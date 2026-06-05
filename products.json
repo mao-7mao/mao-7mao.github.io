@@ -555,7 +555,7 @@
           {
             "id":"2-3-1", "title":"草莓蛋糕橫", "badge":"hot", "link":"",
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.58.22 PM.png"]},            
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/solidx.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.57.57 PM.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.58.09 PM.png"]}
           ]
@@ -654,6 +654,8 @@
            {
             "id":"3-1-1", "title":"貓貓玩具熊透色-粉", "badge":"hot", "link":"",
             "models":[
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx2.webp"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx2.webp"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/2025091009_17.png"] }
         ]
           },
