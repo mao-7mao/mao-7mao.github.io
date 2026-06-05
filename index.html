@@ -195,7 +195,7 @@ const CASE_TYPES = [
     models:[
       {name:'微醺斑比不重複排版airx', price:'428元'},
       {name:'微醺斑比不重複排版磁吸背板+邊框', price:'290元'},
-      {name:'微醺斑比不重複排版非磁吸背板+邊框', price:'230 元'},
+      {name:'微醺斑比不重複排版非磁吸背板+邊框', price:'230元'},
       {name:'微醺斑比不重複排版磁吸背板', price:'225元'},
       {name:'微醺斑比不重複排版非磁吸背板', price:'140元'},
       {name:'微醺斑比不重複排版磁吸clearx', price:'385元'},
@@ -309,7 +309,7 @@ Promise.all([loadSeriesJson(), loadTutuBoomJson()]).then(() => {
 
 
 /* ═══════════════════════════════════════════
-   RENDER PRICE
+   RENDER PRICE在有優惠的時候 吧「價格」改成「原價」在具體的price裡面添加優惠項目
 ═══════════════════════════════════════════ */
 document.getElementById('price-grid').innerHTML = CASE_TYPES.map((ct,idx)=>`
   <div class="pc">
@@ -325,7 +325,7 @@ document.getElementById('price-grid').innerHTML = CASE_TYPES.map((ct,idx)=>`
           ${ct.models.map(m=>`
             <div class="pc-row">
               <span>${m.name}</span>
-              <span class="pc-price">原價 ${m.price}</span>
+              <span class="pc-price">價格 ${m.price}</span> 
               ${m.salePrice ? `<span class="pc-sale-price">優惠價 ${m.salePrice}</span>` : ''}
               ${ct.saleDeadline ? `<div class="pc-sale-deadline">優惠截止：${ct.saleDeadline}</div>` : ''}
             </div>`).join('')}
@@ -351,7 +351,7 @@ document.getElementById('price-grid').innerHTML = CASE_TYPES.map((ct,idx)=>`
           ${ct.models.map(m=>`
             <div class="pc-row">
               <span>${m.name}</span>
-              <span class="pc-price">原價 ${m.price}</span>
+              <span class="pc-price">價格 ${m.price}</span>
               ${m.salePrice ? `<span class="pc-sale-price">優惠價 ${m.salePrice}</span>` : ''}
               ${ct.saleDeadline ? `<div class="pc-sale-deadline">優惠截止：${ct.saleDeadline}</div>` : ''}
             </div>`).join('')}
