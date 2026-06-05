@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>萬有狀態Omnistate</title>
+<meta name="description"
+content="萬有狀態1717客製化手機殼">
+
+<meta name="keywords"
+content="客製化手機殼,萬有狀態,omnistate">
+
+<meta name="author"
+<meta property="og:title"
+content="萬有狀態omnistate">
+
+<meta property="og:description"
+content="客製化手機殼圖庫">
+<meta name="google-site-verification" content="QNwYhDFGhEjyJGcly79qvUi6K_TjnyH3kzTd0dIV_A8" />
+<meta property="og:url"
+content="https://omnistate.netlify.app">
+content="萬有狀態omnistate">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <a class="nav-logo" href="#hero">萬有狀態</em></a>
+  <div class="nav-tabs">
+    <a class="ntab active" href="#price-page">價格表</a>
+    <a class="ntab" href="#series-anchor">Rhinoshield</a>
+    <a class="ntab" href="#tutuboom-anchor">TutuBoom</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-eye">Custom Case Gallery</div>
+    <h1 class="hero-h1">萬有狀態<br><em>客製化款手機殼</em></h1>
+    <p class="hero-p">支援多種機型，🫧：esmusssein-7<br>
+    <a class="hero-cta" href="#price-page">查看價格 ↓</a>
+    <a class="hero-cta" href="#series-anchor">查看圖款 ↓</a>
+  </div>
+</section>
+
+<!-- PAGE 1：PRICE -->
+<section id="price-page">
+  <div class="sec-eye">Pricing</div>
+  <h2 class="sec-h2">殼體 <em>價格表<span style="font-size: 0.85em; color: #666;">（不含運費）</span></em></h2>
+  <p class="sec-sub">所有圖款均可選擇支援機型的不同殼體♥️<br>本價格及運費僅針對中國大陸，其餘地區or國家價格及運費另議🙇<br>價格表更新日期2026/06/01</p>
+  <div class="price-section">
+    <div class="price-main">
+      <div class="price-grid" id="price-grid"></div>
+      <div class="notes" id="notes-box"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" style="margin-top:56px;margin-bottom:0">
+
+<!-- PAGE 2：SERIES -->
+<div id="series-anchor">
+  <nav class="series-nav" id="series-nav"></nav>
+  <div id="series-content"></div>
+</div>
+
+<!-- PAGE 3：TUTUBOOM -->
+<div id="tutuboom-anchor">
+  <section class="series-sec" style="border-bottom:1px solid var(--border)">
+    <div class="series-hd">
+      <div class="series-name">TutuBoom <em>圖款展示</em></div>
+      <div class="series-cnt" id="tutuboom-cnt">0 款</div>
+    </div>
+    <div class="series-desc">預覽圖僅供參考，實物可能有色差</div>
+    <div class="design-grid" id="tutuboom-designs"></div>
+  </section>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lb-close">✕</button>
+  <div class="lb-img-wrap">
+    <img class="lb-img" id="lb-img" src="" alt="" loading="lazy" style="display:none">
+    <div class="lb-ph" id="lb-ph">
+      <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+    </div>
+  </div>
+  <div class="lb-info">
+    <div class="lb-series-lbl" id="lb-series"></div>
+    <div class="lb-title" id="lb-title"></div>
+    <div class="lb-meta" id="lb-meta"></div>
+  </div>
+</div>
+
+<footer>
+  <div>看中哪款，<strong>截圖或傳訊息</strong>告知圖款編號 ＋ 機型 ＋ 殼種 ✦</div>
+  <div>點擊圖片可放大預覽</div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   ★ ✨✨✨✨✨✨✨資料區 — 修改這裡即可
+═══════════════════════════════════════════ */
+
+/* 殼種價格表
+   models 列表 = 各機型價格 */
+const CASE_TYPES = [
+  {
+      name:'AirX',
+      nameEm: '訂製款極致氣墊緩衝手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供15-17機型及SamsungS26、S26u</span>', 
+      img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/airx.webp',
+      desc: '雙側減壓氣室設計，手感曲線雕塑，長時間手持亦常保舒適<br/><span style="font-size: 0.85em; color: #666;">本款默認磁吸</span>',
+
+    iconBg:'#e8f3f8', iconColor:'#4a9ab8',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3" stroke-dasharray="3 2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>`,
+    models:[
+      {name:' 訂製款Airx', price:'398元'},
+    ]
+  },
+  {
+    name:'Mod NX', 
+    nameEm:'訂製款邊框背蓋兩用防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體僅提供iPhone全機型</span>',
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/modnx.webp',
+    desc:'經典防摔分體殼',
+    iconBg:'#f0ede8', iconColor:'#8a7868',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3" stroke-dasharray="3 2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>`,
+    models:[
+      {name:'訂製款磁吸背板+邊框', price:'245元'},
+      {name:'訂製款非磁吸背板+邊框', price:'200元'},
+      {name:'訂製款磁吸背板', price:'190元'},
+      {name:'訂製款非磁吸背板', price:'95元'},
+
+    ]
+  },
+    {
+    name:'ClearX', 
+      nameEm: '訂製款裸機感抗黃防摔透明殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone17pro、17promax機型</span>', 
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/clearx.webp',
+    desc:'1mm 超薄側邊，還原 iPhone 裸機手感，四角防護配置獨家柔韌吸震配方，有效吸收外部衝擊力，終結黃化，終身保固',
+    iconBg:'#f5f0e8', iconColor:'#9a7850',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 7h8M8 10.5h6M8 14h4" stroke-linecap="round"/></svg>`,
+    models:[
+      {name:'訂製款磁吸clearX', price:'350元'},
+      {name:'訂製款非磁吸clearX', price:'315元'},
+
+    ]
+  },
+  {
+    name:'SolidX', 
+      nameEm: '訂製款經典防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供Samsung及iPhone15-17機型，其中透色款為17系列專屬</span>', 
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidx.webp',
+    desc:'強化四角與內部設計，全面升級防摔力道',
+    iconBg:'#fdf0ec', iconColor:'#b04030',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="4" y="1" width="16" height="22" rx="4"/><rect x="7" y="4" width="10" height="16" rx="2"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>`,
+    models:[
+      {name:'訂製款磁吸solidx', price:'300元'},
+      {name:'訂製款非磁吸solidx', price:'255元'},
+    ]
+  },
+  {
+    name:'Clear', 
+      nameEm: '訂製款抗黃化透明防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone及Samsung機型</span>', 
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/clear.webp',
+    desc:'終結黃化，終身保固',
+    iconBg:'#f5f0e8', iconColor:'#9a7850',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 7h8M8 10.5h6M8 14h4" stroke-linecap="round"/></svg>`,
+    models:[
+      {name:'訂製款磁吸clear', price:'315元'},
+      {name:'訂製款非磁吸clear', price:'245元'},
+   
+    ]
+  },
+    {
+    name:'SolidSuit', 
+      nameEm:'訂製款經典防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體僅提供iphone14及以下機型</span>',
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidsuit.webp',
+    desc:'超越軍規防摔標準，更耐摔更耐用',
+    iconBg:'#f5f0e8', iconColor:'#9a7850',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 7h8M8 10.5h6M8 14h4" stroke-linecap="round"/></svg>`,
+    models:[
+      {name:'訂製款磁吸solidsuit', price:'290元'},
+      {name:'訂製款非磁吸solidsuit', price:'190元'},
+    ]
+  },
+    {
+    name:'微醺斑比不重複排版', nameEm:'默認透明背景版本，可選添加背景：鵝黃 淡綠 淡藍 淺灰 淡紫 淡粉',
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/weixun.webp',
+      desc:'底下文字可以客製化，總價+10rmb 僅限英文、數字 和符號():;,.?!', 
+    iconBg:'#f5f0e8', iconColor:'#9a7850',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 7h8M8 10.5h6M8 14h4" stroke-linecap="round"/></svg>`,
+    models:[
+      {name:'微醺斑比不重複排版airx', price:'428元'},
+      {name:'微醺斑比不重複排版磁吸背板+邊框', price:'290元'},
+      {name:'微醺斑比不重複排版非磁吸背板+邊框', price:'230 元'},
+      {name:'微醺斑比不重複排版磁吸背板', price:'225元'},
+      {name:'微醺斑比不重複排版非磁吸背板', price:'140元'},
+      {name:'微醺斑比不重複排版磁吸clearx', price:'385元'},
+      {name:'微醺斑比不重複排版非磁吸clearx', price:'350元'},
+      {name:'微醺斑比不重複排版磁吸clear', price:'340元'},
+      {name:'微醺斑比不重複排版非磁吸clear', price:'280元'},
+      {name:'微醺斑比不重複排版磁吸solidx', price:'335元'},
+      {name:'微醺斑比不重複排版非磁吸solidx', price:'295元'},
+      {name:'微醺斑比不重複排版磁吸solidsuit', price:'315元'},
+      {name:'微醺斑比不重複排版非磁吸solidsuit', price:'235元'},
+    ]
+  },
+    {
+    name:'微醺斑比小動物連連看&花花', nameEm:'默認透明背景版本，可選添加背景：鵝黃 淡綠 淡藍 淺灰 淡紫 淡粉',
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/weixunani.webp',
+      desc:'底下文字可以客製化，總價+10rmb 僅限英文、數字 和符號():;,.?!',   
+         iconBg:'#f5f0e8', iconColor:'#9a7850',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 7h8M8 10.5h6M8 14h4" stroke-linecap="round"/></svg>`,
+    models:[
+      {name:'微醺斑比小動物連連看&花花排版airx', price:'403元'},
+      {name:'微醺斑比小動物連連看&花花排版磁吸背板+邊框', price:'255元'},
+      {name:'微醺斑比小動物連連看&花花排版非磁吸背板+邊框', price:'205元'},
+      {name:'微醺斑比小動物連連看&花花排版磁吸背板', price:'200元'},
+      {name:'微醺斑比小動物連連看&花花排版非磁吸背板', price:'105元'},
+      {name:'微醺斑比小動物連連看&花花排版磁吸clearx', price:'365元'},
+      {name:'微醺斑比小動物連連看&花花排版非磁吸clearx', price:'330元'},
+      {name:'微醺斑比小動物連連看&花花排版磁吸clear', price:'325元'},
+      {name:'微醺斑比小動物連連看&花花排版非磁吸clear', price:'255元'},
+      {name:'微醺斑比小動物連連看&花花排版磁吸solidx', price:'310元'},
+      {name:'微醺斑比小動物連連看&花花排版非磁吸solidx', price:'265元'},
+      {name:'微醺斑比小動物連連看&花花排版磁吸solidsuit', price:'295元'},
+      {name:'微醺斑比小動物連連看&花花排版非磁吸solidsuit', price:'195元'},
+    ]
+  },
+    
+];
+
+/* 備註欄 */
+const NOTES = [
+  {label:'下單方式', val:'可截圖或傳訊息告知：圖款編號 ＋ 機型 ＋ 殼體 ＋ 殼體顏色<br>若需要訂製款水壺、ipad殼請私訊<br>如需在定制款基礎上添加犀牛盾官網的貼紙（需要提供貼紙的準確名稱，描述添加的具體位置），按照貼紙價格（TWD）/4計算'},
+  {label:'製作時間', val:'下單後約 3-5 個工作日出貨，遇到特殊節日或公休可能會更久，敬請見諒🙇'},
+  {label:'運費',     val:'拼郵請詳詢<strong>Jimmibobo（🫧：jimmibobotw）</strong>，運費約為20-25人民幣<br>若選擇官網直郵詢問muss es sein<br>下單至台灣滿<span style="color: blue;">人民幣225元</span>下單，沒滿需要等待滿額後下單<br>個人直郵滿人民幣500元下單，免運，但可能產生稅費，需要自理稅金'},
+  {label:'注意事項', val:'預覽圖僅供參考，實際色彩請您以實物為準'},
+  {label:'聯繫方式', val:'🫧：<strong>mussessein-7</strong>'},
+];
+
+/* TutuBoom 價格表 */
+const TUTUBOOM_PRICES = [
+  {
+    name:'TutuBoom',
+    nameEm:'分離殼',
+    img:'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/tutuboom.webp',
+    desc:'雙面印刷具有半透明效果，實物和預覽圖可能有色彩差異，預覽圖僅供參考 <br>*tutuboom價格含運費<br>請直接詢問muss es sein',
+    iconBg:'#f0ede8', iconColor:'#8a7868',
+    icon:`<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 10h4" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>`,
+    models:[
+      {name:'TutuBoom訂製款單層背板', price:'168.3元'},
+     {name:'TutuBoom訂製款單層背板+邊框', price:'295.8元'},
+    {name:'TutuBoom訂製款雙層背板', price:'185.3元'},
+    {name:'TutuBoom訂製款雙層背板+邊框', price:'312.8元'},
+    ]
+  },
+];
+
+/* TutuBoom 款式資料 - 不分系列，直接展示圖款 */
+let TUTUBOOM_DESIGNS = [];
+
+/* ═══════════════════════════════════════════
+   ✨✨✨✨✨✨✨✨系列資料
+   層級：系列 → 子系列 → 款式 → 機型
+
+   每個機型：{ name:'機型名', img:'圖片URL' }
+             或 { name:'機型名', imgs:['圖片URL1','圖片URL2'] }
+   img 留空 = 顯示佔位框
+   badge: '' / 'new' / 'hot'
+═══════════════════════════════════════════ */
+let SERIES = [];
+
+function loadSeriesJson(){
+  return fetch('products.json')
+    .then(resp => {
+      if(!resp.ok) throw new Error('products.json 讀取失敗');
+      return resp.json();
+    })
+    .then(data => {
+      SERIES = data.SERIES || [];
+    })
+    .catch(err => {
+      console.error('載入 SERIES JSON 失敗', err);
+    });
+}
+
+function loadTutuBoomJson(){
+  return fetch('tutuproducts.json')
+    .then(resp => {
+      if(!resp.ok) throw new Error('tutuproducts.json 讀取失敗');
+      return resp.json();
+    })
+    .then(data => {
+      TUTUBOOM_DESIGNS = Array.isArray(data) ? data : [];
+    })
+    .catch(err => {
+      console.error('載入 TutuBoom JSON 失敗', err);
+    });
+}
+
+Promise.all([loadSeriesJson(), loadTutuBoomJson()]).then(() => {
+  renderSeries();
+  renderTutuBoom();
+});
+
+
+/* ═══════════════════════════════════════════
+   RENDER PRICE
+═══════════════════════════════════════════ */
+document.getElementById('price-grid').innerHTML = CASE_TYPES.map((ct,idx)=>`
+  <div class="pc">
+    <div class="pc-head">
+      <div>
+        <div class="pc-n">${ct.name} <em>${ct.nameEm}</em></div>
+        <div class="pc-d">${ct.desc}</div>
+      </div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-content">
+        <div>
+          ${ct.models.map(m=>`
+            <div class="pc-row">
+              <span>${m.name}</span>
+              <span class="pc-price">原價 ${m.price}</span>
+              ${m.salePrice ? `<span class="pc-sale-price">優惠價 ${m.salePrice}</span>` : ''}
+              ${ct.saleDeadline ? `<div class="pc-sale-deadline">優惠截止：${ct.saleDeadline}</div>` : ''}
+            </div>`).join('')}
+        </div>
+              <div class="pc-img-box">
+          <div class="pc-img" id="pc-img-${idx}">
+            ${ct.img ? `<img src="${ct.img}" alt="${ct.name}" loading="lazy">` : `<div class="pc-img-placeholder">圖片待填</div>`}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`).join('') + TUTUBOOM_PRICES.map((ct,idx)=>`
+  <div class="pc">
+    <div class="pc-head">
+      <div>
+        <div class="pc-n">${ct.name} <em>${ct.nameEm}</em></div>
+        <div class="pc-d">${ct.desc}</div>
+      </div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-content">
+        <div>
+          ${ct.models.map(m=>`
+            <div class="pc-row">
+              <span>${m.name}</span>
+              <span class="pc-price">原價 ${m.price}</span>
+              ${m.salePrice ? `<span class="pc-sale-price">優惠價 ${m.salePrice}</span>` : ''}
+              ${ct.saleDeadline ? `<div class="pc-sale-deadline">優惠截止：${ct.saleDeadline}</div>` : ''}
+            </div>`).join('')}
+        </div>
+              <div class="pc-img-box">
+          <div class="pc-img" id="pc-img-tb-${idx}">
+            ${ct.img ? `<img src="${ct.img}" alt="${ct.name}" loading="lazy">` : `<div class="pc-img-placeholder">圖片待填</div>`}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`).join('');
+
+document.getElementById('notes-box').innerHTML = NOTES.map(n=>`
+  <div>
+    <div class="note-lbl">${n.label}</div>
+    <div class="note-v">${n.val}</div>
+  </div>`).join('');
+
+/* ═══════════════════════════════════════════
+   RENDER SERIES 改成了fetch json，下面這個函數改成從SERIES資料中尋找對應id的系列或子系列，沒找到就回傳null
+═══════════════════════════════════════════ */
+function findSeriesItemById(id){
+  const direct = SERIES.find(x=>x.id===id);
+  if(direct) return direct;
+  for(const s of SERIES){
+    const sub = s.subseries?.find(x=>x.id===id);
+    if(sub) return sub;
+  }
+  return null;
+}
+
+function validDesigns(arr){
+  return Array.isArray(arr) ? arr.filter(d => d && Array.isArray(d.models) && d.models.length) : [];
+}
+
+function renderSeries(){
+  // series nav tabs
+  document.getElementById('series-nav').innerHTML =
+    SERIES.map(s=>`<a class="stab" href="#${s.id}" data-sid="${s.id}">${s.name}</a>`).join('');
+
+  document.getElementById('series-content').innerHTML = SERIES.map((s,si)=>{
+    const total = s.subseries?.length ? s.subseries.reduce((sum,sub)=>sum + validDesigns(sub.designs).length, 0) : validDesigns(s.designs).length;
+    const subnav = s.subseries?.length ? `
+      <nav class="series-nav subseries-nav">
+        ${s.subseries.map(sub=>`<a class="stab" href="#${sub.id}" data-sid="${s.id}" data-subid="${sub.id}">${sub.name}</a>`).join('')}
+      </nav>` : '';
+    const content = s.subseries?.length ? s.subseries.map((sub,ssi)=>{
+      const designs = validDesigns(sub.designs);
+      return `
+      <section class="series-subsec" id="${sub.id}">
+        <div class="series-hd">
+          <div class="series-name">${sub.name}${sub.nameEm?` — <em>${sub.nameEm}</em>`:''}</div>
+          <div class="series-cnt">${designs.length} 款</div>
+        </div>
+        ${sub.desc?`<div class="series-desc">${sub.desc}</div>`:''}
+        <div class="design-grid">
+          ${designs.map((d,di)=>designCard(sub,d,si,di)).join('')}
+        </div>
+      </section>`;
+    }).join('') : `
+      <div class="design-grid">
+        ${validDesigns(s.designs).map((d,di)=>designCard(s,d,si,di)).join('')}
+      </div>`;
+
+    return `
+      <section class="series-sec" id="${s.id}">
+        <div class="series-hd">
+          <div class="series-name">${s.name}${s.nameEm?` — <em>${s.nameEm}</em>`:''}</div>
+          <div class="series-cnt">${total} 款</div>
+        </div>
+        ${s.desc?`<div class="series-desc">${s.desc}</div>`:''}
+        ${subnav}
+        ${content}
+      </section>`;
+  }).join('');
+
+  // bind model tab clicks (event delegation)
+  document.getElementById('series-content').addEventListener('click',e=>{
+    const tab = e.target.closest('.mtab');
+    if(!tab) return;
+    const card = tab.closest('.design-card');
+    const sid  = card.dataset.sid;
+    const did  = card.dataset.did;
+    const midx = parseInt(tab.dataset.midx);
+    switchModel(card, sid, did, midx);
+  });
+
+  // bind image click → lightbox
+  document.getElementById('series-content').addEventListener('click',e=>{
+    const card = e.target.closest('.design-card');
+    if(!card) return;
+
+    const dot = e.target.closest('.dc-img-dot');
+    if(dot){
+      switchModelImage(card, parseInt(dot.dataset.imgIdx, 10));
+      return;
+    }
+
+    const wrap = e.target.closest('.dc-img-wrap');
+    if(!wrap || e.target.closest('.dc-img-nav')) return;
+    openLB(
+      card.dataset.sid,
+      card.dataset.did,
+      parseInt(card.dataset.activeIdx||0, 10),
+      parseInt(card.dataset.activeImgIdx||0, 10)
+    );
+  });
+
+  // series tab active on scroll
+  const secs  = document.querySelectorAll('.series-sec');
+  const stabs = document.querySelectorAll('.stab');
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        stabs.forEach(t=>t.classList.remove('active'));
+        const a=document.querySelector(`.stab[data-sid="${e.target.id}"]`);
+        if(a){a.classList.add('active');a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+      }
+    });
+  },{threshold:0.25}).observe && secs.forEach(s=>new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        stabs.forEach(t=>t.classList.remove('active'));
+        const a=document.querySelector(`.stab[data-sid="${e.target.id}"]`);
+        if(a){a.classList.add('active');a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+      }
+    });
+  },{threshold:0.25}).observe(s));
+}
+
+function renderTutuBoom(){
+  // 獲取 tutuboom 的設計卡片 HTML
+  const tutuSeriesObj = { id:'tutuboom', name:'TutuBoom' };
+  document.getElementById('tutuboom-cnt').textContent = TUTUBOOM_DESIGNS.length + ' 款';
+  
+  document.getElementById('tutuboom-designs').innerHTML = TUTUBOOM_DESIGNS.map((d,di)=>{
+    const firstModel = d.models[0];
+    const firstModelImgs = getModelImages(firstModel);
+    const badgeHtml  = d.badge==='new' ? '<div class="dc-badge badge-new">NEW</div>'
+                     : d.badge==='hot'? '<div class="dc-badge badge-hot">HOT</div>' : '';
+    const firstImage  = firstModelImgs[0];
+    const imgHtml    = firstImage
+      ? `<img class="dc-img" src="${firstImage}" alt="${d.title}" loading="lazy">`
+      : `<div class="dc-placeholder">
+          <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+          圖片待填
+         </div>`;
+    const imageNavHtml = firstModelImgs.length > 1 ? `
+        <div class="dc-img-nav">
+          ${firstModelImgs.map((_,i)=>`<button class="dc-img-dot${i===0?' active':''}" type="button" data-img-idx="${i}" aria-label="第 ${i+1} 張"></button>`).join('')}
+        </div>` : '';
+    const modelTabs  = d.models.map((m,mi)=>`
+      <button class="mtab${mi===0?' active':''}" data-midx="${mi}">${m.name}</button>`).join('');
+    const linkHtml   = d.link ? `<a class="dc-link" href="${d.link}" target="_blank" rel="noopener noreferrer">小紅書</a>` : '';
+
+    return `
+      <div class="design-card" data-sid="tutuboom" data-did="${d.id}" data-active-idx="0" data-active-img-idx="0"
+           style="animation-delay:${di*0.08}s">
+        <div class="dc-img-wrap">
+          ${imgHtml}
+          ${badgeHtml}
+          ${imageNavHtml}
+          <div class="dc-zoom">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="dc-body">
+          <div class="dc-top">
+            <span class="dc-title">${d.title}</span>
+            <span class="dc-code">${d.id}</span>
+          </div>
+          <div class="model-tabs">${modelTabs}</div>
+          ${linkHtml}
+        </div>
+      </div>`;
+  }).join('');
+
+  // bind model tab clicks for tutuboom
+  document.getElementById('tutuboom-designs').addEventListener('click',e=>{
+    const tab = e.target.closest('.mtab');
+    if(!tab) return;
+    const card = tab.closest('.design-card');
+    const midx = parseInt(tab.dataset.midx);
+    const d = TUTUBOOM_DESIGNS.find(x=>x.id===card.dataset.did);
+    if(!d || !d.models[midx]) return;
+    card.dataset.activeIdx = midx;
+    card.dataset.activeImgIdx = 0;
+    const m = d.models[midx];
+    renderImagePreview(card, d, m, 0);
+    renderImageNav(card, m, 0);
+    card.querySelectorAll('.mtab').forEach((t,i)=>t.classList.toggle('active',i===midx));
+  });
+
+  // bind image click for tutuboom
+  document.getElementById('tutuboom-designs').addEventListener('click',e=>{
+    const card = e.target.closest('.design-card');
+    if(!card) return;
+
+    const dot = e.target.closest('.dc-img-dot');
+    if(dot){
+      const imgIdx = parseInt(dot.dataset.imgIdx, 10);
+      const d = TUTUBOOM_DESIGNS.find(x=>x.id===card.dataset.did);
+      if(!d) return;
+      const midx = parseInt(card.dataset.activeIdx||0, 10);
+      const m = d.models[midx];
+      if(!m) return;
+      const imgs = getModelImages(m);
+      if(imgIdx < 0 || imgIdx >= imgs.length) return;
+      card.dataset.activeImgIdx = imgIdx;
+      renderImagePreview(card, d, m, imgIdx);
+      return;
+    }
+
+    const wrap = e.target.closest('.dc-img-wrap');
+    if(!wrap || e.target.closest('.dc-img-nav')) return;
+    const d = TUTUBOOM_DESIGNS.find(x=>x.id===card.dataset.did);
+    const midx = parseInt(card.dataset.activeIdx||0, 10);
+    const imgidx = parseInt(card.dataset.activeImgIdx||0, 10);
+    if(d){
+      document.getElementById('lb-series').textContent = 'TutuBoom';
+      document.getElementById('lb-title').textContent = d.title;
+      const m = d.models[midx];
+      const imgs = getModelImages(m);
+      const count = imgs.length;
+      document.getElementById('lb-meta').textContent = `款號 ${d.id}  ·  ${m.name}${count>1 ? ` · ${imgidx+1}/${count}` : ''}`;
+      
+      const img=document.getElementById('lb-img');
+      const ph =document.getElementById('lb-ph');
+      const src = imgs[imgidx] || imgs[0];
+      if(src){img.src=src;img.style.display='block';ph.style.display='none';}
+      else{img.style.display='none';ph.style.display='flex';}
+      document.getElementById('lb').classList.add('open');
+    }
+  });
+}
+
+function getModelImages(m){
+  if(!m) return [];
+  if(Array.isArray(m.imgs) && m.imgs.length) return m.imgs;
+  if(m.img) return [m.img];
+  return [];
+}
+function getModelFirstImage(m){
+  return getModelImages(m)[0] || '';
+}
+function renderImageNav(card,m,activeImgIdx=0){
+  const wrap = card.querySelector('.dc-img-wrap');
+  if(!wrap) return;
+  const imgs = getModelImages(m);
+  let nav = wrap.querySelector('.dc-img-nav');
+  if(imgs.length <= 1){
+    if(nav) nav.remove();
+    return;
+  }
+  const html = imgs.map((_,i)=>`<button class="dc-img-dot${i===activeImgIdx?' active':''}" type="button" data-img-idx="${i}" aria-label="第 ${i+1} 張"></button>`).join('');
+  if(nav){
+    nav.innerHTML = html;
+  } else {
+    nav = document.createElement('div');
+    nav.className = 'dc-img-nav';
+    nav.innerHTML = html;
+    wrap.appendChild(nav);
+  }
+}
+function renderImagePreview(card,d,m,imgIdx=0){
+  const wrap = card.querySelector('.dc-img-wrap');
+  if(!wrap) return;
+  const oldImg = wrap.querySelector('.dc-img');
+  const oldPh  = wrap.querySelector('.dc-placeholder');
+  if(oldImg) oldImg.remove();
+  if(oldPh) oldPh.remove();
+  const imgs = getModelImages(m);
+  const src = imgs[imgIdx];
+  if(src){
+    const img = document.createElement('img');
+    img.className = 'dc-img'; img.src = src; img.alt = d.title; 
+    img.loading = 'lazy';
+    img.draggable = false;
+    img.oncontextmenu = function() { return false; };
+    wrap.insertBefore(img, wrap.firstChild);
+  } else {
+    const ph = document.createElement('div');
+    ph.className = 'dc-placeholder';
+    ph.innerHTML = `<svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+        圖片待填`;
+    wrap.insertBefore(ph, wrap.firstChild);
+  }
+  wrap.querySelectorAll('.dc-img-dot').forEach((t,i)=>t.classList.toggle('active', i===imgIdx));
+}
+function switchModelImage(card,imgIdx){
+  const sid = card.dataset.sid;
+  const did = card.dataset.did;
+  const s = findSeriesItemById(sid);
+  const d = s?.designs.find(x=>x.id===did);
+  if(!d) return;
+  const midx = parseInt(card.dataset.activeIdx||0, 10);
+  const m = d.models[midx];
+  if(!m) return;
+  const imgs = getModelImages(m);
+  if(imgIdx < 0 || imgIdx >= imgs.length) return;
+  card.dataset.activeImgIdx = imgIdx;
+  renderImagePreview(card, d, m, imgIdx);
+}
+function designCard(s,d,si,di){
+  const firstModel = Array.isArray(d.models) ? d.models[0] : null;
+  const firstModelImgs = getModelImages(firstModel);
+  const badgeHtml  = d.badge==='new' ? '<div class="dc-badge badge-new">NEW</div>'
+                   : d.badge==='hot'? '<div class="dc-badge badge-hot">HOT</div>' : '';
+  const firstImage  = firstModelImgs[0] || '';
+  const imgHtml    = firstImage
+    ? `<img class="dc-img" src="${firstImage}" alt="${d.title}" loading="lazy" draggable="false" oncontextmenu="return false;">`
+    : `<div class="dc-placeholder">
+        <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+        圖片待填
+       </div>`;
+  const imageNavHtml = firstModelImgs.length > 1 ? `
+      <div class="dc-img-nav">
+        ${firstModelImgs.map((_,i)=>`<button class="dc-img-dot${i===0?' active':''}" type="button" data-img-idx="${i}" aria-label="第 ${i+1} 張"></button>`).join('')}
+      </div>` : '';
+  const modelTabs  = d.models.map((m,mi)=>`
+    <button class="mtab${mi===0?' active':''}" data-midx="${mi}">${m.name}</button>`).join('');
+  const linkHtml   = d.link ? `<a class="dc-link" href="${d.link}" target="_blank" rel="noopener noreferrer">小紅書</a>` : '';
+
+  return `
+    <div class="design-card" data-sid="${s.id}" data-did="${d.id}" data-active-idx="0" data-active-img-idx="0"
+         style="animation-delay:${si*.04+di*.06}s">
+      <div class="dc-img-wrap">
+        ${imgHtml}
+        ${badgeHtml}
+        ${imageNavHtml}
+        <div class="dc-zoom">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dc-body">
+        <div class="dc-top">
+          <span class="dc-title">${d.title}</span>
+          <span class="dc-code">${d.id}</span>
+        </div>
+        <div class="model-tabs">${modelTabs}</div>
+        ${linkHtml}
+      </div>
+    </div>`;
+}
+
+function switchModel(card, sid, did, midx){
+  const s = findSeriesItemById(sid);
+  const d = s?.designs.find(x=>x.id===did);
+  if(!d) return;
+  const m = d.models[midx];
+  if(!m) return;
+  card.dataset.activeIdx = midx;
+  card.dataset.activeImgIdx = 0;
+  renderImagePreview(card, d, m, 0);
+  renderImageNav(card, m, 0);
+
+  // update tabs
+  card.querySelectorAll('.mtab').forEach((t,i)=>t.classList.toggle('active',i===midx));
+}
+
+/* ═══════════════════════════════════════════
+   LIGHTBOX
+═══════════════════════════════════ */
+function openLB(sid,did,midx,imgidx=0){
+  const s=findSeriesItemById(sid);
+  const d=s?.designs.find(x=>x.id===did);
+  const m=d?.models[midx];
+  if(!m) return;
+  const imgs = getModelImages(m);
+  const src = imgs[imgidx] || imgs[0];
+  const img=document.getElementById('lb-img');
+  const ph =document.getElementById('lb-ph');
+  if(src){img.src=src;img.style.display='block';ph.style.display='none';}
+  else{img.style.display='none';ph.style.display='flex';}
+  const count = imgs.length;
+  document.getElementById('lb-series').textContent=s.name+(s.nameEm?' · '+s.nameEm:'');
+  document.getElementById('lb-title').textContent=d.title;
+  document.getElementById('lb-meta').textContent=`款號 ${d.id}  ·  ${m.name}${count>1 ? ` · ${imgidx+1}/${count}` : ''}`;
+  document.getElementById('lb').classList.add('open');
+}
+
+document.getElementById('lb-close').onclick=()=>document.getElementById('lb').classList.remove('open');
+document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb'))document.getElementById('lb').classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').classList.remove('open');});
+
+/* top nav active */
+const ntabs=[
+  document.querySelector('.ntab[href="#price-page"]'),
+  document.querySelector('.ntab[href="#series-anchor"]'),
+  document.querySelector('.ntab[href="#tutuboom-anchor"]')
+];
+[document.getElementById('price-page'),
+ document.getElementById('series-anchor'),
+ document.getElementById('tutuboom-anchor')].forEach((el,i)=>{
+  if(!el) return;
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        ntabs.forEach(t=>t?.classList.remove('active'));
+        ntabs[i]?.classList.add('active');
+      }
+    });
+  },{threshold:.15}).observe(el);
+});
+</script>
+</body>
+</html>

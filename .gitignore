@@ -1,0 +1,18 @@
+# images
+images/
+
+# mac
+.DS_Store
+
+# archives
+*.zip
+
+# video
+*.mp4
+*.mov
+
+# photoshop
+*.psd
+
+# temp
+node_modules//Users/hsiaomiao/Documents/Github/Showcasse/images/

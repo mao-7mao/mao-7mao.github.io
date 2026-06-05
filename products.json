@@ -1,0 +1,1815 @@
+  {
+  "SERIES": [
+  {
+    "id":"s1", "name":"格紋與條紋系列", 
+    "subseries":[
+      {
+        "id":"s1-1", "name":"鏤空格紋", 
+        "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
+        "designs":[
+          {
+            "id":"1-1-1", "title":"柔柔粉藍", "badge":"new", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-26-40.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-29-41.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-27-31.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-28-10.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-28-49.png"]},
+              {"name":"ModNX+白色背景",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-47-07.png"]}
+            ]
+          },
+    {
+            "id":"1-1-2", "title":"黃黑灰格紋", "badge":"hot", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-14-57-10.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-15-03-16.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-14-52-51.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-15-02-27.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-14-57-48.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-14-58-10.png"]}
+            ]
+          },
+           {
+            "id":"1-1-3", "title":"黃粉藍格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-34-28.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-32-28.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-33-16.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-36-09.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-33-39.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-34-00.png"]}
+            ]
+          },
+           {
+            "id":"1-1-4", "title":"彩色蠟筆+小雲朵「文字可更換」<br/><span style=\"font-size: 0.85em; color: #666;\">為收費貼紙需+12.5元</span>", "badge":"hot", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-50-46.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-56-24.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-09.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-56-42.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-29.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-53-17.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-59.png"]}
+            ]
+          },
+           {
+            "id":"1-1-5", "title":"竹編格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-17-23.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-19-14.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-17-47.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-21-17.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-18-05.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-18-43.png"]},
+              {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-5/2026-05-26-20-20-56.png"]}
+            ]
+          },
+           {
+            "id":"1-1-6", "title":"灰綠格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-16-19.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-15-40.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2025091110_54_1.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-07-15.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-06-53.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-14-30.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-15-09.png"]}
+            ]
+          },
+       
+           {
+            "id":"1-1-7", "title":"彩虹格紋小笑臉", "badge":"", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-56-03.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-55-07.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-55-43.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-54-05.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-56-35.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-57-05.png"]},
+              {"name":"clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2025091013_49.png"]}
+            ]
+          },
+           {
+            "id":"1-1-8", "title":"粉色方形格紋", "badge":"", "link":"",
+            "models":[
+             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-8/Screenshot 2026-05-30 at 10.40.30 PM.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-8/Screenshot 2026-05-30 at 10.40.42 PM.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-8/Screenshot 2026-05-30 at 8.55.48 PM.png"]}
+            ]
+          },
+              {
+            "id":"1-1-9", "title":"藍紫橙格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/2025091110_57.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/Screenshot 2026-05-30 at 10.42.13 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/Screenshot 2026-05-30 at 10.43.14 PM.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/Screenshot 2026-05-30 at 10.42.29 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/Screenshot 2026-05-30 at 10.42.37 PM.png"]}
+            ]
+          },
+           {
+            "id":"1-1-10", "title":"綠色編織", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.44.36 PM.png"]},
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/2025091111_09.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.43.57 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.44.10 PM.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.44.23 PM.png"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id":"s1-2", "name":"滿印格紋", 
+        "designs":[
+          {
+            "id":"1-2-1", "title":"彩虹跳跳糖", "badge":"new", "link":"",
+            "models":[
+             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-1/2026031122_13.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-1/2026031122_19.png"]}
+            ]
+          },
+                    {
+            "id":"1-2-2", "title":"彩虹跳跳糖加星星鈕扣", "badge":"new", "link":"",
+            "models":[
+             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031122_23.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031122_22.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031123_49.png"]}
+            ]
+          },
+          {
+            "id":"1-2-3", "title":"黃粉格紋實色", "badge":"hot", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.02.23 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.01.17 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.01.07 PM.png"]}
+            ]
+          },
+          {
+            "id":"1-2-4", "title":"藍色大衣", "badge":"", "link":"",
+            "models":[
+                           {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-4/2025091111_24_1.png"]}
+            ]
+          },
+          {
+            "id":"1-2-5", "title":"編織星星格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-5/2025091111_46.png"]}
+            ]
+          },
+          {
+            "id":"1-2-6", "title":"花花格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-6/Screenshot 2026-05-30 at 11.04.50 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-6/Screenshot 2026-05-30 at 11.04.38 PM.png"]}
+            ]
+          },
+          {
+            "id":"1-2-7", "title":"紗籠線條格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-7/2026031122_25.png"]},
+            {"name":"AirX",     "imgs":[ "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-7/2026031122_17_1.png"]}
+            ]
+          },
+          {
+            "id":"1-2-8", "title":"朦朧彩色格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-8/2025091111_25.png"]}
+            ]
+          },
+          {
+            "id":"1-2-9", "title":"綠色格紋浮雕", "badge":"", "link":"",
+            "models":[
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.47 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.59 PM.png"]}
+            ]
+          },
+          {
+            "id":"1-2-10", "title":"浮雕粉豬豬", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-10/Screenshot 2026-05-30 at 11.14.57 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.47 PM.png"]}
+            ]
+          },
+              {
+            "id":"1-2-11", "title":"秋意格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-11/2025091111_47.png"]}
+            ]
+          },
+              {
+            "id":"1-2-12", "title":"粉色布藝格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-12/2025091111_24.png"]}
+            ]
+          },
+              {
+            "id":"1-2-13", "title":"黑白千鳥格", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-13/2025091111_48.png"]}
+            ]
+          },
+              {
+            "id":"1-2-14", "title":"薄荷綠鼠尾草綠實色", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-14/Screenshot 2026-05-30 at 11.15.51 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-14/Screenshot 2026-05-30 at 11.16.11 PM.png"]}
+            ]
+          },
+              {
+            "id":"1-2-15", "title":"彩虹格", "badge":"", "link":"",
+            "models":[
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-15/Screenshot 2026-05-30 at 11.17.10 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-15/Screenshot 2026-05-30 at 11.16.40 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-15/Screenshot 2026-05-30 at 11.16.55 PM.png"]}
+            ]
+          },
+              {
+            "id":"1-2-16", "title":"黃棕蠟筆格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-16/Screenshot 2026-05-30 at 11.18.16 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-16/Screenshot 2026-05-30 at 11.18.03 PM.png"]}
+            ]
+          },
+              {
+            "id":"1-2-17", "title":"紅色蠟筆格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-17/Screenshot 2026-05-30 at 11.20.04 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-17/Screenshot 2026-05-30 at 11.19.30 PM.png"]}
+            ]
+          },
+              {
+            "id":"1-2-18", "title":"紫色斜格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-18/2025091111_46_1.png"]}
+            ]
+          },
+              {
+            "id":"1-2-19", "title":"瓦楞格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-19/2026013121_01.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-19/2026013121_03.png"]}
+            ]
+          },
+              {
+            "id":"1-2-20", "title":"畫筆斜紅格紋米色背景", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-20/Screenshot 2026-06-01 at 12.47.46 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-20/Screenshot 2026-06-01 at 12.48.17 AM.png"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id":"s1-3", "name":"愛心格紋", 
+        "designs":[
+          {
+            "id":"1-3-1", "title":"咖啡薄荷綠燕麥灰愛心格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-1/2025091111_36.png"]}
+            ]
+          },
+                      {
+            "id":"1-3-2", "title":"抹茶綠愛心格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-2/Screenshot 2026-05-30 at 11.22.04 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-2/Screenshot 2026-05-30 at 11.21.24 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-2/Screenshot 2026-05-30 at 11.21.33 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-2/Screenshot 2026-05-30 at 11.21.07 PM.png"]}
+            ]
+          },
+     {
+            "id":"1-3-3", "title":"紫色愛心格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-3/2026013120_59.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-3/2026013121_00.png"]}
+            ]
+          },
+     {
+            "id":"1-3-4", "title":"白色底色黑色愛心格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-4/Screenshot 2026-05-30 at 11.22.45 PM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-4/Screenshot 2026-05-30 at 11.22.58 PM.png"]}
+            ]
+          },
+     {
+            "id":"1-3-5", "title":"白色愛心格紋-mini-透明背景", "badge":"", "link":"",
+            "models":[
+          {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/Screenshot 2026-05-30 at 11.23.42 PM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/Screenshot 2026-05-30 at 11.24.09 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/Screenshot 2026-05-30 at 11.24.24 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/Screenshot 2026-05-30 at 11.24.54 PM.png"]}
+            ]
+          },
+     {
+            "id":"1-3-6", "title":"格紋刺繡愛心紅", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.27.19 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.27.41 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.27.53 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.26.58 PM.png"]}
+            ]
+          },     
+ {
+            "id":"1-3-7", "title":"格紋刺繡愛心黑", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-7/Screenshot 2026-05-30 at 11.29.16 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-7/Screenshot 2026-05-30 at 11.29.48 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-7/Screenshot 2026-05-30 at 11.28.59 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-7/Screenshot 2026-05-30 at 11.30.10 PM.png"]}
+            ]
+          },
+     {
+            "id":"1-3-8", "title":"抹布藝愛心灰色", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-8/Screenshot 2026-05-30 at 11.31.39 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-8/Screenshot 2026-05-30 at 11.32.16 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-8/Screenshot 2026-05-30 at 11.31.21 PM.png"]}
+            ]
+          },
+     {
+            "id":"1-3-9", "title":"布藝愛心紫色", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-9/Screenshot 2026-05-30 at 11.33.32 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-9/Screenshot 2026-05-30 at 11.33.13 PM.png"]}
+            ]
+          }
+        ]
+      },
+       {
+        "id":"s1-4", "name":"條紋", 
+        "designs":[
+          {
+            "id":"1-4-1", "title":"綠色條紋橫", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-1/2025091111_51_1.png"]}
+            ]
+          },
+                   {
+            "id":"1-4-2", "title":"灰粉條紋橫", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-2/2025091111_49.png"]}
+        ]
+      },
+          {
+            "id":"1-4-3", "title":"黃咖斜條紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-3/Screenshot 2026-05-30 at 11.34.01 PM.png"]}
+            ]
+          },
+          {
+            "id":"1-4-4", "title":"薄荷咖條紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-4/Screenshot 2026-05-30 at 11.35.46 PM.png"]}
+    ]
+        },
+        {
+              "id":"1-4-5", "title":"粉咖條紋", "badge":"", "link":"",
+              "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-5/Screenshot 2026-05-30 at 11.36.10 PM.png"]}
+              ]
+            },
+            {
+              "id":"1-4-6", "title":"have a nice day", "badge":"new", "link":"",
+              "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-6/Screenshot 2026-05-30 at 11.38.48 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-6/Screenshot 2026-05-30 at 11.37.20 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-6/Screenshot 2026-05-30 at 11.38.17 PM.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-4-6/Screenshot 2026-05-30 at 11.39.10 PM.png"]}
+              ]
+            }
+          ]
+      }
+    ]
+  },
+  {
+    "id":"s2", "name":"手繪系列", 
+    "subseries":[
+      {
+        "id":"s2-1", "name":"手繪🎨", 
+        "designs":[
+        
+           {
+            "id":"2-1-1", "title":"粉光圈", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-1/2025091111_31.png"]}
+            ]
+          },
+              {
+            "id":"2-1-2", "title":"水果柵欄", "badge":"hot", "link":"",
+            "models":[
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-2/Screenshot 2026-05-30 at 11.43.32 PM.png"]},
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-2/2025091111_17.png"]}
+            ]
+          },
+           {
+            "id":"2-1-3", "title":"落雨鬱金香", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-3/Screenshot 2026-05-30 at 11.40.19 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-3/Screenshot 2026-05-30 at 11.40.03 PM.png"]}
+            ]
+          },
+           {
+            "id":"2-1-4", "title":"自然版畫棕色", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-4/Screenshot 2026-05-30 at 12.07.04 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-4/2026030921_26.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-4/2026030921_27.png"]}
+            ]
+          },
+          {
+            "id":"2-1-5", "title":"自然版畫綠色", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-5/Screenshot 2026-05-31 at 2.21.37 PM.png"]}
+            ]
+          },
+           {
+            "id":"2-1-6", "title":"條紋四葉草", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-6/2025091111_14.png"] }
+        ]
+          },
+           {
+            "id":"2-1-7", "title":"愛心青草地", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-7/Screenshot 2026-05-30 at 11.41.32 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-7/Screenshot 2026-05-30 at 11.41.08 PM.png"] }
+        ]
+          },
+           {
+            "id":"2-1-8", "title":"草莓彩格", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-8/2025091111_13.png"] }
+        ]
+          },
+           {
+            "id":"2-1-9", "title":"草莓小狗", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-9/2025091111_15.png"] }
+        ]
+          },
+           {
+            "id":"2-1-10", "title":"咖啡杯", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-10/Screenshot 2026-05-30 at 11.42.29 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-10/Screenshot 2026-05-30 at 11.42.46 PM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-10/Screenshot 2026-05-30 at 11.42.15 PM.png"]}
+            ]
+          },
+           {
+            "id":"2-1-11", "title":"藍色山脈", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/2025091111_13_1.png"] }
+        ]
+          },
+           {
+            "id":"2-1-12", "title":"海的顏色", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-12/Screenshot 2026-05-30 at 11.44.23 PM.png"] }
+        ]
+          },
+           {
+            "id":"2-1-13", "title":"復古絲帶兔兔", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-13/Screenshot 2026-05-30 at 11.45.22 PM.png"] }
+        ]
+          },
+           {
+            "id":"2-1-14", "title":"復古絲帶熊熊", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-14/Screenshot 2026-05-30 at 11.46.10 PM.png"] }
+        ]
+          },
+           {
+            "id":"2-1-15", "title":"復古絲帶貓貓", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-15/Screenshot 2026-05-30 at 11.46.32 PM.png"] }
+        ]
+          },
+           {
+            "id":"2-1-16", "title":"閃閃扶桑花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-16/2025091111_36_1.png"] }
+        ]
+          },
+           {
+            "id":"2-1-17", "title":"閃閃扶桑花藍色", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-17/2025091111_37.png"] }
+        ]
+          },
+           {
+            "id":"2-1-18", "title":"閃閃四葉草", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-18/2025091111_37_1.png"] }
+        ]
+          },
+          {
+            "id":"2-1-19", "title":"條紋蝴蝶結", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-19/2025091111_15_1.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-19/2025121522_09.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-19/Screenshot 2026-05-29 at 11.56.37 PM.png"] }
+        ]
+          },
+          {
+            "id":"2-1-20", "title":"波點鏤空貼紙", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_17_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_17_3.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_18_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_18.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_17_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_17.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-20/2026013023_18_1.png"] }
+        ]
+          },
+         {
+            "id":"2-1-21", "title":"印章百合花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.47.36 PM.png", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.47.56 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.48.06 PM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.48.33 PM.png"]}
+            ]
+          },
+                   {
+            "id":"2-1-22", "title":"粉草莓", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.20 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.02 PM.png"]}
+            ]
+          },
+          {
+              "id":"2-1-23", "title":"紅草莓", "badge":"", "link":"",
+              "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.55.03 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.54.38 PM.png"]}
+            ]
+          } ,
+          {
+              "id":"2-1-24", "title":"星星花花", "badge":"", "link":"",
+              "models":[
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-24/2026030914_46_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-24/2026030914_46.png"]}
+            ]
+          },
+                   {
+            "id":"2-1-25", "title":"星星花花藍色系", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-25/2026030914_46_2.png"] }
+        ]
+          }
+        ]
+      },
+      {
+        "id":"s2-2", "name":"貓貓特輯",
+        "designs":[
+          {
+            "id":"2-2-1", "title":"黑白貓貓", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/2025120513_22_1.png", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/2025120513_22_2.png"] }
+        ]
+          },
+           {
+            "id":"2-2-2", "title":"橘貓睡睡", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-2/Screenshot 2026-05-30 at 11.55.53 PM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-2/Screenshot 2026-05-30 at 11.55.41 PM.png"]}
+            ]
+          },
+           {
+            "id":"2-2-3", "title":"奶牛小小貓", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-3/Screenshot 2026-05-30 at 11.56.25 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-3/Screenshot 2026-05-30 at 11.56.13 PM.png"] }
+        ]
+          }
+        ]
+      },
+      {
+        "id":"s2-3", "name":"甜點系列🍰", 
+        "designs":[
+          {
+            "id":"2-3-1", "title":"草莓蛋糕橫", "badge":"hot", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.58.22 PM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.57.57 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.58.09 PM.png"]}
+          ]
+          },
+           {
+            "id":"2-3-2", "title":"草莓瑞士捲", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/2025091111_09_1.png"] }
+        ]
+          },
+           {
+            "id":"2-3-3", "title":"藍莓瑞士捲", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/Screenshot 2026-05-31 at 12.00.00 AM.png"]}
+            ]
+          },
+           {
+            "id":"2-3-4", "title":"抹茶蛋糕", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-4/2025091111_38.png"] }
+        ]
+          },
+           {
+            "id":"2-3-5", "title":"芒果蛋糕", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-5/Screenshot 2026-05-31 at 12.01.45 AM.png"]}
+            ]
+          },
+           {
+            "id":"2-3-6", "title":"草莓蛋糕豎", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-6/Screenshot 2026-05-31 at 12.03.16 AM.png"]}
+            ]
+          },
+           {
+            "id":"2-3-7", "title":"黃棕格紋布丁", "badge":"new", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-7/Screenshot 2026-05-31 at 12.04.20 AM.png"]}
+            ]
+          }
+        ]
+      },
+  {
+        "id":"s2-4", "name":"Hey there", "nameEm":"本系列請聯繫Hey there",
+        "designs":[
+          {
+            "id":"2-4-1", "title":"ht6腳咪", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪01.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪02.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪04.jpg"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪03.jpg"]}
+            ]
+          },
+            {
+              "id":"2-4-2", "title":"ht四宮格", "badge":"", "link":"",
+              "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-2/四宮格.jpg"]}
+            ]
+  },
+            {
+              "id":"2-4-3", "title":"ht奶牛貓", "badge":"", "link":"",
+              "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓05.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓02.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/s2-4-3/奶牛貓01.jpg"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓03.jpg"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓04.jpg"]}
+            ]
+            },
+            {
+              "id":"2-4-4", "title":"ht點點布丁狗", "badge":"", "link":"",
+              "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗03.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗01.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗02.jpg"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗04.jpg"]}
+            ]
+            },
+            {
+              "id":"2-4-5", "title":"Pei鬼鬼", "badge":"", "link":"",
+              "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼01.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼03.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼09.jpg"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼02.jpg"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼08.jpg"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼07.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼06.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼05.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼04.jpg"]}
+            ]
+            }
+        ]
+      }
+    ]
+  },
+
+{
+    "id":"s3", "name":"微織工坊系列", 
+    "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本，同時該系列實物比預覽圖暗，請以實物為主🙇",
+    "subseries":[
+      {
+        "id":"s3-1", "name":"貓貓玩具熊", 
+        "designs":[
+        
+           {
+            "id":"3-1-1", "title":"貓貓玩具熊透色-粉", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/2025091009_17.png"] }
+        ]
+          },
+              {
+            "id":"3-1-2", "title":"貓貓玩具熊透色-藍", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-2/Screenshot 2026-05-31 at 12.27.14 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-2/Screenshot 2026-05-31 at 12.27.25 AM.png"] }
+        ]
+          },
+           {
+            "id":"3-1-3", "title":"貓貓玩具熊滿-黑白", "badge":"hot", "link":"",
+            "models":[
+           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_53.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025091111_32.png"] }
+        ]
+          },
+            {
+              "id":"3-1-4", "title":"貓貓玩具熊滿-紅黑", "badge":"", "link":"",
+              "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-4/2026010516_37_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-4/2026010516_42.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-4/2026010516_37.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-4/2026010322_50_1.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-4/2026010516_37_2.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-4/2026010516_38.png"]}            
+              ]
+            },
+              {
+                "id":"3-1-5", "title":"貓貓玩具熊滿-紅漸變", "badge":"", "link":"",
+                "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-5/2026010617_54.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-5/2026010322_50.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-5/2026010618_01.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-5/2026010618_06.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-5/2026010618_00.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-5/2026010618_00_1.png"]}            
+                ]
+              },
+                {
+                "id":"3-1-6", "title":"貓貓玩具熊滿-粉藍", "badge":"", "link":"",
+                "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-6/2025091009_21_1.png"]}
+            ]
+              },
+                {
+                  "id":"3-1-7", "title":"貓貓玩具熊透色-綠", "badge":"", "link":"",
+                  "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-7/Screenshot 2026-05-31 at 12.28.14 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-7/Screenshot 2026-05-31 at 12.28.24 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-7/Screenshot 2026-05-31 at 12.28.04 AM.png"]}
+            ]
+                },
+                  {
+                  "id":"3-1-8", "title":"貓貓玩具熊透色-紫", "badge":"", "link":"",
+                  "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-8/2025121522_05.png"]}
+            ]
+                },
+                  {
+                  "id":"3-1-9", "title":"貓貓玩具熊透色-黑白", "badge":"", "link":"",
+                  "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_11.png"]},
+            {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_16.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_15.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_12_1.png", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_12.png"]}            
+                  ]
+                  }
+        ]
+      },
+      {
+        "id":"s3-2", "name":"微織💗", 
+        "designs":[
+          {
+            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":"",
+            "models":[
+             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.46 PM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-2", "title":"冰藍冰飲", "badge":"new", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-2/Screenshot 2026-05-31 at 12.30.56 AM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-3", "title":"草莓冰飲", "badge":"new", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-3/Screenshot 2026-05-31 at 12.31.34 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-3/Screenshot 2026-05-31 at 12.32.04 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-3/Screenshot 2026-05-31 at 12.31.45 AM.png"] }
+        ]
+          },
+          {
+            "id":"3-2-4", "title":"芒果冰飲", "badge":"new", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.33.26 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.57 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.33 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.33.49 AM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.47 AM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-5", "title":"滿滿心心", "badge":"new", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8931.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8945.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8929.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8930.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8940.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8922.jpg"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8924.jpg", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8926.jpg"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8944.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-5/IMG_8928.jpg"] }
+        ]
+          },
+          {
+            "id":"3-2-6", "title":"泥灰白小天使滿", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025091110_59.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025121522_04.png"]}]
+          },
+          {
+            "id":"3-2-7", "title":"雪酪粉黑小天使-滿", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-7/Screenshot 2026-05-31 at 12.34.35 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-7/Screenshot 2026-05-31 at 12.34.25 AM.png"]},
+            {"name":"SolidX",         "imgs":["Screenshot 2026-05-31 at 12.34.47 AM"]}
+            ]
+          },
+          {
+            "id":"3-2-8", "title":"小天使白透", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.38 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.31 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.15 AM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-9", "title":"蝴蝶結小熊黑白", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2025091111_27.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2025121522_04_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2026060414_224.png"] },
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2026060414_222.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2026060414_223.png"]}
+        ]
+          },
+          {
+            "id":"3-2-10", "title":"蝴蝶結小熊粉藍色", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-10/Screenshot 2026-05-31 at 12.36.41 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-10/Screenshot 2026-05-31 at 12.36.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-10/Screenshot 2026-05-31 at 12.36.18 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-10/Screenshot 2026-05-31 at 12.36.25 AM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-11", "title":"蝴蝶結小熊鼠尾草綠", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-11/2026031018_34.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-11/2026031018_34_1.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-11/Screenshot 2026-05-31 at 12.37.21 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-11/Screenshot 2026-05-31 at 12.37.14 AM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-12", "title":"雙色微織-鬱金香", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-12/2025122210_23.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-12/2025122210_25.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-12/2025122210_29.png"]}
+            ]
+          },
+          {
+            "id":"3-2-13", "title":"雙色微織-花磚", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_27_1.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28_1.png"]}
+            ]
+          },
+          {
+            "id":"3-2-14", "title":"波浪愛心紅白色版", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-14/Screenshot 2026-05-31 at 12.38.07 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-14/Screenshot 2026-05-31 at 12.38.00 AM.png"] }
+        ]
+          },
+          {
+            "id":"3-2-15", "title":"雙色微織-太陽花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-15/2025122210_27.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-15/2025122210_25_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-15/2025122210_26.png"] }
+        ]
+          },
+          {
+            "id":"3-2-16", "title":"橘白微織小花", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-16/Screenshot 2026-05-31 at 12.39.00 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-16/Screenshot 2026-05-31 at 12.38.48 AM.png"] }
+        ]
+          },
+          {
+            "id":"3-2-17", "title":"玉色禮物小兔", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-17/Screenshot 2026-05-31 at 12.39.44 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-17/Screenshot 2026-05-31 at 12.39.34 AM.png"]}
+            ]
+          },
+          {
+            "id":"3-2-18", "title":"水色禮物小兔", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-18/2025091111_00.png"] }
+        ]
+          },
+          {
+            "id":"3-2-19", "title":"微織玫瑰", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-19/2025091111_30_1.png"] }
+        ]
+          },
+          {
+            "id":"3-2-20", "title":"灰褐色蝴蝶", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-20/2025091111_30.png"] }
+        ]
+          },
+          {
+            "id":"3-2-21", "title":"藍紫色蝴蝶", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-21/2025091111_29.png"] }
+        ]
+          },
+          {
+            "id":"3-2-22", "title":"小馬紅色", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-22/2026010910_52.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-22/2026010910_37.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-22/2026010910_37_1.png"] }
+        ]
+          },
+          {
+            "id":"3-2-23", "title":"小松鼠", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-23/Screenshot 2026-05-31 at 12.40.49 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-23/Screenshot 2026-05-31 at 12.40.43 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-23/Screenshot 2026-05-31 at 12.40.37 AM.png"]}  
+            ]
+          },
+          {
+            "id":"3-2-24", "title":"像素花花", "badge":"new", "link":"",
+            "models":[
+          {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.20.40 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.19.39 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.19.28 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.19.47 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.20.23 PM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.20.05 PM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-24/Screenshot 2026-06-02 at 2.19.58 PM.png"]
+        }  
+            
+        ]
+      }
+    ]
+  },
+      {
+        "id":"s3-3", "name":"微織格紋", 
+        "designs":[
+          {
+            "id":"3-3-1", "title":"微織藍格", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122922_57.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122922_58.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122922_59.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122922_59_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122922_58_2.png"]},
+            {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122923_00_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122923_00.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-1/2025122922_59_2.png"]}
+            ]
+          },
+          {
+            "id":"3-3-2", "title":"微織紅格", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-2/2025122923_07_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-2/2025122923_06_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-2/2025122923_06_1.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-2/2025122923_07_1.png"]}
+            ]
+          },
+         {
+            "id":"3-3-3", "title":"白粉微織格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-3/Screenshot 2026-06-01 at 12.44.48 AM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-3/Screenshot 2026-06-01 at 12.45.01 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-3/Screenshot 2026-06-01 at 12.45.12 AM.png"]}
+            ]
+          },
+         {
+            "id":"3-3-4", "title":"白藍微織格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-4/Screenshot 2026-05-31 at 12.41.30 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-4/Screenshot 2026-05-31 at 12.41.39 AM.png"] }
+        ]
+          },
+         {
+            "id":"3-3-5", "title":"黃粉微織格紋", "badge":"", "link":"",
+            "models":[
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-5/Screenshot 2026-05-31 at 12.44.23 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-5/Screenshot 2026-05-31 at 12.44.16 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-5/Screenshot 2026-05-31 at 12.43.56 AM.pnghttps://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-5/Screenshot 2026-05-31 at 12.44.09 AM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-5/Screenshot 2026-05-31 at 12.44.06 AM.png"]}
+            ]
+          },
+         {
+            "id":"3-3-6", "title":"黃綠微織格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-6/Screenshot 2026-05-31 at 12.45.13 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-6/Screenshot 2026-05-31 at 12.45.05 AM.png"]}
+            ]
+          },
+         {
+            "id":"3-3-7", "title":"白色愛心微織格紋", "badge":"", "link":"",
+            "models":[
+       {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-7/Screenshot 2026-05-31 at 12.45.37 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-7/Screenshot 2026-05-31 at 12.45.30 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-7/Screenshot 2026-05-31 at 12.45.47 AM.png"] }
+        ]
+          }
+
+        ]
+      }
+       
+    ]
+  },
+
+{
+    "id":"s4", "name":"蕾絲系列", 
+    "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本，同時該系列實物比預覽圖暗，請以實物為主🙇",
+    "subseries":[
+      {
+        "id":"s4-1", "name":"童話橫豎蕾絲", 
+        "designs":[
+      
+          {
+            "id":"4-1-1", "title":"童話蕾絲橫-紫", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-23-38.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-43.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-18.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-05.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-01.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-30.png"]}
+            ]
+          },
+          {
+            "id":"4-1-2", "title":"童話蕾絲橫-白", "badge":"", "link":"",
+            "models":[
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-22.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-04.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-46-24.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-53.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-45-47.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-40-33.png"]}
+            ]
+          },
+            {
+              "id":"4-1-3", "title":"童話蕾絲橫-藍", "badge":"", "link":"",
+              "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-12-05.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-57.png"]},
+                {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-11-49.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-09-20.png"]},
+                {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-39.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-12.png"]}
+            ]
+            },
+             {
+              "id":"4-1-4", "title":"童話蕾絲橫-灰", "badge":"", "link":"",
+              "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-04-40.png"] },
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-11.png"]},
+                {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-26.png"]},
+                {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-41.png"]}
+            ]
+            },
+            {
+              "id":"4-1-5", "title":"童話蕾絲橫-橙", "badge":"", "link":"",
+              "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-06-57.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-07-18.png"]},
+                {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-07-50.png"]},
+                {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-06-39.png"]}
+            ]
+            },
+              {
+                "id":"4-1-6", "title":"童話蕾絲豎-紫", "badge":"", "link":"",
+                "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-19.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-35.png"]},
+                {"name":"Clear", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-51.png"]},
+                {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-20-16.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-22-12.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-21-17.png"]}
+            ]
+             },
+                {
+                "id":"4-1-7", "title":"童話蕾絲豎-白", "badge":"hot", "link":"",
+               "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-23-28.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-22-13.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-24-12.png"]}
+            ]
+             },
+               {
+               "id":"4-1-8", "title":"童話蕾絲豎-藍", "badge":"", "link":"",
+               "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-8/2026-05-27-22-27-12.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-8/2026-05-27-22-28-19.png"]}
+             ]
+             },
+               {
+                "id":"4-1-9", "title":"童話蕾絲豎-灰", "badge":"", "link":"",
+                "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-31-16.png"]},
+                {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-30-58.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-30-42.png"]}
+             ]
+              },
+                {
+                "id":"4-1-10", "title":"童話蕾絲豎-橙", "badge":"", "link":"",
+               "models":[
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-10/2026-05-27-22-32-13.png"]},
+                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-10/2026-05-27-22-32-48.png"]}
+            ]
+                }
+        ]
+      },
+      {
+        "id":"s4-2", "name":"蕾絲🤍", 
+        "designs":[
+          {
+            "id":"4-2-1", "title":"純色玩具熊-橘", "badge":"hot", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53_1.png"]}
+            ]
+          },
+         {
+            "id":"4-2-2", "title":"純色玩具熊-白", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/2026041714_54.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/2026041714_54_1.png"]}
+            ]
+          },
+         {
+            "id":"4-2-3", "title":"花花絲帶", "badge":"", "link":"",
+            "models":[
+           {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.13 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.33 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.46 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.00 AM.png"]},            
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.28 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.22 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-4", "title":"雪花絲帶", "badge":"", "link":"",
+            "models":[
+            {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_11_2.jpg"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_11_1.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_11.jpg"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_12.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_12_1.jpg"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10_1.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10.jpg"]}
+            ]
+          },
+         {
+            "id":"4-2-5", "title":"雙飛燕-薄荷綠", "badge":"", "link":"",
+            "models":[
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.43 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.20 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.12 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.56 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.39 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-6", "title":"雙飛燕-粉", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/Screenshot 2026-05-31 at 12.51.17 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-7", "title":"愛心雙飛燕-白", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-7/Screenshot 2026-05-31 at 12.52.22 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-7/Screenshot 2026-05-31 at 12.52.14 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-8", "title":"愛心雙飛燕-粉", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-8/Screenshot 2026-05-31 at 12.53.09 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-8/Screenshot 2026-05-31 at 12.53.02 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-9", "title":"蝴蝶結小熊膠帶", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.54.16 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.54.10 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.53.51 AM.png"] }
+        ]
+          },
+         {
+            "id":"4-2-10", "title":"蘋果小熊膠帶", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-10/Screenshot 2026-05-31 at 12.54.41 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-10/Screenshot 2026-05-31 at 12.55.03 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-10/Screenshot 2026-05-31 at 12.55.11 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-11", "title":"花花貓咪", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-11/Screenshot 2026-05-31 at 12.56.27 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-11/Screenshot 2026-05-31 at 12.56.20 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-11/Screenshot 2026-05-31 at 12.56.15 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-11/Screenshot 2026-05-31 at 12.56.06 AM.png"] }
+        ]
+          },
+         {
+            "id":"4-2-12", "title":"領結小狗", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.35 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.09 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.54 AM.png"]}
+            ]
+          },
+         {
+            "id":"4-2-13", "title":"綠色蝴蝶蕾絲", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-13/2025091111_02.png"] }
+        ]
+          },
+         {
+            "id":"4-2-14", "title":"粉色蝴蝶蕾絲", "badge":"", "link":"",
+            "models":[
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-14/2025091111_03.png"] }
+        ]
+          }
+
+        ]
+      }  
+    ]
+  },
+{
+    "id":"s5", "name":"幾何律動系列", 
+    "desc":"波點與連續圖樣，俐落現代",
+    "subseries":[
+      {
+        "id":"s5-1", "name":"波點",  
+        "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
+        "designs":[
+           {
+            "id":"5-1-1", "title":"彩色水彩點點", "badge":"", "link":"",
+            "models":[
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-09-17.png"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-10-02.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-10-43.png"]},
+              {"name":"clear",       "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-08-08.png"] }
+               ]
+          },
+              {
+            "id":"5-1-2", "title":"不規則白色點點", "badge":"hot", "link":"",
+            "models":[
+              {"name":"SolidX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-40-32.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-51-33.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-52-07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-52-42.png"]},
+              {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-53-13.png"]},
+              {"name":"clear",       "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-53-47.png"]}
+            ]
+          },
+           {
+            "id":"5-1-3", "title":"白色波點", "badge":"", "link":"",
+            "models":[
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-21-58-53.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-22-00-30.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-22-01-54.png"]},            
+            {"name":"clear", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-21-58-03.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-21-59-27.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-22-02-47.png"]}
+            ]
+          },
+          {
+            "id":"5-1-4", "title":"彩色波點系列", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.27.55 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.26.57 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.27.29 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.27.43 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.28.12 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.26.36 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.25.21 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.25.32 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.25.43 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.26.01 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.26.11 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.26.24 AM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.28.53 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.28.33 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-5", "title":"漸變波點系列", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.29.43 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.30.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.30.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.30.51 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.31.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.31.26 AM.png"]}
+            ]
+          }
+
+
+        ]
+      },
+      {
+        "id":"s5-2", "name":"平鋪", 
+        "designs":[
+          {
+            "id":"5-2-1", "title":"紙膠帶-系列", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.40.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.40.39 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.40.54 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.41.13 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/2025091111_06.png"] }
+        ]
+          },
+          {
+            "id":"5-2-2", "title":"星星襖", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-2/2025091009_36.png"] }
+        ]
+          },
+          {
+            "id":"5-2-3", "title":"薄巧滿", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-3/Screenshot 2026-05-31 at 12.59.03 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-3/Screenshot 2026-05-31 at 12.58.33 AM.png"] }
+        ]
+          },
+          {
+            "id":"5-2-4", "title":"薄巧透", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-4/2025091009_18.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-4/Screenshot 2026-05-31 at 12.58.45 AM.png"] }
+        ]
+          },
+          {
+            "id":"5-2-5", "title":"藍粉蝴蝶結", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-5/2025091009_36_1.png"] }
+        ]
+          },
+          {
+            "id":"5-2-6", "title":"眩暈愛心", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-6/2025091111_23.png"] }
+        ]
+          },
+          {
+            "id":"5-2-7", "title":"黃白小碎花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-7/2025091111_25_1.png"] }
+        ]
+          },
+          {
+            "id":"5-2-8", "title":"彩色花花", "badge":"new", "link":"",
+            "models":[
+           {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-8/Screenshot 2026-05-31 at 12.59.54 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-8/Screenshot 2026-05-31 at 1.00.01 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-8/Screenshot 2026-05-31 at 12.59.30 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-8/Screenshot 2026-05-31 at 12.59.37 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-8/Screenshot 2026-05-31 at 12.59.42 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-9", "title":"像素風水果派對", "badge":"new", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-9/Screenshot 2026-05-31 at 1.00.50 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-9/Screenshot 2026-05-31 at 1.00.23 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-9/Screenshot 2026-05-31 at 1.00.33 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-9/Screenshot 2026-05-31 at 1.00.40 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-9/Screenshot 2026-05-31 at 1.00.56 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-10", "title":"彩色星星", "badge":"", "link":"",
+            "models":[
+           {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.52 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.42 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.35 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.24 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.17 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-11", "title":"藍色漸變白色雲朵", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-11/Screenshot 2026-05-31 at 1.02.34 AM.png"]},
+
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-11/Screenshot 2026-05-31 at 1.02.19 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-11/Screenshot 2026-05-31 at 1.02.26 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-12", "title":"漸變粉底白色愛心", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-12/Screenshot 2026-05-31 at 1.02.58 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-13", "title":"紫色漸變底白色四角星星", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-13/Screenshot 2026-05-31 at 1.03.40 AM.png"]}
+            ]
+          },
+          {
+            "id":"5-2-14", "title":"黑底白四角星", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-14/Screenshot 2026-05-31 at 1.03.56 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-14/2025112710_30.png.jpg"]}
+            ]
+          }
+
+        ]
+      }
+    ]
+  },
+ {
+    "id":"s6", "name":"織物肌理系列", 
+  	
+
+    "subseries":[
+      {
+        "id":"s6-1", "name":"布紋",  
+        "designs":[
+        
+           {
+            "id":"6-1-1", "title":"牛仔藍風鈴花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-1/2025091111_01.png"]}
+            ]
+          },
+              {
+            "id":"6-1-2", "title":"布藝拼接", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-2/2026020917_24.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-2/2025091111_05.png"]}
+            ]
+          },
+           {
+            "id":"6-1-3", "title":"淺藍牛仔雪花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-3/2025112710_29.png.jpg"]}
+            ]
+          },
+           {
+            "id":"6-1-4", "title":"做舊粉牛仔櫻花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-4/2025091111_05_1.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-4/2025121522_06.png"]}
+            ]
+          },
+              {
+            "id":"6-1-5", "title":"藍牛仔櫻花", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-5/Screenshot 2026-05-31 at 1.04.29 AM.png"]}
+            ]
+          },
+           {
+            "id":"6-1-6", "title":"牛仔星星-系列", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/Screenshot 2026-05-31 at 1.05.44 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/Screenshot 2026-05-31 at 1.05.34 AM.png"]}
+            ]
+          },
+           {
+            "id":"6-1-7", "title":"牛仔條紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-7/Screenshot 2026-05-31 at 1.05.55 AM.png"]}
+            ]
+          }
+
+
+
+        ]
+      },
+      {
+        "id":"s6-2", "name":"茸茸毛衣", 
+        "designs":[
+          {
+            "id":"6-2-1", "title":"泥灰雪酪粉格紋", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-1/2025091111_22.png"]}
+            ]
+          },
+          {
+            "id":"6-2-2", "title":"草莓蛋糕毛衣", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-2/Screenshot 2026-05-31 at 1.06.27 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-2/Screenshot 2026-05-31 at 1.06.49 AM.png"]}
+            ]
+          },
+          {
+            "id":"6-2-3", "title":"綿綿毛衣", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-3/2025091111_21.png"]}
+            ]
+          },
+          {
+            "id":"6-2-4", "title":"黑白毛衣", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-4/Screenshot 2026-05-31 at 1.07.18 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-4/Screenshot 2026-05-31 at 1.07.08 AM.png"] }
+        ]
+          },
+          {
+            "id":"6-2-5", "title":"兔兔毛衣", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-5/Screenshot 2026-05-31 at 1.07.49 AM.png"] }
+        ]
+          },
+          {
+            "id":"6-2-6", "title":"奶牛毛衣", "badge":"", "link":"",
+            "models":[
+           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-6/2025120513_22_3.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-6/2025120513_22.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-6/2025113023_44.jpg"] }
+        ]
+          },
+          {
+            "id":"6-2-7", "title":"森林編織", "badge":"hot", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/2025091111_18.png"] }
+        ]
+          },
+          {
+            "id":"6-2-8", "title":"暹羅貓毛衣", "badge":"", "link":"",
+            "models":[
+           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.34 AM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.24 AM.png"] }
+        ]
+          },
+          {
+            "id":"6-2-9", "title":"毛毛愛心格紋", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-9/2025121920_07_1.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-9/2025121920_07.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-9/2025121920_08.png"]}
+            ]
+          },
+          {
+            "id":"6-2-10", "title":"菱形格紋毛衣", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-10/Screenshot 2026-05-31 at 1.09.09 AM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-10/Screenshot 2026-05-31 at 1.09.17 AM.png"] }
+        ]
+          }
+
+        ]
+      }
+    ]
+  },
+ {
+    "id":"s7", "name":"氣息流光系列", 
+    "desc":"噴槍漸變，潮流迷幻",
+    "subseries":[
+      {
+        "id":"s7-1", "name":"漸變暈染", 
+        "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
+        "designs":[
+        
+           {
+            "id":"7-1-1", "title":"金龍魚", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-1/2025091111_34.png"] }
+        ]
+          },
+              {
+            "id":"7-1-2", "title":"佳樂水", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-2/Screenshot 2026-05-31 at 1.10.06 AM.png"] }
+        ]
+          },
+           {
+            "id":"7-1-3", "title":"橙黑", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-3/Screenshot 2026-05-31 at 1.10.19 AM.png"] }
+        ]
+          },
+              {
+            "id":"7-1-4", "title":"淺藍渲染", "badge":"", "link":"",
+            "models":[
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-4/Screenshot 2026-05-31 at 1.10.34 AM.png"] }
+        ]
+          },
+           {
+            "id":"7-1-5", "title":"藍紫漸變", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-5/Screenshot 2026-05-31 at 1.11.25 AM.png"]},            
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-5/Screenshot 2026-05-31 at 1.11.02 AM.png"] }
+        ]
+          }
+
+        ]
+      },
+      {
+        "id":"s7-2", "name":"噴繪", 
+        "designs":[
+          {
+            "id":"7-2-1", "title":"格紋楊桃星星", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-1/Screenshot 2026-05-31 at 1.11.48 AM.png"]}
+            ]
+          },
+          {
+            "id":"7-2-2", "title":"渲染楊桃星星", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-2/2025091111_07.png"] }
+        ]
+          },
+          {
+            "id":"7-2-3", "title":"鬱金香綠橘", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-3/2025091111_40.png"] }
+        ]
+          },
+          {
+            "id":"7-2-4", "title":"鬱金香紅藍", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-4/2025091111_39.png"]}
+            ]
+          },
+          {
+            "id":"7-2-5", "title":"蕨", "badge":"new", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-5/Screenshot 2026-05-31 at 1.12.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-5/Screenshot 2026-05-31 at 1.12.23 AM.png"]}
+            ]
+          },
+          {
+            "id":"7-2-6", "title":"蝴蝶蘭", "badge":"new", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-6/Screenshot 2026-05-31 at 1.13.10 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-6/Screenshot 2026-05-31 at 1.13.02 AM.png"]}
+            ]
+          },
+          {
+            "id":"7-2-7", "title":"粉百合", "badge":"new", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-7/Screenshot 2026-05-31 at 1.13.52 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-7/Screenshot 2026-05-31 at 1.13.41 AM.png"]}
+            ]
+          },
+          {
+            "id":"7-2-8", "title":"梔子", "badge":"new", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.16 AM.png"]}
+            ]
+          },
+          {
+            "id":"7-2-9", "title":"牽牛花", "badge":"new", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-9/Screenshot 2026-05-31 at 1.14.55 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-9/Screenshot 2026-05-31 at 1.14.43 AM.png"]}
+            ]
+          }
+          
+        ]
+      }
+    ]
+  },
+{
+    "id":"s8", "name":"刺繡貼圖特輯", 
+  	
+
+    "desc":"可以和以上任意背景組合搭配",
+    "subseries":[
+      {
+        "id":"s8-1", "name":"刺繡玩具熊淺色",  
+
+        "designs":[
+        
+           {
+            "id":"8-1-airx", "title":"刺繡玩具熊淺色AirX", "badge":"", "link":"",
+            "models":[
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32_1.png"]},  
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32.png"]},        
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_35_2.png"]},  
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_35.png"]},   
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_41_1.png"]},  
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_41.png"]},        
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_44_4.png"]},  
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026013121_02.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026013121_02_1.png"]}          
+            ]
+          },
+              {
+            "id":"8-1-modnx", "title":"刺繡玩具熊淺色ModNX", "badge":"", "link":"",
+            "models":[ 
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031122_19_1.png"]},  
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026013121_01_1.png"]},        
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031209_29_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031209_31.png"]},  
+            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031215_02.png"]}
+
+            ]
+          },
+            {
+              "id":"8-1-solidx", "title":"刺繡玩具熊淺色solidx", "badge":"", "link":"",
+              "models":[
+              {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.54.55 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.55.19 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.55.26 AM.png"]},  
+              {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.56.59 AM.png"]}           
+              ]
+            }
+        ]
+      },
+      {
+        "id":"s8-2", "name":"刺繡玩具熊深色", 
+        "designs":[
+          {
+            "id":"8-2-airx", "title":"刺繡玩具熊深色AirX", "badge":"", "link":"",
+            "models":[
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112820_18.png"]},   
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_01.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_03_1.png"]},        
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_04_1.png"]},  
+           {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_03.png"]},   
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_05.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_04_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_04.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026010920_42_1.png"]},        
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026013121_06.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026031122_18.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026031122_17.png"]}   
+             ]
+          },
+
+          {
+            "id":"8-2-solidx", "title":"刺繡玩具熊深色solidx", "badge":"", "link":"",
+            "models":[
+           {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025122923_06.png"]},        
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2026013121_07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2026013121_06_1.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025112821_06.png"]},   
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025112821_05_1.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/Screenshot 2026-06-01 at 10.12.36 AM.png"]},
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/Screenshot 2026-06-01 at 10.12.36 AM.png"]}
+            ]
+          },
+          {
+            "id":"8-2-modnx", "title":"刺繡玩具熊深色ModNX", "badge":"", "link":"",
+            "models":[
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_05.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_04.png"]},        
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025122923_07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025122923_06_3.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025-09-11-1.png"]},   
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025091110_46.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025091110_48.png"]},        
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_00_1.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_00.png"]},   
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_02.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_03.png"]},        
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2026013121_07_1.png"]},  
+            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2026031209_29.png"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id":"s8-3", "name":"刺繡兔兔白色", 
+        "designs":[
+          {
+            "id":"8-3-airx", "title":"刺繡兔兔白色AirX", "badge":"", "link":"",
+            "models":[
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026031122_00.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026031122_15.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026013110_26.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026013110_28.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_06_3.png"]},        
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_06_5.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_07_1.png"]},   
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_19.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_22.png"]},        
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026030522_50.png"]},       
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_07.png"]}  
+          ]
+          },
+          {
+        "id":"8-3-solidx", "title":"刺繡兔兔白色solidx", "badge":"", "link":"",
+            "models":[
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.19.53 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.20.05 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.20.10 AM.png"]},
+               {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.32.42 AM.png"]}
+            ]
+          }, 
+       {
+            "id":"8-3-modnx", "title":"刺繡兔兔白色ModNX", "badge":"", "link":"",
+            "models":[
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_03.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026013023_16.png"]},        
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_05_1.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_05.png"]},   
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06_1.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06_2.png"]},        
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026030313_20.png"]},  
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026031121_58_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026031121_58.png"]}  
+            ]
+          },   
+       {
+            "id":"8-3-clear", "title":"刺繡兔兔白色Clear", "badge":"", "link":"",
+            "models":[
+            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-clear/2026013023_16_1.png"]}  
+                    ]
+                 }
+              ]
+            },
+      
+       {
+        "id":"s8-4", "name":"刺繡兔兔灰色", 
+        "designs":[
+       {
+            "id":"8-4-airx", "title":"刺繡兔兔灰色AirX", "badge":"", "link":"",
+            "models":[
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026013110_27_1.png"]},  
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026020620_18_1.png"]},        
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026020620_18.png"]},  
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026030522_32.png"]},   
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026030522_34.png"]}
+            ]
+          },
+     {
+            "id":"8-4-solidx", "title":"刺繡兔兔灰色solidx", "badge":"", "link":"",
+            "models":[
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/Screenshot 2026-06-01 at 10.31.30 AM.png"]},
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/Screenshot 2026-06-01 at 10.31.11 AM.png"]}
+            ]
+          },
+     {
+            "id":"8-4-modnx", "title":"刺繡兔兔灰色ModNX", "badge":"", "link":"",
+            "models":[
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026013023_12_1.png"]},  
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026013121_00_1.png"]},        
+            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026030213_12.png"]}          
+            ]
+          }
+        ]
+      },
+       {
+        "id":"s8-5", "name":"刺繡兔兔黃色", 
+        "designs":[
+       {
+            "id":"8-5-airx", "title":"刺繡兔兔黃色AirX", "badge":"", "link":"",
+            "models":[
+            {"name":"🟡🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-airx/2026013023_14.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-airx/2026013023_14_1.png"]}
+            ]
+          },
+       {
+            "id":"8-5-solidx", "title":"刺繡兔兔黃色solidx", "badge":"", "link":"",
+            "models":[
+            {"name":"🟡🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/Screenshot 2026-06-01 at 10.36.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/Screenshot 2026-06-01 at 10.36.01 AM.png"]}         
+            ]
+          }, 
+       {
+            "id":"8-5-modnx", "title":"刺繡兔兔黃色ModNX", "badge":"", "link":"",
+            "models":[
+            {"name":"🟡🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/2026013023_15.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/2026013023_13.png"]}         
+            ]
+          } 
+        ]
+      }
+    ]
+  },
+  {
+    "id":"s9", "name":"微醺斑比預覽特輯", 
+  	
+
+    "subseries":[
+      {
+        "id":"s9-1", "name":"微醺斑比不重複",  
+        "designs":[
+        
+           {
+            "id":"9-1-1", "title":"+格紋背景", "badge":"hot", "link":"",
+            "models":[
+           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.07.04 AM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.07.11 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/2026031018_41_3.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/2026031018_41_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/2026031018_41_1.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.06.56 AM.png"]}
+            ]
+          },
+              {
+            "id":"9-1-2", "title":"透明背景", "badge":"hot", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.46 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.34 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.40 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.25 AM.png"]}
+            ]
+          },
+      {
+            "id":"9-1-2", "title":"客製化文字", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-3/Screenshot 2026-06-01 at 11.08.03 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-3/Screenshot 2026-06-01 at 11.08.11 AM.png"]},
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-3/Screenshot 2026-06-01 at 11.08.27 AM.png"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id":"s9-2", "name":"微醺斑比連連看", 
+        "designs":[
+          {
+            "id":"9-2-1", "title":"+格紋背景", "badge":"", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-1/Screenshot 2026-06-01 at 11.11.26 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-1/Screenshot 2026-06-01 at 11.11.20 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-1/Screenshot 2026-06-01 at 11.11.12 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-1/Screenshot 2026-06-01 at 11.09.49 AM.png"]}
+            ]
+          },
+                   {
+            "id":"9-2-2", "title":"透明背景", "badge":"", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-2/Screenshot 2026-06-01 at 11.10.49 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-2/Screenshot 2026-06-01 at 11.10.10 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-2/Screenshot 2026-06-01 at 11.10.42 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-2/Screenshot 2026-06-01 at 11.10.19 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-2-2/Screenshot 2026-06-01 at 11.11.01 AM.png"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id":"s9-3", "name":"微醺斑比花花", 
+        "designs":[
+          {
+            "id":"9-3-1", "title":"+格紋背景", "badge":"new", "link":"",
+            "models":[
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/Screenshot 2026-06-01 at 11.12.32 AM.png"]}
+            ]
+          },
+                    {
+            "id":"9-2-1", "title":"透明背景", "badge":"new", "link":"",
+            "models":[
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.11.52 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.11.58 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.12.03 AM.png"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/2026-05-28-16-04-54.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.12.13 AM.png"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+}
