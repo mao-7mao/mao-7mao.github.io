@@ -120,7 +120,7 @@
           {
             "id":"1-2-3", "title":"黃粉格紋實色", "badge":"hot", "link":"",
             "models":[
-              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.02.23 PM.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.02.23 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/solidx-y.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/solidx-w.webp"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.01.17 PM.png"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-3/Screenshot 2026-05-30 at 11.01.07 PM.png"]}
             ]
