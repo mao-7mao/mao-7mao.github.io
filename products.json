@@ -501,12 +501,14 @@
                    {
             "id":"2-1-22", "title":"粉草莓", "badge":"", "link":"",
             "models":[
+           {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/s2.webp"]},
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.20 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.02 PM.png"]}
             ]
           },
           {
               "id":"2-1-23", "title":"紅草莓", "badge":"", "link":"",
               "models":[
+                {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/s1.webp"]},
               {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.55.03 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.54.38 PM.png"]}
             ]
           } ,
@@ -642,7 +644,6 @@
       }
     ]
   },
-
 {
     "id":"s3", "name":"微織工坊系列", 
     "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本，同時該系列實物比預覽圖暗，請以實物為主🙇",
@@ -955,7 +956,6 @@
        
     ]
   },
-
 {
     "id":"s4", "name":"蕾絲系列", 
     "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本，同時該系列實物比預覽圖暗，請以實物為主🙇",
@@ -1147,12 +1147,20 @@
             "models":[
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-14/2025091111_03.png"] }
         ]
-          }
-
+          },
+          {
+              "id":"4-2-15", "title":"蕾絲鬱金香", "badge":"new", "link":"",
+              "models":[
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g14.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/g5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/g6.webp"] },
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g12.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g11.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g9.webp"] },
+              {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g4.webp"] },
+              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g7.webp"] }
         ]
       }  
     ]
-  },
+  }
+]
+},
 {
     "id":"s5", "name":"幾何律動系列", 
     "desc":"波點與連續圖樣，俐落現代",
@@ -1202,11 +1210,12 @@
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.29.43 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.30.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.30.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.30.51 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.31.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-5/Screenshot 2026-06-01 at 1.31.26 AM.png"]}
             ]
           }
-
-
         ]
-      },
-      {
+      }
+    ]
+   },  
+
+ {
         "id":"s5-2", "name":"平鋪", 
         "designs":[
           {
@@ -1305,9 +1314,7 @@
           }
 
         ]
-      }
-    ]
-  },
+},
  {
     "id":"s6", "name":"織物肌理系列", 
   	
