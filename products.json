@@ -1111,8 +1111,10 @@
          {
             "id":"4-2-9", "title":"蝴蝶結小熊膠帶", "badge":"", "link":"",
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.54.16 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.54.10 AM.png"]},            
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.53.51 AM.png"] }
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/g5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/g6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.54.16 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.54.10 AM.png"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/g3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/Screenshot 2026-05-31 at 12.53.51 AM.png"] },
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/g1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/g2.webp"] },
+           {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-9/g4.webp"] }
         ]
           },
          {
