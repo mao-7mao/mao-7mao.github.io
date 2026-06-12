@@ -111,11 +111,21 @@
   {
     "id": "tb-12",
     "title": "雙層-粉色背景雙飛燕",
-    "badge": "",
+    "badge": "new",
     "link": "",
     "models": [
       { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2103.JPG"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2131.JPG"] }
+    ]
+  },
+  {
+    "id": "tb-13",
+    "title": "雙層-紫色愛心雙飛燕",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0612-2.webp"] },
+      { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0612-1.webp"] }
     ]
   }
 ]

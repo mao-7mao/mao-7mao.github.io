@@ -82,6 +82,13 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-seri
 .pc-img,img{max-width:100%;max-height:100%;object-fit:contain}
 @media(max-width:860px){.pc-content{grid-template-columns:1fr}}
 
+.price-quicknav{position:sticky;top:50px;z-index:90;background:var(--card);border-bottom:1px solid var(--border);padding:14px 18px;margin-bottom:18px;backdrop-filter:blur(12px)}
+.price-quicknav-inner{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-start}
+.price-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--bg2);color:var(--text);font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-decoration:none;transition:transform .2s,background .2s,color .2s}
+.price-link:hover{background:var(--border);transform:translateY(-1px)}
+.price-link.active{background:var(--accent);color:#fff;transform:translateY(0)}
+.price-link-notes{font-weight:700}
+
 .notes{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
 .note-lbl{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
 .note-v{font-size:.8rem;color:var(--text);line-height:1.65}

@@ -53,6 +53,7 @@ content="萬有狀態omnistate">
   <h2 class="sec-h2">殼體 <em>價格表<span style="font-size: 0.85em; color: #666;">（不含運費）</span></em></h2>
   <p class="sec-sub">所有圖款均可選擇支援機型的不同殼體♥️<br>本價格及運費僅針對中國大陸，其餘地區or國家價格及運費另議🙇<br>價格表更新日期2026/06/01<br>618優惠：iPhone15系列機型 20%discount（單背板無折扣）14系列及以下機型 30-50%discount（單背板無折扣）</p>
   <div class="price-section">
+    <div class="price-quicknav" id="price-quicknav"></div>
     <div class="price-main">
       <div class="price-grid" id="price-grid"></div>
       <div class="notes" id="notes-box"></div>
@@ -97,7 +98,7 @@ content="萬有狀態omnistate">
 </div>
 
 <footer>
-  <div>看中哪款，<strong>截圖或傳訊息</strong>告知圖款編號 ＋ 機型 ＋ 殼種 ✦</div>
+  <div>看中哪款，<strong>煩請截圖或傳訊息</strong>告知圖款編號 ＋ 機型 ＋ 殼種 ✦</div>
   <div>點擊圖片可放大預覽</div>
 </footer>
 
@@ -237,7 +238,7 @@ const CASE_TYPES = [
 const NOTES = [
   {label:'下單方式', val:'可截圖或傳訊息告知：圖款編號 ＋ 機型 ＋ 殼體 ＋ 殼體顏色<br>若需要訂製款水壺、ipad殼請私訊<br>如需在定制款基礎上添加犀牛盾官網的貼紙（需要提供貼紙的準確名稱，描述添加的具體位置），按照貼紙價格（TWD）/4計算'},
   {label:'製作時間', val:'下單後約 3-5 個工作日出貨，遇到特殊節日或公休可能會更久，敬請見諒🙇'},
-  {label:'運費',     val:'拼郵請詳詢<strong>Jimmibobo（🫧：jimmibobotw）</strong>，運費約為20-25人民幣，可以和jimmibobo的其他商品一起寄送<br>若選擇官網直郵詢問muss es sein<br>下單至台灣滿<span style="color: blue;">人民幣225元</span>下單，沒滿需要等待滿額後下單<br>個人直郵滿人民幣500元下單，免運，但可能產生稅費，需要自理稅金'},
+  {label:'運費',     val:'拼郵請詳詢<strong>Jimmibobo</strong>，運費約為20-25人民幣，可以和jimmibobo的其他商品一起寄送<br>下單至台灣滿<span style="color: blue;">人民幣225元</span>下單，沒滿需要等待滿額後下單<br><br>  若選擇官網直郵請詢問<strong>萬有狀態</strong><br>個人直郵滿<span style="color: blue;">人民幣500元</span>下單，免運，可能產生商品價格20%的稅費，需要自理稅金'},
   {label:'注意事項', val:'預覽圖僅供參考，實際色彩請您以實物為準'},
   {label:'聯繫方式', val:'萬有狀態🫧：<strong>mussessein-7</strong>    line：esmusssein- <br>Jimmibobo🫧：<strong>jimmibobotw</strong>'},
 ];
@@ -311,8 +312,14 @@ Promise.all([loadSeriesJson(), loadTutuBoomJson()]).then(() => {
 /* ═══════════════════════════════════════════
    RENDER PRICE在有優惠的時候 吧「價格」改成「原價」在具體的price裡面添加優惠項目
 ═══════════════════════════════════════════ */
+const PRICE_ITEMS = [...CASE_TYPES, ...TUTUBOOM_PRICES];
+function slugify(text){
+  return text.toString().trim().replace(/\s+/g,'-').replace(/[^\w\-\u4e00-\u9fff]+/g,'').replace(/^-+|-+$/g,'');
+}
+const priceNavHtml = PRICE_ITEMS.map((ct)=>`<a class="price-link" href="#price-card-${slugify(ct.name)}">${ct.name}</a>`).join('') + '<a class="price-link price-link-notes" href="#notes-box">備註📝</a>';
+document.getElementById('price-quicknav').innerHTML = `<div class="price-quicknav-inner">${priceNavHtml}</div>`;
 document.getElementById('price-grid').innerHTML = CASE_TYPES.map((ct,idx)=>`
-  <div class="pc">
+  <div class="pc" id="price-card-${slugify(ct.name)}">
     <div class="pc-head">
       <div>
         <div class="pc-n">${ct.name} <em>${ct.nameEm}</em></div>
@@ -338,7 +345,7 @@ document.getElementById('price-grid').innerHTML = CASE_TYPES.map((ct,idx)=>`
       </div>
     </div>
   </div>`).join('') + TUTUBOOM_PRICES.map((ct,idx)=>`
-  <div class="pc">
+  <div class="pc" id="price-card-${slugify(ct.name)}">
     <div class="pc-head">
       <div>
         <div class="pc-n">${ct.name} <em>${ct.nameEm}</em></div>
@@ -370,6 +377,31 @@ document.getElementById('notes-box').innerHTML = NOTES.map(n=>`
     <div class="note-lbl">${n.label}</div>
     <div class="note-v">${n.val}</div>
   </div>`).join('');
+
+const priceLinks = Array.from(document.querySelectorAll('.price-link'));
+const priceSections = Array.from(document.querySelectorAll('.pc[id^="price-card-"], #notes-box'));
+const updatePriceNavActive = () => {
+  const offset = 110;
+  let activeId = priceSections[0]?.id || '';
+  for (const section of priceSections) {
+    const top = section.getBoundingClientRect().top;
+    if (top <= offset) activeId = section.id;
+    else break;
+  }
+  priceLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+  });
+};
+priceLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    priceLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    setTimeout(updatePriceNavActive, 120);
+  });
+});
+window.addEventListener('scroll', updatePriceNavActive, {passive:true});
+window.addEventListener('resize', updatePriceNavActive);
+updatePriceNavActive();
 
 /* ═══════════════════════════════════════════
    RENDER SERIES 改成了fetch json，下面這個函數改成從SERIES資料中尋找對應id的系列或子系列，沒找到就回傳null
@@ -461,26 +493,34 @@ function renderSeries(){
     );
   });
 
-  // series tab active on scroll
-  const secs  = document.querySelectorAll('.series-sec');
+  // series tab active on click + scroll
+  const secs  = document.querySelectorAll('.series-sec, .series-subsec');
   const stabs = document.querySelectorAll('.stab');
-  new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        stabs.forEach(t=>t.classList.remove('active'));
-        const a=document.querySelector(`.stab[data-sid="${e.target.id}"]`);
-        if(a){a.classList.add('active');a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
-      }
-    });
-  },{threshold:0.25}).observe && secs.forEach(s=>new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        stabs.forEach(t=>t.classList.remove('active'));
-        const a=document.querySelector(`.stab[data-sid="${e.target.id}"]`);
-        if(a){a.classList.add('active');a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
-      }
-    });
-  },{threshold:0.25}).observe(s));
+  const activateSeriesTab = id => {
+    stabs.forEach(t=>t.classList.remove('active'));
+    const a = document.querySelector(`.stab[data-subid="${id}"], .stab[data-sid="${id}"]`);
+    if(a){
+      a.classList.add('active');
+      a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    }
+  };
+
+  document.getElementById('series-anchor').addEventListener('click', e => {
+    const a = e.target.closest('.stab');
+    if(!a) return;
+    activateSeriesTab(a.dataset.subid || a.dataset.sid);
+  });
+
+  if('IntersectionObserver' in window){
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          activateSeriesTab(e.target.id);
+        }
+      });
+    }, {threshold: 0.25});
+    secs.forEach(s => observer.observe(s));
+  }
 }
 
 function renderTutuBoom(){
@@ -743,24 +783,48 @@ document.getElementById('lb').addEventListener('click',e=>{if(e.target===documen
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').classList.remove('open');});
 
 /* top nav active */
-const ntabs=[
+const ntabs = [
   document.querySelector('.ntab[href="#price-page"]'),
   document.querySelector('.ntab[href="#series-anchor"]'),
   document.querySelector('.ntab[href="#tutuboom-anchor"]')
 ];
-[document.getElementById('price-page'),
- document.getElementById('series-anchor'),
- document.getElementById('tutuboom-anchor')].forEach((el,i)=>{
-  if(!el) return;
-  new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        ntabs.forEach(t=>t?.classList.remove('active'));
-        ntabs[i]?.classList.add('active');
-      }
-    });
-  },{threshold:.15}).observe(el);
+const topSections = [
+  document.getElementById('price-page'),
+  document.getElementById('series-anchor'),
+  document.getElementById('tutuboom-anchor')
+];
+const updateTopNavActive = () => {
+  const offset = 56;
+  let activeIndex = 0;
+  topSections.forEach((el, i) => {
+    if(!el || !ntabs[i]) return;
+    const rect = el.getBoundingClientRect();
+    if(rect.top <= offset) activeIndex = i;
+  });
+  ntabs.forEach((tab, i) => tab?.classList.toggle('active', i === activeIndex));
+};
+let topNavTick = false;
+const scheduleTopNavUpdate = () => {
+  if(topNavTick) return;
+  topNavTick = true;
+  requestAnimationFrame(() => {
+    updateTopNavActive();
+    topNavTick = false;
+  });
+};
+ntabs.forEach(tab => {
+  if(!tab) return;
+  tab.addEventListener('click', () => {
+    ntabs.forEach(t => t?.classList.remove('active'));
+    tab.classList.add('active');
+    scheduleTopNavUpdate();
+    setTimeout(scheduleTopNavUpdate, 100);
+  });
 });
+window.addEventListener('scroll', scheduleTopNavUpdate, {passive:true});
+window.addEventListener('resize', scheduleTopNavUpdate);
+window.addEventListener('hashchange', scheduleTopNavUpdate);
+updateTopNavActive();
 </script>
 </body>
 </html>
