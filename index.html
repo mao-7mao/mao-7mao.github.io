@@ -496,19 +496,43 @@ function renderSeries(){
   // series tab active on click + scroll
   const secs  = document.querySelectorAll('.series-sec, .series-subsec');
   const stabs = document.querySelectorAll('.stab');
+  const getParentTab = sid => document.querySelector(`.stab[data-sid="${sid}"]:not([data-subid])`);
+  const getFirstChildId = sid => {
+    const section = document.getElementById(sid);
+    return section?.querySelector('.stab[data-subid]')?.dataset.subid || null;
+  };
   const activateSeriesTab = id => {
     stabs.forEach(t=>t.classList.remove('active'));
-    const a = document.querySelector(`.stab[data-subid="${id}"], .stab[data-sid="${id}"]`);
-    if(a){
-      a.classList.add('active');
-      a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    const sub = document.querySelector(`.stab[data-subid="${id}"]`);
+    if(sub){
+      sub.classList.add('active');
+      const parent = getParentTab(sub.dataset.sid);
+      if(parent) parent.classList.add('active');
+      return;
     }
+    const top = getParentTab(id);
+    if(top) top.classList.add('active');
   };
 
-  document.getElementById('series-anchor').addEventListener('click', e => {
-    const a = e.target.closest('.stab');
-    if(!a) return;
-    activateSeriesTab(a.dataset.subid || a.dataset.sid);
+  document.querySelectorAll('#series-anchor .stab').forEach(link => {
+    link.addEventListener('click', e => {
+      const targetId = link.dataset.subid || link.dataset.sid;
+      if(!targetId) return;
+      e.preventDefault();
+
+      let scrollTargetId = targetId;
+      if(!link.dataset.subid && link.dataset.sid){
+        const firstChild = getFirstChildId(targetId);
+        if(firstChild) scrollTargetId = firstChild;
+      }
+
+      const target = document.getElementById(scrollTargetId);
+      if(target){
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+        history.replaceState(null, '', `#${scrollTargetId}`);
+      }
+      activateSeriesTab(scrollTargetId);
+    });
   });
 
   if('IntersectionObserver' in window){
