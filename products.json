@@ -8,7 +8,7 @@
         "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
         "designs":[
           {
-            "id":"1-1-1", "title":"柔柔粉藍", "badge":"new", "link":"",
+            "id":"1-1-1", "title":"柔柔粉藍", "badge":"new",  "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/8P638v8Yh8B "}] ,
             "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-26-40.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-29-41.png"]},
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-1/2026-05-26-14-27-31.png"]},
@@ -317,7 +317,7 @@
             ]
           },
               {
-            "id":"1-2-17", "title":"紅色蠟筆格紋", "badge":"", "link":"",
+            "id":"1-2-17", "title":"紅色蠟筆格紋", "badge":"",  "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/7NGn6OAbqGz"}] ,
             "models":[
               {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-17/Screenshot 2026-05-30 at 11.20.04 PM.png"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-17/Screenshot 2026-05-30 at 11.19.30 PM.png"]}
@@ -385,7 +385,7 @@
             ]
           },
      {
-            "id":"1-3-6", "title":"格紋刺繡愛心紅", "badge":"", "link":"",
+            "id":"1-3-6", "title":"格紋刺繡愛心紅", "badge":"",  "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/5O5GWuzIVWb  "}] ,
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.27.19 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.27.41 PM.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-6/Screenshot 2026-05-30 at 11.27.53 PM.png"]},
@@ -775,7 +775,7 @@
         ]
           },
            {
-            "id":"3-1-3", "title":"貓貓玩具熊滿-黑白", "badge":"hot", "link":"",
+            "id":"3-1-3", "title":"貓貓玩具熊滿-黑白", "badge":"hot",  "link":[ {"platform":"xhs", "url":"  http://xhslink.com/o/1Z4sXiIIIKC  "}] ,
             "models":[
            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_53.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025091111_32.png"] }
@@ -830,7 +830,7 @@
         "id":"s3-2", "name":"微織💗", 
         "designs":[
           {
-            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":"",
+            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
             "models":[
              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
@@ -882,7 +882,7 @@
             ]
           },
           {
-            "id":"3-2-8", "title":"小天使白透", "badge":"", "link":"",
+            "id":"3-2-8", "title":"小天使白透", "badge":"",  "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/8nejef6nNsT "}] ,
             "models":[
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.38 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.31 AM.png"]},
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-8/Screenshot 2026-05-31 at 12.35.15 AM.png"]}
@@ -1072,7 +1072,7 @@
         "designs":[
       
           {
-            "id":"4-1-1", "title":"童話蕾絲橫-紫", "badge":"hot", "link":"",
+            "id":"4-1-1", "title":"童話蕾絲橫-紫", "badge":"hot",  "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/2XkwLNUIzRr "}] ,
             "models":[
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-23-38.png"]},
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-43.png"]},            
