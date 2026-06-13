@@ -118,14 +118,14 @@
         "id":"1-1-13", "title":"藍橙不規則鏤空格紋","badge":"", "link":"",
         "models":[
           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-13/0612-1.webp"]},
-          {"name":"MonNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-13/0612-2.webp"]}
+          {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-13/0612-2.webp"]}
          ]
       },
       {
         "id":"1-1-14", "title":"粉紫不規則鏤空格紋","badge":"", "link":"",
         "models":[
           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0612-3.webp"]},
-          {"name":"MonNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0612-1.webp"]},
+          {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0612-1.webp"]},
           {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0612-2.webp"]}
     ]
       },
@@ -140,7 +140,7 @@
       {
         "id":"1-1-16", "title":"藍色扭扭格紋","badge":"", "link":"",
         "models":[
-          {"name":"MonNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-16/2025091110_54.webp"]}
+          {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-16/2025091110_54.webp"]}
         ]
        },
       {
@@ -148,25 +148,61 @@
         "models":[
           {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-17/0612-1.webp"]},
           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-17/0612-2.webp"]},
-          {"name":"MonNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-17/0612-3.webp"]}
+          {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-17/0612-3.webp"]}
         ]
        },
         {
           "id":"1-1-18", "title":"白淺藍斜格紋","badge":"", "link":"",
           "models":[
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-18/0612-2.webp"]},
-            {"name":"MonNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-18/0612-1.webp"]},
+            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-18/0612-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-18/0613-2.webp"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-18/0612-3.webp"]}
           ]
         },
         {
             "id":"1-1-19", "title":"經典斜格紋-多色","badge":"hot", "link":"",
             "models":[
-              {"name":"MonNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-9.webp"]},
+              {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-9.webp"]},
               {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-7.webp"]},
               {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-19/0612-10.webp"]}
             ]
-          }
+          },
+        {
+            "id":"1-1-20", "title":"薄荷奶咖", "badge":"new", "link":"",
+            "models":[
+              {"name":"AirX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-2.webp"]},
+              {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0613-1.webp"]},
+              {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-8.webp"]},
+              {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-10.webp"]}
+            ]
+        },
+          {
+              "id":"1-1-21", "title":"黑莓霓光", "badge":"new", "link":"",
+              "models":[
+                {"name":"AirX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-4.webp"]},
+                {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-3.webp"]},
+                {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-8.webp"]},
+                {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-21/0613-7.webp"]}
+              ]
+          },
+        {
+            "id":"1-1-22", "title":"冰霧霓光", "badge":"new", "link":"",
+            "models":[
+              {"name":"AirX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-2.webp"]},
+              {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-3.webp"]},
+              {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-22/0613-8.webp"]}
+            ]
+        },
+        {
+            "id":"1-1-23", "title":"琥珀霓光", "badge":"new", "link":"",
+            "models":[
+              {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-7.webp"]},
+              {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-1.webp"]},
+              {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-6.webp"]},
+              {"name":"AirX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-23/0613-5.webp"]}
+            ]
+        }
+
         ]
       },
 
@@ -834,7 +870,7 @@
           {
             "id":"3-2-6", "title":"泥灰白小天使滿", "badge":"", "link":"",
             "models":[
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025091110_59.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025091110_59.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0613-1.webp"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025121522_04.png"]}]
           },
           {
@@ -1496,7 +1532,7 @@
           {
             "id":"6-2-8", "title":"暹羅貓毛衣", "badge":"", "link":"",
             "models":[
-           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.34 AM.png"]},
+           {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.34 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/0613-3.webp"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.24 AM.png"] }
         ]
           },
