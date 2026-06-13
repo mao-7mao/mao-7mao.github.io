@@ -210,7 +210,7 @@
         "id":"s1-2", "name":"滿印格紋", 
         "designs":[
           {
-            "id":"1-2-1", "title":"彩虹跳跳糖", "badge":"new", "link":"",
+            "id":"1-2-1", "title":"彩虹跳跳糖", "badge":"new", "link":[ {"platform":"xhs", "url":"  http://xhslink.com/o/AQaXfJHPC5A "}] ,
             "models":[
              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-1/2026031122_13.png"]},
               {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-1/2026031122_19.png"]}
@@ -834,7 +834,7 @@
             "models":[
              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.58 PM.png"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.46 PM.png"]}
             ]
           },
@@ -889,7 +889,7 @@
             ]
           },
           {
-            "id":"3-2-9", "title":"蝴蝶結小熊黑白", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/5Kk3cffNRph "}] ,
+            "id":"3-2-9", "title":"蝴蝶結小熊黑白", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/5Kk3cffNRph "}, {"platform":"xhs", "url":" http://xhslink.com/o/8bOdRra9Poj  "}] ,
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2025091111_27.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2025121522_04_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2026060414_224.png"] },
@@ -1875,7 +1875,7 @@
             ]
           },
               {
-            "id":"9-1-2", "title":"透明背景", "badge":"hot", "link":"",
+            "id":"9-1-2", "title":"透明背景", "badge":"hot", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/9B6OGkeSa   "}] ,
             "models":[
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.46 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.34 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.40 AM.png"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.25 AM.png"]}
