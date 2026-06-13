@@ -514,24 +514,35 @@ function renderSeries(){
     if(top) top.classList.add('active');
   };
 
-  document.querySelectorAll('#series-anchor .stab').forEach(link => {
+  document.querySelectorAll('#series-nav > .stab').forEach(link => {
     link.addEventListener('click', e => {
-      const targetId = link.dataset.subid || link.dataset.sid;
+      const targetId = link.dataset.sid;
       if(!targetId) return;
       e.preventDefault();
+      e.stopPropagation();
 
-      let scrollTargetId = targetId;
-      if(!link.dataset.subid && link.dataset.sid){
-        const firstChild = getFirstChildId(targetId);
-        if(firstChild) scrollTargetId = firstChild;
-      }
-
-      const target = document.getElementById(scrollTargetId);
+      const target = document.getElementById(targetId);
       if(target){
         target.scrollIntoView({behavior:'smooth',block:'start'});
-        history.replaceState(null, '', `#${scrollTargetId}`);
+        history.replaceState(null, '', `#${targetId}`);
       }
-      activateSeriesTab(scrollTargetId);
+      activateSeriesTab(targetId);
+    });
+  });
+
+  document.querySelectorAll('.subseries-nav .stab').forEach(link => {
+    link.addEventListener('click', e => {
+      const targetId = link.dataset.subid;
+      if(!targetId) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      const target = document.getElementById(targetId);
+      if(target){
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+        history.replaceState(null, '', `#${targetId}`);
+      }
+      activateSeriesTab(targetId);
     });
   });
 
@@ -570,7 +581,7 @@ function renderTutuBoom(){
         </div>` : '';
     const modelTabs  = d.models.map((m,mi)=>`
       <button class="mtab${mi===0?' active':''}" data-midx="${mi}">${m.name}</button>`).join('');
-    const linkHtml   = d.link ? `<a class="dc-link" href="${d.link}" target="_blank" rel="noopener noreferrer">小紅書</a>` : '';
+    const linkHtml   = renderPlatformLinks(d.link);
 
     return `
       <div class="design-card" data-sid="tutuboom" data-did="${d.id}" data-active-idx="0" data-active-img-idx="0"
@@ -664,6 +675,44 @@ function getModelImages(m){
 function getModelFirstImage(m){
   return getModelImages(m)[0] || '';
 }
+function renderPlatformLinks(linkData){
+  if(!linkData) return '';
+
+  const platforms = [
+    {key:'xhs', label:'小紅書', icon:'RED', className:'dc-link-xhs'},
+    {key:'ig', label:'IG', icon:'IG', className:'dc-link-ig'},
+    {key:'threads', label:'Threads', icon:'脆', className:'dc-link-threads'}
+  ];
+
+  const entries = [];
+  if(typeof linkData === 'string'){
+    entries.push({platform:'xhs', url:linkData});
+  } else if(Array.isArray(linkData)){
+    linkData.forEach(item => {
+      if(!item) return;
+      if(typeof item === 'string') entries.push({platform:'xhs', url:item});
+      else if(typeof item === 'object' && item.url) entries.push({platform:item.platform || 'xhs', url:item.url});
+    });
+  } else if(typeof linkData === 'object'){
+    Object.entries(linkData).forEach(([platform, value]) => {
+      if(value) entries.push({platform, url:String(value)});
+    });
+  }
+
+  const order = ['xhs','ig','threads'];
+  const html = entries
+    .sort((a,b) => {
+      const ai = order.indexOf(a.platform) === -1 ? order.length : order.indexOf(a.platform);
+      const bi = order.indexOf(b.platform) === -1 ? order.length : order.indexOf(b.platform);
+      return ai - bi;
+    })
+    .map(({platform,url}) => {
+      const info = platforms.find(p => p.key === platform) || {label:platform, icon:'🔗', className:'dc-link-generic'};
+      return `<a class="dc-link ${info.className}" href="${url}" target="_blank" rel="noopener noreferrer"><span class="dc-link-icon">${info.icon}</span><span>${info.label}</span></a>`;
+    }).join('');
+
+  return html ? `<div class="dc-links">${html}</div>` : '';
+}
 function renderImageNav(card,m,activeImgIdx=0){
   const wrap = card.querySelector('.dc-img-wrap');
   if(!wrap) return;
@@ -740,8 +789,7 @@ function designCard(s,d,si,di){
       </div>` : '';
   const modelTabs  = d.models.map((m,mi)=>`
     <button class="mtab${mi===0?' active':''}" data-midx="${mi}">${m.name}</button>`).join('');
-  const linkHtml   = d.link ? `<a class="dc-link" href="${d.link}" target="_blank" rel="noopener noreferrer">小紅書</a>` : '';
-
+const linkHtml = renderPlatformLinks(d.link);
   return `
     <div class="design-card" data-sid="${s.id}" data-did="${d.id}" data-active-idx="0" data-active-img-idx="0"
          style="animation-delay:${si*.04+di*.06}s">
