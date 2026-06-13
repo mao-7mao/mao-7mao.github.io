@@ -308,7 +308,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-seri
   color:var(--text);
 }
 
-@media (max-width:768px){
+@media (max-width:640px){
 
   .dc-links{
     gap:6px;
