@@ -217,7 +217,7 @@
             ]
           },
                     {
-            "id":"1-2-2", "title":"彩虹跳跳糖加星星鈕扣", "badge":"new", "link":"",
+            "id":"1-2-2", "title":"彩虹跳跳糖加星星鈕扣", "badge":"new",  "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/2lsFxsot0tV "}] ,
             "models":[
              {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031122_23.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031122_22.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031123_49.png"]}
             ]
@@ -760,7 +760,7 @@
         "designs":[
         
            {
-            "id":"3-1-1", "title":"貓貓玩具熊透色-粉", "badge":"hot", "link":"",
+            "id":"3-1-1", "title":"貓貓玩具熊透色-粉", "badge":"hot",  "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/8EfLmdGn3Af "}] ,
             "models":[
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx2.webp"]},
               {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx2.webp"]},
@@ -775,7 +775,7 @@
         ]
           },
            {
-            "id":"3-1-3", "title":"貓貓玩具熊滿-黑白", "badge":"hot",  "link":[ {"platform":"xhs", "url":"  http://xhslink.com/o/1Z4sXiIIIKC  "}] ,
+            "id":"3-1-3", "title":"貓貓玩具熊滿-黑白", "badge":"hot",  "link":[ {"platform":"xhs", "url":"  http://xhslink.com/o/1Z4sXiIIIKC  "},  {"platform":"xhs", "url":"http://xhslink.com/o/A2JR8dKzcau "} ] ,
             "models":[
            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_53.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025091111_32.png"] }
@@ -1180,7 +1180,7 @@
             ]
           },
          {
-            "id":"4-2-4", "title":"雪花絲帶", "badge":"", "link":"",
+            "id":"4-2-4", "title":"雪花絲帶", "badge":"",  "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/4HqQKv9tSqp"}],
             "models":[
             {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_11_2.jpg"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_11_1.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_11.jpg"]},
@@ -1276,7 +1276,7 @@
     "subseries":[
       {
         "id":"s5-1", "name":"波點",  
-        "desc":"會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
+        "desc":"",
         "designs":[
            {
             "id":"5-1-1", "title":"彩色水彩點點", "badge":"", "link":"",
