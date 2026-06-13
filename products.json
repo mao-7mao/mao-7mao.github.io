@@ -889,7 +889,7 @@
             ]
           },
           {
-            "id":"3-2-9", "title":"蝴蝶結小熊黑白", "badge":"hot", "link":"",
+            "id":"3-2-9", "title":"蝴蝶結小熊黑白", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/5Kk3cffNRph "}] ,
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2025091111_27.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2025121522_04_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-9/2026060414_224.png"] },
