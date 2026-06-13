@@ -171,7 +171,7 @@
             "id":"1-1-20", "title":"薄荷奶咖", "badge":"new", "link":"",
             "models":[
               {"name":"AirX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-2.webp"]},
-              {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0613-1.webp"]},
+              {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-9.webp"]},
               {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-8.webp"]},
               {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-20/0613-10.webp"]}
             ]
