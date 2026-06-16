@@ -614,8 +614,10 @@
           {
               "id":"2-1-23", "title":"紅草莓", "badge":"", "link":"",
               "models":[
-                {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/s1.webp"]},
-              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.55.03 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.54.38 PM.png"]}
+                {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/s1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06161.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06162.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06163.webp"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.55.03 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.54.38 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06166.webp"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06164.webp" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06165.webp"]},
+                {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06167.webp" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06168.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06169.webp"]}
             ]
           } ,
           {
