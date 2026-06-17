@@ -1269,7 +1269,7 @@
           {
               "id":"4-2-15", "title":"蕾絲鬱金香", "badge":"new", "link":"" ,
               "models":[
-              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g14.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/g5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/g6.webp"] },
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g14.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g6.webp"] },
               {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g12.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g11.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g9.webp"] },
               {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g4.webp"] },
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g7.webp"] }
