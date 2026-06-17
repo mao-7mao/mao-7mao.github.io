@@ -473,6 +473,7 @@
            {
             "id":"2-1-1", "title":"粉光圈", "badge":"hot", "link":"",
             "models":[
+            {"name":"SolidX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-1/0618-1.webp"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-1/2025091111_31.png"]}
             ]
           },
@@ -929,7 +930,7 @@
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_27_1.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28.png"]},
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28_1.png"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/0618-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28_1.png"]}
             ]
           },
           {
