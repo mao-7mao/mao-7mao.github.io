@@ -714,7 +714,8 @@
         ]
       },
   {
-        "id":"s2-4", "name":"Hey there", "nameEm":"本系列請聯繫Hey there（也可聯繫萬有狀態詢問hey there之QR code付款）",
+        "id":"s2-4", "name":"Hey there", "nameEm":"本系列請聯繫Hey there",
+        "descriptions":"也可聯繫萬有狀態詢問hey there之QR code付款",
         "designs":[
           {
             "id":"2-4-1", "title":"ht6腳咪", "badge":"", "link":"",
