@@ -840,7 +840,7 @@
           {
             "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
             "models":[
-             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0617-34.webp"]},            
+             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0617-34.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-3.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0614.webp"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.46 PM.png"]}
@@ -862,7 +862,7 @@
           {
             "id":"3-2-4", "title":"芒果冰飲", "badge":"new", "link":"",
             "models":[
-              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.33.26 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.57 AM.png"]},            
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.33.26 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.57 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/0620-4.webp"]},            
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.33 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.33.49 AM.png"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.47 AM.png"]}
             ]
