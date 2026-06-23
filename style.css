@@ -390,3 +390,70 @@ footer strong{color:var(--text)}
   .design-grid{grid-template-columns:repeat(2,1fr);gap:14px}
   .notes{grid-template-columns:1fr}
 }
+
+/* ── VIEW FILTER (殼體快篩功能區) ── */
+.view-filter-wrapper {
+  max-width: 1200px; /* 與你網頁內容的最大寬度對齊 */
+  margin: 40px auto 10px;
+  padding: 0 24px;
+}
+
+.filter-label {
+  font-family: 'DM Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.filter-tabs-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+/* 篩選按鈕基礎樣式 */
+.filter-btn {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: .75rem;
+  font-weight: 400;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 18px;
+  border-radius: 20px; /* 契合原本的膠囊型按鈕圓角 */
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+/* 滑鼠懸停效果 */
+.filter-btn:hover {
+  border-color: var(--text);
+  background: var(--bg2);
+}
+
+/* 當前被選中（Active）的按鈕狀態 */
+.filter-btn.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+/* 針對手機板（螢幕較小時）的優化調適 */
+@media(max-width: 768px) {
+  .view-filter-wrapper {
+    margin: 25px auto 5px;
+    padding: 0 16px;
+  }
+  .filter-tabs-row {
+    gap: 8px;
+    padding-bottom: 14px;
+  }
+  .filter-btn {
+    font-size: .7rem;
+    padding: 6px 14px;
+  }
+}

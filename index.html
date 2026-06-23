@@ -190,6 +190,18 @@ content="萬有狀態omnistate">
 <hr class="divider" style="margin-top:56px;margin-bottom:0">
 
 <!-- PAGE 2：SERIES -->
+<div class="view-filter-wrapper">
+  <div class="filter-label">瀏覽模式 Focus</div>
+  <div class="filter-tabs-row">
+    <button class="filter-btn active" data-type="all">全部系列款式</button>
+    <button class="filter-btn" data-type="model-filter" data-model="SolidX">SolidX 經典防摔</button>
+    <button class="filter-btn" data-type="model-filter" data-model="AirX">AirX 極致氣墊</button>
+    <button class="filter-btn" data-type="model-filter" data-model="ModNX">Mod NX 邊框背蓋</button>
+    <button class="filter-btn" data-type="model-filter" data-model="ClearX">ClearX 抗黃透明</button>
+    <button class="filter-btn" data-type="model-filter" data-model="Clear">Clear 透明防摔</button>
+  </div>
+</div>
+
 <div id="series-anchor">
   <nav class="series-nav" id="series-nav"></nav>
   <div id="series-content"></div>
@@ -429,11 +441,186 @@ function loadTutuBoomJson(){
     });
 }
 
+// 為了確保頁面載入時會自動執行，請檢查你原本的 Promise.all，並確保它長得像這樣：
 Promise.all([loadSeriesJson(), loadTutuBoomJson()]).then(() => {
   renderSeries();
   renderTutuBoom();
+  initFilterEvents(); // 確保這一行有被執行！
 });
 
+// ── 2. 修正後的快篩初始化與事件綁定 ──
+function initFilterEvents() {
+  const buttons = document.querySelectorAll('.filter-btn');
+  if (!buttons.length) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // 切換按鈕的 active 樣式
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const type = btn.dataset.type;
+      const seriesNav = document.getElementById('series-nav');
+
+      if (type === 'all') {
+        if (seriesNav) seriesNav.style.display = 'flex';
+        renderSeries(); // 恢復原本的按系列顯示
+      } else if (type === 'model-filter') {
+        if (seriesNav) seriesNav.style.display = 'none';
+        renderFilteredByModel(btn.dataset.model); // 執行快篩
+      }
+    });
+  });
+}
+
+
+// ── 3. 修正後的篩選與渲染邏輯（解決區域變數與事件失效問題） ──
+function renderFilteredByModel(modelName) {
+  let matchedDesignsHtml = [];
+  let count = 0;
+
+  // 安全檢查機制，替代原本讀取不到的區域變數 validDesigns
+  const getValidDesigns = (list) => (list && Array.isArray(list)) ? list.filter(d => d && d.id) : [];
+
+  // 遍歷原始 SERIES 數據
+  SERIES.forEach((s, si) => {
+    if (s.subseries && s.subseries.length) {
+      s.subseries.forEach(sub => {
+        const dList = getValidDesigns(sub.designs);
+        dList.forEach((d, di) => {
+          if (!d.models) return;
+          const targetModelIdx = d.models.findIndex(m => m.name.toLowerCase() === modelName.toLowerCase());
+          if (targetModelIdx !== -1) {
+            count++;
+            matchedDesignsHtml.push(designCardForFilter(sub, d, si, di, targetModelIdx, `${s.name} - ${sub.name}`));
+          }
+        });
+      });
+    } else {
+      const dList = getValidDesigns(s.designs);
+      dList.forEach((d, di) => {
+        if (!d.models) return;
+        const targetModelIdx = d.models.findIndex(m => m.name.toLowerCase() === modelName.toLowerCase());
+        if (targetModelIdx !== -1) {
+          count++;
+          matchedDesignsHtml.push(designCardForFilter(s, d, si, di, targetModelIdx, s.name));
+        }
+      });
+    }
+  });
+
+  // 將篩選後的結果塞入網頁
+  const contentEl = document.getElementById('series-content');
+  if (!contentEl) return;
+
+  contentEl.innerHTML = `
+    <section class="series-sec">
+      <div class="series-hd">
+        <div class="series-name">殼體快篩結果 — <em>只看 ${modelName} 的圖款</em></div>
+        <div class="series-cnt">${count} 款</div>
+      </div>
+      <div class="series-desc" style="font-size:12px; color:var(--muted); margin-top:-10px; margin-bottom:20px;">
+        已為您自動切換至該殼體的預覽圖（您仍可點擊卡片內的型號切換檢視）
+      </div>
+      <div class="design-grid">
+        ${matchedDesignsHtml.length ? matchedDesignsHtml.join('') : '<div style="grid-column:1/-1; text-align:center; color:var(--muted); padding:40px 0;">暫無此殼體的圖款資料</div>'}
+      </div>
+    </section>
+  `;
+
+  // 關鍵修正：重新綁定新生成卡片上的「型號標籤點擊事件」與「點擊放大事件」
+  rebindCardEvents();
+}
+
+
+// ── 4. 修正後的卡片生成 HTML 模板（完美呼應你原本的卡片結構） ──
+function designCardForFilter(s, d, si, di, targetModelIdx, categoryName) {
+  const targetModel = d.models[targetModelIdx];
+  // 處理與你原本 getModelImages 一致的邏輯
+  const modelImgs = (targetModel && targetModel.imgs) ? targetModel.imgs.filter(Boolean) : [];
+  
+  const badgeHtml = d.badge === 'new' ? '<div class="dc-badge badge-new">NEW</div>'
+                  : d.badge === 'hot' ? '<div class="dc-badge badge-hot">HOT</div>' : '';
+                  
+  const firstImage = modelImgs[0] || '';
+  const imgHtml = firstImage
+    ? `<img class="dc-img" src="${firstImage}" alt="${d.title}" loading="lazy" draggable="false" oncontextmenu="return false;">`
+    : `<div class="dc-placeholder">
+        <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+        圖片待填
+       </div>`;
+       
+  const imageNavHtml = modelImgs.length > 1 ? `
+      <div class="dc-img-nav">
+        ${modelImgs.map((_, i) => `<button class="dc-img-dot${i === 0 ? ' active' : ''}" type="button" data-img-idx="${i}" aria-label="第 ${i + 1} 張"></button>`).join('')}
+      </div>` : '';
+      
+  // 生成型號分頁標籤，並將快篩選中的型號預設加上 .active 樣式
+  const modelTabs = d.models.map((m, mi) => `
+    <button class="mtab${mi === targetModelIdx ? ' active' : ''}" data-midx="${mi}">${m.name}</button>`).join('');
+    
+  // 處理購買連結（相容你原本的 renderPlatformLinks）
+  const linkHtml = typeof renderPlatformLinks === 'function' ? renderPlatformLinks(d.link) : '';
+  
+  return `
+    <div class="design-card" data-sid="${s.id || ''}" data-did="${d.id}" data-active-idx="${targetModelIdx}" data-active-img-idx="0">
+      <div class="dc-img-wrap">
+        ${imgHtml}
+        ${badgeHtml}
+        ${imageNavHtml}
+        <div class="dc-zoom">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dc-body">
+        <div style="font-size:10px; color:var(--muted); margin-bottom:4px; opacity:0.8;">系列: ${categoryName}</div>
+        <div class="dc-top">
+          <span class="dc-title">${d.title || '未命名圖款'}</span>
+          <span class="dc-code">${d.id}</span>
+        </div>
+        <div class="model-tabs">${modelTabs}</div>
+        ${linkHtml}
+      </div>
+    </div>`;
+}
+
+
+// ── 5. 新增：動態卡片事件重新綁定函式 ──
+function rebindCardEvents() {
+  const cards = document.querySelectorAll('#series-content .design-card');
+  cards.forEach(card => {
+    // 綁定型號標籤點擊（切換外殼）
+    const tabs = card.querySelectorAll('.mtab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        const mIdx = parseInt(tab.dataset.midx, 10);
+        card.setAttribute('data-active-idx', mIdx);
+        card.setAttribute('data-active-img-idx', 0);
+        
+        // 觸發原本網頁的更新卡片圖片邏輯
+        if (typeof updateCardImage === 'function') {
+          updateCardImage(card);
+        }
+      });
+    });
+
+    // 綁定圖片點擊放大（Lightbox）
+    const imgWrap = card.querySelector('.dc-img-wrap');
+    if (imgWrap) {
+      imgWrap.addEventListener('click', () => {
+        if (typeof openLightbox === 'function') {
+          openLightbox(card);
+        }
+      });
+    }
+  });
+}
 
 /* ═══════════════════════════════════════════
    RENDER PRICE在有優惠的時候 吧「價格」改成「原價」在具體的price裡面添加優惠項目
