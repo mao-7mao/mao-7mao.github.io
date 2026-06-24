@@ -108,8 +108,8 @@ content="萬有狀態omnistate">
       <h4>僅購買萬有商品</h4>
       <ol>
         <li>填寫表單</li>
-        <li>私訊萬有狀態並支付商品款項</li>
-        <li>私訊 <strong>Jimmibobo</strong> 支付運費（僅收ZFB）並通知留意包裹</li>
+        <li>私訊<strong>萬有狀態</strong>（🫧：<strong>mussessein-7</strong>）並支付商品款項</li>
+        <li>私訊 <strong>Jimmibobo</strong> （🫧：<strong>jimmibobotw</strong>）支付運費（僅收ZFB）並通知留意包裹</li>
         <li>商品寄達台灣後由 Jimmibobo 代收</li>
         <li>安排寄出</li>
       </ol>
@@ -136,7 +136,7 @@ content="萬有狀態omnistate">
       <div class="sg-fee">運費約 <b>人民幣25元/kg（ZFB收款）</b>（若選擇拍淘寶一元拍，運費為30元/kg）</div>
       <ul>
         <li>可與 Jimmibobo 其他委託商品合包寄送</li>
-        <li>萬有狀態商品包裹需控制在300g以內</li>
+        <li>合包寄送時萬有狀態商品包裹需控制在300g以內</li>
         <li>P.S.萬有狀態商品滿 <b>225元</b> 即可安排下單，未滿需等待湊單</li>
       </ul>
     </div>
@@ -559,7 +559,7 @@ function designCardForFilter(s, d, si, di, targetModelIdx, categoryName) {
   const modelTabs = d.models.map((m, mi) => `
     <button class="mtab${mi === targetModelIdx ? ' active' : ''}" data-midx="${mi}">${m.name}</button>`).join('');
     
-  // 處理購買連結（相容你原本的 renderPlatformLinks）
+  // 處理購買連結（相容原本的 renderPlatformLinks）
   const linkHtml = typeof renderPlatformLinks === 'function' ? renderPlatformLinks(d.link) : '';
   
   return `

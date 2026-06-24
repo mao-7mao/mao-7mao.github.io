@@ -1102,8 +1102,8 @@
           {
             "id":"4-1-1", "title":"童話蕾絲橫-紫", "badge":"hot",  "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/2XkwLNUIzRr "}] ,
             "models":[
-            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-23-38.png"]},
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-43.png"]},            
+            {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-23-38.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0624-2.webp"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0624-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-43.png"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-18.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-05.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-01.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-30.png"]}
             ]
