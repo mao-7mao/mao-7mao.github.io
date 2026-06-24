@@ -2008,13 +2008,13 @@
             ]
           },
                     {
-            "id":"9-2-1", "title":"透明背景", "badge":"new", "link":"",
+            "id":"9-3-2", "title":"透明背景", "badge":"new", "link":"",
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.11.52 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t6.webp"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.11.58 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.12.03 AM.png"]},
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/2026-05-28-16-04-54.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/Screenshot 2026-06-01 at 11.12.13 AM.png"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t1.webp"]},
-            {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t5.webp"]}
+            {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/0624-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/0624-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t5.webp"]}
             ]
           }
         ]
