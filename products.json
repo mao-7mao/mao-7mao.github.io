@@ -1629,9 +1629,10 @@
                     {
             "id":"6-2-11", "title":"茸茸波波點點", "badge":"new", "link":"",
             "models":[
-            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-11.webp"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-9.webp"]},
-            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-10.webp"] }
+            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-11.webp"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-9.webp"]},
+            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-10.webp"] },
+            {"name":"ClearX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-6.webp"]}
         ]
           }
 
