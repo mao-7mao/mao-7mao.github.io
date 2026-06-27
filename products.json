@@ -653,7 +653,15 @@
             {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-5.webp"]},
             {"name":"Clear",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-14.webp"]}
         ]
-          }
+          },
+           {
+"id":"2-1-28", "title":"蝕刻之翼", "badge":"new", "link":"",
+ "models":[
+ {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-4.webp"]},
+ {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-3.webp"]},
+ {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-4.webp"] }
+  ]
+}
         ]
       },
       {
