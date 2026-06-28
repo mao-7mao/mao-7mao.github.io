@@ -9,5 +9,25 @@
  {"name":"Clear",   "imgs":[""]}
   ]
 }
+ {
+    "id": "tb-16",
+    "title": "梔子",
+    "layer": "雙層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-2.webp"] },
+      { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-1.webp"] }
+    ]
+  },
 
-
+    {
+    "id": "tb-17",
+    "title": "海鹽檸檬條紋",
+    "layer": "單層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-3.webp"] },
+    ]
+  }

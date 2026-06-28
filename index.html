@@ -62,41 +62,7 @@ content="萬有狀態omnistate">
 
   <!-- SHIPPING GUIDE SUB-SECTION -->
   <div id="shipping-guide" class="shipguide-sec">
-  <style>
-    .shipguide-sec{max-width:980px;margin:0 auto;padding:48px 24px 56px;}
-    .shipguide-sec .sec-eye{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#b08a6a;margin-bottom:6px;}
-    .shipguide-sec .sec-h2{font-family:'Playfair Display',serif;font-size:26px;color:#3a322a;margin:0 0 10px;}
-    .shipguide-sec .sec-h2 em{font-style:italic;color:#b5694a;}
-    .shipguide-sec .sec-sub{font-size:14px;color:#8a7c6a;line-height:1.8;margin-bottom:32px;}
-    .sg-flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:40px;}
-    @media (max-width:720px){.sg-flow-grid{grid-template-columns:1fr;}}
-    .sg-flow-card{background:#fffaf6;border:1px solid #f0ddd0;border-radius:14px;padding:22px 24px;}
-    .sg-flow-card .sg-flow-tag{display:inline-block;font-size:12px;font-weight:600;color:#fff;background:#d99a7c;border-radius:20px;padding:3px 12px;margin-bottom:10px;}
-    .sg-flow-card h4{font-size:16px;color:#3a322a;margin:0 0 12px;}
-    .sg-flow-card ol{margin:0;padding-left:20px;color:#5a4f42;font-size:14px;line-height:1.95;}
-    .sg-flow-card ol li{margin-bottom:4px;}
-    .sg-flow-card ol li strong{color:#b5694a;}
-    .sg-divider-label{display:flex;align-items:center;gap:12px;color:#9b8f80;font-size:13px;margin:36px 0 20px;}
-    .sg-divider-label::before,.sg-divider-label::after{content:'';flex:1;height:1px;background:#e8dccb;}
-    .sg-method-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-    @media (max-width:720px){.sg-method-grid{grid-template-columns:1fr;}}
-    .sg-method-card{background:#fffaf6;border:1px solid #f0ddd0;border-radius:14px;padding:22px 24px;position:relative;}
-    .sg-method-card.sg-recommend{border-color:#e3b89a;box-shadow:0 0 0 1px #e3b89a inset;}
-    .sg-method-card .sg-badge{position:absolute;top:-11px;right:18px;background:#b5694a;color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;}
-    .sg-method-card h4{font-size:15px;color:#3a322a;margin:0 0 4px;display:flex;align-items:center;gap:6px;}
-    .sg-method-card .sg-route{font-size:12px;color:#a89a86;margin-bottom:12px;}
-    .sg-method-card .sg-fee{font-size:13px;color:#5a4f42;margin-bottom:10px;}
-    .sg-method-card .sg-fee b{color:#1a5fb4;font-size:15px;}
-    .sg-method-card ul{margin:0;padding-left:18px;font-size:13px;color:#6b5d4a;line-height:1.85;}
-    .sg-method-card ul li{margin-bottom:4px;}
-    .sg-method-card ul li b{color:#b5694a;}
-    .sg-weight-box{grid-column:1 / -1;background:#f3ece2;border-radius:12px;padding:18px 22px;margin-top:4px;}
-    .sg-weight-box h5{font-size:13px;color:#6b5d4a;margin:0 0 10px;display:flex;align-items:center;gap:6px;}
-    .sg-weight-box ul{margin:0;padding-left:18px;font-size:13px;color:#6b5d4a;line-height:1.85;}
-    .sg-weight-box ul li b{color:#b5694a;}
-    .sg-weight-box .sg-tip{margin-top:10px;font-size:12.5px;color:#8a7c6a;border-top:1px dashed #ddc9ad;padding-top:10px;}
-    .sg-footnote{text-align:center;color:#9b8f80;font-size:13px;margin-top:32px;}
-  </style>
+
 
   <div class="sec-eye">Order &amp; Shipping</div>
   <h2 class="sec-h2">商品購買 <em>與寄送說明</em></h2>
@@ -879,12 +845,20 @@ function renderTutuBoom(){
   // 獲取 tutuboom 的設計卡片 HTML
   const tutuSeriesObj = { id:'tutuboom', name:'TutuBoom' };
   document.getElementById('tutuboom-cnt').textContent = TUTUBOOM_DESIGNS.length + ' 款';
-  
-  document.getElementById('tutuboom-designs').innerHTML = TUTUBOOM_DESIGNS.map((d,di)=>{
+
+  const sortedTutu = [
+    ...TUTUBOOM_DESIGNS.filter(d => d.badge === 'new'),
+    ...TUTUBOOM_DESIGNS.filter(d => d.badge !== 'new')
+  ];
+
+  document.getElementById('tutuboom-designs').innerHTML = sortedTutu.map((d,di)=>{
     const firstModel = d.models[0];
     const firstModelImgs = getModelImages(firstModel);
     const badgeHtml  = d.badge==='new' ? '<div class="dc-badge badge-new">NEW</div>'
                      : d.badge==='hot'? '<div class="dc-badge badge-hot">HOT</div>' : '';
+    const layerHtml  = d.layer
+      ? `<div class="dc-layer-tag dc-layer-${d.layer === '雙層' ? 'double' : 'single'}">${d.layer}</div>`
+      : '';
     const firstImage  = firstModelImgs[0];
     const imgHtml    = firstImage
       ? `<img class="dc-img" src="${firstImage}" alt="${d.title}" loading="lazy">`
@@ -906,6 +880,7 @@ function renderTutuBoom(){
         <div class="dc-img-wrap">
           ${imgHtml}
           ${badgeHtml}
+          ${layerHtml}
           ${imageNavHtml}
           <div class="dc-zoom">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
