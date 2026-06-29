@@ -411,7 +411,8 @@ function loadTutuBoomJson(){
 Promise.all([loadSeriesJson(), loadTutuBoomJson()]).then(() => {
   renderSeries();
   renderTutuBoom();
-  initFilterEvents(); // 確保這一行有被執行！
+  initFilterEvents();
+  initSeriesContentEvents(); // 只綁定一次，避免重複觸發
 });
 
 // ── 2. 修正後的快篩初始化與事件綁定 ──
@@ -555,39 +556,100 @@ function designCardForFilter(s, d, si, di, targetModelIdx, categoryName) {
 }
 
 
-// ── 5. 新增：動態卡片事件重新綁定函式 ──
-function rebindCardEvents() {
-  const cards = document.querySelectorAll('#series-content .design-card');
-  cards.forEach(card => {
-    // 綁定型號標籤點擊（切換外殼）
-    const tabs = card.querySelectorAll('.mtab');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', (e) => {
-        e.stopPropagation();
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        const mIdx = parseInt(tab.dataset.midx, 10);
-        card.setAttribute('data-active-idx', mIdx);
-        card.setAttribute('data-active-img-idx', 0);
-        
-        // 觸發原本網頁的更新卡片圖片邏輯
-        if (typeof updateCardImage === 'function') {
-          updateCardImage(card);
+// ── 5. 統一的 series-content click 委派（只初始化一次，涵蓋正常模式與快篩模式）
+function initSeriesContentEvents(){
+  document.getElementById('series-content').addEventListener('click', e => {
+    // mtab 殼體切換
+    const tab = e.target.closest('.mtab');
+    if(tab){
+      const card = tab.closest('.design-card');
+      if(!card) return;
+      const sid = card.dataset.sid;
+      const did = card.dataset.did;
+      const midx = parseInt(tab.dataset.midx, 10);
+      // 快篩卡片（sid 可能對應不到 findSeriesItemById，改用通用切換）
+      const s = findSeriesItemById(sid);
+      const d = s?.designs?.find(x=>x.id===did);
+      if(s && d){
+        switchModel(card, sid, did, midx);
+      } else {
+        // 快篩模式：直接遍歷 SERIES 找對應 design
+        let found = null;
+        for(const ser of SERIES){
+          const designs = ser.designs || [];
+          const match = designs.find(x=>x.id===did);
+          if(match){ found = {s:ser, d:match}; break; }
+          for(const sub of (ser.subseries||[])){
+            const sm = (sub.designs||[]).find(x=>x.id===did);
+            if(sm){ found = {s:sub, d:sm}; break; }
+          }
+          if(found) break;
         }
-      });
-    });
-
-    // 綁定圖片點擊放大（Lightbox）
-    const imgWrap = card.querySelector('.dc-img-wrap');
-    if (imgWrap) {
-      imgWrap.addEventListener('click', () => {
-        if (typeof openLightbox === 'function') {
-          openLightbox(card);
+        if(found){
+          card.dataset.sid = found.s.id;
+          switchModel(card, found.s.id, did, midx);
         }
-      });
+      }
+      return;
     }
+
+    const card = e.target.closest('.design-card');
+    if(!card) return;
+
+    // dot 切換圖片
+    const dot = e.target.closest('.dc-img-dot');
+    if(dot){
+      switchModelImage(card, parseInt(dot.dataset.imgIdx, 10));
+      return;
+    }
+
+    // arrow 翻頁
+    const arrow = e.target.closest('.dc-img-arrow');
+    if(arrow){
+      const sid = card.dataset.sid;
+      const did = card.dataset.did;
+      // 嘗試從 findSeriesItemById 找，找不到就遍歷 SERIES
+      let m = null;
+      const s = findSeriesItemById(sid);
+      const d = s?.designs?.find(x=>x.id===did);
+      if(d){
+        m = d.models[parseInt(card.dataset.activeIdx||0, 10)];
+      } else {
+        for(const ser of SERIES){
+          const match = (ser.designs||[]).find(x=>x.id===did);
+          if(match){ m = match.models[parseInt(card.dataset.activeIdx||0,10)]; break; }
+          for(const sub of (ser.subseries||[])){
+            const sm = (sub.designs||[]).find(x=>x.id===did);
+            if(sm){ m = sm.models[parseInt(card.dataset.activeIdx||0,10)]; break; }
+          }
+          if(m) break;
+        }
+      }
+      if(!m) return;
+      const imgs = getModelImages(m);
+      const cur = parseInt(card.dataset.activeImgIdx||0, 10);
+      const next = arrow.classList.contains('dc-img-next')
+        ? (cur + 1) % imgs.length
+        : (cur - 1 + imgs.length) % imgs.length;
+      card.dataset.activeImgIdx = next;
+      switchModelImage(card, next);
+      return;
+    }
+
+    // 圖片區點擊 → lightbox
+    const wrap = e.target.closest('.dc-img-wrap');
+    if(!wrap || e.target.closest('.dc-img-nav') || e.target.closest('.dc-img-arrow')) return;
+    openLB(
+      card.dataset.sid,
+      card.dataset.did,
+      parseInt(card.dataset.activeIdx||0, 10),
+      parseInt(card.dataset.activeImgIdx||0, 10)
+    );
   });
+}
+
+function rebindCardEvents() {
+  // 已由 initSeriesContentEvents() 統一處理，此函式保留為空避免呼叫錯誤
 }
 
 /* ═══════════════════════════════════════════
@@ -746,56 +808,7 @@ const content = s.subseries?.length ? s.subseries.map((sub,ssi)=>{
       </section>`;
   }).join('');
 
-  // bind model tab clicks (event delegation)
-  document.getElementById('series-content').addEventListener('click',e=>{
-    const tab = e.target.closest('.mtab');
-    if(!tab) return;
-    const card = tab.closest('.design-card');
-    const sid  = card.dataset.sid;
-    const did  = card.dataset.did;
-    const midx = parseInt(tab.dataset.midx);
-    switchModel(card, sid, did, midx);
-  });
-
-  // bind image click → lightbox
-  document.getElementById('series-content').addEventListener('click',e=>{
-    const card = e.target.closest('.design-card');
-    if(!card) return;
-
-    const dot = e.target.closest('.dc-img-dot');
-    if(dot){
-      switchModelImage(card, parseInt(dot.dataset.imgIdx, 10));
-      return;
-    }
-
-    const arrow = e.target.closest('.dc-img-arrow');
-    if(arrow){
-      const sid = card.dataset.sid;
-      const did = card.dataset.did;
-      const s = findSeriesItemById(sid);
-      const d = s?.designs.find(x=>x.id===did);
-      if(!d) return;
-      const midx = parseInt(card.dataset.activeIdx||0, 10);
-      const m = d.models[midx];
-      const imgs = getModelImages(m);
-      const cur = parseInt(card.dataset.activeImgIdx||0, 10);
-      const next = arrow.classList.contains('dc-img-next')
-        ? (cur + 1) % imgs.length
-        : (cur - 1 + imgs.length) % imgs.length;
-      card.dataset.activeImgIdx = next;
-      switchModelImage(card, next);
-      return;
-    }
-
-    const wrap = e.target.closest('.dc-img-wrap');
-    if(!wrap || e.target.closest('.dc-img-nav') || e.target.closest('.dc-img-arrow')) return;
-    openLB(
-      card.dataset.sid,
-      card.dataset.did,
-      parseInt(card.dataset.activeIdx||0, 10),
-      parseInt(card.dataset.activeImgIdx||0, 10)
-    );
-  });
+  // 注意：click 事件委派已移至 initSeriesContentEvents()，在 Promise.all 後只綁定一次
 
   // series tab active on click + scroll
   const secs  = document.querySelectorAll('.series-sec, .series-subsec');

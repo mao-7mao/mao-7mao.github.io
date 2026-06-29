@@ -1200,7 +1200,7 @@
         "id":"s4-2", "name":"蕾絲🤍", 
         "designs":[
           {
-            "id":"4-2-1", "title":"純色玩具熊-橘", "badge":"hot", "link":"",
+            "id":"4-2-1", "title":"純色玩具熊-橘", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/BwrRhtZdP5 "}] ,
             "models":[
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53_1.png"]}
             ]
