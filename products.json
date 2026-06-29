@@ -39,7 +39,7 @@
             "id":"1-1-4", "title":"彩色蠟筆+小雲朵「文字可更換」<br/><span style=\"font-size: 0.85em; color: #666;\">為收費貼紙需+12.5元</span>", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/2WtNVKP2SX0"}] ,
             "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-50-46.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-56-24.png"]},
-              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-09.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-56-42.png"]},
+              {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-09.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/0629.webp"]},
               {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-29.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/0623-4.webp"]},
               {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-53-17.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-59.png"]}
             ]
@@ -70,7 +70,7 @@
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-56-03.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-55-07.png"]},
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-55-43.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-54-05.png"]},
               {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-56-35.png"]},
-              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-57-05.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/0629-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/0629-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-57-05.png"]},
               {"name":"clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2025091013_49.png"]}
             ]
           },
@@ -636,14 +636,16 @@
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-25/2026030914_46_2.png"] }
         ]
           },
-      {
+    {
             "id":"2-1-26", "title":"印章jelly bear", "badge":"new", "link":"",
             "models":[
-            {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-6.webp"]},
-            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-10.webp"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0623-3.webp"]}
-        ]
+ {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-14.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-15.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-18.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-19.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-23.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-24.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-27.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-28.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-33.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-34.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-35.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-36.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-37.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-38.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-39.webp"]},
+ {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-13.webp"]},
+ {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-20.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-21.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-25.webp"] },
+ {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-32.webp"]},
+ {"name":"Clear",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-31.webp"]}        ]
           },
+  
           {
             "id":"2-1-27", "title":"印章小狗", "badge":"new", "link":"",
             "models":[

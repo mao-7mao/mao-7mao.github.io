@@ -28,6 +28,9 @@
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-3.webp"] },
+      { "name": "預覽", "imgs": [""] },
+      { "name": "實物", "imgs": [""] }
     ]
   }
+
+

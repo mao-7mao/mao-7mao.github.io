@@ -129,7 +129,7 @@ content="萬有狀態omnistate">
 
     <div class="sg-method-card">
       <h4>⭐️ 犀牛盾官網直郵</h4>
-      <div class="sg-route">台灣 → 大陸&香港&澳門・訂單滿500元（CNY）</div>
+      <div class="sg-route">台灣 → 大陸・訂單滿500元</div>
       <div class="sg-fee">官方 <b>免運</b></div>
       <ul>
         <li>可直接聯繫萬有狀態安排</li>
@@ -517,9 +517,11 @@ function designCardForFilter(s, d, si, di, targetModelIdx, categoryName) {
        </div>`;
        
   const imageNavHtml = modelImgs.length > 1 ? `
+      <button class="dc-img-arrow dc-img-prev" type="button" aria-label="上一張">&#8249;</button>
       <div class="dc-img-nav">
         ${modelImgs.map((_, i) => `<button class="dc-img-dot${i === 0 ? ' active' : ''}" type="button" data-img-idx="${i}" aria-label="第 ${i + 1} 張"></button>`).join('')}
-      </div>` : '';
+      </div>
+      <button class="dc-img-arrow dc-img-next" type="button" aria-label="下一張">&#8250;</button>` : '';
       
   // 生成型號分頁標籤，並將快篩選中的型號預設加上 .active 樣式
   const modelTabs = d.models.map((m, mi) => `
@@ -766,8 +768,27 @@ const content = s.subseries?.length ? s.subseries.map((sub,ssi)=>{
       return;
     }
 
+    const arrow = e.target.closest('.dc-img-arrow');
+    if(arrow){
+      const sid = card.dataset.sid;
+      const did = card.dataset.did;
+      const s = findSeriesItemById(sid);
+      const d = s?.designs.find(x=>x.id===did);
+      if(!d) return;
+      const midx = parseInt(card.dataset.activeIdx||0, 10);
+      const m = d.models[midx];
+      const imgs = getModelImages(m);
+      const cur = parseInt(card.dataset.activeImgIdx||0, 10);
+      const next = arrow.classList.contains('dc-img-next')
+        ? (cur + 1) % imgs.length
+        : (cur - 1 + imgs.length) % imgs.length;
+      card.dataset.activeImgIdx = next;
+      switchModelImage(card, next);
+      return;
+    }
+
     const wrap = e.target.closest('.dc-img-wrap');
-    if(!wrap || e.target.closest('.dc-img-nav')) return;
+    if(!wrap || e.target.closest('.dc-img-nav') || e.target.closest('.dc-img-arrow')) return;
     openLB(
       card.dataset.sid,
       card.dataset.did,
@@ -867,9 +888,11 @@ function renderTutuBoom(){
           圖片待填
          </div>`;
     const imageNavHtml = firstModelImgs.length > 1 ? `
+        <button class="dc-img-arrow dc-img-prev" type="button" aria-label="上一張">&#8249;</button>
         <div class="dc-img-nav">
           ${firstModelImgs.map((_,i)=>`<button class="dc-img-dot${i===0?' active':''}" type="button" data-img-idx="${i}" aria-label="第 ${i+1} 張"></button>`).join('')}
-        </div>` : '';
+        </div>
+        <button class="dc-img-arrow dc-img-next" type="button" aria-label="下一張">&#8250;</button>` : '';
     const modelTabs  = d.models.map((m,mi)=>`
       <button class="mtab${mi===0?' active':''}" data-midx="${mi}">${m.name}</button>`).join('');
     const linkHtml   = renderPlatformLinks(d.link);
@@ -935,8 +958,25 @@ function renderTutuBoom(){
       return;
     }
 
+    const arrow = e.target.closest('.dc-img-arrow');
+    if(arrow){
+      const d = TUTUBOOM_DESIGNS.find(x=>x.id===card.dataset.did);
+      if(!d) return;
+      const midx = parseInt(card.dataset.activeIdx||0, 10);
+      const m = d.models[midx];
+      if(!m) return;
+      const imgs = getModelImages(m);
+      const cur = parseInt(card.dataset.activeImgIdx||0, 10);
+      const next = arrow.classList.contains('dc-img-next')
+        ? (cur + 1) % imgs.length
+        : (cur - 1 + imgs.length) % imgs.length;
+      card.dataset.activeImgIdx = next;
+      renderImagePreview(card, d, m, next);
+      return;
+    }
+
     const wrap = e.target.closest('.dc-img-wrap');
-    if(!wrap || e.target.closest('.dc-img-nav')) return;
+    if(!wrap || e.target.closest('.dc-img-nav') || e.target.closest('.dc-img-arrow')) return;
     const d = TUTUBOOM_DESIGNS.find(x=>x.id===card.dataset.did);
     const midx = parseInt(card.dataset.activeIdx||0, 10);
     const imgidx = parseInt(card.dataset.activeImgIdx||0, 10);
@@ -1009,6 +1049,8 @@ function renderImageNav(card,m,activeImgIdx=0){
   const wrap = card.querySelector('.dc-img-wrap');
   if(!wrap) return;
   const imgs = getModelImages(m);
+  // remove old arrows & nav
+  wrap.querySelectorAll('.dc-img-arrow').forEach(el=>el.remove());
   let nav = wrap.querySelector('.dc-img-nav');
   if(imgs.length <= 1){
     if(nav) nav.remove();
@@ -1022,6 +1064,23 @@ function renderImageNav(card,m,activeImgIdx=0){
     nav.className = 'dc-img-nav';
     nav.innerHTML = html;
     wrap.appendChild(nav);
+  }
+  // add arrows if not already present
+  if(!wrap.querySelector('.dc-img-prev')){
+    const prev = document.createElement('button');
+    prev.className = 'dc-img-arrow dc-img-prev';
+    prev.type = 'button';
+    prev.setAttribute('aria-label','上一張');
+    prev.innerHTML = '&#8249;';
+    wrap.appendChild(prev);
+  }
+  if(!wrap.querySelector('.dc-img-next')){
+    const next = document.createElement('button');
+    next.className = 'dc-img-arrow dc-img-next';
+    next.type = 'button';
+    next.setAttribute('aria-label','下一張');
+    next.innerHTML = '&#8250;';
+    wrap.appendChild(next);
   }
 }
 function renderImagePreview(card,d,m,imgIdx=0){
@@ -1076,9 +1135,11 @@ function designCard(s,d,si,di){
         圖片待填
        </div>`;
   const imageNavHtml = firstModelImgs.length > 1 ? `
+      <button class="dc-img-arrow dc-img-prev" type="button" aria-label="上一張">&#8249;</button>
       <div class="dc-img-nav">
         ${firstModelImgs.map((_,i)=>`<button class="dc-img-dot${i===0?' active':''}" type="button" data-img-idx="${i}" aria-label="第 ${i+1} 張"></button>`).join('')}
-      </div>` : '';
+      </div>
+      <button class="dc-img-arrow dc-img-next" type="button" aria-label="下一張">&#8250;</button>` : '';
   const modelTabs  = d.models.map((m,mi)=>`
     <button class="mtab${mi===0?' active':''}" data-midx="${mi}">${m.name}</button>`).join('');
 const linkHtml = renderPlatformLinks(d.link);

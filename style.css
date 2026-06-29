@@ -512,3 +512,10 @@ footer strong{color:var(--text)}
     .dc-layer-tag{position:absolute;bottom:8px;left:8px;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;pointer-events:none;letter-spacing:.04em;}
     .dc-layer-single{background:#e8f3f8;color:#3a7a9b;}
     .dc-layer-double{background:#f0e8f8;color:#7a4a9b;}
+
+
+    .dc-img-nav { display:flex; flex-wrap:wrap; justify-content:center; gap:4px; padding:4px 6px; max-width:80%; margin:0 auto; }
+.dc-img-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.75); border:none; border-radius:50%; width:28px; height:28px; font-size:20px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#444; backdrop-filter:blur(4px); transition:background .15s; z-index:5; padding:0; }
+.dc-img-arrow:hover { background:rgba(255,255,255,.95); }
+.dc-img-prev { left:6px; }
+.dc-img-next { right:6px; }
