@@ -181,5 +181,46 @@
     "models": [
       { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-3.webp"] }
     ]
-  }
+  },
+ {
+    "id": "tb-18",
+    "title": "蜜瓜冰飲",
+    "layer": "雙層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-4.webp"] },
+    ]
+},
+ {
+    "id": "tb-19",
+    "title": "冰藍冰飲",
+    "layer": "雙層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-3.webp"] },
+    ]
+},
+ {
+    "id": "tb-20",
+    "title": "草莓冰飲",
+    "layer": "雙層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-1.webp"] },
+    ]
+},
+ {
+    "id": "tb-21",
+    "title": "芒果冰飲",
+    "layer": "雙層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-2.webp"] },
+    ]
+}
+
 ]
