@@ -158,7 +158,8 @@
   "badge":"new",
   "link":"",
   "models":[
-    {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"]}
+    {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"]},
+    {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-13.webp"]}
   ]
 },
   {
@@ -221,6 +222,17 @@
     "models": [
       { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-2.webp"] }
     ]
-}
+},
+
+      {
+    "id": "tb-22",
+    "title": "白色鈴蘭",
+    "layer": "單層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-6.webp"] }
+    ]
+  }
 
 ]

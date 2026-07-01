@@ -8,18 +8,9 @@
  {"name":"ClearX",   "imgs":[""]},
  {"name":"Clear",   "imgs":[""]}
   ]
-},
+}
 
-    {
-    "id": "tb-",
-    "title": "",
-    "layer": "雙層",
-    "badge": "new",
-    "link": "",
-    "models": [
-      { "name": "預覽", "imgs": [""] },
-      { "name": "實物", "imgs": [""] }
-    ]
-  }
+
+
 
 
