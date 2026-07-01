@@ -668,10 +668,7 @@
 "id":"2-1-29", "title":"軟糖多多", "badge":"new", "link":"",
  "models":[
  {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-12.webp"]},
- {"name":"AirX",     "imgs":[""]},
- {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-6.webp"] },
- {"name":"ClearX",   "imgs":[""]},
- {"name":"Clear",   "imgs":[""]}
+ {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-6.webp"] }
   ]
 },
 
@@ -681,9 +678,7 @@
  "models":[
  {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-10.webp"]},
  {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-1.webp"]},
- {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-2.webp"] },
- {"name":"ClearX",   "imgs":[""]},
- {"name":"Clear",   "imgs":[""]}
+ {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-2.webp"] }
   ]
 }
         ]
