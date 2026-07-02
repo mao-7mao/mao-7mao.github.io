@@ -16,3 +16,10 @@ images/
 
 # temp
 node_modules//Users/hsiaomiao/Documents/Github/Showcasse/images/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
