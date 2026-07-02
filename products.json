@@ -1329,7 +1329,7 @@
             "models":[
             {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-7.webp"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-4.webp"]},
-            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-6.webp"] },
+            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0702-1.webp"] },
             {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-5.webp"]}
         ]
           },
