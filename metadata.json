@@ -1,0 +1,6 @@
+{
+  "name": "萬有狀態 Omnistate",
+  "description": "萬有狀態客製化款手機殼 Custonized Phone Case",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
