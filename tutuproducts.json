@@ -146,9 +146,10 @@
   "title":"印章小狗",
   "layer": "雙層",
   "badge":"new",
-  "link":"",
+   "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/7dWqtf7Swqq "}] ,
   "models":[
-    {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-3.webp"]}
+    {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-3.webp"]},
+    {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0702-2.webp"]}
   ]
 },
 {
@@ -156,7 +157,7 @@
   "title":"小熊軟糖",
   "layer": "單層",
   "badge":"new",
-  "link":"",
+   "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/9ZSGsDKDPBV"}] ,
   "models":[
     {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"]},
     {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-13.webp"]}
