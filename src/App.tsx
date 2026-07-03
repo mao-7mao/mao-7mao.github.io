@@ -26,6 +26,28 @@ export default function App() {
     price: '',
   });
 
+  // Prevent Right Click on Images
+useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    const handleContextMenu = (e: MouseEvent) => {
+      if (e.target instanceof HTMLImageElement) {
+        e.preventDefault(); // 當目標是圖片時，防止右鍵菜單彈出
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('contextmenu', handleContextMenu);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
+
   // Floating Back-to-Top State
   const [showScrollTop, setShowScrollTop] = useState(false);
 

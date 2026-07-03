@@ -8,7 +8,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "layer": "單層",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/000.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/000.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8071.webp"] }
     ]
   },
@@ -16,10 +16,10 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "id": "tb-2",
     "title": "絲帶花花",
     "layer": "雙層",
-    "badge": "",
+    "badge": "hot",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1.webp", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1.webp", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/IMG_2590.webp"] }
     ]
   },
@@ -30,7 +30,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/7.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/7.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8048.webp"] }
     ]
   },
@@ -41,7 +41,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7819.webp"] }
     ]
   },
@@ -52,7 +52,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "layer": "雙層",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框2.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7912.webp"] }
     ]
   },
@@ -63,7 +63,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 白色框1.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 白色框1.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8477.webp"] }
     ]
   },
@@ -74,7 +74,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A6278.webp"] }
     ]
   },
@@ -85,7 +85,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框2.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8431.webp"] }
     ]
   },
@@ -96,7 +96,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框9.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框9.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8057.webp"] }
     ]
   },
@@ -107,7 +107,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/白色爱心渐变.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/白色爱心渐变.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7819.webp"] }
     ]
   },
@@ -118,7 +118,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/藍色底色像素愛心.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/藍色底色像素愛心.webp"] }
     ]
   },
   {
@@ -128,7 +128,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2103.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2103.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2131.webp"] }
     ]
   },
@@ -139,7 +139,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0612-2.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0612-2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0612-1.webp"] }
     ]
   },
@@ -150,7 +150,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   "badge":"new",
    "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/7dWqtf7Swqq "}] ,
   "models":[
-    {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-3.webp"]},
+    {"name":"分離殼預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-3.webp"]},
     {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0702-2.webp"]}
   ]
 },
@@ -161,7 +161,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   "badge":"new",
    "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/9ZSGsDKDPBV"}] ,
   "models":[
-    {"name":"預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"]},
+    {"name":"分離殼預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"]},
     {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-13.webp"]}
   ]
 },
@@ -172,7 +172,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/71GGTL6dhP4 "}] ,
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-2.webp"] },
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-1.webp"] }
     ]
   },
@@ -183,7 +183,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-3.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-3.webp"] }
     ]
   },
  {
@@ -193,7 +193,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-4.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-4.webp"] }
     ]
 },
  {
@@ -203,7 +203,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-3.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-3.webp"] }
     ]
 },
  {
@@ -213,7 +213,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-1.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-1.webp"] }
     ]
 },
  {
@@ -223,7 +223,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-2.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0630-2.webp"] }
     ]
 },
 
@@ -234,8 +234,19 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-6.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-6.webp"] }
     ]
+  },
+  {
+    "id": "tb-23",
+    "title": "印章小狗",
+    "layer": "單層",
+    "badge": "new",
+    "link": "",
+    "models": [
+      { "name": "一體殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0704-8.webp"] }
+    ]
+
   }
 
 ]

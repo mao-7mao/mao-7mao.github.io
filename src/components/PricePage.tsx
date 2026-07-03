@@ -125,7 +125,7 @@ export default function PricePage() {
             </span>
             <h4 className="font-sans font-semibold text-sm text-brand-text mb-2">僅購買萬有商品</h4>
             <ol className="list-decimal list-inside text-xs text-brand-text/80 space-y-1.5 leading-relaxed">
-              <li>填寫集運委託登記表單</li>
+              <li>填寫集運委託登記表單（萬有狀態商品滿 <b>225元</b> 即可安排下單，未滿需等待湊單滿額後下單🙇）</li>
               <li>私訊萬有狀態支付商品款項</li>
               <li>私訊Jimmibobo支付運費並通知留意包裹</li>
               <li>商品寄達台灣後由jimmibobo代收並拼郵，安排安排寄往大陸</li>
@@ -159,7 +159,7 @@ export default function PricePage() {
               <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">拼郵 (默認)</h5>
               <p className="text-[11px] text-brand-muted mb-2">代收、集運、大陸段轉寄</p>
               <div className="font-mono text-xs font-semibold text-black mb-2">約 ¥25 元 / kg</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal">適合不急件、想和Jimmibobo其他東西一同帶回的顧客。</p>
+              <p className="text-[11px] text-brand-text/70 leading-normal">可與 Jimmibobo （僅ZFB收款）其他委託商品合包寄送，合包寄送時萬有狀態商品包裹需控制在300g以內</p>
             </div>
 
             <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">

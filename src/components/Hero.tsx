@@ -71,7 +71,7 @@ export default function Hero() {
             className="group flex items-center gap-2 bg-black text-white hover:scale-[1.02] transition-transform font-mono text-xs tracking-wider uppercase px-6 py-4 rounded-full shadow-md font-semibold"
           >
             <Compass className="h-4 w-4 group-hover:rotate-45 transition-transform" />
-            <span>單獨瀏覽區（可添加配件）</span>
+            <span>單獨瀏覽區（可模擬添加配件瀏覽）</span>
           </button>
 
           <button

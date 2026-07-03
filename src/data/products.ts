@@ -760,24 +760,24 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         ]
       },
   {
-        "id":"s2-4", "name":"Hey there:)", "nameEm":"",
+        "id":"s2-4", "name":"Hey there:)", "nameEm":"🔔本系列請聯繫Hey there",
         "desc":"🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款",
         "designs":[
           {
-            "id":"2-4-1", "title":"ht6腳咪-🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款", "badge":"", "link":"",
+            "id":"2-4-1", "title":"ht6腳咪", "desc":"","badge":"", "link":"",
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪01.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪02.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪04.jpg"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪03.jpg"]}
             ]
           },
             {
-              "id":"2-4-2", "title":"ht四宮格🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款", "badge":"", "link":"",
+              "id":"2-4-2", "title":"ht四宮格", "desc":"","badge":"", "link":"",
               "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-2/四宮格.jpg"]}
             ]
   },
             {
-              "id":"2-4-3", "title":"ht奶牛貓🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款", "badge":"", "link":"",
+              "id":"2-4-3", "title":"ht奶牛貓", "desc":"","badge":"", "link":"",
               "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓05.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓02.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/s2-4-3/奶牛貓01.jpg"]},
               {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-3/奶牛貓03.jpg"]},
@@ -785,14 +785,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
             },
             {
-              "id":"2-4-4", "title":"ht點點布丁狗🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款", "badge":"", "link":"",
+              "id":"2-4-4", "title":"ht點點布丁狗", "desc":"","badge":"", "link":"",
               "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗03.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗01.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗02.jpg"]},
               {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-4/點點布丁狗04.jpg"]}
             ]
             },
             {
-              "id":"2-4-5", "title":"Pei鬼鬼🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款", "badge":"", "link":"",
+              "id":"2-4-5", "title":"Pei鬼鬼", "desc":"","badge":"", "link":"",
               "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼01.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼03.jpg","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼09.jpg"]},
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-5/Pei鬼鬼02.jpg"]},
@@ -1433,8 +1433,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"5-2-1", "title":"紙膠帶-系列", "badge":"", "link":"",
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.40.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.40.39 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.40.54 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/Screenshot 2026-06-01 at 1.41.13 AM.png"]},            
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/2025091111_06.png"] }
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/0704-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/0704-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/0704-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/0704-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-1/0704-7.webp"]},            
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0704-8.webp"] }
         ]
           },
           {
@@ -1790,31 +1790,31 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
            {
             "id":"8-1-airx", "title":"刺繡玩具熊淺色AirX", "badge":"", "link":"",
             "models":[
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32_1.png"]},  
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32.png"]},        
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_35_2.png"]},  
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_35.png"]},   
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_41_1.png"]},  
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_41.png"]},        
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_44_4.png"]},  
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026013121_02.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026013121_02_1.png"]}          
+            {"name":"🍋🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32_1.png"]},  
+            {"name":"🍋🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32.png"]},        
+            {"name":"🍋🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_35_2.png"]},  
+            {"name":"🍋🧸-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_35.png"]},   
+            {"name":"🍋🧸-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_41_1.png"]},  
+            {"name":"🍋🧸-6",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_41.png"]},        
+            {"name":"🍋🧸-7",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_44_4.png"]},  
+            {"name":"🍋🧸-8",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026013121_02.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026013121_02_1.png"]}          
             ]
           },
               {
             "id":"8-1-modnx", "title":"刺繡玩具熊淺色ModNX", "badge":"", "link":"",
             "models":[ 
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031122_19_1.png"]},  
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026013121_01_1.png"]},        
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031209_29_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031209_31.png"]},  
-            {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031215_02.png"]}
+            {"name":"🍋🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031122_19_1.png"]},  
+            {"name":"🍋🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026013121_01_1.png"]},        
+            {"name":"🍋🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031209_29_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031209_31.png"]},  
+            {"name":"🍋🧸-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-modnx/2026031２１５_０２.png"]}
 
             ]
           },
             {
               "id":"8-1-solidx", "title":"刺繡玩具熊淺色solidx", "badge":"", "link":"",
               "models":[
-              {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.54.55 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.55.19 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.55.26 AM.png"]},  
-              {"name":"🍋🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.56.59 AM.png"]}           
+              {"name":"🍋🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.54.55 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.55.19 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.55.26 AM.png"]},  
+              {"name":"🍋🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-solidx/Screenshot 2026-06-01 at 9.56.59 AM.png"]}           
               ]
             }
         ]
@@ -1827,45 +1827,45 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
               {"platform":"xhs", "url":"http://xhslink.com/o/9bIjv1nRWKn"}
             ],
             "models":[
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112820_18.png"]},   
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_01.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_03_1.png"]},        
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_04_1.png"]},  
-           {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_03.png"]},   
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_05.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_04_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_04.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026010920_42_1.png"]},        
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026013121_06.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026031122_18.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2026031122_17.png"]}   
+            {"name":"🍊🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112820_18.png"]},   
+            {"name":"🍊🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_01.png"]},  
+            {"name":"🍊🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_03_1.png"]},        
+            {"name":"🍊🧸-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112821_04_1.png"]},  
+           {"name":"🍊🧸-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025122923_03.png"]},   
+            {"name":"🍊🧸-6",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-２-airx/２０２５１２２９２３_０５.png","https://pub-ee3a4255fbd840f five 9cf80５7２３８０４５a５.r２.dev/８-２-airx/２０２５１２２９２３_０４_１.png","https://pub-ee3a4₂.dev/８-２-airx/２０２５１２２９２３_０４.png"]},  
+            {"name":"🍊🧸-7",         "imgs":["https://pub-ee3a4₂.dev/８-２-airx/２０２６０１０９２０_４２_１.png"]},        
+            {"name":"🍊🧸-８",         "imgs":["https://pub-ee3a4₂.dev/８-２-airx/２０２６０１３１２１_０６.png"]},  
+            {"name":"🍊🧸-９",         "imgs":["https://pub-ee3a4₂.dev/８-２-airx/２０２６０３１１２２_１８.png","https://pub-ee3a4₂.dev/８-２-airx/２０₂６０３１１₂₂_₁７.png"]}   
              ]
           },
 
           {
             "id":"8-2-solidx", "title":"刺繡玩具熊深色solidx", "badge":"", "link":"",
             "models":[
-              {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0617-23.webp"]},
-           {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025122923_06.png"]},        
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2026013121_07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2026013121_06_1.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025112821_06.png"]},   
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025112821_05_1.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/Screenshot 2026-06-01 at 10.12.36 AM.png"]},
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/Screenshot 2026-06-01 at 10.12.36 AM.png"]},
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0617-15.webp"]}
+              {"name":"🍊🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0617-23.webp"]},
+           {"name":"🍊🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025122923_06.png"]},        
+            {"name":"🍊🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2026013121_07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2026013121_06_1.png"]},  
+            {"name":"🍊🧸-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025112821_06.png"]},   
+            {"name":"🍊🧸-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/2025112821_05_1.png"]},  
+            {"name":"🍊🧸-6",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r２.dev/８-２-solidx/Screenshot ２０２６－０６－０１ at １０.１２.３６ AM.png"]},
+            {"name":"🍊🧸-7",         "imgs":["https://pub-ee3a4₂.dev/８-２-solidx/Screenshot ２０２６－０６－０１ at １０.１２.３６ AM.png"]},
+            {"name":"🍊🧸-8",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0617-15.webp"]}
             ]
           },
           {
             "id":"8-2-modnx", "title":"刺繡玩具熊深色ModNX", "badge":"", "link":"",
             "models":[
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_05.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_04.png"]},        
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025122923_07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025122923_06_3.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025-09-11-1.png"]},   
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025091110_46.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025091110_48.png"]},        
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_00_1.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_00.png"]},   
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_02.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_03.png"]},        
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2026013121_07_1.png"]},  
-            {"name":"🍊🧸",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2026031209_29.png"]}
+            {"name":"🍊🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_05.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_04.png"]},        
+            {"name":"🍊🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025122923_07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025122923_06_3.png"]},  
+            {"name":"🍊🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r２.dev/８-２-modnx/２０２５－１１－２８ at ２１.０４.３６ AM.png"]},   
+            {"name":"🍊🧸-4",         "imgs":["https://pub-ee3a4₂.dev/８-２-modnx/２０２５０９１１１０_４６.png"]},  
+            {"name":"🍊🧸-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025091110_48.png"]},        
+            {"name":"🍊🧸-6",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_00_1.png"]},  
+            {"name":"🍊🧸-7",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_00.png"]},   
+            {"name":"🍊🧸-8",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_02.png"]},  
+            {"name":"🍊🧸-9",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/2025112821_03.png"]},        
+            {"name":"🍊🧸-10",        "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r２.dev/８-２-modnx/２０２６－０１－３１ at ２１.０７.３６ AM.png"]},  
+            {"name":"🍊🧸-11",        "imgs":["https://pub-ee3a4₂.dev/８-２-modnx/２０２６－０３－１２ at ０９.２９.３６ AM.png"]}
             ]
           }
         ]
@@ -1876,43 +1876,43 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"8-3-airx", "title":"刺繡兔兔白色AirX", "badge":"", "link":"",
             "models":[
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026031122_00.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026031122_15.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026013110_26.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026013110_28.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_06_3.png"]},        
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_06_5.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_07_1.png"]},   
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_19.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_22.png"]},        
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026030522_50.png"]},       
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_07.png"]}  
+            {"name":"🤍🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026031122_00.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026031122_15.png"]},  
+            {"name":"🤍🐰-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026013110_26.png"]},  
+            {"name":"🤍🐰-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026013110_28.png"]},  
+            {"name":"🤍🐰-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_06_3.png"]},        
+            {"name":"🤍🐰-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-airx/2026020620_06_5.png"]},  
+            {"name":"🤍🐰-6",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r２.dev/８-２-modnx/２０２６－０２－０６ at ２０.０７.０１ AM.png"]},   
+            {"name":"🤍🐰-7",         "imgs":["https://pub-ee3a4₂.dev/８-２-modnx/２０２６－０２－０６ at ２０.１９.００ AM.png"]},  
+            {"name":"🤍🐰-8",         "imgs":["https://pub-ee3a4₂.dev/８-２-modnx/２０２６－０２－０６ at ２０.２２.００ AM.png"]},        
+            {"name":"🤍🐰-9",         "imgs":["https://pub-ee3a4₂.dev/８-２-modnx/２０２６－０３－０５ at ２２.５０.００ AM.png"]},       
+            {"name":"🤍🐰-10",        "imgs":["https://pub-ee3a4₂.dev/８-２-modnx/２０２６－０２－０６ at ２₀.₀７.₀₀ AM.png"]}  
           ]
           },
           {
         "id":"8-3-solidx", "title":"刺繡兔兔白色solidx", "badge":"", "link":"",
             "models":[
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.19.53 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.20.05 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.20.10 AM.png"]},
-               {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.32.42 AM.png"]}
+            {"name":"🤍🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.19.53 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.20.05 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.20.10 AM.png"]},
+               {"name":"🤍🐰-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/Screenshot 2026-06-01 at 10.32.42 AM.png"]}
             ]
           }, 
        {
             "id":"8-3-modnx", "title":"刺繡兔兔白色ModNX", "badge":"", "link":"",
             "models":[
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_03.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026013023_16.png"]},        
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_05_1.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_05.png"]},   
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06_1.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06_2.png"]},        
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026030313_20.png"]},  
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026031121_58_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026031121_58.png"]}  
+            {"name":"🤍🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_03.png"]},  
+            {"name":"🤍🐰-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026013023_16.png"]},        
+            {"name":"🤍🐰-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_05_1.png"]},  
+            {"name":"🤍🐰-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_05.png"]},   
+            {"name":"🤍🐰-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06_1.png"]},  
+            {"name":"🤍🐰-6",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06_2.png"]},        
+            {"name":"🤍🐰-7",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026020620_06.png"]},  
+            {"name":"🤍🐰-8",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/202603₀₃₁₃_₂₀.png"]},  
+            {"name":"🤍🐰-9",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026031121_58_1.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-modnx/2026031121_58.png"]}  
             ]
           },   
        {
             "id":"8-3-clear", "title":"刺繡兔兔白色Clear", "badge":"", "link":"",
             "models":[
-            {"name":"🤍🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-clear/2026013023_16_1.png"]}  
+            {"name":"🤍🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-clear/2026013023_16_1.png"]}  
                     ]
                  }
               ]
@@ -1924,26 +1924,26 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
        {
             "id":"8-4-airx", "title":"刺繡兔兔灰色AirX", "badge":"", "link":"",
             "models":[
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026013110_27_1.png"]},  
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026020620_18_1.png"]},        
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026020620_18.png"]},  
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026030522_32.png"]},   
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026030522_34.png"]}
+            {"name":"🩶🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026013110_27_1.png"]},  
+            {"name":"🩶🐰-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026020620_18_1.png"]},        
+            {"name":"🩶🐰-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026020620_18.png"]},  
+            {"name":"🩶🐰-4",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026030522_32.png"]},   
+            {"name":"🩶🐰-5",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/2026030522_34.png"]}
             ]
           },
      {
             "id":"8-4-solidx", "title":"刺繡兔兔灰色solidx", "badge":"", "link":"",
             "models":[
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/Screenshot 2026-06-01 at 10.31.30 AM.png"]},
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/Screenshot 2026-06-01 at 10.31.11 AM.png"]}
+            {"name":"🩶🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/Screenshot 2026-06-01 at 10.31.30 AM.png"]},
+            {"name":"🩶🐰-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/Screenshot 2026-06-01 at 10.31.11 AM.png"]}
             ]
           },
      {
             "id":"8-4-modnx", "title":"刺繡兔兔灰色ModNX", "badge":"", "link":"",
             "models":[
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026013023_12_1.png"]},  
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026013121_00_1.png"]},        
-            {"name":"🩶🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026030213_12.png"]}          
+            {"name":"🩶🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026013023_12_1.png"]},  
+            {"name":"🩶🐰-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026013121_00_1.png"]},        
+            {"name":"🩶🐰-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/2026030213_12.png"]}          
             ]
           }
         ]
@@ -1954,19 +1954,19 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
        {
             "id":"8-5-airx", "title":"刺繡兔兔黃色AirX", "badge":"", "link":"",
             "models":[
-            {"name":"🟡🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-airx/2026013023_14.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-airx/2026013023_14_1.png"]}
+            {"name":"🟡🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-airx/2026013023_14.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-airx/2026013023_14_1.png"]}
             ]
           },
        {
-            "id":"8-5-solidx", "title":"刺繡兔兔黃色solidx", "badge":"", "link":"",
+            "id":"8-5-solidx", "title":"刺繡兔兔黃色SolidX", "badge":"", "link":"",
             "models":[
-            {"name":"🟡🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/Screenshot 2026-06-01 at 10.36.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/Screenshot 2026-06-01 at 10.36.01 AM.png"]}         
+            {"name":"🟡🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/Screenshot 2026-06-01 at 10.36.09 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/Screenshot 2026-06-01 at 10.36.01 AM.png"]}         
             ]
           }, 
        {
             "id":"8-5-modnx", "title":"刺繡兔兔黃色ModNX", "badge":"", "link":"",
             "models":[
-            {"name":"🟡🐰",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/2026013023_15.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/2026013023_13.png"]}         
+            {"name":"🟡🐰-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/2026013023_15.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/2026013023_13.png"]}         
             ]
           } 
         ]
@@ -1987,13 +1987,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             "models":[
            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.07.04 AM.png"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.07.11 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/2026031018_41_3.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/2026031018_41_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/2026031018_41_1.png"]},
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.06.56 AM.png"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/0703-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/0703-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-1/Screenshot 2026-06-01 at 11.06.56 AM.png"]}
             ]
           },
               {
             "id":"9-1-2", "title":"透明背景", "badge":"hot", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/9B6OGkeSa   "}] ,
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.46 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.34 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.40 AM.png"]},            
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.46 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.34 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.40 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/0703-1.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-1-2/Screenshot 2026-06-01 at 11.06.25 AM.png"]}
             ]
           },

@@ -68,3 +68,12 @@
     transform: translateY(0);
   }
 }
+
+/* Protection to prevent right click / long press saving on mobile and desktop */
+img {
+  -webkit-touch-callout: none !important; /* Disable iOS Safari long press menu */
+  -webkit-user-select: none !important; /* Disable text/image selection */
+  user-select: none !important;
+  -webkit-user-drag: none !important; /* Disable dragging */
+}
+

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx React.createElement */
 import React, { useState } from 'react';
-import { Copy, Check, MessageCircle, ArrowRight, ShieldCheck, X } from 'lucide-react';
+import { Copy, Check, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface OrderInquiryModalProps {
@@ -10,6 +10,7 @@ interface OrderInquiryModalProps {
   selectedDesign: {
     id: string;
     title: string;
+    layer?: string;
   } | null;
   selectedCaseType: string;
   totalPrice: string;
@@ -24,12 +25,13 @@ export default function OrderInquiryModal({
 }: OrderInquiryModalProps) {
   const [copiedText, setCopiedText] = useState<'wechat' | 'wechat2' | 'line' | 'order' | null>(null);
 
+  const isTutuBoom = selectedDesign?.id.startsWith('tb-') || !!selectedDesign?.layer || selectedCaseType.includes('TutuBoom');
+
   const getDesignNote = (title?: string) => {
     if (!title) return '';
     const parts = title.split(/<br\s*\/?>/i);
     return parts.length > 1 ? parts.slice(1).join('<br/>').trim() : '';
   };
-  const designNote = getDesignNote(selectedDesign?.title);
 
   const orderSummaryText = `我想要詢問客製化手機殼：
 - 款號：${selectedDesign?.id || '未選擇'}
@@ -62,7 +64,7 @@ export default function OrderInquiryModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-brand-bg p-6 shadow-2xl border border-brand-border z-10"
+            className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-2xl bg-brand-bg p-5 sm:p-6 shadow-2xl border border-brand-border z-10 no-scrollbar"
           >
             {/* Close Button */}
             <button
@@ -134,60 +136,100 @@ export default function OrderInquiryModal({
               <h4 className="font-serif font-semibold text-sm text-brand-text border-l-2 border-brand-accent pl-2">
                 簡易下單流程
               </h4>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <div className="p-3 bg-brand-card rounded-lg border border-brand-border">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-accent text-white text-[10px] font-mono">
-                      1
+              {isTutuBoom ? (
+                <div className="p-4 bg-brand-card rounded-xl border border-brand-border space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-accent text-white text-[10px] font-mono font-bold animate-pulse">
+                      ✦
                     </span>
-                    <span className="font-medium">私訊萬有狀態</span>
+                    <span className="font-semibold text-brand-text text-[13px]">私訊萬有狀態下單 (TutuBoom da)</span>
                   </div>
                   <p className="text-brand-muted text-[11px] leading-relaxed">
-                    提供複製的規格與截圖，完成商品款項支付。
+                    <b>TutuBoom 系列價格已含大陸段運費（免集運）</b>！請點擊上方「一鍵複製規格資訊」並截圖本預覽畫面，直接私訊萬有狀態客服，即可輕鬆完成商品款項支付與寄送登記。
                   </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-1.5 rounded border border-brand-border">
-                      <span className="font-mono text-[10px] select-all font-semibold">mussessein-7</span>
+                  <div className="space-y-2 mt-2">
+                    <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-2 rounded-lg border border-brand-border">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] text-brand-muted">WeChat客服：</span>
+                        <span className="font-mono text-xs select-all font-semibold text-brand-accent">mussessein-7</span>
+                      </div>
                       <button
                         onClick={() => copyToClipboard('mussessein-7', 'wechat')}
-                        className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1"
+                        className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1 font-semibold border border-brand-accent/20 px-2 py-0.5 rounded bg-white/50 transition-all hover:scale-[1.02]"
                       >
                         {copiedText === 'wechat' ? '已複製' : '複製WeChat'}
                       </button>
                     </div>
-                    <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-1.5 rounded border border-brand-border">
-                      <span className="font-mono text-[10px] select-all font-semibold">esmusssein-</span>
+                    <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-2 rounded-lg border border-brand-border">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] text-brand-muted">Line 客服：</span>
+                        <span className="font-mono text-xs select-all font-semibold text-brand-accent">esmusssein-</span>
+                      </div>
                       <button
                         onClick={() => copyToClipboard('esmusssein-', 'line')}
-                        className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1"
+                        className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1 font-semibold border border-brand-accent/20 px-2 py-0.5 rounded bg-white/50 transition-all hover:scale-[1.02]"
                       >
-                        {copiedText === 'line' ? '已複製' : '複製Line ID'}
+                        {copiedText === 'line' ? '已複製' : '複製Line'}
                       </button>
                     </div>
                   </div>
                 </div>
-
-                <div className="p-3 bg-brand-card rounded-lg border border-brand-border">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-gold text-white text-[10px] font-mono">
-                      2
-                    </span>
-                    <span className="font-medium">私訊Jimmibobo</span>
+              ) : (
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="p-3 bg-brand-card rounded-lg border border-brand-border">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-accent text-white text-[10px] font-mono">
+                        1
+                      </span>
+                      <span className="font-medium">私訊萬有狀態</span>
+                    </div>
+                    <p className="text-brand-muted text-[11px] leading-relaxed">
+                      提供複製的規格與截圖，完成商品款項支付。
+                    </p>
+                    <div className="space-y-2 mt-2">
+                      <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-1.5 rounded border border-brand-border">
+                        <span className="font-mono text-[10px] select-all font-semibold">mussessein-7</span>
+                        <button
+                          onClick={() => copyToClipboard('mussessein-7', 'wechat')}
+                          className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1"
+                        >
+                          {copiedText === 'wechat' ? '已複製' : '複製WeChat'}
+                        </button>
+                      </div>
+                      <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-1.5 rounded border border-brand-border">
+                        <span className="font-mono text-[10px] select-all font-semibold">esmusssein-</span>
+                        <button
+                          onClick={() => copyToClipboard('esmusssein-', 'line')}
+                          className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1"
+                        >
+                          {copiedText === 'line' ? '已複製' : '複製Line'}
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-brand-muted text-[11px] leading-relaxed">
-                    私訊 Jimmibobo 支付運費，合併其他委託寄送。
-                  </p>
-                  <div className="mt-2.5 flex items-center justify-between gap-1.5 bg-brand-bg p-1.5 rounded border border-brand-border">
-                    <span className="font-mono text-[10px] select-all font-semibold">jimmibobotw</span>
-                    <button
-                      onClick={() => copyToClipboard('jimmibobotw', 'wechat2')}
-                      className="text-brand-gold hover:text-brand-text text-[10px] flex items-center gap-1"
-                    >
-                      {copiedText === 'wechat2' ? '已複製' : '複製WeChat'}
-                    </button>
+
+                  <div className="p-3 bg-brand-card rounded-lg border border-brand-border">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-gold text-white text-[10px] font-mono">
+                        2
+                      </span>
+                      <span className="font-medium">私訊Jimmibobo</span>
+                    </div>
+                    <p className="text-brand-muted text-[11px] leading-relaxed">
+                      私訊 Jimmibobo 支付運費，委託寄送，也可合併其他委託。
+                    </p>
+                    <div className="mt-2.5 flex items-center justify-between gap-1.5 bg-brand-bg p-1.5 rounded border border-brand-border">
+                      <span className="font-mono text-[10px] select-all font-semibold">jimmibobotw</span>
+                      <button
+                        onClick={() => copyToClipboard('jimmibobotw', 'wechat2')}
+                        className="text-brand-gold hover:text-brand-text text-[10px] flex items-center gap-1"
+                      >
+                        {copiedText === 'wechat2' ? '已複製' : '複製WeChat'}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Bottom Actions */}

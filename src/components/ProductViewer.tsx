@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CASE_TYPES, CaseType, Design } from '../data/productsData';
+import { PRODUCTS_DATA } from '../data/products';
 import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -22,16 +23,8 @@ const CASE_TYPE_DISPLAY_NAMES: Record<string, { label: string; desc: string }> =
   'ClearX': { label: 'ClearX 抗黃透明', desc: '裸機感抗黃防摔' },
   'Clear': { label: 'Clear 抗黃防摔', desc: '終結黃化，終身保固' },
   'SolidSuit': { label: 'SolidSuit 經典防摔', desc: '超越軍規，耐用防摔' },
-  '預覽': { label: '預覽圖款', desc: '高精度設計預覽效果' },
-  '實物': { label: '實物圖款', desc: '實品實拍，質感看得見' },
-};
-
-const extractDesignTitleNote = (title: string) => {
-  const parts = title.split(/<br\s*\/?>/i);
-  return {
-    baseTitle: parts[0].replace(/<[^>]+>/g, '').trim(),
-    noteHtml: parts.slice(1).join('<br/>').trim(),
-  };
+  '預覽': { label: '預覽圖款', desc: '設計預覽效果' },
+  '實物': { label: '實物圖款', desc: '實品實拍' },
 };
 
 export default function ProductViewer({ selectedDesign, onOpenOrderModal, preferredCaseType }: ProductViewerProps) {
@@ -40,6 +33,20 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [selectedCaseType, setSelectedCaseType] = useState<string>('');
   const [isZoomed, setIsZoomed] = useState(false);
+  const [tutuboomType, setTutuboomType] = useState<'single' | 'double' | 'matte'>('double');
+
+  useEffect(() => {
+    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
+      const initialLayer = selectedDesign.layer || '雙層';
+      if (initialLayer === '單層') {
+        setTutuboomType('single');
+      } else if (initialLayer === '雙層') {
+        setTutuboomType('double');
+      } else {
+        setTutuboomType('matte');
+      }
+    }
+  }, [selectedDesign]);
 
   // Case Mockup fine tuning states (Remove margins/borders adaptively)
   const [showTweakControls, setShowTweakControls] = useState<boolean>(false);
@@ -75,32 +82,84 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
 
   const originalImageRef = useRef<HTMLImageElement | null>(null);
 
+  const isTutuBoom = selectedDesign.id.startsWith('tb-') || !!selectedDesign.layer;
+  const isS8OrS9 = 
+    (selectedDesign as any).seriesId === 's8' || 
+    (selectedDesign as any).seriesId === 's9' ||
+    selectedDesign.id.startsWith('8-') || 
+    selectedDesign.id.startsWith('9-');
+
+  const getVirtualModels = (): { name: string; imgs: string[] }[] => {
+    if (!isTutuBoom) {
+      return selectedDesign.models || [];
+    }
+
+    // If models are already explicitly defined as separate case types (e.g. including '分離' or '一體') in the JSON,
+    // directly use and respect the models array to achieve a clean one-to-one correspondence.
+    const hasExplicitTutuModels = selectedDesign.models?.some(
+      m => m.name.includes('分離') || m.name.includes('一體')
+    );
+    if (hasExplicitTutuModels) {
+      return selectedDesign.models || [];
+    }
+
+    const layer = selectedDesign.layer || '雙層';
+    const jsonPreviewModel = selectedDesign.models?.find(m => m.name === '預覽') || selectedDesign.models?.[0];
+    const jsonRealModel = selectedDesign.models?.find(m => m.name === '實物') || selectedDesign.models?.[1];
+
+    const previewImgs = jsonPreviewModel?.imgs || [];
+    const realImgs = jsonRealModel?.imgs || [];
+
+    if (layer === '單層') {
+      return [
+        { name: '分離殼預覽', imgs: previewImgs },
+        { name: '一體殼預覽', imgs: previewImgs },
+        ...(realImgs.length > 0 ? [{ name: '實物', imgs: realImgs }] : [{ name: '實物', imgs: previewImgs }])
+      ];
+    } else {
+      return [
+        { name: '分離殼預覽', imgs: previewImgs },
+        ...(realImgs.length > 0 ? [{ name: '實物', imgs: realImgs }] : [{ name: '實物', imgs: previewImgs }])
+      ];
+    }
+  };
+
+  const virtualModels = getVirtualModels();
+
   // Sync selection when design shifts or preferredCaseType changes
   useEffect(() => {
-    if (selectedDesign.models && selectedDesign.models.length > 0) {
+    // Always reset image index to 0 when design changes to prevent out-of-bounds/stuck image previews
+    setActiveImgIdx(0);
+
+    if (virtualModels.length > 0) {
       const targetType = preferredCaseType && preferredCaseType !== 'all' ? preferredCaseType : '';
       let matchIdx = -1;
       if (targetType) {
-        matchIdx = selectedDesign.models.findIndex(
-          (m) => m.name.toLowerCase() === targetType.toLowerCase()
-        );
+        const normalizedTarget = targetType.toLowerCase();
+        if (normalizedTarget.includes('磨砂') || normalizedTarget.includes('一體')) {
+          matchIdx = virtualModels.findIndex(m => m.name.includes('一體'));
+        } else if (normalizedTarget.includes('分離')) {
+          matchIdx = virtualModels.findIndex(m => m.name.includes('分離'));
+        } else {
+          matchIdx = virtualModels.findIndex(
+            (m) => m.name.toLowerCase() === targetType.toLowerCase()
+          );
+        }
       }
 
       if (matchIdx !== -1) {
         setActiveModelIdx(matchIdx);
-        setActiveImgIdx(0);
-        setSelectedCaseType(selectedDesign.models[matchIdx].name);
+        setSelectedCaseType(virtualModels[matchIdx].name);
       } else {
         // Fallback to previous selectedCaseType if still valid for this design, otherwise index 0
-        const prevIdx = selectedDesign.models.findIndex(
+        const prevIdx = virtualModels.findIndex(
           (m) => m.name === selectedCaseType
         );
         if (prevIdx !== -1) {
           setActiveModelIdx(prevIdx);
         } else {
           setActiveModelIdx(0);
-          setActiveImgIdx(0);
-          setSelectedCaseType(selectedDesign.models[0].name);
+          setSelectedCaseType(virtualModels[0].name);
         }
       }
     } else {
@@ -108,10 +167,9 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
     }
   }, [selectedDesign, preferredCaseType]);
 
-  const activeModel = selectedDesign.models?.[activeModelIdx] || selectedDesign.models?.[0];
+  const activeModel = virtualModels[activeModelIdx] || virtualModels[0];
   const images = activeModel?.imgs || [];
   const currentImage = images[activeImgIdx] || '';
-  const { baseTitle, noteHtml: titleNote } = extractDesignTitleNote(selectedDesign.title);
 
   const getSocialLinks = (link: any): { platform: string; url: string }[] => {
     if (!link) return [];
@@ -150,9 +208,17 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
     // Check if TutuBoom design
     if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
       const layer = selectedDesign.layer || '雙層';
-      if (layer === '單層') return '295.8元';
-      if (layer === '雙層') return '312.8元';
-      return '295.8 - 312.8元';
+      if (layer === '單層') {
+        if (selectedCaseType.includes('分離')) {
+          return '295.8元';
+        }
+        if (selectedCaseType.includes('一體')) {
+          return '142.8 - 159.8元';
+        }
+        return '142.8 - 295.8元';
+      } else {
+        return '312.8元';
+      }
     }
 
     // Bambi repeat
@@ -186,13 +252,19 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
       return parseDetailedPrice(ct.models);
     }
 
-    return '255元起';
+    return '95元起';
   };
 
   const getDisplayCaseType = () => {
     if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
       const layer = selectedDesign.layer || '雙層';
-      return `TutuBoom訂製款${layer}背板+邊框`;
+      if (layer === '單層') {
+        if (selectedCaseType.includes('分離')) return 'TutuBoom訂製款分離殼 (單層背板+邊框)';
+        if (selectedCaseType.includes('一體')) return 'TutuBoom訂製款磨砂一體防摔殼';
+        return 'TutuBoom 訂製系列 (單層)';
+      } else {
+        return 'TutuBoom訂製款分離殼 (雙層背板+邊框)';
+      }
     }
     return selectedCaseType;
   };
@@ -581,6 +653,32 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
     }
   };
 
+  const getSubseriesInfo = () => {
+    for (const series of PRODUCTS_DATA.SERIES) {
+      if (series.subseries) {
+        for (const sub of series.subseries) {
+          if (sub.designs.some(d => d.id === selectedDesign.id)) {
+            return { seriesName: series.name, subseriesName: sub.name, desc: sub.desc };
+          }
+        }
+      } else if (series.designs) {
+        if (series.designs.some(d => d.id === selectedDesign.id)) {
+          return { seriesName: series.name, subseriesName: '', desc: series.desc };
+        }
+      }
+    }
+    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
+      return {
+        seriesName: 'TutuBoom 系列',
+        subseriesName: '分離殼 / 一體殼',
+        desc: '雙面分層立體印刷可具有微透質感；一體防摔磨砂殼細緻滑順。本系列價格皆已含中國大陸運費。'
+      };
+    }
+    return null;
+  };
+
+  const subInfo = getSubseriesInfo();
+
   const currentPrice = getPrice();
 
   return (
@@ -603,88 +701,122 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
         <div className="lg:col-span-5 flex flex-col justify-between glass-frosted rounded-3xl p-6 sm:p-8">
           <div className="space-y-6">
             {/* Design Identifier Head */}
-            <div className="border-b border-black/5 pb-4">
-              <span className="font-mono text-[10px] tracking-widest text-black/40 font-semibold uppercase block mb-1">
-                Active Selection / 正在預覽
-              </span>
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-serif text-xl font-bold text-brand-text leading-tight">
-                    {selectedDesign.title}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-1.5">
-                    <span className="font-mono text-xs text-black/60 bg-white/50 border border-black/5 px-2.5 py-1 rounded-md">
-                      圖號 #{selectedDesign.id}
-                    </span>
-                    {selectedDesign.layer && (
-                      <span className="font-sans text-xs font-semibold text-black/80 bg-white/70 border border-black/5 px-2.5 py-1 rounded-md">
-                        分類: {selectedDesign.layer}
+            <div className="border-b border-black/5 pb-4 space-y-3">
+              <div>
+                <span className="font-mono text-[10px] tracking-widest text-black/40 font-semibold uppercase block mb-1">
+                  Active Selection / 正在瀏覽
+                </span>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif text-xl font-bold text-brand-text leading-tight">
+                      {selectedDesign.title}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-1.5">
+                      <span className="font-mono text-xs text-black/60 bg-white/50 border border-black/5 px-2.5 py-1 rounded-md">
+                        圖號 #{selectedDesign.id}
                       </span>
+                      {selectedDesign.layer && (
+                        <span className="font-sans text-xs font-semibold text-black/80 bg-white/70 border border-black/5 px-2.5 py-1 rounded-md">
+                          分類: {selectedDesign.layer}
+                        </span>
+                      )}
+                    </div>
+                    {selectedDesign.link && getSocialLinks(selectedDesign.link).length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-2.5">
+                        {getSocialLinks(selectedDesign.link).map((link, idx) => (
+                          <a
+                            key={idx}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2.5 py-1 rounded-full transition-all text-[11px] font-semibold hover:scale-[1.02]"
+                          >
+                            <span className="text-sm">📕</span>
+                            <span>小紅書</span>
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        ))}
+                      </div>
                     )}
                   </div>
-                  {selectedDesign.link && getSocialLinks(selectedDesign.link).length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-2.5">
-                      {getSocialLinks(selectedDesign.link).map((link, idx) => (
-                        <a
-                          key={idx}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2.5 py-1 rounded-full transition-all text-[11px] font-semibold hover:scale-[1.02]"
-                        >
-                          <span className="text-sm">📕</span>
-                          <span>小紅書</span>
-                          <ExternalLink className="h-3 w-3" />
-                        </a>
-                      ))}
-                    </div>
+                  {selectedDesign.badge && (
+                    <span className="font-mono text-[9px] tracking-wider uppercase px-2 py-1 rounded font-semibold shrink-0 bg-black text-white">
+                      {selectedDesign.badge}
+                    </span>
                   )}
                 </div>
-                {selectedDesign.badge && (
-                  <span className="font-mono text-[9px] tracking-wider uppercase px-2 py-1 rounded font-semibold shrink-0 bg-black text-white">
-                    {selectedDesign.badge}
-                  </span>
-                )}
               </div>
+
+              {/* Series and Subseries text info */}
+              {subInfo && (
+                <div className="p-3 bg-black/[0.02] border border-black/5 rounded-xl text-[11px] leading-relaxed text-brand-text/90">
+                  <div className="font-sans font-bold text-black/80 mb-0.5 flex items-center gap-1">
+                    <span>📂 所屬系列:</span>
+                    <span className="text-brand-gold">{subInfo.seriesName}</span>
+                    {subInfo.subseriesName && (
+                      <>
+                        <span className="text-black/30">/</span>
+                        <span>{subInfo.subseriesName}</span>
+                      </>
+                    )}
+                  </div>
+                  {subInfo.desc && (
+                    <p className="text-brand-muted italic mt-0.5">{subInfo.desc}</p>
+                  )}
+                </div>
+              )}
+
+              {/* Design level specific remarks box */}
+              {selectedDesign.desc && (
+                <div className="p-3 bg-amber-50/50 border border-amber-200/40 rounded-xl text-[11px] leading-relaxed text-amber-900 flex items-start gap-2 shadow-sm">
+                  <span className="text-amber-600 shrink-0 mt-0.5 select-none">📝</span>
+                  <div>
+                    <span className="font-bold">產品備註：</span>
+                    <span>{selectedDesign.desc}</span>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Step 1: Case Type selection (Determined purely by JSON) */}
-            <div>
-              <label className="font-mono text-[10px] tracking-widest text-black/40 uppercase block mb-2.5 font-semibold">
-                Step 01 / 選擇殼體種類
-              </label>
-              <div className="grid grid-cols-2 gap-2.5">
-                {selectedDesign.models?.map((m, mIdx) => {
-                  const displayInfo = CASE_TYPE_DISPLAY_NAMES[m.name] || { label: m.name, desc: '對應客製規格' };
-                  const isSelected = selectedCaseType === m.name;
-                  return (
-                    <button
-                      key={m.name}
-                      onClick={() => {
-                        setSelectedCaseType(m.name);
-                        setActiveModelIdx(mIdx);
-                        setActiveImgIdx(0);
-                      }}
-                      className={`flex flex-col text-left p-3 rounded-xl border transition-all ${
-                        isSelected
-                          ? 'bg-black text-white border-black shadow-sm'
-                          : 'border-black/5 hover:bg-white bg-white/40'
-                      }`}
-                    >
-                      <span className={`text-xs font-semibold ${isSelected ? 'text-white' : 'text-brand-text'}`}>
-                        {displayInfo.label}
-                      </span>
-                      <span className={`text-[10px] mt-1 line-clamp-1 ${isSelected ? 'text-white/60' : 'text-brand-muted'}`}>
-                        {displayInfo.desc}
-                      </span>
-                    </button>
-                  );
-                })}
+            {!isS8OrS9 && (
+              <div>
+                <label className="font-mono text-[10px] tracking-widest text-black/40 uppercase block mb-2.5 font-semibold">
+                  🌟選擇殼體種類
+                </label>
+                <div className="grid grid-cols-2 gap-2.5">
+                  {virtualModels.map((m, mIdx) => {
+                    const displayInfo = CASE_TYPE_DISPLAY_NAMES[m.name] || { label: m.name, desc: '對應客製規格' };
+                    const isSelected = selectedCaseType === m.name;
+                    return (
+                      <button
+                        key={`${m.name}-${mIdx}`}
+                        onClick={() => {
+                          setSelectedCaseType(m.name);
+                          setActiveModelIdx(mIdx);
+                          setActiveImgIdx(0);
+                        }}
+                        className={`flex flex-col text-left p-3 rounded-xl border transition-all ${
+                          isSelected
+                            ? 'bg-black text-white border-black shadow-sm'
+                            : 'border-black/5 hover:bg-white bg-white/40'
+                        }`}
+                      >
+                        <span className={`text-xs font-semibold ${isSelected ? 'text-white' : 'text-brand-text'}`}>
+                          {displayInfo.label}
+                        </span>
+                        <span className={`text-[10px] mt-1 line-clamp-1 ${isSelected ? 'text-white/60' : 'text-brand-muted'}`}>
+                          {displayInfo.desc}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="text-[10px] text-brand-muted mt-2 leading-relaxed italic">
+                  * 註：僅展示已上傳之殼體渲染圖，若有未及可留言萬有狀態。
+                </p>
               </div>
-              <p className="text-[10px] text-brand-muted mt-2 leading-relaxed italic">
-                * 註：僅展示已上傳之殼體渲染圖，若有未及可留言萬有狀態。
-              </p>
-            </div>
+            )}
 
             {/* Case Mockup Fine Tuning (Remove margins / borders) */}
             <div className="pt-3 border-t border-black/5">
@@ -693,7 +825,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                 className="flex items-center justify-between w-full text-left font-mono text-[10px] tracking-widest text-black/40 uppercase font-semibold hover:text-black transition-colors"
                 type="button"
               >
-                <span>🎨 渲染圖尺寸微調 (居中)</span>
+                <span>🎨 渲染圖尺寸微調 (去除白邊/居中)</span>
                 <span className="text-[11px] font-sans font-normal text-black/60 hover:underline">
                   {showTweakControls ? '隱藏' : '展開'}
                 </span>
@@ -761,7 +893,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
             <div className="pt-4 border-t border-black/5">
               <label className="font-mono text-[10px] tracking-widest text-black/40 uppercase block mb-3 font-semibold flex items-center gap-1.5">
                 <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-pulse" />
-                Step 02 / 預覽您的手機配件（磁吸支架、指環支架等）搭配 (選填)
+                🌟預覽您的手機配件（磁吸支架、指環支架等）搭配 (選填)
               </label>
 
               {!standImage ? (
@@ -777,7 +909,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                     <div className="p-3 rounded-full bg-black/5 hover:scale-105 transition-transform">
                       <Upload className="h-5 w-5 text-black/60" />
                     </div>
-                    <span className="text-xs font-semibold text-brand-text">上傳手機配件圖片（可選項）</span>
+                    <span className="text-xs font-semibold text-brand-text">上傳支架照片</span>
                     <span className="text-[10px] text-brand-muted leading-relaxed max-w-[220px] mx-auto block">
                       支援 PNG/JPG 格式，網頁將自動智能去背或提供手動裁切預覽。
                     </span>
@@ -956,7 +1088,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
           <div className="mt-8 pt-6 border-t border-black/5">
             <div className="flex justify-between items-baseline mb-4">
               <span className="font-mono text-[10px] tracking-widest text-black/40 uppercase">
-                價格 / price
+                參考定價 / Reference Price
               </span>
               <span className="font-serif text-2xl font-bold text-black italic">
                 {currentPrice}
@@ -987,25 +1119,27 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
           </div>
 
           {/* Display grid model list */}
-          <div className="absolute top-4 left-4 z-10 flex gap-2">
-            {selectedDesign.models?.map((m, mIdx) => (
-              <button
-                key={m.name}
-                onClick={() => {
-                  setActiveModelIdx(mIdx);
-                  setActiveImgIdx(0);
-                  setSelectedCaseType(m.name);
-                }}
-                className={`text-[10px] font-mono px-3 py-1.5 rounded-lg border transition-all ${
-                  activeModelIdx === mIdx
-                    ? 'bg-black text-white border-black'
-                    : 'bg-white/40 hover:bg-white/60 text-brand-muted border-white/40 backdrop-blur-md'
-                }`}
-              >
-                {m.name}
-              </button>
-            ))}
-          </div>
+          {virtualModels.length > 1 && (
+            <div className="absolute top-4 left-4 z-10 flex gap-2">
+              {virtualModels.map((m, mIdx) => (
+                <button
+                  key={`${m.name}-${mIdx}`}
+                  onClick={() => {
+                    setActiveModelIdx(mIdx);
+                    setActiveImgIdx(0);
+                    setSelectedCaseType(m.name);
+                  }}
+                  className={`text-[10px] font-mono px-3 py-1.5 rounded-lg border transition-all ${
+                    activeModelIdx === mIdx
+                      ? 'bg-black text-white border-black'
+                      : 'bg-white/40 hover:bg-white/60 text-brand-muted border-white/40 backdrop-blur-md'
+                  }`}
+                >
+                  {m.name}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* The Phone Case Art Container */}
           <div className="flex-1 w-full flex items-center justify-center py-6">

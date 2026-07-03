@@ -103,7 +103,8 @@ export default function Gallery({
       }
 
       // 3. Case Compatibility
-      if (selectedCaseCompatible !== 'all') {
+      const isEmbroiderySeries = d.seriesId === 's8' || d.id.startsWith('8-');
+      if (selectedCaseCompatible !== 'all' && !isEmbroiderySeries) {
         const hasCompatible = d.models.some(
           (m) => m.name.toLowerCase() === selectedCaseCompatible.toLowerCase()
         );
@@ -142,13 +143,13 @@ export default function Gallery({
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 border-b border-black/5 pb-6">
         <div>
           <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase block mb-1">
-            Custom Case Gallery
+            Phone Case Gallery
           </span>
           <h2 className="font-serif text-3xl font-semibold text-brand-text">
-            客製化款 <em>phone case</em>
+             客製化款<em>全品類展示</em>
           </h2>
           <p className="text-xs text-brand-muted mt-1 leading-relaxed">
-            點擊任何圖款即可帶入頂部工作室進行放大瀏覽
+            點擊任何圖款即可帶入頂部瀏覽區進行瀏覽或模擬添加配件。
           </p>
         </div>
 
@@ -208,81 +209,94 @@ export default function Gallery({
                 <span>全部設計系列</span>
                 {selectedSeries === 'all' && <Check className="h-3 w-3" />}
               </button>
-              {PRODUCTS_DATA.SERIES.map((s) => {
-                const isSelected = selectedSeries === s.id;
-                const hasSubseries = s.subseries && s.subseries.length > 0;
-                
-                return (
-                  <div key={s.id} className="space-y-1">
-                    <button
-                      onClick={() => {
-                        setSelectedSeries(s.id);
-                        setSelectedSubseries('all');
-                      }}
-                      className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
-                        isSelected && selectedSubseries === 'all'
-                          ? 'bg-black text-white font-medium'
-                          : isSelected
-                            ? 'bg-black/5 text-black font-semibold border-l-2 border-black pl-2.5'
-                            : 'text-brand-text/90 hover:bg-white/60'
-                      }`}
-                    >
-                      <span className="truncate">{s.name}</span>
-                      {isSelected && selectedSubseries === 'all' && <Check className="h-3 w-3" />}
-                    </button>
-                    
-                    {/* Nested Subseries options */}
-                    {hasSubseries && isSelected && (
-                      <div className="pl-3.5 pr-1 py-1 space-y-1 bg-black/[0.02] rounded-lg border-l border-black/10 ml-2">
-                        <button
-                          onClick={() => setSelectedSubseries('all')}
-                          className={`w-full text-left text-[11px] px-2.5 py-1 rounded-md transition-all flex items-center justify-between ${
-                            selectedSubseries === 'all'
-                              ? 'text-black font-semibold bg-white shadow-sm'
-                              : 'text-brand-muted hover:text-black hover:bg-white/40'
-                          }`}
-                        >
-                          <span>全部子系列</span>
-                          {selectedSubseries === 'all' && <Check className="h-2.5 w-2.5 text-black/40" />}
-                        </button>
-                        {s.subseries!.map((sub) => (
+              {/* RHINOSHIELD SECTION */}
+              <div className="space-y-1 pt-1.5">
+                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-600/90 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
+                  <span>🛡️ Rhinoshield 系列</span>
+                </div>
+                {PRODUCTS_DATA.SERIES.map((s) => {
+                  const isSelected = selectedSeries === s.id;
+                  const hasSubseries = s.subseries && s.subseries.length > 0;
+                  
+                  return (
+                    <div key={s.id} className="space-y-1">
+                      <button
+                        onClick={() => {
+                          setSelectedSeries(s.id);
+                          setSelectedSubseries('all');
+                        }}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
+                          isSelected && selectedSubseries === 'all'
+                            ? 'bg-black text-white font-medium'
+                            : isSelected
+                              ? 'bg-black/5 text-black font-semibold border-l-2 border-black pl-2.5'
+                              : 'text-brand-text/90 hover:bg-white/60'
+                        }`}
+                      >
+                        <span className="truncate">{s.name}</span>
+                        {isSelected && selectedSubseries === 'all' && <Check className="h-3 w-3" />}
+                      </button>
+                      
+                      {/* Nested Subseries options */}
+                      {hasSubseries && isSelected && (
+                        <div className="pl-3.5 pr-1 py-1 space-y-1 bg-black/[0.02] rounded-lg border-l border-black/10 ml-2">
                           <button
-                            key={sub.id}
-                            onClick={() => setSelectedSubseries(sub.id)}
+                            onClick={() => setSelectedSubseries('all')}
                             className={`w-full text-left text-[11px] px-2.5 py-1 rounded-md transition-all flex items-center justify-between ${
-                              selectedSubseries === sub.id
-                                ? 'text-black font-semibold bg-white shadow-sm border border-black/5'
+                              selectedSubseries === 'all'
+                                ? 'text-black font-semibold bg-white shadow-sm'
                                 : 'text-brand-muted hover:text-black hover:bg-white/40'
                             }`}
                           >
-                            <span className="truncate">
-                              {sub.name} <span className="font-mono text-[9px] text-black/30">({sub.id})</span>
-                            </span>
-                            {selectedSubseries === sub.id && <Check className="h-2.5 w-2.5 text-brand-gold" />}
+                            <span>全部子系列</span>
+                            {selectedSubseries === 'all' && <Check className="h-2.5 w-2.5 text-black/40" />}
                           </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-              <button
-                onClick={() => {
-                  setSelectedSeries('tutuboom');
-                  setSelectedSubseries('all');
-                }}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
-                  selectedSeries === 'tutuboom'
-                    ? 'bg-black text-white font-medium'
-                    : 'text-brand-text hover:bg-white/60'
-                }`}
-              >
-                <span className="flex items-center gap-1">
-                  <Layers className="h-3.5 w-3.5 text-brand-gold" />
-                  TutuBoom 分離殼
-                </span>
-                {selectedSeries === 'tutuboom' && <Check className="h-3 w-3" />}
-              </button>
+                          {s.subseries!.map((sub) => (
+                            <button
+                              key={sub.id}
+                              onClick={() => setSelectedSubseries(sub.id)}
+                              className={`w-full text-left text-[11px] px-2.5 py-1 rounded-md transition-all flex items-center justify-between ${
+                                selectedSubseries === sub.id
+                                  ? 'text-black font-semibold bg-white shadow-sm border border-black/5'
+                                  : 'text-brand-muted hover:text-black hover:bg-white/40'
+                              }`}
+                            >
+                              <span className="truncate">
+                                {sub.name}
+                              </span>
+                              {selectedSubseries === sub.id && <Check className="h-2.5 w-2.5 text-brand-gold" />}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* TUTUBOOM SECTION */}
+              <div className="space-y-1 pt-3 border-t border-black/5">
+                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-purple-600 uppercase bg-purple-50 rounded-md mb-2 flex items-center justify-between">
+                  <span>👾 TutuBoom 系列</span>
+                </div>
+                <button
+                  onClick={() => {
+                    setSelectedSeries('tutuboom');
+                    setSelectedSubseries('all');
+                  }}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
+                    selectedSeries === 'tutuboom'
+                      ? 'bg-black text-white font-medium'
+                      : 'text-brand-text hover:bg-white/60'
+                  }`}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <Layers className="h-3.5 w-3.5 text-purple-500" />
+                    TutuBoom 
+                  </span>
+                  {selectedSeries === 'tutuboom' && <Check className="h-3 w-3" />}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -302,7 +316,7 @@ export default function Gallery({
                       : 'border-white/40 text-brand-muted bg-white/20 hover:bg-white/50'
                   }`}
                 >
-                  {c === 'all' ? '全部殼體' : c}
+                  {c === 'all' ? '全部相容' : c}
                 </button>
               ))}
             </div>
@@ -311,7 +325,7 @@ export default function Gallery({
           {/* Filter 3: Badges */}
           <div>
             <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block mb-2 font-semibold">
-              標籤篩選 / Highlights
+              標籤 / Highlights
             </span>
             <div className="grid grid-cols-3 gap-1.5">
               {['all', 'new', 'hot'].map((b) => (
@@ -334,7 +348,52 @@ export default function Gallery({
         </div>
 
         {/* RESULTS GRID (lg:col-span-9) */}
-        <div className="lg:col-span-9">
+        <div className="lg:col-span-9 space-y-5">
+          {/* Active Series/Subseries Header with description */}
+          {(selectedSeries !== 'all' || selectedSubseries !== 'all') && (
+            <div className="p-4.5 rounded-2xl bg-white/60 border border-black/5 flex flex-col gap-2 shadow-sm">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs text-brand-muted">
+                <span className="font-mono text-[10px] bg-black/5 px-1.5 py-0.5 rounded">正在瀏覽 / Browsing</span>
+                <span className="font-semibold text-black">
+                  {selectedSeries === 'tutuboom' ? 'TutuBoom 系列' : PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.name}
+                </span>
+                {selectedSubseries !== 'all' && (
+                  <>
+                    <span className="text-black/30">/</span>
+                    <span className="font-semibold text-black">
+                      {PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.subseries?.find(sub => sub.id === selectedSubseries)?.name}
+                    </span>
+                  </>
+                )}
+              </div>
+              
+              {/* Display subseries description (desc) and series description if applicable */}
+              {selectedSeries !== 'tutuboom' && (
+                <div className="text-xs text-brand-text/80 space-y-1.5 mt-1 leading-relaxed">
+                  {/* Series description */}
+                  {PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.desc && (
+                    <p className="flex items-start gap-1.5">
+                      <span className="text-brand-gold select-none">✦</span>
+                      <span>{PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.desc}</span>
+                    </p>
+                  )}
+                  {/* Subseries description */}
+                  {selectedSubseries !== 'all' && PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.subseries?.find(sub => sub.id === selectedSubseries)?.desc && (
+                    <div className="flex items-start gap-2 bg-black/[0.02] p-2.5 rounded-xl border-l-2 border-brand-gold">
+                      <span className="text-brand-gold select-none">ℹ️</span>
+                      <span>{PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.subseries?.find(sub => sub.id === selectedSubseries)?.desc}</span>
+                    </div>
+                  )}
+                </div>
+              )}
+              {selectedSeries === 'tutuboom' && (
+                <p className="text-xs text-brand-text/85 mt-1 leading-relaxed flex items-start gap-1.5 bg-purple-50/40 p-2.5 rounded-xl border-l-2 border-purple-500">
+                  <span className="text-purple-600 select-none">✦</span>
+                  <span>TutuBoom 系列：雙面分體印刷與磨砂一體殼。雙面分層立體印刷可製作微透質感，實物和預覽圖可能有色彩差異。</span>
+                </p>
+              )}
+            </div>
+          )}
           <AnimatePresence mode="popLayout">
             {filteredDesigns.length > 0 ? (
               <motion.div

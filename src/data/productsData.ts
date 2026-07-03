@@ -15,6 +15,7 @@ export interface Design {
   link: string | DesignLink[] | Record<string, string>;
   models: ModelImg[];
   layer?: string;
+  desc?: string;
 }
 
 export interface Subseries {
@@ -145,7 +146,7 @@ export const CASE_TYPES: CaseType[] = [
       { name: '微醺斑比不重複排版磁吸背板', price: '225元' },
       { name: '微醺斑比不重複排版非磁吸背板', price: '140元' },
       { name: '微醺斑比不重複排版磁吸clearx', price: '385元' },
-      { name: '微醺斑比不重複排版非磁吸clearx', price: '350元' },
+      { name: 'x', price: '350元' },
       { name: '微醺斑比不重複排版磁吸clear', price: '340元' },
       { name: '微醺斑比不重複排版非磁吸clear', price: '280元' },
       { name: '微醺斑比不重複排版磁吸solidx', price: '335元' },
@@ -155,7 +156,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: '微醺斑比小動物連連看&花花',
+    name: '微醺斑比小動物連連看/花花',
     nameEm: '默認透明背景版本，可選添加背景：鵝黃 淡綠 淡藍 淺灰 淡紫 淡粉',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/weixunani.webp',
     desc: '底下文字可以客製化，總價+10rmb 僅限英文、數字 和符號():;,.?!',
@@ -196,9 +197,9 @@ export const TUTUBOOM_PRICES = [
 export const TUTUBOOM_CASE_TYPES: CaseType[] = [
   {
     name: 'TutuBoom',
-    nameEm: '分離殼',
+    nameEm: '分離殼/一體殼',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/tutuboom.webp',
-    desc: '雙層印刷具有半透明效果<br>實物和預覽圖可能有色彩差異，預覽圖僅供參考 <br>*tutuboom價格含大陸段運費<br>請直接詢問萬有狀態',
+    desc: '<b>【分離殼】</b>：雙層印刷具有半透明效果</b>分離殼提供17pro/17pro max型號<br>分離殼邊框顏色含有：🩷迷你粉 🖤暗夜嘿 🤎朱古力 🤍磨砂透<br><b>【一體殼 (磨砂殼)】</b>：細膩磨砂質感，提供16pro/16pro max/air/17pro/17pro max型號<br>實物和預覽圖可能有色彩差異，預覽圖僅供參考 <br>*tutuboom價格含大陸段運費，具體可直接詢問萬有狀態<br>tutuboom與rhinoshield不是同一品牌🙇',
     iconBg: '#f0ede8',
     iconColor: '#8a7868',
     icon: 'Layers',
@@ -206,7 +207,9 @@ export const TUTUBOOM_CASE_TYPES: CaseType[] = [
       { name: 'TutuBoom訂製款單層印刷背板', price: '168.3元' },
       { name: 'TutuBoom訂製款單層印刷背板+邊框', price: '295.8元' },
       { name: 'TutuBoom訂製款雙層印刷背板', price: '185.3元' },
-      { name: 'TutuBoom訂製款雙層印刷背板+邊框', price: '312.8元' }
+      { name: 'TutuBoom訂製款雙層印刷背板+邊框', price: '312.8元' } ,
+      { name: 'TutuBoom訂製款白透or全透磨砂殼', price: '142.8元' },
+      { name: 'TutuBoom訂製款白透or全透磨砂殼(相機按鈕版)', price: '159.8元' }
     ]
   }
 ];
