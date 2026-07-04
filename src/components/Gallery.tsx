@@ -166,7 +166,7 @@ export default function Gallery({
           <div className="flex items-center justify-between pb-3 border-b border-black/5">
             <h3 className="font-serif font-semibold text-sm text-brand-text flex items-center gap-1.5">
               <SlidersHorizontal className="h-4 w-4 text-brand-gold" />
-              <span>智能篩選 / Filters</span>
+              <span>篩選 / Filters</span>
             </h3>
             <button
               onClick={handleResetFilters}

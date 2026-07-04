@@ -169,7 +169,7 @@ export default function OrderInquiryModal({
                         onClick={() => copyToClipboard('esmusssein-', 'line')}
                         className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1 font-semibold border border-brand-accent/20 px-2 py-0.5 rounded bg-white/50 transition-all hover:scale-[1.02]"
                       >
-                        {copiedText === 'line' ? '已複製' : '複製Line'}
+                        {copiedText === 'line' ? '已複製' : '「或」複製Line'}
                       </button>
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export default function OrderInquiryModal({
                           onClick={() => copyToClipboard('esmusssein-', 'line')}
                           className="text-brand-accent hover:text-brand-text text-[10px] flex items-center gap-1"
                         >
-                          {copiedText === 'line' ? '已複製' : '複製Line'}
+                          {copiedText === 'line' ? '已複製' : '「或」複製Line'}
                         </button>
                       </div>
                     </div>
