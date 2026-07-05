@@ -146,7 +146,7 @@ export const CASE_TYPES: CaseType[] = [
       { name: '微醺斑比不重複排版磁吸背板', price: '225元' },
       { name: '微醺斑比不重複排版非磁吸背板', price: '140元' },
       { name: '微醺斑比不重複排版磁吸clearx', price: '385元' },
-      { name: 'x', price: '350元' },
+      { name: '微醺斑比不重複排版非磁吸clearx', price: '350元' },
       { name: '微醺斑比不重複排版磁吸clear', price: '340元' },
       { name: '微醺斑比不重複排版非磁吸clear', price: '280元' },
       { name: '微醺斑比不重複排版磁吸solidx', price: '335元' },

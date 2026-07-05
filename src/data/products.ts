@@ -1248,11 +1248,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
           },
          {
-            "id":"4-2-5", "title":"雙飛燕-薄荷綠", "badge":"", "link":"",
+            "id":"4-2-5", "title":"雙飛燕-薄荷綠", "badge":"", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/L3I3IrW05t "}] ,
             "models":[
-              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0617-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.39 AM.png"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0705-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0705-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0617-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.31 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.39 AM.png"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.43 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.20 AM.png"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.12 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.56 AM.png"]}
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.12 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.56 AM.png"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0705-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0705-3.webp"]}
             ]
           },
          {

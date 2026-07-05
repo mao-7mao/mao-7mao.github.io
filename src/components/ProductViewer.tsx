@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CASE_TYPES, CaseType, Design } from '../data/productsData';
 import { PRODUCTS_DATA } from '../data/products';
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import ShareCardModal from './ShareCardModal';
 
 interface ProductViewerProps {
   selectedDesign: Design;
@@ -34,6 +35,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
   const [selectedCaseType, setSelectedCaseType] = useState<string>('');
   const [isZoomed, setIsZoomed] = useState(false);
   const [tutuboomType, setTutuboomType] = useState<'single' | 'double' | 'matte'>('double');
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
   useEffect(() => {
     if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
@@ -59,7 +61,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
   const [standCutout, setStandCutout] = useState<string | null>(null);
   const [processMode, setProcessMode] = useState<'auto' | 'crop' | 'lasso'>('crop');
   const [tolerance, setTolerance] = useState<number>(20);
-  
+
   // Crop parameters
   const [cropCx, setCropCx] = useState<number>(50);
   const [cropCy, setCropCy] = useState<number>(50);
@@ -83,10 +85,10 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
   const originalImageRef = useRef<HTMLImageElement | null>(null);
 
   const isTutuBoom = selectedDesign.id.startsWith('tb-') || !!selectedDesign.layer;
-  const isS8OrS9 = 
-    (selectedDesign as any).seriesId === 's8' || 
+  const isS8OrS9 =
+    (selectedDesign as any).seriesId === 's8' ||
     (selectedDesign as any).seriesId === 's9' ||
-    selectedDesign.id.startsWith('8-') || 
+    selectedDesign.id.startsWith('8-') ||
     selectedDesign.id.startsWith('9-');
 
   const getVirtualModels = (): { name: string; imgs: string[] }[] => {
@@ -372,7 +374,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
 
     ctx.clearRect(0, 0, img.width, img.height);
     ctx.save();
-    
+
     // Create the path
     ctx.beginPath();
     const firstX = (lassoPoints[0].x - dx) / scale;
@@ -400,13 +402,13 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
     // Trim transparent margins
     const imgData = ctx.getImageData(0, 0, img.width, img.height);
     const data = imgData.data;
-    
+
     let minX = img.width;
     let maxX = 0;
     let minY = img.height;
     let maxY = 0;
     let hasPixels = false;
-    
+
     for (let y = 0; y < img.height; y++) {
       for (let x = 0; x < img.width; x++) {
         const idx = (y * img.width + x) * 4;
@@ -467,7 +469,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
       for (let i = 1; i < lassoPoints.length; i++) {
         ctx.lineTo(lassoPoints[i].x, lassoPoints[i].y);
       }
-      
+
       if (!isDrawingLasso) {
         ctx.closePath();
       }
@@ -605,7 +607,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
         const dx = e.clientX - centerX;
         const dy = e.clientY - centerY;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        
+
         resizeStartDistRef.current = dist;
         resizeStartSizeRef.current = standSize;
       } else {
@@ -616,14 +618,14 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
 
   const handleMockupPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    
+
     if (isResizingStand) {
       const centerX = rect.left + (standX / 100) * rect.width;
       const centerY = rect.top + (standY / 100) * rect.height;
       const dx = e.clientX - centerX;
       const dy = e.clientY - centerY;
       const currentDist = Math.sqrt(dx * dx + dy * dy);
-      
+
       const newSize = resizeStartSizeRef.current * (currentDist / resizeStartDistRef.current);
       setStandSize(Math.max(10, Math.min(80, Math.round(newSize))));
       return;
@@ -632,7 +634,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
     if (!isDraggingStand) return;
     const relativeX = ((e.clientX - rect.left) / rect.width) * 100;
     const relativeY = ((e.clientY - rect.top) / rect.height) * 100;
-    
+
     setStandX(Math.max(5, Math.min(95, relativeX)));
     setStandY(Math.max(5, Math.min(95, relativeY)));
   };
@@ -820,7 +822,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
 
             {/* Case Mockup Fine Tuning (Remove margins / borders) */}
             <div className="pt-3 border-t border-black/5">
-              <button 
+              <button
                 onClick={() => setShowTweakControls(!showTweakControls)}
                 className="flex items-center justify-between w-full text-left font-mono text-[10px] tracking-widest text-black/40 uppercase font-semibold hover:text-black transition-colors"
                 type="button"
@@ -830,7 +832,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                   {showTweakControls ? '隱藏' : '展開'}
                 </span>
               </button>
-              
+
               {showTweakControls && (
                 <div className="mt-3 space-y-3 bg-black/[0.02] border border-black/5 rounded-xl p-3.5">
                   <div className="space-y-1">
@@ -873,7 +875,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                       />
                     </div>
                   </div>
-                  
+
                   <button
                     onClick={() => {
                       setCaseImgScale(1.15);
@@ -1000,7 +1002,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                   ) : (
                     <div className="space-y-3">
                       {/* Live Crop region SVG preview overlay */}
-                      <div 
+                      <div
                         onPointerDown={handleCropPointerDown}
                         onPointerMove={handleCropPointerMove}
                         onPointerUp={handleCropPointerUp}
@@ -1008,9 +1010,9 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                         className="relative w-full h-44 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-move touch-none select-none"
                         title="拖曳滑鼠移動中心，滾動滾輪調整大小"
                       >
-                        <img 
-                          src={standImage} 
-                          alt="Original Stand" 
+                        <img
+                          src={standImage}
+                          alt="Original Stand"
                           className="max-h-full max-w-full object-contain select-none"
                           referrerPolicy="no-referrer"
                         />
@@ -1052,7 +1054,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                       <p>📍 <b>拖曳調整</b>：在右側手機上按住支架，即可<b>自由拖曳</b>移動其位置 ({standX.toFixed(0)}%, {standY.toFixed(0)}%)</p>
                       <p>🔍 <b>滾輪縮放</b>：在右側手機上，滾動<b>滑鼠滾輪</b>即可即時縮放支架大小 ({standSize}%)</p>
                     </div>
-                    
+
                     <div className="space-y-1">
                       <span className="block text-[11px] text-brand-muted mb-1">旋轉角度 Angle: {standRotate}°</span>
                       <input
@@ -1095,13 +1097,24 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
               </span>
             </div>
 
-            <button
-              onClick={() => onOpenOrderModal(getDisplayCaseType(), '', '', '', currentPrice)}
-              className="w-full flex items-center justify-center gap-2 rounded-full py-4 bg-black text-white hover:scale-[1.02] transition-transform font-semibold text-xs tracking-wider uppercase shadow-md"
-            >
-              <ShoppingBag className="h-4.5 w-4.5 text-brand-gold" />
-              <span>諮詢萬有狀態 / 立即登記</span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => onOpenOrderModal(getDisplayCaseType(), '', '', '', currentPrice)}
+                className="flex-1 flex items-center justify-center gap-2 rounded-full py-4 bg-black text-white hover:scale-[1.02] transition-transform font-semibold text-xs tracking-wider uppercase shadow-md"
+              >
+                <ShoppingBag className="h-4.5 w-4.5 text-brand-gold" />
+                <span>諮詢萬有狀態 / 立即登記</span>
+              </button>
+
+              <button
+                onClick={() => setIsShareModalOpen(true)}
+                className="flex items-center justify-center gap-2 rounded-full px-5 py-4 bg-stone-100 hover:bg-stone-200 text-stone-800 hover:scale-[1.02] transition-all font-semibold text-xs border border-stone-200 shadow-sm"
+                title="生成 3:4 分享卡片"
+              >
+                <Share2 className="h-4.5 w-4.5 text-stone-600" />
+                <span>分享卡片</span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1111,10 +1124,17 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
           <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
             <button
               onClick={() => setIsZoomed(!isZoomed)}
-              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all"
+              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all flex items-center justify-center"
               title="細節縮放"
             >
               {isZoomed ? <ZoomOut className="h-4 w-4" /> : <ZoomIn className="h-4 w-4" />}
+            </button>
+            <button
+              onClick={() => setIsShareModalOpen(true)}
+              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all flex items-center justify-center"
+              title="生成 3:4 分享卡片"
+            >
+              <Share2 className="h-4.5 w-4.5 text-brand-gold" />
             </button>
           </div>
 
@@ -1143,7 +1163,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
 
           {/* The Phone Case Art Container */}
           <div className="flex-1 w-full flex items-center justify-center py-6">
-            <div 
+            <div
               className="relative w-72 h-[420px] rounded-[38px] border-4 border-slate-800 shadow-2xl bg-slate-100 overflow-hidden flex items-center justify-center transition-all duration-300 touch-none"
               style={{
                 boxShadow: '0 25px 60px -15px rgba(0,0,0,0.25)',
@@ -1168,10 +1188,10 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                   className="absolute inset-0 w-full h-full flex items-center justify-center p-3 select-none"
                 >
                   {currentImage ? (
-                    <img 
-                      src={currentImage} 
-                      alt={selectedDesign.title} 
-                      className="max-h-full max-w-full object-contain pointer-events-none" 
+                    <img
+                      src={currentImage}
+                      alt={selectedDesign.title}
+                      className="max-h-full max-w-full object-contain pointer-events-none"
                       draggable="false"
                       onContextMenu={(e) => e.preventDefault()}
                       referrerPolicy="no-referrer"
@@ -1190,7 +1210,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
 
               {/* Dynamic Phone Stand Preview Overlay */}
               {standCutout && (
-                <div 
+                <div
                   id="stand-preview-overlay"
                   className="absolute z-20 cursor-move select-none pointer-events-auto group/stand"
                   style={{
@@ -1202,17 +1222,17 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                     touchAction: 'none'
                   }}
                 >
-                  <img 
-                    src={standCutout} 
-                    alt="手機支架" 
+                  <img
+                    src={standCutout}
+                    alt="手機支架"
                     className="w-full h-auto object-contain pointer-events-none select-none"
                     draggable="false"
                     referrerPolicy="no-referrer"
                   />
-                  
+
                   {/* Thin dashed outline on hover or active */}
                   <div className="absolute inset-[-3px] border border-dashed border-black/35 rounded-lg pointer-events-none group-hover/stand:border-black/60 transition-colors" />
-                  
+
                   {/* Four Corner Handles for Resizing */}
                   <div className="stand-resize-handle absolute -top-1.5 -left-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nwse-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
                   <div className="stand-resize-handle absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nesw-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
@@ -1246,15 +1266,15 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                     key={i}
                     onClick={() => setActiveImgIdx(i)}
                     className={`relative w-11 h-14 rounded-lg bg-white/50 border overflow-hidden p-1 shrink-0 transition-all ${
-                      activeImgIdx === i 
-                        ? 'border-black ring-1 ring-black/10 scale-105' 
+                      activeImgIdx === i
+                        ? 'border-black ring-1 ring-black/10 scale-105'
                         : 'border-white/40 opacity-65 hover:opacity-100'
                     }`}
                   >
-                    <img 
-                      src={img} 
-                      alt="Thumbnail" 
-                      className="w-full h-full object-contain" 
+                    <img
+                      src={img}
+                      alt="Thumbnail"
+                      className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
                     />
                   </button>
@@ -1272,6 +1292,24 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
           )}
         </div>
       </div>
+
+      {/* Share Card Modal Overlay */}
+      <ShareCardModal
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+        design={selectedDesign}
+        currentImage={currentImage}
+        caseImgScale={caseImgScale}
+        caseImgX={caseImgX}
+        caseImgY={caseImgY}
+        standCutout={standCutout}
+        standX={standX}
+        standY={standY}
+        standSize={standSize}
+        standRotate={standRotate}
+        displayCaseType={getDisplayCaseType()}
+        currentPrice={currentPrice}
+      />
     </div>
   );
 }
