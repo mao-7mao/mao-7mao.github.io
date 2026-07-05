@@ -17,7 +17,6 @@ interface ShareCardModalProps {
   standSize: number;
   standRotate: number;
   displayCaseType: string;
-  currentPrice: string;
 }
 
 const BG_THEMES = [
@@ -41,7 +40,6 @@ export default function ShareCardModal({
   standSize,
   standRotate,
   displayCaseType,
-  currentPrice,
 }: ShareCardModalProps) {
   const [selectedTheme, setSelectedTheme] = useState('white');
   const theme = BG_THEMES.find((t) => t.id === selectedTheme) || BG_THEMES[0];
