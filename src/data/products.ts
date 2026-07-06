@@ -37,7 +37,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
           },
            {
-            "id":"1-1-4", "title":"彩色蠟筆+小雲朵「文字可更換」此為收費貼紙需+12.5元", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/2WtNVKP2SX0"}] ,
+            "id":"1-1-4", "title":"彩色蠟筆+小雲朵「文字可更換」", "desc":"小雲朵為收費貼紙需+12.5元", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/2WtNVKP2SX0"}] ,
             "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-50-46.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-56-24.png"]},
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/2026-05-26-15-51-09.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-4/0629.webp"]},
@@ -650,8 +650,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"2-1-27", "title":"印章小狗", "badge":"new", "link":"",
             "models":[
-            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-11.webp"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-13.webp"]},
+            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-11.webp"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-13.webp"]},
             {"name":"ModNX",    "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-12.webp"] },
             {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-5.webp"]},
             {"name":"Clear",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-14.webp"]}

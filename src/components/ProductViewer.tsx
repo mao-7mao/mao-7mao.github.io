@@ -1308,7 +1308,6 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
         standSize={standSize}
         standRotate={standRotate}
         displayCaseType={getDisplayCaseType()}
-        currentPrice={currentPrice}
       />
     </div>
   );

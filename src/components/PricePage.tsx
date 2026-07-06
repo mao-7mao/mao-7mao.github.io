@@ -194,7 +194,7 @@ export default function PricePage() {
                 Jimmibobo 委託寄送重量規則
               </h5>
               <p className="text-[11px] text-brand-muted leading-relaxed">
-                單份包裹建議不超過 <b>300g</b> (約 2 個手機殼)，每超過 300g 需補運費 <b>¥20 元</b>。如若包裹總重量大於1kg，則無法使用拼郵只能使用順豐寄送🙇。
+                單份包裹建議不超過 <b>300g</b> (約 2 個手機殼)，<b>每超過 300g</b> 需補運費 <b>¥20 元</b>。如若包裹總重量<b>大於1kg</b>，則無法使用拼郵只能使用順豐寄送🙇。
                 <br />
                 <b>重量參考：</b>單背板含原包裝約 <b>50g</b>；手機殼含原包裝約 <b>125g</b>。
                 <br />

@@ -235,7 +235,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "link": "",
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-6.webp"] },
-      { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0706-3.webp"] }
+      { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0706-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0706-4.webp"] }
     ]
   },
   {
