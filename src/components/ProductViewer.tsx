@@ -254,7 +254,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
       return parseDetailedPrice(ct.models);
     }
 
-    return '95元起';
+    return '190元起';
   };
 
   const getDisplayCaseType = () => {
