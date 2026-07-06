@@ -26,7 +26,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-3",
     "title": "玩具熊",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -37,7 +37,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-4",
     "title": "漸變愛心",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -49,7 +49,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "id": "tb-5",
     "title": "薄荷漸變星星",
     "badge": "",
-    "layer": "雙層",
+    "layer": "單層",
     "link": "",
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框2.webp"] },
@@ -59,7 +59,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-6",
     "title": "紫色漸變星星",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -70,7 +70,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-7",
     "title": "黑色漸變星星",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -81,7 +81,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-8",
     "title": "天空色漸變雲朵",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -103,7 +103,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-10",
     "title": "粉色漸變愛心",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -114,7 +114,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-11",
     "title": "天空藍像素愛心",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "",
     "link": "",
     "models": [
@@ -189,7 +189,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
  {
     "id": "tb-18",
     "title": "蜜瓜冰飲",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "new",
     "link": "",
     "models": [
@@ -199,7 +199,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
  {
     "id": "tb-19",
     "title": "冰藍冰飲",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "new",
     "link": "",
     "models": [
@@ -209,7 +209,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
  {
     "id": "tb-20",
     "title": "草莓冰飲",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "new",
     "link": "",
     "models": [
@@ -219,7 +219,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
  {
     "id": "tb-21",
     "title": "芒果冰飲",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "new",
     "link": "",
     "models": [

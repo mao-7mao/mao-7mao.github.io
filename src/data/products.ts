@@ -1763,7 +1763,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"7-2-8", "title":"梔子", "badge":"new", "link":"",
             "models":[
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.16 AM.png"]}
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.16 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-1.webp"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-2.webp"] }
             ]
           },
           {
