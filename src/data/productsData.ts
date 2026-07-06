@@ -199,7 +199,7 @@ export const TUTUBOOM_CASE_TYPES: CaseType[] = [
     name: 'TutuBoom',
     nameEm: '分離殼/一體殼',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/tutuboom.webp',
-    desc: '<b>【分離殼】</b>：雙層印刷具有半透明效果</b>分離殼提供17pro/17pro max型號<br>分離殼邊框顏色含有：🩷迷你粉 🖤暗夜嘿 🤎朱古力 🤍磨砂透<br><b>【一體殼 (磨砂殼)】</b>：細膩磨砂質感，提供16pro/16pro max/air/17pro/17pro max型號<br>實物和預覽圖可能有色彩差異，預覽圖僅供參考 <br>*tutuboom價格含大陸段運費，具體可直接詢問萬有狀態<br>tutuboom與rhinoshield不是同一品牌🙇',
+    desc: '<b>【分離殼】</b>：雙層印刷具有半透明效果</b>分離殼提供17pro/17pro max型號<br>分離殼邊框顏色含有：🩷迷你粉 🖤暗夜嘿 🤎朱古力 🤍磨砂透<br><b>【一體殼 (磨砂殼)】</b>：細膩磨砂質感，提供16pro/16pro max/air/17pro/17pro max型號<br>實物和預覽圖可能有色彩差異，預覽圖僅供參考 <br>⭐️tutuboom價格含大陸段運費，具體可直接詢問萬有狀態<br>tutuboom與rhinoshield不是同一品牌🙇',
     iconBg: '#f0ede8',
     iconColor: '#8a7868',
     icon: 'Layers',

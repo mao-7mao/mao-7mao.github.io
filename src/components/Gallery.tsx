@@ -212,7 +212,7 @@ export default function Gallery({
               {/* RHINOSHIELD SECTION */}
               <div className="space-y-1 pt-1.5">
                 <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-600/90 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>🛡️ Rhinoshield 系列</span>
+                  <span>🦏 Rhinoshield 系列</span>
                 </div>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;

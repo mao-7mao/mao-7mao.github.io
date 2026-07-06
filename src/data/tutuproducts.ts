@@ -234,7 +234,8 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-6.webp"] }
+      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-6.webp"] },
+      { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0706-3.webp"] }
     ]
   },
   {
@@ -244,7 +245,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "badge": "new",
     "link": "",
     "models": [
-      { "name": "一體殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0704-8.webp"] }
+      { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0704-8.webp"] }
     ]
 
   }

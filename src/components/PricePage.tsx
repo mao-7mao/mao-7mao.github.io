@@ -4,9 +4,9 @@ import { ShieldCheck, Truck, Scale, AlertCircle, Copy, Check, ExternalLink } fro
 import { motion } from 'motion/react';
 
 export default function PricePage() {
-  const [copiedText, setCopiedText] = useState<'wechat1' | 'wechat2' | null>(null);
+  const [copiedText, setCopiedText] = useState<'wechat1' | 'wechat2' | 'line1' | null>(null);
 
-  const copyContact = (text: string, type: 'wechat1' | 'wechat2') => {
+  const copyContact = (text: string, type: 'wechat1' | 'wechat2' | 'line1') => {
     navigator.clipboard.writeText(text);
     setCopiedText(type);
     setTimeout(() => setCopiedText(null), 2000);
@@ -158,21 +158,21 @@ export default function PricePage() {
               </span>
               <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">拼郵 (默認)</h5>
               <p className="text-[11px] text-brand-muted mb-2">代收、集運、大陸段轉寄</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">約 ¥25 元 / kg</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal">可與 Jimmibobo （僅ZFB收款）其他委託商品合包寄送，合包寄送時萬有狀態商品包裹需控制在300g以內</p>
+              <div className="font-mono text-xs font-semibold text-black mb-2">約 ¥25 元起 / <b>300 g</b> <br />（如果🍑一元拍需要加¥5 元）</div>
+              <p className="text-[11px] text-brand-text/70 leading-normal">可與 Jimmibobo （僅ZFB收款）其他委託商品合包寄送，合包寄送時萬有狀態商品包裹需控制在300g以內，總重量不得超過1kg（指加上jimmibobo處所購之產品）。 <br />🙇‍♀️如若超過只能使用順豐寄送。</p>
             </div>
 
             <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">
               <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">Jimmibobo 順豐直郵優惠版</h5>
               <p className="text-[11px] text-brand-muted mb-2">台灣 → 大陸・jimmibobo專屬福利方案</p>
               <div className="font-mono text-xs font-semibold text-black mb-2">¥55 元 / 1kg</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal">必須與 Jimmibobo 其他委託商品合包。萬有狀態商品包裹需控制在300g以內。</p>
+              <p className="text-[11px] text-brand-text/70 leading-normal"><b>必須</b>與 Jimmibobo 其他委託商品合包。萬有狀態商品包裹需控制在300g以內。</p>
             </div>
 
             <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">
               <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">萬有順豐直郵</h5>
               <p className="text-[11px] text-brand-muted mb-2">台灣 → 大陸・無需拼郵或合包</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">運費到付 (約 ¥70)</div>
+              <div className="font-mono text-xs font-semibold text-black mb-2">運費到付 (約 ¥80)</div>
               <p className="text-[11px] text-brand-text/70 leading-normal">具體價格依物流報價為準，可直接聯繫萬有安排寄出。</p>
             </div>
 
@@ -194,9 +194,13 @@ export default function PricePage() {
                 Jimmibobo 委託寄送重量規則
               </h5>
               <p className="text-[11px] text-brand-muted leading-relaxed">
-                單份包裹建議不超過 <b>300g</b> (約 2 個手機殼)，每超過 300g 需補運費 <b>¥20 元</b>。
+                單份包裹建議不超過 <b>300g</b> (約 2 個手機殼)，每超過 300g 需補運費 <b>¥20 元</b>。如若包裹總重量大於1kg，則無法使用拼郵只能使用順豐寄送🙇。
                 <br />
                 <b>重量參考：</b>單背板含原包裝約 <b>50g</b>；手機殼含原包裝約 <b>125g</b>。
+                <br />
+                偏遠地區若產生額外費用，Jimmibobo 會提前告知，同時需補運費時，Jimmibobo 會私訊另行通知，請留意訊息。
+                <br />
+                以上內容如有更新會再另行通知，謝謝每位各位的耐心閱讀與支持💕
               </p>
             </div>
           </div>
