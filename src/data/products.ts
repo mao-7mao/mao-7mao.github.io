@@ -1380,7 +1380,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/30Akv1ItoWI"},    {"platform":"xhs", "url":"http://xhslink.com/o/73muBBV0Dej"}         ],
             "models":[
               {"name":"SolidX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-40-32.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/0617-12.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-51-33.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-52-07.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-52-42.png"]},
-              {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-53-13.png"]},
+              {"name":"AirX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-53-13.png"]},
               {"name":"clear",       "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-2/2026-05-27-21-53-47.png"]}
             ]
           },
