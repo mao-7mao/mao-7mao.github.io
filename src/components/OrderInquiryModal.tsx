@@ -142,7 +142,7 @@ export default function OrderInquiryModal({
                     <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-accent text-white text-[10px] font-mono font-bold animate-pulse">
                       ✦
                     </span>
-                    <span className="font-semibold text-brand-text text-[13px]">私訊萬有狀態下單 (TutuBoom da)</span>
+                    <span className="font-semibold text-brand-text text-[13px]">私訊萬有狀態下單 (TutuBoom 大陸段包郵)</span>
                   </div>
                   <p className="text-brand-muted text-[11px] leading-relaxed">
                     <b>TutuBoom 系列價格已含大陸段運費（免集運）</b>！請點擊上方「一鍵複製規格資訊」並截圖本預覽畫面，直接私訊萬有狀態，即可輕鬆完成商品款項支付與寄送登記。
