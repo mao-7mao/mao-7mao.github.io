@@ -153,7 +153,7 @@ useEffect(() => {
             「redbook: 萬有狀態」
           </p>
           <div className="text-[11px] text-brand-muted/75 leading-relaxed tracking-wider font-sans">
-            看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知客服圖款編號 ＋ 機型 ＋ 殼種 ✦
+            看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
             © 2026 萬有狀態Omnistate. All Rights Reserved. Crafted with pristine structural design.
           </div>
