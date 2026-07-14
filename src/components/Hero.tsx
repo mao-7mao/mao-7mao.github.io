@@ -35,7 +35,7 @@ export default function Hero() {
           <span className="h-2 w-2 rounded-full bg-black animate-pulse" />
           <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase flex items-center gap-1.5 font-bold">
             <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin" style={{ animationDuration: '6s' }} />
-            Omnistate V2 · Studio Commerce
+            Omnistate · STUDIO
           </span>
         </motion.div>
 
