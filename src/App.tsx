@@ -4,10 +4,12 @@ import ProductViewer from './components/ProductViewer';
 import Gallery from './components/Gallery';
 import PricePage from './components/PricePage';
 import OrderInquiryModal from './components/OrderInquiryModal';
+import FavoritesDrawer from './components/FavoritesDrawer';
 import { PRODUCTS_DATA } from './data/products';
+import { TUTU_PRODUCTS_DATA } from './data/tutuproducts';
 import { Design } from './data/productsData';
-import { Smartphone, ShoppingBag, Layers, ShieldCheck, ArrowUp, Compass, Sparkles } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { Smartphone, ShoppingBag, Layers, ShieldCheck, ArrowUp, Compass, Sparkles, Heart } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   // Configured states
@@ -15,6 +17,49 @@ export default function App() {
     PRODUCTS_DATA.SERIES[0].subseries?.[0].designs[0] || PRODUCTS_DATA.SERIES[0].designs![0]
   );
   const [selectedCaseCompatible, setSelectedCaseCompatible] = useState<string>('all');
+
+  // Favorites States
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
+
+  // Load favorites from localstorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('fav_designs');
+    if (saved) {
+      try {
+        setFavorites(JSON.parse(saved));
+      } catch (err) {
+        console.error('Error loading favorites from localStorage', err);
+      }
+    }
+  }, []);
+
+  const handleToggleFavorite = (id: string) => {
+    setFavorites((prev) => {
+      const isFav = prev.includes(id);
+      const updated = isFav ? prev.filter((item) => item !== id) : [...prev, id];
+      localStorage.setItem('fav_designs', JSON.stringify(updated));
+      return updated;
+    });
+  };
+
+  // Flatten all designs for looking up objects
+  const allDesigns = React.useMemo(() => {
+    const list: Design[] = [];
+    TUTU_PRODUCTS_DATA.forEach((design) => {
+      list.push(design);
+    });
+    PRODUCTS_DATA.SERIES.forEach((series) => {
+      if (series.subseries && series.subseries.length) {
+        series.subseries.forEach((sub) => {
+          list.push(...sub.designs);
+        });
+      } else if (series.designs) {
+        list.push(...series.designs);
+      }
+    });
+    return list;
+  }, []);
 
   // Inquiry Modal States
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
@@ -26,15 +71,17 @@ export default function App() {
     price: '',
   });
 
-  // Prevent Right Click on Images
-useEffect(() => {
+  // Floating Back-to-Top State
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };
 
     const handleContextMenu = (e: MouseEvent) => {
       if (e.target instanceof HTMLImageElement) {
-        e.preventDefault(); // 當目標是圖片時，防止右鍵菜單彈出
+        e.preventDefault();
       }
     };
 
@@ -45,18 +92,6 @@ useEffect(() => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('contextmenu', handleContextMenu);
     };
-  }, []);
-
-
-  // Floating Back-to-Top State
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleSelectDesign = (design: Design) => {
@@ -89,8 +124,8 @@ useEffect(() => {
         {/* Brand logo */}
         <div className="flex items-center gap-2 cursor-pointer relative z-10" onClick={() => scrollToSection('hero')}>
           <Sparkles className="h-5 w-5 text-brand-gold" />
-          <h1 className="font-serif text-lg font-semibold tracking-wide text-brand-text">
-            萬有狀態 <em className="text-black font-normal italic font-serif">Omnistate</em>
+          <h1 className="font-serif text-lg font-semibold tracking-wide text-brand-text flex items-center">
+            萬有狀態 <em className="text-black font-normal italic font-serif ml-1.5">Omnistate</em>
           </h1>
         </div>
 
@@ -98,15 +133,28 @@ useEffect(() => {
         <nav className="flex items-center gap-1 sm:gap-2 relative z-10">
           <button
             onClick={() => scrollToSection('price-page')}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
           >
             <ShieldCheck className="h-3.5 w-3.5 text-brand-gold" />
             <span className="hidden sm:inline">殼體價格與運送說明</span>
           </button>
 
           <button
+            onClick={() => setIsFavoritesOpen(true)}
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40 relative"
+          >
+            <Heart className={`h-3.5 w-3.5 ${favorites.length > 0 ? 'text-rose-500 fill-current' : ''}`} />
+            <span>我的收藏</span>
+            {favorites.length > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 bg-rose-500 text-white text-[8px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
+                {favorites.length}
+              </span>
+            )}
+          </button>
+
+          <button
             onClick={() => scrollToSection('product-viewer')}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
           >
             <Compass className="h-3.5 w-3.5 text-black" />
             <span className="hidden sm:inline">瀏覽區</span>
@@ -114,7 +162,7 @@ useEffect(() => {
 
           <button
             onClick={() => scrollToSection('gallery-section')}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
           >
             <Layers className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">全品類</span>
@@ -132,6 +180,8 @@ useEffect(() => {
           selectedDesign={selectedDesign}
           onOpenOrderModal={handleOpenInquiry}
           preferredCaseType={selectedCaseCompatible}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
         />
 
         {/* Core Gallery Showcase */}
@@ -140,6 +190,8 @@ useEffect(() => {
           activeDesignId={selectedDesign.id}
           selectedCaseCompatible={selectedCaseCompatible}
           setSelectedCaseCompatible={setSelectedCaseCompatible}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
         />
 
         {/* Prices and shipping logistics guide */}
@@ -183,6 +235,17 @@ useEffect(() => {
         selectedDesign={selectedDesign}
         selectedCaseType={inquirySpecs.caseType}
         totalPrice={inquirySpecs.price}
+      />
+
+      {/* Favorites List Drawer */}
+      <FavoritesDrawer
+        isOpen={isFavoritesOpen}
+        onClose={() => setIsFavoritesOpen(false)}
+        favorites={favorites}
+        onToggleFavorite={handleToggleFavorite}
+        onSelectDesign={handleSelectDesign}
+        scrollToSection={scrollToSection}
+        allDesigns={allDesigns}
       />
     </div>
   );

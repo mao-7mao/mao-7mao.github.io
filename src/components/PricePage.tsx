@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { CASE_TYPES, TUTUBOOM_CASE_TYPES, NOTES, CaseType } from '../data/productsData';
+import { CASE_TYPES, tutuboom_CASE_TYPES, NOTES, CaseType } from '../data/productsData';
 import { ShieldCheck, Truck, Scale, AlertCircle, Copy, Check, ExternalLink } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export default function PricePage() {
   const [copiedText, setCopiedText] = useState<'wechat1' | 'wechat2' | 'line1' | null>(null);
@@ -12,14 +12,14 @@ export default function PricePage() {
     setTimeout(() => setCopiedText(null), 2000);
   };
 
-  const ALL_DISPLAY_TYPES = [...CASE_TYPES, ...TUTUBOOM_CASE_TYPES];
+  const ALL_DISPLAY_TYPES = [...tutuboom_CASE_TYPES, ...CASE_TYPES];
 
   return (
     <section id="price-page" className="py-20 px-6 max-w-7xl mx-auto page-enter relative z-10">
       {/* Eye Brow */}
       <div className="text-center mb-12">
         <span className="font-mono text-xs tracking-[0.2em] text-black/50 uppercase block mb-2 font-semibold">
-          Pricing & Logistics
+          規格價格
         </span>
         <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
           殼體規格與 <em>物流說明書</em>
@@ -31,81 +31,129 @@ export default function PricePage() {
 
       {/* Case Types Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-        {ALL_DISPLAY_TYPES.map((ct, idx) => (
-          <motion.div
-            key={ct.name}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            className="group relative flex flex-col glass-card rounded-2xl overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1"
-          >
-            {/* Header */}
-            <div className="p-5 border-b border-black/5">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-serif text-lg font-semibold text-brand-text flex items-center gap-1.5">
-                    {ct.name}
-                  </h3>
-                  <p 
-                    className="text-[11px] text-brand-muted mt-1 leading-normal"
-                    dangerouslySetInnerHTML={{ __html: ct.nameEm }}
-                  />
-                </div>
-                <div 
-                  className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${ct.iconBg}`, color: ct.iconColor }}
-                >
-                  <ShieldCheck className="h-5 w-5" />
-                </div>
-              </div>
-            </div>
-
-            {/* Content Split: Left Info, Right Image */}
-            <div className="p-5 flex-1 flex flex-col justify-between">
-              <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 items-center">
-                <div className="sm:col-span-3 space-y-2">
-                  <span className="font-mono text-[9px] uppercase tracking-wider text-black/40 block font-semibold">
-                    殼種詳情 / Description
+        {ALL_DISPLAY_TYPES.map((ct, idx) => {
+          const istutuboom = ct.name.toLowerCase().includes('tutuboom');
+          return (
+            <motion.div
+              key={ct.name}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              className={`group relative flex flex-col rounded-2xl overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 ${
+                istutuboom
+                  ? 'bg-gradient-to-b from-rose-50/70 to-amber-50/45 border border-rose-200/80 shadow-md shadow-rose-100/10 hover:shadow-rose-100/40'
+                  : 'glass-card'
+              }`}
+            >
+              {/* Premium Ribbon Tag for tutuboom */}
+              {istutuboom && (
+                <div className="absolute top-0 right-12 z-20">
+                  <span className="text-[8px] font-mono font-extrabold bg-gradient-to-r from-rose-500 to-rose-600 text-white px-2.5 py-0.5 rounded-b-lg shadow-sm tracking-wider uppercase">
+                    tutuboom-Brand
                   </span>
-                  <p 
-                    className="text-[11px] text-brand-text/80 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: ct.desc }}
-                  />
                 </div>
-                <div className="sm:col-span-2 flex justify-center">
-                  <div className="relative w-24 h-32 rounded-xl bg-white/20 border border-dashed border-black/10 overflow-hidden p-2 flex items-center justify-center">
-                    {ct.img ? (
-                      <img 
-                        src={ct.img} 
-                        alt={ct.name} 
-                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
-                        referrerPolicy="no-referrer"
-                      />
-                    ) : (
-                      <span className="text-[10px] text-brand-muted font-mono">Image</span>
-                    )}
+              )}
+
+              {/* Header */}
+              <div className={`p-5 border-b ${istutuboom ? 'border-rose-100' : 'border-black/5'}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className={`font-serif text-lg font-semibold flex items-center gap-1.5 ${
+                      istutuboom ? 'text-rose-950 font-bold' : 'text-brand-text'
+                    }`}>
+                      {istutuboom && <span className="text-rose-500 text-base animate-pulse">✦</span>}
+                      {ct.name}
+                    </h3>
+                    <p 
+                      className={`text-[11px] mt-1 leading-normal ${
+                        istutuboom ? 'text-rose-800/80 font-medium' : 'text-brand-muted'
+                      }`}
+                      dangerouslySetInnerHTML={{ __html: ct.nameEm }}
+                    />
+                  </div>
+                  <div 
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm"
+                    style={{ 
+                      backgroundColor: istutuboom ? '#ffe4e6' : `${ct.iconBg}`, 
+                      color: istutuboom ? '#f43f5e' : ct.iconColor 
+                    }}
+                  >
+                    <ShieldCheck className="h-5 w-5" />
                   </div>
                 </div>
               </div>
 
-              {/* Price list */}
-              <div className="mt-5 pt-4 border-t border-black/5 space-y-2">
-                <span className="font-mono text-[9px] uppercase tracking-wider text-black/40 block font-semibold">
-                  訂製價格 / Models & Prices
-                </span>
-                <div className="space-y-1.5">
-                  {ct.models.map((m, mIdx) => (
-                    <div key={mIdx} className="flex justify-between items-center text-xs pb-1 border-b border-black/5 last:border-0 last:pb-0">
-                      <span className="text-brand-text/90 font-sans">{m.name}</span>
-                      <span className="font-mono font-semibold text-black">{m.price}</span>
+              {/* Content Split: Left Info, Right Image */}
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 items-center">
+                  <div className="sm:col-span-3 space-y-2">
+                    <span className={`font-mono text-[9px] uppercase tracking-wider block font-semibold ${
+                      istutuboom ? 'text-rose-700/60' : 'text-black/40'
+                    }`}>
+                      詳情 / Description
+                    </span>
+                    <p 
+                      className={`text-[11px] leading-relaxed ${
+                        istutuboom ? 'text-rose-950/80 font-medium' : 'text-brand-text/80'
+                      }`}
+                      dangerouslySetInnerHTML={{ __html: ct.desc }}
+                    />
+                  </div>
+                  <div className="sm:col-span-2 flex justify-center">
+                    <div className={`relative w-24 h-32 rounded-xl overflow-hidden p-2 flex items-center justify-center border border-dashed ${
+                      istutuboom ? 'bg-white/60 border-rose-300/60 shadow-sm' : 'bg-white/20 border-black/10'
+                    }`}>
+                      {ct.img ? (
+                        <img 
+                          src={ct.img} 
+                          alt={ct.name} 
+                          className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
+                          referrerPolicy="no-referrer"
+                        />
+                      ) : (
+                        <span className="text-[10px] text-brand-muted font-mono">Image</span>
+                      )}
                     </div>
-                  ))}
+                  </div>
+                </div>
+
+                {/* Price list */}
+                <div className={`mt-5 pt-4 border-t space-y-2 ${istutuboom ? 'border-rose-100' : 'border-black/5'}`}>
+                  <span className={`font-mono text-[9px] uppercase tracking-wider block font-semibold ${
+                    istutuboom ? 'text-rose-700/60' : 'text-black/40'
+                  }`}>
+                    訂製價格 / Models & Prices
+                  </span>
+                  <div className="space-y-1.5">
+                    {ct.models.map((m, mIdx) => (
+                      <div 
+                        key={mIdx} 
+                        className={`flex justify-between items-center text-xs pb-1 border-b last:border-0 last:pb-0 ${
+                          istutuboom ? 'border-rose-100/40' : 'border-black/5'
+                        }`}
+                      >
+                        <span className={`font-sans flex items-center gap-1.5 ${
+                          istutuboom ? 'text-rose-950 font-medium' : 'text-brand-text/90'
+                        }`}>
+                          {istutuboom && <span className="h-1.5 w-1.5 rounded-full bg-rose-500 animate-pulse shrink-0" />}
+                          {m.name}
+                        </span>
+                        <span className={`font-mono font-semibold ${
+                          istutuboom 
+                            ? 'text-rose-600 bg-rose-50/80 px-2 py-0.5 rounded border border-rose-100/30 font-bold' 
+                            : 'text-black'
+                        }`}>
+                          {m.price}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Logistics & Shipping Guide */}
@@ -113,7 +161,7 @@ export default function PricePage() {
         <div className="flex items-center gap-2 mb-6">
           <Truck className="h-5 w-5 text-black" />
           <h3 className="font-serif text-xl font-semibold text-brand-text">
-            商品購買與 <em>寄送物流說明（rhinoshield） </em>
+            商品購買與 <em>寄送物流說明（rhinoshield ） </em>
           </h3>
         </div>
 
@@ -216,37 +264,39 @@ export default function PricePage() {
           <ul className="space-y-3.5 text-xs text-brand-text/80 leading-relaxed">
             {NOTES.slice(0, 4).map((note, i) => (
               <li key={i}>
-                <span className="font-semibold text-brand-text block mb-0.5">{note.label}：</span>
+                <span className="font-semibold text-brand-text block mb-0.5">
+                  {note.label}：
+                </span>
                 <span dangerouslySetInnerHTML={{ __html: note.val }} />
               </li>
             ))}
           </ul>
         </div>
 
-<div className="flex flex-col justify-between">
-  <div>
-    <h4 className="font-serif font-semibold text-sm text-brand-text border-l-2 border-black pl-2 mb-4">
+        <div className="flex flex-col justify-between">
+          <div>
+            <h4 className="font-serif font-semibold text-sm text-brand-text border-l-2 border-black pl-2 mb-4">
       聯繫方式 / Contacts
-    </h4>
-    <div className="space-y-3.5">
+            </h4>
+            <div className="space-y-3.5">
       {/* 萬有狀態 WeChat */}
-      <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
-        <div>
-          <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">萬有狀態 WeChat</span>
-          <span className="text-sm font-semibold font-mono text-brand-text">mussessein-7</span>
-        </div>
-        <button
-          onClick={() => copyContact('mussessein-7', 'wechat1')}
-          className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
-        >
-          {copiedText === 'wechat1' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-          <span>{copiedText === 'wechat1' ? '已複製' : '複製'}</span>
-        </button>
-      </div>
+              <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
+                <div>
+                  <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">萬有狀態 WeChat</span>
+                  <span className="text-sm font-semibold font-mono text-brand-text">mussessein-7</span>
+                </div>
+                <button
+                  onClick={() => copyContact('mussessein-7', 'wechat1')}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
+                >
+                  {copiedText === 'wechat1' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  <span>{copiedText === 'wechat1' ? '已複製' : '複製'}</span>
+                </button>
+              </div>
 
       {/* 新增的 萬有狀態 Line */}
-      <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
-        <div>
+              <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
+                <div>
           <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">萬有狀態 Line</span>
           <span className="text-sm font-semibold font-mono text-brand-text">esmusssein-</span>
         </div>
@@ -263,18 +313,18 @@ export default function PricePage() {
       <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
         <div>
           <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">Jimmibobo WeChat</span>
-          <span className="text-sm font-semibold font-mono text-brand-text">jimmibobotw</span>
-        </div>
-        <button
-          onClick={() => copyContact('jimmibobotw', 'wechat2')}
-          className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
-        >
-          {copiedText === 'wechat2' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-          <span>{copiedText === 'wechat2' ? '已複製' : '複製'}</span>
-        </button>
-      </div>
-    </div>
-  </div>
+                  <span className="text-sm font-semibold font-mono text-brand-text">jimmibobotw</span>
+                </div>
+                <button
+                  onClick={() => copyContact('jimmibobotw', 'wechat2')}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
+                >
+                  {copiedText === 'wechat2' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  <span>{copiedText === 'wechat2' ? '已複製' : '複製'}</span>
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div className="mt-6 p-4 rounded-xl border border-black/10 bg-black/5 flex items-start gap-2.5">
             <AlertCircle className="h-4.5 w-4.5 text-black shrink-0 mt-0.5" />

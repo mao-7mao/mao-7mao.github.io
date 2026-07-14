@@ -17,7 +17,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "title": "絲帶花花",
     "layer": "雙層",
     "badge": "hot",
-    "link": "",
+    "link": [{"platform":"xhs", "url":" http://xhslink.com/o/7lgTZdUVf47 "} ],
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1.webp", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/IMG_2590.webp"] }
@@ -50,7 +50,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "title": "薄荷漸變星星",
     "badge": "",
     "layer": "單層",
-    "link": "",
+    "link": [{"platform":"xhs", "url":" http://xhslink.com/o/2sYPXilstKS "} ],
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框2.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7912.webp"] }
@@ -105,9 +105,15 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "title": "粉色漸變愛心",
     "layer": "單層",
     "badge": "",
-    "link": "",
+    "link": [{"platform":"xhs", "url":" http://xhslink.com/o/81yANq4ZhLl "} ],
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/白色爱心渐变.webp"] },
+          {
+      "name": "一體殼預覽", 
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0713-46.webp"
+      ]
+    },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7819.webp"] }
     ]
   },
@@ -126,7 +132,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "title": "粉色背景雙飛燕",
     "layer": "雙層",
     "badge": "new",
-    "link": "",
+    "link": [{"platform":"xhs", "url":"http://xhslink.com/o/5x0oiP54wNL "}],
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2103.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2131.webp"] }
@@ -148,7 +154,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   "title":"印章小狗",
   "layer": "雙層",
   "badge":"new",
-   "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/7dWqtf7Swqq "}] ,
+   "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/7dWqtf7Swqq "},{"platform":"xhs", "url":"http://xhslink.com/o/8ZyAM4g1IZM"},{"platform":"xhs", "url":"http://xhslink.com/o/3CdmnfKDAVx "}] ,
   "models":[
     {"name":"分離殼預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-3.webp"]},
     {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0702-2.webp"]}
@@ -159,7 +165,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   "title":"小熊軟糖",
   "layer": "單層",
   "badge":"new",
-   "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/9ZSGsDKDPBV"}] ,
+   "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/9ZSGsDKDPBV"},{"platform":"xhs", "url":"http://xhslink.com/o/3CdLkHpafVq"} ] ,
   "models":[
     {"name":"分離殼預覽","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"]},
     {"name":"實物","imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-13.webp"]}
@@ -173,6 +179,12 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/71GGTL6dhP4 "}] ,
     "models": [
       { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-2.webp"] },
+          {
+      "name": "一體殼預覽", 
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0713-45.webp"
+      ]
+    },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-1.webp"] }
     ]
   },
@@ -243,8 +255,14 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "title": "印章小狗",
     "layer": "單層",
     "badge": "new",
-    "link": "",
+    "link": [{"platform":"xhs", "url":"http://xhslink.com/o/1srV37dHHAI "}],
     "models": [
+          {
+      "name": "一體殼預覽", 
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0713-47.webp"
+      ]
+    },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0704-8.webp"] }
     ]
 

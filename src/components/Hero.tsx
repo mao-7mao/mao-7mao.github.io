@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDown, Sparkles, Image, Compass } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -35,7 +35,7 @@ export default function Hero() {
           <span className="h-2 w-2 rounded-full bg-black animate-pulse" />
           <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase flex items-center gap-1.5 font-bold">
             <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin" style={{ animationDuration: '6s' }} />
-            Omnistate
+            Omnistate V2 · Studio Commerce
           </span>
         </motion.div>
 
@@ -47,7 +47,7 @@ export default function Hero() {
         >
           萬有狀態 <br />
           <span className="font-serif italic font-normal text-brand-gold text-2xl sm:text-3xl md:text-4xl mt-1 block">
-            Omnistate 
+            Omnistate
           </span>
         </motion.h1>
 
@@ -57,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="font-sans font-medium text-xs sm:text-sm text-black/75 leading-relaxed max-w-lg mb-8"
         >
-          客製化款手機殼展示 Customized Phone Cases
+          萬有狀態の客製化手機殼🫧
         </motion.p>
 
         <motion.div
@@ -71,7 +71,7 @@ export default function Hero() {
             className="group flex items-center gap-2 bg-black text-white hover:scale-[1.02] transition-transform font-mono text-xs tracking-wider uppercase px-6 py-4 rounded-full shadow-md font-semibold"
           >
             <Compass className="h-4 w-4 group-hover:rotate-45 transition-transform" />
-            <span>單獨瀏覽區（可模擬添加配件瀏覽）</span>
+            <span>開始配置殼體</span>
           </button>
 
           <button

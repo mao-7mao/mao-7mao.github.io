@@ -602,25 +602,25 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         ]
           },
          {
-            "id":"2-1-21", "title":"印章百合花", "badge":"", "link":"",
+            "id":"2-1-21", "title":"印章百合花-多色系", "badge":"", "link":"",
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.47.36 PM.png", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.47.56 PM.png"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.48.06 PM.png"]},
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.48.33 PM.png"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/0713-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/0713-22.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/0713-35.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/0714-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/0714-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-21/Screenshot 2026-05-30 at 11.48.33 PM.png"]}
             ]
           },
-                   {
-            "id":"2-1-22", "title":"粉草莓", "badge":"", "link":"",
+       {
+            "id":"2-1-22", "title":"粉草莓", "badge":"new", "link":"",
             "models":[
            {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/s2.webp"]},
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.20 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.02 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/0612-11.webp"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/0713-36.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/0713-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.20 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/Screenshot 2026-05-30 at 11.54.02 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-22/0612-11.webp"]}
             ]
           },
           {
-              "id":"2-1-23", "title":"紅草莓", "badge":"", "link":"",
+              "id":"2-1-23", "title":"紅草莓", "badge":"new", "link":"",
               "models":[
-                {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/s1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06161.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06162.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06163.webp"]},
-              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.55.03 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.54.38 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06166.webp"]},
+                {"name":"ModNX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/0713-41.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/s1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06161.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06162.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06163.webp"]},
+              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/0713-34.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.55.03 PM.png" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/Screenshot 2026-05-30 at 11.54.38 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06166.webp"]},
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06164.webp" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06165.webp"]},
                 {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06167.webp" ,"https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06168.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-23/06169.webp"]}
             ]
@@ -651,8 +651,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             "id":"2-1-27", "title":"印章小狗", "badge":"new", "link":"",
             "models":[
             {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-11.webp"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-13.webp"]},
-            {"name":"ModNX",    "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-12.webp"] },
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-11.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-13.webp"]},
+            {"name":"ModNX",    "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-42.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-43.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-12.webp"] },
             {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-5.webp"]},
             {"name":"Clear",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-14.webp"]}
         ]
@@ -660,7 +660,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
            {
 "id":"2-1-28", "title":"蝕刻之翼", "badge":"new", "link":"",
  "models":[
- {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-4.webp"]},
+ {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0713-44.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-4.webp"]},
  {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-3.webp"]},
  {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-28/0627-4.webp"] }
   ]
@@ -673,13 +673,21 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
   ]
 },
 
-
  {
 "id":"2-1-30", "title":"脆冰冰", "badge":"new", "link":"",
  "models":[
  {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-10.webp"]},
  {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-1.webp"]},
  {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-2.webp"] }
+  ]
+},
+{
+"id":"2-1-31", "title":"線條鬱金香", "badge":"new", "link":"",
+"models":[
+{"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-5.webp"]},
+{"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-2.webp"]},
+{"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-4.webp"] },
+{"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-3.webp"]}
   ]
 }
         ]
@@ -724,13 +732,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
            {
             "id":"2-3-2", "title":"草莓瑞士捲", "badge":"", "link":"",
             "models":[
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/2025091111_09_1.png"] }
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/2025091111_09_1.png"] },
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/0713-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/0713-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/0713-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-2/0713-7.webp"]}
         ]
           },
            {
             "id":"2-3-3", "title":"藍莓瑞士捲", "badge":"", "link":"",
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/Screenshot 2026-05-31 at 12.00.00 AM.png"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/0713-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/0713-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/Screenshot 2026-05-31 at 12.00.00 AM.png"]}
             ]
           },
            {
@@ -884,7 +893,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "id":"s3-2", "name":"微織💗", 
         "designs":[
           {
-            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
+            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/5kyix3HHnSW "},{"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
             "models":[
              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0617-34.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-3.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
@@ -927,7 +936,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             "id":"3-2-6", "title":"泥灰白小天使滿", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/657wjLVwkvC  "}, {"platform":"xhs", "url":" http://xhslink.com/o/4yRke7a6fns"}] ,
             "models":[
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0617-31.webp"]},
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025091110_59.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0613-1.webp"]},
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025091110_59.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0613-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0713-18.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/0713-19.webp"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-6/2025121522_04.png"]}]
           },
           {
@@ -1013,7 +1022,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"3-2-18", "title":"水色禮物小兔", "badge":"", "link":"",
             "models":[
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-18/2025091111_00.png"] }
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-18/2025091111_00.png"] },
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-18/0713-10.webp"] }
         ]
           },
           {
@@ -1327,9 +1337,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         ]
       },
                 {
-            "id":"4-2-16", "title":"鈴蘭刺繡彩", "badge":"new", "link":"",
+            "id":"4-2-16", "title":"鈴蘭刺繡彩", "badge":"new", "link":[{"platform":"xhs", "url":" http://xhslink.com/o/5Y73OmEN6la  "} ],
             "models":[
-            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-7.webp"]},
+            {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0713-12.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0713-15.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0713-16.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-7.webp"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-4.webp"]},
             {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0702-1.webp"] },
             {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-5.webp"]}
@@ -1637,10 +1647,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         ]
           },
           {
-            "id":"6-2-8", "title":"暹羅貓毛衣", "badge":"", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/4yRke7a6fns"}] ,
+            "id":"6-2-8", "title":"暹羅貓毛衣", "badge":"hot", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/4yRke7a6fns"}] ,
             "models":[
            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.34 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/0613-3.webp"]},
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.24 AM.png"] }
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/0713-13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/Screenshot 2026-05-31 at 1.08.24 AM.png"] },
+            {"name":"Clear",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/0713-20.webp"] },
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-8/0713-14.webp"] }
         ]
           },
           {
@@ -1763,9 +1775,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"7-2-8", "title":"梔子", "badge":"new", "link":"",
             "models":[
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.16 AM.png"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-1.webp"]},
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-2.webp"] }
+            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0713-39.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0713-40.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.24 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/Screenshot 2026-05-31 at 1.14.16 AM.png"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0713-37.webp"]},
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0713-38.webp"] },
+            {"name":"Clear", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-2-8/0713-21.webp"] }
             ]
           },
           {
@@ -1791,7 +1804,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "designs":[
         
            {
-            "id":"8-1-airx", "title":"刺繡玩具熊淺色AirX", "badge":"", "link":"",
+            "id":"8-1-airx", "title":"刺繡玩具熊淺色AirX", "badge":"", "link":[{"platform":"xhs", "url":" http://xhslink.com/o/73hKMzNbUgk "} ],
             "models":[
             {"name":"🍋🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32_1.png"]},  
             {"name":"🍋🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/2026010920_32.png"]},        
@@ -1827,7 +1840,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "designs":[
           {
             "id":"8-2-airx", "title":"刺繡玩具熊深色AirX", "badge":"", "link":[
-              {"platform":"xhs", "url":"http://xhslink.com/o/9bIjv1nRWKn"}
+             {"platform":"xhs", "url":"http://xhslink.com/o/9bIjv1nRWKn"}
             ],
             "models":[
             {"name":"🍊🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-airx/2025112820_18.png"]},   
@@ -1973,9 +1986,37 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
           } 
         ]
-      }
+      },
+      {"id":"s8-6", "name":"針線時光熊", 
+        "designs":[
+       {
+            "id":"8-6-airx", "title":"針線時光熊AirX", "badge":"new", "link":"",
+            "models":[
+            {"name":"🪡🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-51.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-59.webp"]},
+            {"name":"🪡🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-52.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-53.webp"]},
+            {"name":"🪡🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-54.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-55.webp"]},
     ]
   },
+  {
+    "id":"8-6-solidx", "title":"針線時光熊SolidX", "badge":"new", "link":"",
+            "models":[
+            {"name":"🪡🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-49.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-50.webp"]},
+            {"name":"🪡🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-56.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-57.webp"]},
+            {"name":"🪡🧸-3",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-60.webp"]}
+  ]
+},
+  {
+    "id":"8-6-modnx", "title":"針線時光熊ModNX", "badge":"new", "link":"",
+            "models":[
+            {"name":"🪡🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-modnx/0713-48.webp"]},
+            {"name":"🪡🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-modnx/0713-58.webp"]}
+  ]
+}
+]
+ }
+    ]
+
+},
   {
     "id":"s9", "name":"微醺斑比預覽特輯", 
   	

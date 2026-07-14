@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Copy, Check, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+
 interface OrderInquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -25,7 +26,7 @@ export default function OrderInquiryModal({
 }: OrderInquiryModalProps) {
   const [copiedText, setCopiedText] = useState<'wechat' | 'wechat2' | 'line' | 'order' | null>(null);
 
-  const isTutuBoom = selectedDesign?.id.startsWith('tb-') || !!selectedDesign?.layer || selectedCaseType.includes('TutuBoom');
+  const istutuboom = selectedDesign?.id.startsWith('tb-') || !!selectedDesign?.layer || selectedCaseType.includes('tutuboom');
 
   const getDesignNote = (title?: string) => {
     if (!title) return '';
@@ -136,16 +137,16 @@ export default function OrderInquiryModal({
               <h4 className="font-serif font-semibold text-sm text-brand-text border-l-2 border-brand-accent pl-2">
                 簡易下單流程
               </h4>
-              {isTutuBoom ? (
+              {istutuboom ? (
                 <div className="p-4 bg-brand-card rounded-xl border border-brand-border space-y-3">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 flex items-center justify-center rounded-full bg-brand-accent text-white text-[10px] font-mono font-bold animate-pulse">
                       ✦
                     </span>
-                    <span className="font-semibold text-brand-text text-[13px]">私訊萬有狀態下單 (TutuBoom 大陸段包郵)</span>
+                    <span className="font-semibold text-brand-text text-[13px]">私訊萬有狀態下單 (tutuboom 大陸段包郵)</span>
                   </div>
                   <p className="text-brand-muted text-[11px] leading-relaxed">
-                    <b>TutuBoom 系列價格已含大陸段運費（免集運）</b>！請點擊上方「一鍵複製規格資訊」並截圖本預覽畫面，直接私訊萬有狀態，即可輕鬆完成商品款項支付與寄送登記。
+                    <b>tutuboom 系列價格已含大陸段運費（免集運）</b>！請點擊上方「一鍵複製規格資訊」並截圖本預覽畫面，直接私訊萬有狀態，即可輕鬆完成商品款項支付與寄送登記。
                   </p>
                   <div className="space-y-2 mt-2">
                     <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-2 rounded-lg border border-brand-border">

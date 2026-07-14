@@ -189,27 +189,26 @@ export const NOTES: NoteItem[] = [
   { label: '聯繫方式', val: '萬有狀態🫧：<strong>mussessein-7</strong>  <br>萬有狀態line：<strong>esmusssein-</strong> <br>Jimmibobo🫧：<strong>jimmibobotw</strong>' }
 ];
 
-export const TUTUBOOM_PRICES = [
-  { name: 'TutuBoom訂製款單層背板+邊框', price: '295.8元' },
-  { name: 'TutuBoom訂製款雙層背板+邊框', price: '312.8元' }
+export const tutuboom_PRICES = [
+  { name: 'tutuboom訂製款單層背板+邊框', price: '295.8元' },
+  { name: 'tutuboom訂製款雙層背板+邊框', price: '312.8元' }
 ];
 
-export const TUTUBOOM_CASE_TYPES: CaseType[] = [
+export const tutuboom_CASE_TYPES: CaseType[] = [
   {
-    name: 'TutuBoom',
+    name: 'tutuboom',
     nameEm: '分離殼/一體殼',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/tutuboom.webp',
-    desc: '<b>【分離殼】</b>：具有雙層印刷、單層印刷之印刷工藝類型<br>雙層印刷具有較為明顯的圖層分離效果<br>單層印刷可以做出半透明、漸變、浮雕之效果<br>☁️分離殼提供17pro/17pro max型號<br>🎨分離殼邊框顏色：迷你粉 暗夜黑 朱古力 磨砂透<br><b>【一體殼 (磨砂殼)】</b>：單層印刷，提供16pro/16pro max/air/17pro/17pro max型號<br>💡實物和預覽圖可能有色差，預覽圖僅供參考 <br>💡tutuboom價格含大陸段運費，具體可直接詢問萬有狀態<br>💡tutuboom與rhinoshield不是同一品牌',
-    iconBg: '#f0ede8',
-    iconColor: '#8a7868',
+    desc: '<b>【分離殼】</b>：具有雙層印刷、單層印刷之印刷工藝類型<br>・雙層印刷：圖層分離效果較為明顯<br>・單層印刷：可做出半透明、漸變、浮雕之效果<br>・☁️適用型號：17pro/17pro max<br>・🎨邊框顏色：迷你粉、暗夜黑、朱古力、磨砂透<br><br><b>【一體殼(磨砂殼)】</b>：單層印刷<br>・適用型號：16pro/16pro max/air/17pro/17pro max<br><br>💡實物和預覽圖可能有色差，預覽圖僅供參考<br>💡tutuboom價格含大陸段運費，具體可直接詢問萬有狀態<br>💡tutuboom與rhinoshield 不是同一品牌',    iconBg: '#f0ede8',
+    iconColor: '#eeaedc',
     icon: 'Layers',
     models: [
-      { name: 'TutuBoom訂製款單層印刷背板', price: '168.3元' },
-      { name: 'TutuBoom訂製款單層印刷背板+邊框', price: '295.8元' },
-      { name: 'TutuBoom訂製款雙層印刷背板', price: '185.3元' },
-      { name: 'TutuBoom訂製款雙層印刷背板+邊框', price: '312.8元' } ,
-      { name: 'TutuBoom訂製款白透or全透磨砂殼', price: '142.8元' },
-      { name: 'TutuBoom訂製款白透or全透磨砂殼(相機按鈕版)', price: '159.8元' }
+      { name: 'tutuboom訂製款單層印刷背板', price: '168.3元' },
+      { name: 'tutuboom訂製款單層印刷背板+邊框', price: '295.8元' },
+      { name: 'tutuboom訂製款雙層印刷背板', price: '185.3元' },
+      { name: 'tutuboom訂製款雙層印刷背板+邊框', price: '312.8元' } ,
+      { name: 'tutuboom訂製款白透or全透磨砂殼', price: '142.8元' },
+      { name: 'tutuboom訂製款白透or全透磨砂殼(相機按鈕版)', price: '159.8元' }
     ]
   }
 ];
