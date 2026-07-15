@@ -708,7 +708,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             "id":"2-2-1", "title":"黑白貓貓", "badge":"", "link":"",
             "models":[
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/2025120513_22_1.png", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/2025120513_22_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-10.webp"] },
-            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-9.webp"] }
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-9.webp"] }
         ]
           },
            {
