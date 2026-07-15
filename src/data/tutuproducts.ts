@@ -174,7 +174,7 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
   {
     "id": "tb-16",
     "title": "梔子",
-    "layer": "雙層",
+    "layer": "單層",
     "badge": "new",
     "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/71GGTL6dhP4 "}] ,
     "models": [
@@ -266,6 +266,13 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0704-8.webp"] }
     ]
 
-  }
+  },
+  {"id": "tb-24","title": "印章jelly bear 圓點版","layer": "單層","badge": "new","link":"",
+  "models": [
+    {"name": "分離殼預覽",  "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0715-21.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0715-22.webp"] },
+    {"name": "一體殼預覽",  "imgs": [ "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0715-23.webp" ]}
+  ]
+}
+  
 
 ]

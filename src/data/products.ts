@@ -651,7 +651,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             "id":"2-1-27", "title":"印章小狗", "badge":"new", "link":"",
             "models":[
             {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-9.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-10.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-11.webp"]},
-            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-11.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-13.webp"]},
+            {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-11.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-13.webp"]},
             {"name":"ModNX",    "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-42.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0713-43.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-12.webp"] },
             {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-5.webp"]},
             {"name":"Clear",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-14.webp"]}
@@ -689,7 +689,16 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
 {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-4.webp"] },
 {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-31/0715-3.webp"]}
   ]
-}
+},
+{
+"id":"2-1-32", "title":"印章jelly bear 圓點版", "desc":"與2-1-26的區別是以圓點的方式呈現印章質感", "badge":"new", "link":"",
+"models":[
+{"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-5.webp"]},
+{"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-10.webp"]},
+{"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-6-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-9.webp"]},
+{"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-7.webp"]},
+{"name":"Clear",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-11.webp"]}
+        ]}
         ]
       },
       {
@@ -1231,13 +1240,15 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"4-2-1", "title":"純色玩具熊-橘", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/BwrRhtZdP5 "}] ,
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53_1.png"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-15.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-16.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-17.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53_1.png"]},
+            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-18.webp"]}
             ]
           },
          {
             "id":"4-2-2", "title":"純色玩具熊-白", "badge":"", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/7O44sveRj8v "}] ,
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/2026041714_54.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/2026041714_54_1.png"]}
+            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/0715-14.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/0715-20.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/2026041714_54.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/2026041714_54_1.png"]},
+            {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/0715-12.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-2/0715-19.webp"]}
             ]
           },
          {

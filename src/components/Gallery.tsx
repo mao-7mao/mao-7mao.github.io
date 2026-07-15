@@ -203,10 +203,10 @@ export default function Gallery({
             Phonecase Gallery
           </span>
           <h2 className="font-serif text-3xl font-semibold text-brand-text">
-            客製化 <em>瀏覽區</em>
+            全品類 <em>瀏覽區</em>
           </h2>
           <p className="text-xs text-brand-muted mt-1 leading-relaxed">
-            可以上傳手機配件預覽搭配效果♥️
+            可收藏並進入瀏覽區詳細查看📪
           </p>
         </div>
 
