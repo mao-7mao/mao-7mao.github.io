@@ -266,7 +266,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
       const layer = selectedDesign.layer || '雙層';
       if (layer === '單層') {
         if (selectedCaseType.includes('分離')) return 'tutuboom訂製款分離殼 (單層背板+邊框)';
-        if (selectedCaseType.includes('一體')) return 'tutuboom訂製款磨砂一體防摔殼';
+        if (selectedCaseType.includes('一體')) return 'tutuboom訂製款磨砂一體殼';
         return 'tutuboom 訂製系列 (單層)';
       } else {
         return 'tutuboom訂製款分離殼 (雙層背板+邊框)';
