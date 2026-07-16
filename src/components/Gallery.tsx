@@ -508,16 +508,16 @@ export default function Gallery({
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-              className="fixed top-0 left-0 h-full w-[310px] bg-white dark:bg-stone-900 shadow-2xl z-50 lg:hidden overflow-y-auto flex flex-col border-r border-stone-200 dark:border-stone-800"
+              className="fixed top-0 left-0 h-full w-[310px] bg-white shadow-2xl z-50 lg:hidden overflow-y-auto flex flex-col border-r border-stone-200"
             >
-              <div className="flex items-center justify-between p-5 border-b border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/20">
+              <div className="flex items-center justify-between p-5 border-b border-stone-100 bg-stone-50/50">
                 <h3 className="font-serif font-bold text-base text-brand-text flex items-center gap-2">
                   <SlidersHorizontal className="h-4.5 w-4.5 text-brand-gold animate-pulse" />
                   <span>系列與分類篩選</span>
                 </h3>
                 <button
                   onClick={() => setIsMobileSidebarOpen(false)}
-                  className="p-1.5 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 text-stone-500 hover:text-black dark:text-stone-400 dark:hover:text-white transition-colors cursor-pointer"
+                  className="p-1.5 rounded-full hover:bg-stone-200/60 text-stone-500 hover:text-black transition-colors cursor-pointer"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -527,7 +527,7 @@ export default function Gallery({
                 {renderSidebarInner(true)}
               </div>
               
-              <div className="p-4 border-t border-stone-100 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/40">
+              <div className="p-4 border-t border-stone-100 bg-stone-50">
                 <button
                   onClick={() => setIsMobileSidebarOpen(false)}
                   className="w-full py-2.5 bg-black text-white font-semibold text-xs rounded-xl uppercase tracking-wider cursor-pointer text-center"
