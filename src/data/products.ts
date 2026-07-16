@@ -265,7 +265,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
           },
           {
-            "id":"1-2-9", "title":"綠色格紋浮雕", "badge":"", "link":"",
+            "id":"1-2-9", "title":"綠色格紋浮雕", "badge":"", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/4z60dKW6fZe"} ],
             "models":[
               {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.47 PM.png"]},
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.59 PM.png"]}
@@ -705,7 +705,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "id":"s2-2", "name":"貓貓特輯",
         "designs":[
           {
-            "id":"2-2-1", "title":"黑白貓貓", "badge":"", "link":"",
+            "id":"2-2-1", "title":"黑白貓貓", "badge":"", "link":[{"platform":"xhs", "url":" http://xhslink.com/o/REdBHok1hh "} ],
             "models":[
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/2025120513_22_1.png", "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/2025120513_22_2.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-10.webp"] },
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-7.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-1/0612-9.webp"] }
@@ -719,7 +719,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
           },
            {
-            "id":"2-2-3", "title":"奶牛小小貓", "badge":"", "link":"",
+            "id":"2-2-3", "title":"奶牛小小貓", "badge":"", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/1YL28ccehyp "} ],
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-3/Screenshot 2026-05-30 at 11.56.25 PM.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-2-3/Screenshot 2026-05-30 at 11.56.13 PM.png"] }
@@ -731,7 +731,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "id":"s2-3", "name":"甜點系列🍰", 
         "designs":[
           {
-            "id":"2-3-1", "title":"草莓蛋糕橫", "badge":"hot", "link":"",
+            "id":"2-3-1", "title":"草莓蛋糕橫", "badge":"hot", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/6IFQlX0yewe"} ],
             "models":[
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/solidx.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/0619-5.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.57.57 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/0619-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/0619-4.webp"]},
@@ -902,7 +902,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "id":"s3-2", "name":"微織💗", 
         "designs":[
           {
-            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[ {"platform":"xhs", "url":" http://xhslink.com/o/5kyix3HHnSW "},{"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
+            "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/3JI4QznKpWy"}, {"platform":"xhs", "url":" http://xhslink.com/o/5kyix3HHnSW "},{"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
             "models":[
              {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0617-34.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-3.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
@@ -994,7 +994,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
             ]
           },
           {
-            "id":"3-2-13", "title":"雙色微織-花磚", "badge":"hot", "link":"",
+            "id":"3-2-13", "title":"雙色微織-花磚", "badge":"hot", "link":[{"platform":"xhs", "url":" http://xhslink.com/o/GFTujcKTMg "} ],
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_27_1.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28.png"]},
@@ -1238,7 +1238,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "id":"s4-2", "name":"蕾絲🤍", 
         "designs":[
           {
-            "id":"4-2-1", "title":"純色玩具熊-橘", "badge":"hot", "link":[ {"platform":"xhs", "url":"http://xhslink.com/o/BwrRhtZdP5 "}] ,
+            "id":"4-2-1", "title":"純色玩具熊-橘", "badge":"hot", "link":[{"platform":"xhs", "url":"  http://xhslink.com/o/8fEJIJDVzRh "}, {"platform":"xhs", "url":"http://xhslink.com/o/BwrRhtZdP5 "}] ,
             "models":[
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-15.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-16.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-17.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/2026041714_53_1.png"]},
             {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-13.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-1/0715-18.webp"]}
@@ -1322,12 +1322,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
          {
             "id":"4-2-12", "title":"領結小狗", "badge":"", "link":"",
             "models":[
-            {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.35 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.09 AM.png"]},            
+            {"name":"SolidX",         "imgs":[  "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/0716-11.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.35 AM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.09 AM.png"]},            
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-12/Screenshot 2026-05-31 at 12.57.54 AM.png"]}
             ]
           },
          {
-            "id":"4-2-13", "title":"綠色蝴蝶蕾絲", "badge":"", "link":"",
+            "id":"4-2-13", "title":"綠色蝴蝶蕾絲", "badge":"", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/7tg0VoKFs9a "} ],
             "models":[
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-13/2025091111_02.png"] }
         ]
@@ -1374,7 +1374,72 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
  {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-18/0623-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-18/0623-14.webp"] },
  {"name":"ClearX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-18/0623-12.webp"]} 
      ]
-          }  
+          },
+{
+  "id": "4-2-19",
+  "title": "古董蕾絲",
+  "badge": "",
+  "link": [
+    {
+      "platform": "xhs",
+      "url": "http://xhslink.com/o/7LcUo4nVbg5"
+    }
+  ],
+  "models": [
+    {
+      "name": "SolidX",
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-1.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-2.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-3.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-4.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-9.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-10.webp"
+      ]
+    },
+    {
+      "name": "AirX",
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-5.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-6.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-7.webp",
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-19/0716-8.webp"
+      ]
+    }
+  ]
+},
+{
+  "id": "4-2-20",
+  "title": "綿綿牛仔蕾絲",
+  "badge": "",
+  "link": "",
+  "models": [
+    {
+      "name": "SolidX",
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-20/0716-14.webp"
+      ]
+    },
+    {
+      "name": "AirX",
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-20/0716-15.webp"
+      ]
+    },
+    {
+      "name": "ModNX",
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-20/0716-12.webp"
+      ]
+    },
+    {
+      "name": "ClearX",
+      "imgs": [
+        "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-20/0716-13.webp"
+      ]
+    }
+  ]
+}
     ]
   }
 ]
@@ -1388,7 +1453,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "desc":"",
         "designs":[
            {
-            "id":"5-1-1", "title":"彩色水彩點點", "badge":"", "link":"",
+            "id":"5-1-1", "title":"彩色水彩點點", "badge":"", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/5YjvuNLS3uC "} ,{"platform":"xhs", "url":" http://xhslink.com/o/2a9sobbY54v "} ],
             "models":[
               {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-09-17.png"]},
               {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-10-02.png"]},

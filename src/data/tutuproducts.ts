@@ -93,10 +93,15 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "id": "tb-9",
     "title": "白底黑波點",
     "layer": "雙層",
-    "badge": "",
-    "link": "",
+    "badge": "hot",
+   "link": [
+  {
+    "platform": "xhs",
+    "url": "http://xhslink.com/o/5C3YUpDSyAy"
+  }
+],
     "models": [
-      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框9.webp"] },
+      { "name": "分離殼預覽", "imgs": [  "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-9/0716-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框9.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8057.webp"] }
     ]
   },

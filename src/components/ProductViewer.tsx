@@ -4,6 +4,7 @@ import { PRODUCTS_DATA } from '../data/products';
 import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink, Share2, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ShareCardModal from './ShareCardModal';
+import { ShareQueueItem } from '../types';
 
 interface ProductViewerProps {
   selectedDesign: Design;
@@ -17,6 +18,11 @@ interface ProductViewerProps {
   preferredCaseType?: string;
   favorites: string[];
   onToggleFavorite: (id: string) => void;
+  shareList: ShareQueueItem[];
+  onAddToShareList: (item: Omit<ShareQueueItem, 'id'>) => void;
+  onRemoveFromShareList: (id: string) => void;
+  isShareModalOpen: boolean;
+  setIsShareModalOpen: (open: boolean) => void;
 }
 
 const CASE_TYPE_DISPLAY_NAMES: Record<string, { label: string; desc: string }> = {
@@ -30,14 +36,38 @@ const CASE_TYPE_DISPLAY_NAMES: Record<string, { label: string; desc: string }> =
   '實物': { label: '實物圖款', desc: '實品實拍' },
 };
 
-export default function ProductViewer({ selectedDesign, onOpenOrderModal, preferredCaseType, favorites, onToggleFavorite }: ProductViewerProps) {
+export default function ProductViewer({
+  selectedDesign,
+  onOpenOrderModal,
+  preferredCaseType,
+  favorites,
+  onToggleFavorite,
+  shareList,
+  onAddToShareList,
+  onRemoveFromShareList,
+  isShareModalOpen,
+  setIsShareModalOpen,
+}: ProductViewerProps) {
+  const lang = 'zh-TW' as string;
+  const getCaseTypeDisplayName = (name: string) => {
+    const zhNames: Record<string, { label: string; desc: string }> = {
+      'SolidX': { label: 'SolidX 經典防摔', desc: '強化四角，防摔升級' },
+      'ModNX': { label: 'Mod NX 邊框背蓋', desc: '邊框背蓋，經典防摔' },
+      'AirX': { label: 'AirX 極致氣墊', desc: '雙側氣室，極致防摔' },
+      'ClearX': { label: 'ClearX 抗黃透明', desc: '裸機感抗黃防摔' },
+      'Clear': { label: 'Clear 抗黃防摔', desc: '終結黃化，終身保固' },
+      'SolidSuit': { label: 'SolidSuit 經典防摔', desc: '超越軍規，耐用防摔' },
+      '預覽': { label: '預覽圖款', desc: '設計預覽效果' },
+      '實物': { label: '實物圖款', desc: '實品實拍' },
+    };
+    return zhNames[name] || { label: name, desc: '對應客製規格' };
+  };
   // Config state
   const [activeModelIdx, setActiveModelIdx] = useState(0);
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [selectedCaseType, setSelectedCaseType] = useState<string>('');
   const [isZoomed, setIsZoomed] = useState(false);
   const [tutuboomType, settutuboomType] = useState<'single' | 'double' | 'matte'>('double');
-  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
   const isFavorite = favorites.includes(selectedDesign.id);
 
@@ -176,6 +206,53 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
   const activeModel = virtualModels[activeModelIdx] || virtualModels[0];
   const images = activeModel?.imgs || [];
   const currentImage = images[activeImgIdx] || '';
+
+  const isCurrentInShareList = () => {
+    return shareList.some(item => 
+      item.design.id === selectedDesign.id && 
+      item.currentImage === currentImage && 
+      item.displayCaseType === getDisplayCaseType() &&
+      item.standCutout === standCutout
+    );
+  };
+
+  const handleAddToComparison = () => {
+    if (isCurrentInShareList()) {
+      return;
+    }
+    onAddToShareList({
+      design: selectedDesign,
+      currentImage,
+      caseImgScale,
+      caseImgX,
+      caseImgY,
+      standCutout,
+      standX,
+      standY,
+      standSize,
+      standRotate,
+      displayCaseType: getDisplayCaseType(),
+    });
+  };
+
+  const handleOpenShareModal = () => {
+    if (!isCurrentInShareList()) {
+      onAddToShareList({
+        design: selectedDesign,
+        currentImage,
+        caseImgScale,
+        caseImgX,
+        caseImgY,
+        standCutout,
+        standX,
+        standY,
+        standSize,
+        standRotate,
+        displayCaseType: getDisplayCaseType(),
+      });
+    }
+    setIsShareModalOpen(true);
+  };
 
   const getSocialLinks = (link: any): { platform: string; url: string }[] => {
     if (!link) return [];
@@ -792,7 +869,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
                 </label>
                 <div className="grid grid-cols-2 gap-2.5">
                   {virtualModels.map((m, mIdx) => {
-                    const displayInfo = CASE_TYPE_DISPLAY_NAMES[m.name] || { label: m.name, desc: '對應客製規格' };
+                    const displayInfo = getCaseTypeDisplayName(m.name);
                     const isSelected = selectedCaseType === m.name;
                     return (
                       <button
@@ -1101,35 +1178,51 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
               </span>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col">
               <button
                 onClick={() => onOpenOrderModal(getDisplayCaseType(), '', '', '', currentPrice)}
-                className="flex-[1.5] flex items-center justify-center gap-2 rounded-full py-4 bg-black text-white hover:scale-[1.02] transition-transform font-semibold text-xs tracking-wider uppercase shadow-md"
+                className="w-full flex items-center justify-center gap-2 rounded-full py-4 bg-black text-white hover:scale-[1.01] transition-transform font-semibold text-xs tracking-wider uppercase shadow-md mb-3 cursor-pointer"
               >
                 <ShoppingBag className="h-4.5 w-4.5 text-brand-gold" />
                 <span>諮詢萬有狀態</span>
               </button>
 
+              <div className="grid grid-cols-3 gap-2">
               <button
                 onClick={() => onToggleFavorite(selectedDesign.id)}
-                className={`flex-1 flex items-center justify-center gap-2 rounded-full py-4 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-sm ${
+                  className={`flex items-center justify-center gap-1.5 rounded-full py-3.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
                   isFavorite
                     ? 'bg-rose-50 border-rose-200 text-rose-500 hover:bg-rose-100'
                     : 'border-black/10 bg-white hover:bg-black/5 text-black'
                 }`}
                 title={isFavorite ? '取消收藏' : '加入收藏'}
               >
-                <Heart className={`h-4.5 w-4.5 ${isFavorite ? 'fill-current text-rose-500' : 'text-brand-gold'}`} />
-                <span>{isFavorite ? '已收藏' : '加入收藏'}</span>
+                  <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current text-rose-500' : 'text-brand-gold'}`} />
+                  <span>{isFavorite ? '已收藏' : '收藏'}</span>
               </button>
 
               <button
-                onClick={() => setIsShareModalOpen(true)}
-                className="flex-1 flex items-center justify-center gap-2 rounded-full py-4 border border-black/10 bg-white hover:bg-black/5 text-black hover:scale-[1.02] transition-transform font-semibold text-xs tracking-wider uppercase shadow-sm"
+                  onClick={handleAddToComparison}
+                  className={`flex items-center justify-center gap-1.5 rounded-full py-3.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
+                    isCurrentInShareList()
+                      ? 'bg-amber-50 border-amber-200 text-amber-600 hover:bg-amber-100'
+                      : 'border-black/10 bg-white hover:bg-black/5 text-black'
+                  }`}
+                  title="加入對比清單"
+                >
+                  <Layers className={`h-4 w-4 ${isCurrentInShareList() ? 'text-amber-500' : 'text-brand-gold'}`} />
+                  <span>{isCurrentInShareList() ? '已入對比' : '加入對比'}</span>
+                </button>
+
+                <button
+                  onClick={handleOpenShareModal}
+                  className="flex items-center justify-center gap-1.5 rounded-full py-3.5 border border-black/10 bg-white hover:bg-black/5 text-black hover:scale-[1.02] transition-all font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer"
+                  title="生成分享卡片"
               >
-                <Share2 className="h-4.5 w-4.5 text-brand-gold" />
+                  <Share2 className="h-4 w-4 text-brand-gold" />
                 <span>分享卡片</span>
               </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1157,8 +1250,8 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
               <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current' : ''}`} />
             </button>
             <button
-              onClick={() => setIsShareModalOpen(true)}
-              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all"
+              onClick={handleOpenShareModal}
+              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all cursor-pointer"
               title="分享卡片"
             >
               <Share2 className="h-4 w-4" />
@@ -1324,17 +1417,7 @@ export default function ProductViewer({ selectedDesign, onOpenOrderModal, prefer
       <ShareCardModal
         isOpen={isShareModalOpen}
         onClose={() => setIsShareModalOpen(false)}
-        design={selectedDesign}
-        currentImage={currentImage}
-        caseImgScale={caseImgScale}
-        caseImgX={caseImgX}
-        caseImgY={caseImgY}
-        standCutout={standCutout}
-        standX={standX}
-        standY={standY}
-        standSize={standSize}
-        standRotate={standRotate}
-        displayCaseType={getDisplayCaseType()}
+        shareList={shareList}
       />
     </div>
   );

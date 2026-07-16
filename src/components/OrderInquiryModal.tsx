@@ -2,8 +2,7 @@
 /** @jsx React.createElement */
 import React, { useState } from 'react';
 import { Copy, Check, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface OrderInquiryModalProps {
   isOpen: boolean;
@@ -25,6 +24,7 @@ export default function OrderInquiryModal({
   totalPrice,
 }: OrderInquiryModalProps) {
   const [copiedText, setCopiedText] = useState<'wechat' | 'wechat2' | 'line' | 'order' | null>(null);
+  const [phoneModel, setPhoneModel] = useState('');
 
   const istutuboom = selectedDesign?.id.startsWith('tb-') || !!selectedDesign?.layer || selectedCaseType.includes('tutuboom');
 
@@ -34,11 +34,13 @@ export default function OrderInquiryModal({
     return parts.length > 1 ? parts.slice(1).join('<br/>').trim() : '';
   };
 
-  const orderSummaryText = `我想要詢問客製化手機殼：
-- 款號：${selectedDesign?.id || '未選擇'}
-- 款式名稱：${selectedDesign?.title || '未選擇'}
-- 殼體：${selectedCaseType}
-- 參考價格：${totalPrice}`;
+  const getOrderSummaryText = () => {
+    let text = `我想要詢問客製化手機殼：\n- 款號：${selectedDesign?.id || '未選擇'}\n- 款式名稱：${selectedDesign?.title || '未選擇'}\n- 殼體：${selectedCaseType}\n- 參考價格：${totalPrice}`;
+    if (phoneModel.trim()) {
+      text += `\n- 手機型號：${phoneModel.trim()}`;
+    }
+    return text;
+  };
 
   const copyToClipboard = (text: string, type: 'wechat' | 'wechat2' | 'line' | 'order') => {
     navigator.clipboard.writeText(text);
@@ -113,19 +115,38 @@ export default function OrderInquiryModal({
                 </div>
               </div>
 
+              {/* Phone Model Optional Input Field */}
+              <div className="mt-4 pt-4 border-t border-brand-bg/40">
+                <label htmlFor="phoneModelInput" className="block text-xs font-semibold text-brand-text mb-1.5 flex justify-between items-center">
+                  <span className="flex items-center gap-1">
+                    我的手機型號
+                    <span className="text-brand-muted font-normal text-[10px]">(選填)</span>
+                  </span>
+                  <span className="text-[10px] text-brand-muted font-normal">例如：iPhone 15 Pro, S24 Ultra</span>
+                </label>
+                <input
+                  id="phoneModelInput"
+                  type="text"
+                  value={phoneModel}
+                  onChange={(e) => setPhoneModel(e.target.value)}
+                  placeholder="請輸入您的手機型號（選填，將一併複製）"
+                  className="w-full bg-brand-bg/60 border border-brand-border rounded-xl px-3 py-2 text-xs text-brand-text placeholder-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all duration-250 shadow-sm"
+                />
+              </div>
+
               {/* Quick Copy Spec Button */}
               <button
-                onClick={() => copyToClipboard(orderSummaryText, 'order')}
-                className="mt-4 w-full flex items-center justify-center gap-2 rounded-lg py-2 text-xs font-medium bg-brand-border hover:bg-brand-muted/10 transition-colors text-brand-text"
+                onClick={() => copyToClipboard(getOrderSummaryText(), 'order')}
+                className="mt-4 w-full flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-semibold bg-brand-border hover:bg-brand-muted/10 transition-colors text-brand-text cursor-pointer"
               >
                 {copiedText === 'order' ? (
                   <React.Fragment>
-                    <Check className="h-3.5 w-3.5 text-brand-accent" />
+                    <Check className="h-3.5 w-3.5 text-brand-accent animate-pulse" />
                     <span>規格已複製！</span>
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <Copy className="h-3.5 w-3.5" />
+                    <Copy className="h-3.5 w-3.5 text-brand-muted" />
                     <span>一鍵複製規格資訊</span>
                   </React.Fragment>
                 )}

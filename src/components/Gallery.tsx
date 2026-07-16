@@ -30,6 +30,7 @@ export default function Gallery({
   const [selectedSeries, setSelectedSeries] = useState<string>('all');
   const [selectedSubseries, setSelectedSubseries] = useState<string>('all');
   const [selectedBadge, setSelectedBadge] = useState<string>('all');
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   // Pagination State for high display and loading performance
   const [visibleCount, setVisibleCount] = useState(24);
@@ -194,46 +195,19 @@ export default function Gallery({
     setSelectedBadge('all');
   };
 
-  return (
-    <section id="gallery-section" className="py-16 px-6 max-w-7xl mx-auto scroll-mt-12 relative z-10">
-      {/* Eye brow section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 border-b border-black/5 pb-6">
-        <div>
-          <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase block mb-1">
-            Phonecase Gallery
-          </span>
-          <h2 className="font-serif text-3xl font-semibold text-brand-text">
-            全品類 <em>瀏覽區</em>
-          </h2>
-          <p className="text-xs text-brand-muted mt-1 leading-relaxed">
-            可收藏並進入瀏覽區詳細查看📪
-          </p>
-        </div>
-
-        {/* Total stats */}
-        <div className="flex flex-col items-end gap-1">
-          <span className="font-mono text-xs text-brand-muted bg-white/50 border border-black/5 px-3.5 py-1.5 rounded-lg select-none">
-            {lang === 'en' ? 'Count' : '顯示款數'} : <b className="text-black font-semibold">{filteredDesigns.length}</b> {lang === 'en' ? 'styles' : '款'}
-          </span>
-          <span className="text-[9px] font-mono text-black/40 bg-white/40 px-2 py-0.5 rounded border border-black/5">
-            all:{allDesigns.length} | filtered:{filteredDesigns.length} | series:{selectedSeries} | sub:{selectedSubseries} | comp:{selectedCaseCompatible} | badge:{selectedBadge} | q:"{searchQuery}"
-          </span>
-        </div>
-      </div>
-
-
-      {/* Main Container with Sticky Sidebar and Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* STICKY SIDEBAR FILTERS (lg:col-span-3) */}
-        <div className="lg:col-span-3 lg:sticky lg:top-20 z-20 space-y-6 glass-frosted rounded-2xl p-5">
+  const renderSidebarInner = (isMobile: boolean) => (
+    <>
           <div className="flex items-center justify-between pb-3 border-b border-black/5">
             <h3 className="font-serif font-semibold text-sm text-brand-text flex items-center gap-1.5">
               <SlidersHorizontal className="h-4 w-4 text-brand-gold" />
               <span>{lang === 'en' ? 'Filters' : '智能篩選 / Filters'}</span>
             </h3>
             <button
-              onClick={handleResetFilters}
-              className="text-[10px] font-mono font-medium text-black hover:underline flex items-center gap-1"
+          onClick={() => {
+            handleResetFilters();
+            if (isMobile) setIsMobileSidebarOpen(false);
+          }}
+          className="text-[10px] font-mono font-medium text-black hover:underline flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw className="h-2.5 w-2.5" />
               <span>{lang === 'en' ? 'Reset' : '重置'}</span>
@@ -245,7 +219,7 @@ export default function Gallery({
             <Search className="absolute left-3 top-3 h-4 w-4 text-brand-muted" />
             <input
               type="text"
-              placeholder="搜尋圖號、關鍵字..."
+          placeholder="搜尋設計名稱、圖號或關鍵字..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full text-xs bg-white/50 backdrop-blur-md text-brand-text border border-black/5 rounded-xl pl-9 pr-4 py-3 outline-none focus:border-black transition-all font-sans shadow-sm"
@@ -257,15 +231,16 @@ export default function Gallery({
             <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block mb-2 font-semibold">
               系列分類 / Series
             </span>
-            <div className="space-y-1 max-h-[220px] overflow-y-auto pr-1 no-scrollbar text-xs">
+        <div className="space-y-1 lg:max-h-[520px] max-h-[260px] overflow-y-auto pr-1 no-scrollbar text-xs">
               <button
                 onClick={() => {
                   setSelectedSeries('all');
                   setSelectedSubseries('all');
+              if (isMobile) setIsMobileSidebarOpen(false);
                 }}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
+            className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
                   selectedSeries === 'all'
-                    ? 'bg-black text-white font-medium'
+                ? 'bg-black text-white font-medium shadow-sm'
                     : 'text-brand-text hover:bg-white/60'
                 }`}
               >
@@ -281,10 +256,11 @@ export default function Gallery({
                   onClick={() => {
                     setSelectedSeries('tutuboom');
                     setSelectedSubseries('all');
+                if (isMobile) setIsMobileSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
+              className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
                     selectedSeries === 'tutuboom'
-                      ? 'bg-black text-white font-medium'
+                  ? 'bg-black text-white font-medium shadow-sm'
                       : 'text-brand-text hover:bg-white/60'
                   }`}
                 >
@@ -311,10 +287,11 @@ export default function Gallery({
                         onClick={() => {
                           setSelectedSeries(s.id);
                           setSelectedSubseries('all');
+                      if (isMobile && !hasSubseries) setIsMobileSidebarOpen(false);
                         }}
-                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all ${
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
                           isSelected && selectedSubseries === 'all'
-                            ? 'bg-black text-white font-medium'
+                        ? 'bg-black text-white font-medium shadow-sm'
                             : isSelected
                               ? 'bg-black/5 text-black font-semibold border-l-2 border-black pl-2.5'
                               : 'text-brand-text/90 hover:bg-white/60'
@@ -326,12 +303,15 @@ export default function Gallery({
                       
                       {/* Nested Subseries options */}
                       {hasSubseries && isSelected && (
-                        <div className="pl-3.5 pr-1 py-1 space-y-1 bg-black/[0.02] rounded-lg border-l border-black/10 ml-2">
+                    <div className="pl-3 pr-1 py-1 space-y-1 bg-black/[0.02] rounded-lg border-l border-black/10 ml-2">
                           <button
-                            onClick={() => setSelectedSubseries('all')}
-                            className={`w-full text-left text-[11px] px-2.5 py-1 rounded-md transition-all flex items-center justify-between ${
+                        onClick={() => {
+                          setSelectedSubseries('all');
+                          if (isMobile) setIsMobileSidebarOpen(false);
+                        }}
+                        className={`w-full text-left text-[11px] px-2 py-1 rounded-md transition-all flex items-center justify-between cursor-pointer ${
                               selectedSubseries === 'all'
-                                ? 'text-black font-semibold bg-white shadow-sm'
+                            ? 'text-black font-semibold bg-white shadow-sm border border-black/5'
                                 : 'text-brand-muted hover:text-black hover:bg-white/40'
                             }`}
                           >
@@ -341,8 +321,11 @@ export default function Gallery({
                           {s.subseries!.map((sub) => (
                             <button
                               key={sub.id}
-                              onClick={() => setSelectedSubseries(sub.id)}
-                              className={`w-full text-left text-[11px] px-2.5 py-1 rounded-md transition-all flex items-center justify-between ${
+                          onClick={() => {
+                            setSelectedSubseries(sub.id);
+                            if (isMobile) setIsMobileSidebarOpen(false);
+                          }}
+                          className={`w-full text-left text-[11px] px-2 py-1 rounded-md transition-all flex items-center justify-between cursor-pointer ${
                                 selectedSubseries === sub.id
                                   ? 'text-black font-semibold bg-white shadow-sm border border-black/5'
                                   : 'text-brand-muted hover:text-black hover:bg-white/40'
@@ -375,8 +358,11 @@ export default function Gallery({
               ).map((c) => (
                 <button
                   key={c}
-                  onClick={() => setSelectedCaseCompatible(c)}
-                  className={`text-[10px] font-mono px-2.5 py-1.5 rounded-lg border transition-all ${
+              onClick={() => {
+                setSelectedCaseCompatible(c);
+                if (isMobile) setIsMobileSidebarOpen(false);
+              }}
+              className={`text-[10px] font-mono px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
                     selectedCaseCompatible === c
                       ? 'bg-black text-white border-black shadow-sm'
                       : 'border-white/40 text-brand-muted bg-white/20 hover:bg-white/50'
@@ -397,8 +383,11 @@ export default function Gallery({
               {['all', 'new', 'hot'].map((b) => (
                 <button
                   key={b}
-                  onClick={() => setSelectedBadge(b)}
-                  className={`text-[10px] tracking-wider font-mono py-1.5 rounded-lg border transition-all uppercase flex items-center justify-center gap-1 ${
+              onClick={() => {
+                setSelectedBadge(b);
+                if (isMobile) setIsMobileSidebarOpen(false);
+              }}
+              className={`text-[10px] tracking-wider font-mono py-1.5 rounded-lg border transition-all uppercase flex items-center justify-center gap-1 cursor-pointer ${
                     selectedBadge === b
                       ? 'bg-black text-white border-black shadow-sm'
                       : 'border-white/40 text-brand-muted hover:bg-white/50 bg-white/20'
@@ -411,6 +400,151 @@ export default function Gallery({
               ))}
             </div>
           </div>
+    </>
+  );
+
+  return (
+    <section id="gallery-section" className="py-16 px-6 max-w-7xl mx-auto scroll-mt-12 relative z-10">
+      {/* Eye brow section */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 border-b border-black/5 pb-6">
+        <div>
+          <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase block mb-1">
+            Phone Case Gallery
+          </span>
+          <h2 className="font-serif text-3xl font-semibold text-brand-text">
+            {lang === 'en' ? 'Aesthetics Gallery' : lang === 'zh-CN' ? '壳面设计 美学画廊' : '殼面設計 美學畫廊'}
+          </h2>
+          <p className="text-xs text-brand-muted mt-1 leading-relaxed">點擊圖款即可進入瀏覽區瀏覽
+          </p>
+        </div>
+
+        {/* Total stats */}
+        <div className="flex flex-col items-end gap-1">
+          <span className="font-mono text-xs text-brand-muted bg-white/50 border border-black/5 px-3.5 py-1.5 rounded-lg select-none">
+            {lang === 'en' ? 'Count' : '顯示款數'} : <b className="text-black font-semibold">{filteredDesigns.length}</b> {lang === 'en' ? 'styles' : '款'}
+          </span>
+          <span className="text-[9px] font-mono text-black/40 bg-white/40 px-2 py-0.5 rounded border border-black/5">
+            all:{allDesigns.length} | filtered:{filteredDesigns.length} | series:{selectedSeries} | sub:{selectedSubseries} | comp:{selectedCaseCompatible} | badge:{selectedBadge} | q:"{searchQuery}"
+          </span>
+        </div>
+      </div>
+
+      {/* Mobile Sidebar Toggle Button & Quick Badge bar (only visible on mobile) */}
+      <div className="lg:hidden flex flex-col gap-2.5 mb-6">
+        <div className="flex items-center gap-2.5">
+          <button
+            onClick={() => setIsMobileSidebarOpen(true)}
+            className="flex-1 flex items-center justify-center gap-2 bg-black text-white hover:bg-stone-900 py-3 px-4 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-md active:scale-98 cursor-pointer"
+          >
+            <SlidersHorizontal className="h-4 w-4 text-brand-gold" />
+            <span>系列與篩選 / Series ({filteredDesigns.length}款)</span>
+          </button>
+          
+          {/* Quick reset button if any filter is active */}
+          {(searchQuery || selectedSeries !== 'all' || selectedSubseries !== 'all' || selectedCaseCompatible !== 'all' || selectedBadge !== 'all') && (
+            <button
+              onClick={handleResetFilters}
+              className="p-3 bg-stone-100 text-stone-600 rounded-xl hover:text-black hover:bg-stone-200 transition-colors border border-stone-200/50 cursor-pointer"
+              title="清除所有篩選"
+            >
+              <RefreshCw className="h-4 w-4" />
+            </button>
+          )}
+        </div>
+        
+        {/* Quick horizontal categories row on mobile so users can instantly jump to series */}
+        <div className="flex gap-1.5 overflow-x-auto pb-1.5 no-scrollbar -mx-2 px-2">
+          <button
+            onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
+            className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
+              selectedSeries === 'all'
+                ? 'bg-black text-white border-black shadow-sm'
+                : 'bg-white/80 text-stone-600 border-stone-200/60'
+            }`}
+          >
+            全部系列
+          </button>
+          <button
+            onClick={() => { setSelectedSeries('tutuboom'); setSelectedSubseries('all'); }}
+            className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
+              selectedSeries === 'tutuboom'
+                ? 'bg-purple-600 text-white border-purple-600 shadow-sm'
+                : 'bg-purple-50/50 text-purple-600 border-purple-100'
+            }`}
+          >
+            👾 tutuboom
+          </button>
+          {PRODUCTS_DATA.SERIES.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
+              className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
+                selectedSeries === s.id
+                  ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
+                  : 'bg-white/80 text-stone-600 border-stone-200/60'
+              }`}
+            >
+              {s.name}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Sidebar Slider Drawer Overlay */}
+      <AnimatePresence>
+        {isMobileSidebarOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileSidebarOpen(false)}
+              className="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 lg:hidden"
+            />
+            {/* Slide-out Sidebar Drawer */}
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 26, stiffness: 220 }}
+              className="fixed top-0 left-0 h-full w-[310px] bg-white dark:bg-stone-900 shadow-2xl z-50 lg:hidden overflow-y-auto flex flex-col border-r border-stone-200 dark:border-stone-800"
+            >
+              <div className="flex items-center justify-between p-5 border-b border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/20">
+                <h3 className="font-serif font-bold text-base text-brand-text flex items-center gap-2">
+                  <SlidersHorizontal className="h-4.5 w-4.5 text-brand-gold animate-pulse" />
+                  <span>系列與分類篩選</span>
+                </h3>
+                <button
+                  onClick={() => setIsMobileSidebarOpen(false)}
+                  className="p-1.5 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 text-stone-500 hover:text-black dark:text-stone-400 dark:hover:text-white transition-colors cursor-pointer"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              
+              <div className="p-5 space-y-6 flex-grow">
+                {renderSidebarInner(true)}
+              </div>
+              
+              <div className="p-4 border-t border-stone-100 dark:border-stone-800 bg-stone-50 dark:bg-stone-950/40">
+                <button
+                  onClick={() => setIsMobileSidebarOpen(false)}
+                  className="w-full py-2.5 bg-black text-white font-semibold text-xs rounded-xl uppercase tracking-wider cursor-pointer text-center"
+                >
+                  套用篩選
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Main Container with Sticky Sidebar and Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* DESKTOP STICKY SIDEBAR FILTERS (lg:col-span-3 - hidden on mobile) */}
+        <div className="hidden lg:block lg:col-span-3 lg:sticky lg:top-24 self-start z-20 space-y-6 glass-frosted rounded-2xl p-5">
+          {renderSidebarInner(false)}
         </div>
 
         {/* RESULTS GRID (lg:col-span-9) */}
@@ -419,7 +553,9 @@ export default function Gallery({
           {(selectedSeries !== 'all' || selectedSubseries !== 'all') && (
             <div className="p-4.5 rounded-2xl bg-white/60 border border-black/5 flex flex-col gap-2 shadow-sm">
               <div className="flex flex-wrap items-center gap-1.5 text-xs text-brand-muted">
-                <span className="font-mono text-[10px] bg-black/5 px-1.5 py-0.5 rounded">正在瀏覽 / Browsing</span>
+                <span className="font-mono text-[10px] bg-black/5 px-1.5 py-0.5 rounded">
+                  {lang === 'en' ? 'Browsing' : '正在瀏覽 / Browsing'}
+                </span>
                 <span className="font-semibold text-black">
                   {selectedSeries === 'tutuboom' ? 'tutuboom 系列' : PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.name}
                 </span>
@@ -641,7 +777,9 @@ export default function Gallery({
                       onClick={() => setVisibleCount((prev) => prev + 24)}
                       className="px-8 py-3 rounded-xl bg-white hover:bg-black hover:text-white text-black border border-black/10 hover:border-black font-semibold text-xs transition-all duration-300 flex items-center gap-2 shadow-sm tracking-wide font-sans hover:-translate-y-0.5"
                     >
-                      <span>顯示更多款式 / Load More ({filteredDesigns.length - visibleCount} 款)</span>
+                      <span>
+                        顯示更多款式 ({filteredDesigns.length - visibleCount} 款)
+                      </span>
                     </button>
                   </div>
                 )}
