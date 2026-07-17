@@ -71,13 +71,19 @@ export default function App() {
 
   // Load share list on mount
   useEffect(() => {
+    try {
     const saved = localStorage.getItem('omnistate_share_list');
     if (saved) {
-      try {
-        setShareList(JSON.parse(saved));
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setShareList(parsed);
+        } else {
+          setShareList([]);
+        }
+      }
       } catch (err) {
         console.error('Error loading share list from localStorage', err);
-      }
+      setShareList([]);
     }
   }, []);
 
@@ -92,7 +98,11 @@ export default function App() {
 
   const saveShareList = (list: ShareQueueItem[]) => {
     setShareList(list);
+    try {
     localStorage.setItem('omnistate_share_list', JSON.stringify(list));
+    } catch (err) {
+      console.warn('Unable to write share list to localStorage (likely inside sandboxed iframe):', err);
+    }
   };
 
   const handleAddToShareList = (item: Omit<ShareQueueItem, 'id'>) => {

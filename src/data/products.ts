@@ -904,8 +904,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
           {
             "id":"3-2-1", "title":"蜜瓜冰飲", "badge":"new", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/3JI4QznKpWy"}, {"platform":"xhs", "url":" http://xhslink.com/o/5kyix3HHnSW "},{"platform":"xhs", "url":"http://xhslink.com/o/6zBH0dt0vpZ "}] ,
             "models":[
-             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0617-34.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-3.webp"]},            
-            {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
+             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.52.10 PM.png",  "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0717-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0620-3.webp"]},            
+            {"name":"ModNX", "imgs":[  "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0717-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.21 PM.png"]},
             {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/0614.webp"]},
             {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-1/Screenshot 2026-05-30 at 8.53.46 PM.png"]}
             ]
