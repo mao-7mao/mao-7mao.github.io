@@ -95,7 +95,7 @@ export const CASE_TYPES: CaseType[] = [
   {
     name: 'SolidX',
     nameEm: '訂製款經典防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供Samsung及iPhone15-17機型，其中透色款為17系列專屬</span>',
-    img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidx.webp',
+    img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidx2.webp',
     desc: '強化四角與內部設計，全面升級防摔力道',
     iconBg: '#fdf0ec',
     iconColor: '#b04030',
