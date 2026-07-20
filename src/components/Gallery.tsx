@@ -412,7 +412,7 @@ export default function Gallery({
             Phone Case Gallery
           </span>
           <h2 className="font-serif text-3xl font-semibold text-brand-text">
-            {lang === 'en' ? 'Aesthetics Gallery' : lang === 'zh-CN' ? '壳面设计 美学画廊' : '殼面設計 美學畫廊'}
+            瀏覽區
           </h2>
           <p className="text-xs text-brand-muted mt-1 leading-relaxed">點擊圖款即可進入瀏覽區瀏覽
           </p>
