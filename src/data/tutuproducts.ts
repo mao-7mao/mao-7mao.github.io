@@ -39,9 +39,9 @@ export const TUTU_PRODUCTS_DATA: Design[] = [
     "title": "漸變愛心",
     "layer": "單層",
     "badge": "",
-    "link": "",
+   "link": [ {    "platform": "xhs", "url": "http://xhslink.com/o/A8vc2OjiDP0"  }],
     "models": [
-      { "name": "分離殼預覽", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框.webp"] },
+      { "name": "分離殼預覽", "imgs": [ "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-4/0720-6.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框.webp"] },
       { "name": "實物", "imgs": ["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7819.webp"] }
     ]
   },
