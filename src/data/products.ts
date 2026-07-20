@@ -666,7 +666,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
   ]
 },
  {
-"id":"2-1-29", "title":"軟糖多多", "badge":"new", "link":"",
+"id":"2-1-29", "title":"軟糖多多", "badge":"new", "link": [
+  {
+    "platform": "xhs",
+    "url": "http://xhslink.com/o/7hce8ufWW3Y"
+  }
+],
  "models":[
  {"name":"SolidX",   "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-4.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-8.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-12.webp"]},
  {"name":"ModNX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-5.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-29/0701-6.webp"] }
@@ -2066,7 +2071,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
       {"id":"s8-6", "name":"針線時光熊", 
         "designs":[
        {
-            "id":"8-6-airx", "title":"針線時光熊AirX", "badge":"new", "link":"",
+            "id":"8-6-airx", "title":"針線時光熊AirX", "badge":"new", "link": [
+  {
+    "platform": "xhs",
+    "url": "http://xhslink.com/o/8DGaFlehwWD"
+  }
+],
             "models":[
             {"name":"🪡🧸-1",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-51.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-59.webp"]},
             {"name":"🪡🧸-2",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-52.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-airx/0713-53.webp"]},
