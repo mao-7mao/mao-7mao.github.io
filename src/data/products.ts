@@ -1185,9 +1185,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
               "id":"4-1-4", "title":"童話蕾絲橫-灰", "badge":"", "link":"",
               "models":[
                 {"name":"ClearX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-04-40.png"] },
-                {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-11.png"]},
+                {"name":"SolidX",         "imgs":[  "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0721-1.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-11.png"]},
                 {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-26.png"]},
-                {"name":"AirX",     "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-41.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0629-3.webp"]}
+                {"name":"AirX",     "imgs":[  "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0721-2.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-41.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0629-3.webp"]}
             ]
             },
             {

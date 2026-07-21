@@ -55,7 +55,7 @@ export interface NoteItem {
 
 export const CASE_TYPES: CaseType[] = [
   {
-    name: 'AirX',
+    name: 'AirX(不含運費)',
     nameEm: '訂製款極致氣墊緩衝手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供15-17機型及SamsungS26、S26u</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/airx.webp',
     desc: '雙側減壓氣室設計，手感曲線雕塑，長時間手持亦常保舒適<br/><span style="font-size: 0.85em; color: #666;">本款默認磁吸</span>',
@@ -65,7 +65,7 @@ export const CASE_TYPES: CaseType[] = [
     models: [{ name: '訂製款Airx', price: '398元' }]
   },
   {
-    name: 'Mod NX',
+    name: 'Mod NX(不含運費)',
     nameEm: '訂製款邊框背蓋兩用防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體僅提供iPhone全機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/modnx.webp',
     desc: '經典防摔分體殼',
@@ -80,7 +80,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: 'ClearX',
+    name: 'ClearX(不含運費)',
     nameEm: '訂製款裸機感抗黃防摔透明殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone17pro、17promax機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/clearx.webp',
     desc: '1mm 超薄側邊，還原 iPhone 裸機手感，四角防護配置獨家柔韌吸震配方，有效吸收外部衝擊力，終結黃化，終身保固',
@@ -93,7 +93,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: 'SolidX',
+    name: 'SolidX(不含運費)',
     nameEm: '訂製款經典防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供Samsung及iPhone15-17機型，其中透色款為17系列專屬</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidx2.webp',
     desc: '強化四角與內部設計，全面升級防摔力道',
@@ -106,7 +106,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: 'Clear',
+    name: 'Clear(不含運費)',
     nameEm: '訂製款抗黃化透明防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone及Samsung機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/clear.webp',
     desc: '終結黃化，終身保固',
@@ -119,7 +119,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: 'SolidSuit',
+    name: 'SolidSuit(不含運費)',
     nameEm: '訂製款經典防摔手機殼（SolidX為其更新版）<br/><span style="font-size: 0.85em; color: #666;">本殼體僅提供iphone14及以下機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidsuit.webp',
     desc: '超越軍規防摔標準，更耐摔更耐用',
@@ -132,7 +132,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: '微醺斑比不重複',
+    name: '微醺斑比不重複(不含運費)',
     nameEm: '默認透明背景版本，可選添加背景：鵝黃 淡綠 淡藍 淺灰 淡紫 淡粉',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/weixun.webp',
     desc: '底下文字可以客製化，總價+10rmb 僅限英文、數字 和符號():;,.?!',
@@ -156,7 +156,7 @@ export const CASE_TYPES: CaseType[] = [
     ]
   },
   {
-    name: '微醺斑比小動物連連看/花花',
+    name: '微醺斑比小動物連連看/花花(不含運費)',
     nameEm: '默認透明背景版本，可選添加背景：鵝黃 淡綠 淡藍 淺灰 淡紫 淡粉',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/weixunani.webp',
     desc: '底下文字可以客製化，總價+10rmb 僅限英文、數字 和符號():;,.?!',
