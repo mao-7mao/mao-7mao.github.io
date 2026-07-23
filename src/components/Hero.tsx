@@ -57,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="font-sans font-medium text-xs sm:text-sm text-black/75 leading-relaxed max-w-lg mb-8"
         >
-          萬有狀態の客製化手機殼🫧
+          萬有狀態之客製化手機殼🫧
         </motion.p>
 
         <motion.div

@@ -65,7 +65,7 @@ export const CASE_TYPES: CaseType[] = [
     models: [{ name: '訂製款Airx', price: '398元' }]
   },
   {
-    name: 'Mod NX(不含運費)',
+    name: 'ModNX(不含運費)',
     nameEm: '訂製款邊框背蓋兩用防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體僅提供iPhone全機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/modnx.webp',
     desc: '經典防摔分體殼',
@@ -189,12 +189,12 @@ export const NOTES: NoteItem[] = [
   { label: '聯繫方式', val: '萬有狀態🫧：<strong>mussessein-7</strong>  <br>萬有狀態line：<strong>esmusssein-</strong> <br>Jimmibobo🫧：<strong>jimmibobotw</strong>' }
 ];
 
-export const tutuboom_PRICES = [
+export const TUTUBOOM_PRICES = [
   { name: 'tutuboom訂製款單層背板+邊框', price: '295.8元' },
   { name: 'tutuboom訂製款雙層背板+邊框', price: '312.8元' }
 ];
 
-export const tutuboom_CASE_TYPES: CaseType[] = [
+export const TUTUBOOM_CASE_TYPES: CaseType[] = [
   {
     name: 'tutuboom',
     nameEm: '分離殼/一體殼',
@@ -212,3 +212,5 @@ export const tutuboom_CASE_TYPES: CaseType[] = [
     ]
   }
 ];
+
+export const tutuboom_CASE_TYPES = TUTUBOOM_CASE_TYPES;

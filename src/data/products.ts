@@ -736,7 +736,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
         "id":"s2-3", "name":"甜點系列🍰", 
         "designs":[
           {
-            "id":"2-3-1", "title":"草莓蛋糕橫", "badge":"hot", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/6IFQlX0yewe"} ],
+            "id":"2-3-1", "title":"草莓蛋糕橫", "badge":"hot", "link":[{"platform":"xhs", "url":"http://xhslink.com/o/6IFQlX0yewe"},  {
+    "platform": "xhs",
+    "url": "http://xhslink.com/o/9YtcdfXqOxw"
+  } ],
             "models":[
             {"name":"SolidX",         "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/solidx.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/0619-5.webp"]},            
             {"name":"ModNX", "imgs":["https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/Screenshot 2026-05-30 at 11.57.57 PM.png","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/0619-3.webp","https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-1/0619-4.webp"]},

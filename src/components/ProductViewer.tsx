@@ -65,7 +65,6 @@ export default function ProductViewer({
   // Config state
   const [activeModelIdx, setActiveModelIdx] = useState(0);
   const [activeImgIdx, setActiveImgIdx] = useState(0);
-  const [selectedCaseType, setSelectedCaseType] = useState<string>('');
   const [isZoomed, setIsZoomed] = useState(false);
   const [tutuboomType, settutuboomType] = useState<'single' | 'double' | 'matte'>('double');
 
@@ -125,6 +124,20 @@ export default function ProductViewer({
     selectedDesign.id.startsWith('8-') || 
     selectedDesign.id.startsWith('9-');
 
+  const getActualCaseTypeForSeries8 = (designId: string, designTitle: string): string => {
+    const idLower = designId.toLowerCase();
+    const titleLower = designTitle.toLowerCase();
+    
+    if (idLower.includes('airx') || titleLower.includes('airx')) return 'AirX';
+    if (idLower.includes('modnx') || titleLower.includes('modnx') || idLower.includes('mod nx') || titleLower.includes('mod nx')) return 'Mod NX';
+    if (idLower.includes('solidx') || titleLower.includes('solidx')) return 'SolidX';
+    if (idLower.includes('clearx') || titleLower.includes('clearx')) return 'ClearX';
+    if (idLower.includes('clear') || titleLower.includes('clear')) return 'Clear';
+    if (idLower.includes('solidsuit') || titleLower.includes('solidsuit')) return 'SolidSuit';
+    
+    return '';
+  };
+
   const getVirtualModels = (): { name: string; imgs: string[] }[] => {
     if (!istutuboom) {
       return selectedDesign.models || [];
@@ -162,12 +175,85 @@ export default function ProductViewer({
 
   const virtualModels = getVirtualModels();
 
+  const [selectedCaseType, setSelectedCaseType] = useState<string>(() => {
+    if (selectedDesign.id.startsWith('8-')) {
+      const actualType = getActualCaseTypeForSeries8(selectedDesign.id, selectedDesign.title);
+      if (actualType) return actualType;
+    }
+    return virtualModels.length > 0 ? virtualModels[0].name : '';
+  });
+
+  const [prevDesignId, setPrevDesignId] = useState<string>(selectedDesign.id);
+
+  if (selectedDesign.id !== prevDesignId) {
+    setPrevDesignId(selectedDesign.id);
+    setActiveImgIdx(0);
+
+    let nextCaseType = '';
+    let nextModelIdx = 0;
+
+    const nextVirtualModels = getVirtualModels();
+
+    if (nextVirtualModels.length > 0) {
+      if (selectedDesign.id.startsWith('8-')) {
+        const actualType = getActualCaseTypeForSeries8(selectedDesign.id, selectedDesign.title);
+        if (actualType) {
+          nextCaseType = actualType;
+          nextModelIdx = 0;
+        }
+      } else {
+        const targetType = preferredCaseType && preferredCaseType !== 'all' ? preferredCaseType : '';
+        let matchIdx = -1;
+        if (targetType) {
+          const normalizedTarget = targetType.toLowerCase();
+          if (normalizedTarget.includes('磨砂') || normalizedTarget.includes('一體')) {
+            matchIdx = nextVirtualModels.findIndex(m => m.name.includes('一體'));
+          } else if (normalizedTarget.includes('分離')) {
+            matchIdx = nextVirtualModels.findIndex(m => m.name.includes('分離'));
+          } else {
+            matchIdx = nextVirtualModels.findIndex(
+              (m) => m.name.toLowerCase().replace(/\s+/g, '') === targetType.toLowerCase().replace(/\s+/g, '')
+            );
+          }
+        }
+
+        if (matchIdx !== -1) {
+          nextModelIdx = matchIdx;
+          nextCaseType = nextVirtualModels[matchIdx].name;
+        } else {
+          const prevIdx = nextVirtualModels.findIndex(
+            (m) => m.name.toLowerCase().replace(/\s+/g, '') === selectedCaseType.toLowerCase().replace(/\s+/g, '')
+          );
+          if (prevIdx !== -1) {
+            nextModelIdx = prevIdx;
+            nextCaseType = nextVirtualModels[prevIdx].name;
+          } else {
+            nextModelIdx = 0;
+            nextCaseType = nextVirtualModels[0].name;
+          }
+        }
+      }
+    }
+
+    setSelectedCaseType(nextCaseType);
+    setActiveModelIdx(nextModelIdx);
+  }
+
   // Sync selection when design shifts or preferredCaseType changes
   useEffect(() => {
     // Always reset image index to 0 when design changes to prevent out-of-bounds/stuck image previews
     setActiveImgIdx(0);
 
     if (virtualModels.length > 0) {
+      if (selectedDesign.id.startsWith('8-')) {
+        const actualType = getActualCaseTypeForSeries8(selectedDesign.id, selectedDesign.title);
+        if (actualType) {
+          setSelectedCaseType(actualType);
+          setActiveModelIdx(0);
+          return;
+        }
+      }
+
       const targetType = preferredCaseType && preferredCaseType !== 'all' ? preferredCaseType : '';
       let matchIdx = -1;
       if (targetType) {
@@ -178,7 +264,7 @@ export default function ProductViewer({
           matchIdx = virtualModels.findIndex(m => m.name.includes('分離'));
         } else {
           matchIdx = virtualModels.findIndex(
-            (m) => m.name.toLowerCase() === targetType.toLowerCase()
+            (m) => m.name.toLowerCase().replace(/\s+/g, '') === targetType.toLowerCase().replace(/\s+/g, '')
           );
         }
       }
@@ -189,10 +275,11 @@ export default function ProductViewer({
       } else {
         // Fallback to previous selectedCaseType if still valid for this design, otherwise index 0
         const prevIdx = virtualModels.findIndex(
-          (m) => m.name === selectedCaseType
+          (m) => m.name.toLowerCase().replace(/\s+/g, '') === selectedCaseType.toLowerCase().replace(/\s+/g, '')
         );
         if (prevIdx !== -1) {
           setActiveModelIdx(prevIdx);
+          setSelectedCaseType(virtualModels[prevIdx].name);
         } else {
           setActiveModelIdx(0);
           setSelectedCaseType(virtualModels[0].name);
@@ -304,14 +391,24 @@ export default function ProductViewer({
       }
     }
 
-    // Bambi repeat
+    // Bambi repeat (s9 series)
     const isBambiRepeat = selectedDesign.id.startsWith('9-1');
     const isBambiLink = selectedDesign.id.startsWith('9-2') || selectedDesign.id.startsWith('9-3');
 
     if (isBambiRepeat) {
       const weixunType = CASE_TYPES.find(c => c.name.includes('微醺斑比不重複'));
       if (weixunType) {
-        const matches = weixunType.models.filter(m => m.name.toLowerCase().includes(selectedCaseType.toLowerCase()));
+        const matches = weixunType.models.filter(m => {
+          const mName = m.name.toLowerCase();
+          const sType = selectedCaseType.toLowerCase().replace(/\s+/g, '');
+          if (sType === 'modnx') {
+            return mName.includes('邊框') || mName.includes('背板');
+          }
+          if (sType === 'clear') {
+            return mName.includes('clear') && !mName.includes('clearx');
+          }
+          return mName.includes(sType);
+        });
         if (matches.length > 0) {
           return parseDetailedPrice(matches);
         }
@@ -322,7 +419,17 @@ export default function ProductViewer({
     if (isBambiLink) {
       const weixunType = CASE_TYPES.find(c => c.name.includes('微醺斑比小動物'));
       if (weixunType) {
-        const matches = weixunType.models.filter(m => m.name.toLowerCase().includes(selectedCaseType.toLowerCase()));
+        const matches = weixunType.models.filter(m => {
+          const mName = m.name.toLowerCase();
+          const sType = selectedCaseType.toLowerCase().replace(/\s+/g, '');
+          if (sType === 'modnx') {
+            return mName.includes('邊框') || mName.includes('背板');
+          }
+          if (sType === 'clear') {
+            return mName.includes('clear') && !mName.includes('clearx');
+          }
+          return mName.includes(sType);
+        });
         if (matches.length > 0) {
           return parseDetailedPrice(matches);
         }
@@ -330,7 +437,44 @@ export default function ProductViewer({
       return '265元起';
     }
 
-    const ct = CASE_TYPES.find(c => c.name.toLowerCase() === selectedCaseType.toLowerCase());
+    // Rhinoshield s1-7 and s8 pricing logic
+    let sType = selectedCaseType.toLowerCase().replace(/[\s-_]+/g, '');
+    if (selectedDesign.id.startsWith('8-')) {
+      const actualType = getActualCaseTypeForSeries8(selectedDesign.id, selectedDesign.title);
+      if (actualType) {
+        sType = actualType.toLowerCase().replace(/[\s-_]+/g, '');
+      }
+    }
+    
+    // Prioritize clearx and solidsuit matching to avoid collision with clear or solidx rules
+    if (sType === 'clearx') {
+      return '315 - 350元';
+    }
+    if (sType === 'solidsuit') {
+      return '190 - 290元';
+    }
+    if (sType === 'solidx') {
+      return '255 - 300元';
+    }
+    if (sType === 'airx') {
+      return '398元';
+    }
+    if (sType === 'clear') {
+      return '245 - 315元';
+    }
+    if (sType === 'modnx') {
+      return '95 - 245元';
+    }
+
+    const getNormalizedName = (name: string) => {
+      return name.split('(')[0].toLowerCase().replace(/[\s-_]+/g, '');
+    };
+    const targetNorm = getNormalizedName(
+      selectedDesign.id.startsWith('8-')
+        ? getActualCaseTypeForSeries8(selectedDesign.id, selectedDesign.title)
+        : selectedCaseType
+    );
+    const ct = CASE_TYPES.find(c => getNormalizedName(c.name) === targetNorm);
     if (ct && ct.models && ct.models.length > 0) {
       return parseDetailedPrice(ct.models);
     }
@@ -1267,7 +1411,9 @@ export default function ProductViewer({
                   onClick={() => {
                     setActiveModelIdx(mIdx);
                     setActiveImgIdx(0);
-                    setSelectedCaseType(m.name);
+                    if (!selectedDesign.id.startsWith('8-')) {
+                      setSelectedCaseType(m.name);
+                    }
                   }}
                   className={`text-[10px] font-mono px-3 py-1.5 rounded-lg border transition-all ${
                     activeModelIdx === mIdx
