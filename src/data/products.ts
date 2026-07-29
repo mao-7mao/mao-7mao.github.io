@@ -1,6 +1,6 @@
 import { Series } from './productsData';
 
-export const PRODUCTS_DATA: { SERIES: Series[] } =   {
+export const PRODUCTS_DATA: { SERIES: Series[] } = {
   "SERIES": [
     {
       "id": "s1",
@@ -2543,6 +2543,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/0713-8.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/Screenshot 2026-05-31 at 12.00.00 AM.png"
                   ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/0713-10.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-3-3/0713-11.webp"
+                  ]
                 }
               ]
             },
@@ -4208,8 +4215,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
                   "name": "SolidX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0617-7.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10.jpg",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10_1.jpg",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10.jpg"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-4.webp"
                   ]
                 },
                 {
