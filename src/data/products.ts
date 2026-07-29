@@ -4172,7 +4172,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } =   {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.13 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.33 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.46 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.00 AM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.00 AM.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-4.webp"
                   ]
                 },
                 {
