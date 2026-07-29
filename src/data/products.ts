@@ -1,9 +1,7 @@
 import { Series } from './productsData';
 
-export const
-
-export const PRODUCTS_DATA: { SERIES: Series[] } = {
-  "SERIES": [
+export const PRODUCTS_DATA: { SERIES: Series[] } =   {
+  "SERIES":  [
     {
       "id": "s1",
       "name": "格紋與條紋系列",
