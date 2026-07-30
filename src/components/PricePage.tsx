@@ -161,7 +161,7 @@ export default function PricePage() {
         <div className="flex items-center gap-2 mb-6">
           <Truck className="h-5 w-5 text-black" />
           <h3 className="font-serif text-xl font-semibold text-brand-text">
-            商品購買與 <em>寄送物流說明（rhinoshield ） </em>
+            商品購買與 <em>寄送物流說明（🦏🛡️ ） </em>
           </h3>
         </div>
 

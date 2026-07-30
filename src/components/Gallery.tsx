@@ -139,11 +139,11 @@ export default function Gallery({
             // Only single layer designs support Matte Shell (一體殼)
             if (d.layer !== '單層') return false;
           } else {
-            // rhinoshield  filters don't apply to tutuboom designs
+            // 🦏🛡️  filters don't apply to tutuboom designs
             return false;
           }
         } else {
-          // rhinoshield  designs don't support tutuboom shell types
+          // 🦏🛡️  designs don't support tutuboom shell types
           if (selectedCaseCompatible === '分離殼' || selectedCaseCompatible === '一體殼') {
             return false;
           }
@@ -272,10 +272,10 @@ export default function Gallery({
                 </button>
               </div>
 
-              {/* rhinoshield  SECTION */}
+              {/* 🦏🛡️  SECTION */}
               <div className="space-y-1 pt-3 border-t border-black/5">
                 <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-600/90 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>🦏 rhinoshield  系列分類</span>
+                  <span>🦏 🦏🛡️  系列分類</span>
                 </div>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;

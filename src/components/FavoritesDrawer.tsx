@@ -113,7 +113,7 @@ export default function FavoritesDrawer({
                               </span>
                             ) : (
                               <span className="text-[8px] px-1.5 py-0.5 rounded font-bold bg-amber-50 text-amber-600 border border-amber-100">
-                                rhinoshield  
+                                🦏🛡️  
                               </span>
                             )}
                           </div>

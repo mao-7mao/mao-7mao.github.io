@@ -2291,7 +2291,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-33",
               "title": "蔬果總動員",
               "badge": "new",
-              "link": "",
+              "link": [
+  {
+    "platform": "xhs",
+    "url": "http://xhslink.cn/o/7sUL6Ud3LlE"
+  }
+],
               "models": [
                 {
                   "name": "SolidX",

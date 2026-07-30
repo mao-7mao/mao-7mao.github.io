@@ -437,7 +437,7 @@ export default function ProductViewer({
       return '265元起';
     }
 
-    // Rhinoshield s1-7 and s8 pricing logic
+    // 🦏🛡️ s1-7 and s8 pricing logic
     let sType = selectedCaseType.toLowerCase().replace(/[\s-_]+/g, '');
     if (selectedDesign.id.startsWith('8-')) {
       const actualType = getActualCaseTypeForSeries8(selectedDesign.id, selectedDesign.title);
