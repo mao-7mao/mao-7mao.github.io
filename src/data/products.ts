@@ -2292,11 +2292,15 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "title": "蔬果總動員",
               "badge": "new",
               "link": [
-  {
-    "platform": "xhs",
-    "url": "http://xhslink.cn/o/7sUL6Ud3LlE"
-  }
-],
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/7sUL6Ud3LlE"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/AK2L83ZDvS2"
+                }
+              ],
               "models": [
                 {
                   "name": "SolidX",
@@ -3617,6 +3621,44 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   ]
                 }
               ]
+            },
+            {
+              "id": "3-2-25",
+              "title": "愛心泡泡",
+              "badge": "",
+              "link": [
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/5wSjc38tkyw"
+                }
+              ],
+              "models": [
+                {
+                  "name": "SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-25/0801-8.webp"
+                  ]
+                },
+                {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-25/0801-9.webp"
+                  ]
+                },
+                {
+                  "name": "ClearX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-25/0801-10.webp"
+                  ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-25/0801-11.webp"
+                  ]
+                }
+              ],
+              "desc": "實物更淺一些"
             }
           ]
         },
@@ -4181,14 +4223,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "SolidX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0617-36.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.13 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.33 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.46 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.00 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.33 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.46 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-3.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-4.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0801-15.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0801-14.webp"
                   ]
                 },
                 {
@@ -4220,12 +4262,16 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "SolidX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0617-7.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10.jpg",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0801-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10_1.jpg",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0801-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/2025112713_10.jpg",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-3.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-4.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0801-12.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0729-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-4/0801-13.webp"
                   ]
                 },
                 {
@@ -5556,6 +5602,21 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/0724-16.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/2025091111_18.png"
+                  ]
+                },
+                {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/0801-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/0801-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/0801-7.webp"
+                  ]
+                },
+                {
+                  "name": "SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/0801-5.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-7/0801-6.webp"
                   ]
                 }
               ]
