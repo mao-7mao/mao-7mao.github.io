@@ -968,15 +968,17 @@ const availableSubseries = useMemo(() => {
                     <>
                       <button
                         onClick={() => setModalImgIdx(prev => (prev === 0 ? quickViewDesign.models[modalModelIdx].imgs.length - 1 : prev - 1))}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/40 text-white hover:bg-black/60 transition-opacity opacity-0 group-hover/img:opacity-100"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs hover:scale-110 active:scale-95 cursor-pointer z-20"
                         type="button"
+                        title="上一張圖片"
                       >
                         <ChevronLeft className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => setModalImgIdx(prev => (prev === quickViewDesign.models[modalModelIdx].imgs.length - 1 ? 0 : prev + 1))}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/40 text-white hover:bg-black/60 transition-opacity opacity-0 group-hover/img:opacity-100"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs hover:scale-110 active:scale-95 cursor-pointer z-20"
                         type="button"
+                        title="下一張圖片"
                       >
                         <ChevronRight className="h-4 w-4" />
                       </button>
@@ -984,19 +986,43 @@ const availableSubseries = useMemo(() => {
                   )}
                 </div>
 
-                {/* Carousel indicators if has multiple images */}
+                {/* Navigation bar with Left/Right Arrows & Dots indicators */}
                 {quickViewDesign.models?.[modalModelIdx]?.imgs && quickViewDesign.models[modalModelIdx].imgs.length > 1 && (
-                  <div className="flex gap-2 mt-4 z-10">
+                  <div className="flex items-center justify-center gap-2.5 mt-4 z-10 w-full px-2">
+                    <button
+                      onClick={() => setModalImgIdx(prev => (prev === 0 ? quickViewDesign.models[modalModelIdx].imgs.length - 1 : prev - 1))}
+                      className="p-1.5 rounded-full bg-white hover:bg-black hover:text-white text-black/70 transition-all border border-black/10 shadow-sm active:scale-90 cursor-pointer flex items-center justify-center shrink-0"
+                      type="button"
+                      title="上一張"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+
+                    <div className="flex items-center gap-2 bg-white/90 px-3 py-1.5 rounded-full border border-black/5 shadow-sm">
                     {quickViewDesign.models[modalModelIdx].imgs.map((_, imgIdx) => (
                       <button
                         key={imgIdx}
                         onClick={() => setModalImgIdx(imgIdx)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          modalImgIdx === imgIdx ? 'bg-black w-4' : 'bg-black/20 hover:bg-black/40'
+                          className={`h-2 rounded-full transition-all cursor-pointer ${
+                            modalImgIdx === imgIdx ? 'bg-black w-5' : 'bg-black/20 hover:bg-black/50 w-2'
                         }`}
                         type="button"
+                          title={`切換至第 ${imgIdx + 1} 張`}
                       />
                     ))}
+                      <span className="font-mono text-[10px] text-black/60 font-semibold ml-0.5 select-none">
+                        {modalImgIdx + 1}/{quickViewDesign.models[modalModelIdx].imgs.length}
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => setModalImgIdx(prev => (prev === quickViewDesign.models[modalModelIdx].imgs.length - 1 ? 0 : prev + 1))}
+                      className="p-1.5 rounded-full bg-white hover:bg-black hover:text-white text-black/70 transition-all border border-black/10 shadow-sm active:scale-90 cursor-pointer flex items-center justify-center shrink-0"
+                      type="button"
+                      title="下一張"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
                   </div>
                 )}
               </div>

@@ -4345,7 +4345,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             },
             {
               "id": "4-2-6",
-              "title": "雙飛燕-粉",
+              "title": "雙飛燕-粉/白",
               "badge": "",
               "link": "",
               "models": [
