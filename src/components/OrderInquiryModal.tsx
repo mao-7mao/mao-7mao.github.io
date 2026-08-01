@@ -84,7 +84,7 @@ export default function OrderInquiryModal({
                 Order Request
               </span>
               <h3 className="font-serif text-2xl font-semibold text-brand-text">
-                購買諮詢與 <em>客製確認</em>
+                購買諮詢 <em>💭</em>
               </h3>
               <p className="text-xs text-brand-muted mt-1">
                 萬有狀態採取手工登記訂製，請複製下方規格詳情並私訊。
@@ -122,7 +122,7 @@ export default function OrderInquiryModal({
                     我的手機型號
                     <span className="text-brand-muted font-normal text-[10px]">(選填)</span>
                   </span>
-                  <span className="text-[10px] text-brand-muted font-normal">例如：iPhone 15 Pro, S24 Ultra</span>
+                  <span className="text-[10px] text-brand-muted font-normal">例如：iPhone 17 Pro, S24 Ultra</span>
                 </label>
                 <input
                   id="phoneModelInput"

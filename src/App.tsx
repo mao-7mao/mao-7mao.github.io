@@ -6,8 +6,8 @@ import PricePage from './components/PricePage';
 import OrderInquiryModal from './components/OrderInquiryModal';
 import FavoritesDrawer from './components/FavoritesDrawer';
 import { PRODUCTS_DATA } from './data/products';
-import { TUTU_PRODUCTS_DATA } from './data/tutuproducts';
-import { Design } from './data/productsData';
+import { TUTU_SERIES_LIST } from './data/tutuproducts';
+import { Design, Subseries } from './data/productsData';
 import { Smartphone, ShoppingBag, Layers, ShieldCheck, ArrowUp, Compass, Sparkles, Heart, Trash2, X, ChevronUp, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShareQueueItem } from './types';
@@ -16,12 +16,12 @@ export default function App() {
   // Configured states
   const [selectedDesign, setSelectedDesign] = useState<Design>(() => {
     const list: Design[] = [];
-    TUTU_PRODUCTS_DATA.forEach((design) => {
-      list.push(design);
+    TUTU_SERIES_LIST.forEach((s) => {
+      if (s.designs) list.push(...s.designs);
     });
     PRODUCTS_DATA.SERIES.forEach((series) => {
       if (series.subseries && series.subseries.length) {
-        series.subseries.forEach((sub) => {
+        series.subseries.forEach((sub: Subseries) => {
           list.push(...sub.designs);
         });
       } else if (series.designs) {
@@ -148,12 +148,12 @@ export default function App() {
   // Flatten all designs for looking up objects
   const allDesigns = React.useMemo(() => {
     const list: Design[] = [];
-    TUTU_PRODUCTS_DATA.forEach((design) => {
-      list.push(design);
+    TUTU_SERIES_LIST.forEach((s) => {
+      if (s.designs) list.push(...s.designs);
     });
     PRODUCTS_DATA.SERIES.forEach((series) => {
       if (series.subseries && series.subseries.length) {
-        series.subseries.forEach((sub) => {
+        series.subseries.forEach((sub: Subseries) => {
           list.push(...sub.designs);
         });
       } else if (series.designs) {
@@ -239,7 +239,7 @@ export default function App() {
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40"
           >
             <ShieldCheck className="h-3.5 w-3.5 text-brand-gold" />
-            <span className="hidden sm:inline">殼體價格與運送說明</span>
+            <span className="hidden sm:inline">價格&運送</span>
           </button>
 
           <button
@@ -247,7 +247,7 @@ export default function App() {
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-black hover:bg-white/60 backdrop-blur-md transition-all border border-transparent hover:border-white/40 relative"
           >
             <Heart className={`h-3.5 w-3.5 ${favorites.length > 0 ? 'text-rose-500 fill-current' : ''}`} />
-            <span className="hidden sm:inline">我的收藏</span>
+            <span className="hidden sm:inline">收藏區</span>
             {favorites.length > 0 && (
               <span className="absolute -top-1.5 -right-1.5 bg-rose-500 text-white text-[8px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
                 {favorites.length}

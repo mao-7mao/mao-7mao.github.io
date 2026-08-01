@@ -22,7 +22,7 @@ export default function PricePage() {
           規格價格
         </span>
         <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
-          殼體規格與 <em>物流說明書</em>
+          殼體規格與 <em>物流說明</em>
         </h2>
         <p className="text-xs text-brand-muted mt-2 max-w-lg mx-auto leading-relaxed">
           所有設計皆由官方殼體承載
@@ -161,7 +161,7 @@ export default function PricePage() {
         <div className="flex items-center gap-2 mb-6">
           <Truck className="h-5 w-5 text-black" />
           <h3 className="font-serif text-xl font-semibold text-brand-text">
-            商品購買與 <em>寄送物流說明（🦏🛡️ ） </em>
+            商品寄送說明 <em>for🦏🛡️ </em>
           </h3>
         </div>
 
@@ -220,7 +220,7 @@ export default function PricePage() {
             <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">
               <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">萬有順豐直郵</h5>
               <p className="text-[11px] text-brand-muted mb-2">台灣 → 大陸・無需拼郵或合包</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">運費到付 (約 ¥80)</div>
+              <div className="font-mono text-xs font-semibold text-black mb-2">運費到付 (約 ¥80 元)</div>
               <p className="text-[11px] text-brand-text/70 leading-normal">具體價格依物流報價為準，可直接聯繫萬有安排寄出。</p>
             </div>
 

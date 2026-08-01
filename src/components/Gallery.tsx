@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { PRODUCTS_DATA } from '../data/products';
-import { TUTU_PRODUCTS_DATA } from '../data/tutuproducts';
+import { TUTU_SERIES_LIST } from '../data/tutuproducts';
 import { Series, Design, Subseries } from '../data/productsData';
-import { Search, SlidersHorizontal, Check, RefreshCw, Star, Layers, Zap, ExternalLink, Compass, X, ChevronLeft, ChevronRight, ShoppingBag, Heart } from 'lucide-react';
+import { Search, SlidersHorizontal, Check, RefreshCw, Star, Layers, Zap, ExternalLink, Compass, X, ChevronLeft, ChevronRight, ShoppingBag, Heart, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const convertToTC = (s: string) => s;
@@ -69,13 +69,17 @@ export default function Gallery({
     const list: (Design & { category: string; seriesId: string; subseriesId: string })[] = [];
 
     // tutuboom products
-    TUTU_PRODUCTS_DATA.forEach((design) => {
-      list.push({
-        ...design,
-        category: 'tutuboom 分離殼系列',
-        seriesId: 'tutuboom',
-        subseriesId: 'all',
-      });
+    TUTU_SERIES_LIST.forEach((s) => {
+      if (s.designs) {
+        s.designs.forEach((design: Design) => {
+          list.push({
+            ...design,
+            category: s.name,
+            seriesId: s.id,
+            subseriesId: 'all',
+          });
+        });
+      }
     });
 
     // Products Data Series
@@ -105,6 +109,26 @@ export default function Gallery({
 
     return list;
   }, []);
+
+  // Currently active series object & available subseries
+  const activeSeriesObj = useMemo(() => {
+    const tutuMatch = TUTU_SERIES_LIST.find((s) => s.id === selectedSeries);
+    if (tutuMatch) return tutuMatch;
+    return PRODUCTS_DATA.SERIES.find((s) => s.id === selectedSeries);
+  }, [selectedSeries]);
+
+const availableSubseries = useMemo(() => {
+  if (!activeSeriesObj || !('subseries' in activeSeriesObj) || !activeSeriesObj.subseries) return [];
+  return activeSeriesObj.subseries;
+}, [activeSeriesObj]);
+
+  const getSubseriesCount = (subId: string) => {
+    if (selectedSeries === 'all') return 0;
+    if (subId === 'all') {
+      return allDesigns.filter((d) => d.seriesId === selectedSeries).length;
+    }
+    return allDesigns.filter((d) => d.seriesId === selectedSeries && d.subseriesId === subId).length;
+  };
 
   // Filtered designs
   const filteredDesigns = useMemo(() => {
@@ -249,33 +273,49 @@ export default function Gallery({
               </button>
               {/* tutuboom SECTION */}
               <div className="space-y-1 pt-1.5">
-                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-purple-600 uppercase bg-purple-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>👾 tutuboom 系列分類</span>
+                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-purple-700 uppercase bg-purple-50 rounded-md mb-2 flex items-center justify-between">
+                  <span>🩵 tutuboom 系列分類</span>
                 </div>
-                <button
-                  onClick={() => {
-                    setSelectedSeries('tutuboom');
-                    setSelectedSubseries('all');
-                if (isMobile) setIsMobileSidebarOpen(false);
-                  }}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
-                    selectedSeries === 'tutuboom'
-                  ? 'bg-black text-white font-medium shadow-sm'
-                      : 'text-brand-text hover:bg-white/60'
-                  }`}
-                >
-                  <span className="flex items-center gap-1.5">
-                    <Layers className="h-3.5 w-3.5 text-purple-500" />
-                    tutuboom
-                  </span>
-                  {selectedSeries === 'tutuboom' && <Check className="h-3 w-3" />}
-                </button>
+                <div className="space-y-1">
+                  {TUTU_SERIES_LIST.map((ts) => {
+                    const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
+                    const isSelected = selectedSeries === ts.id;
+                    return (
+                      <button
+                        key={ts.id}
+                        onClick={() => {
+                          setSelectedSeries(ts.id);
+                          setSelectedSubseries('all');
+                          if (isMobile) setIsMobileSidebarOpen(false);
+                        }}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
+                          isSelected
+                            ? 'bg-purple-900 text-white font-medium shadow-sm'
+                            : 'text-brand-text hover:bg-purple-50/70'
+                        }`}
+                      >
+                        <span className="flex items-center gap-1.5 text-[12px] font-semibold">
+                          <Layers className={`h-3.5 w-3.5 shrink-0 ${isSelected ? 'text-purple-200' : 'text-purple-500'}`} />
+                          <span className="truncate">{ts.name}</span>
+                        </span>
+                        <span className="flex items-center gap-1 shrink-0">
+                          <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                            isSelected ? 'bg-white/20 text-white font-bold' : 'text-purple-600 bg-purple-50'
+                          }`}>
+                            {count}款
+                          </span>
+                          {isSelected && <Check className="h-3 w-3 text-white" />}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* 🦏🛡️  SECTION */}
               <div className="space-y-1 pt-3 border-t border-black/5">
-                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-600/90 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>🦏 🦏🛡️  系列分類</span>
+                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-700 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
+                  <span>🧡 🦏🛡️  系列分類</span>
                 </div>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;
@@ -287,13 +327,13 @@ export default function Gallery({
                         onClick={() => {
                           setSelectedSeries(s.id);
                           setSelectedSubseries('all');
-                      if (isMobile && !hasSubseries) setIsMobileSidebarOpen(false);
+                          if (isMobile && !hasSubseries) setIsMobileSidebarOpen(false);
                         }}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
                           isSelected && selectedSubseries === 'all'
-                        ? 'bg-black text-white font-medium shadow-sm'
+                            ? 'bg-black text-white font-medium shadow-sm'
                             : isSelected
-                              ? 'bg-black/5 text-black font-semibold border-l-2 border-black pl-2.5'
+                              ? 'bg-amber-50 text-amber-950 font-semibold border-l-2 border-amber-600 pl-2.5'
                               : 'text-brand-text/90 hover:bg-white/60'
                         }`}
                       >
@@ -303,40 +343,51 @@ export default function Gallery({
                       
                       {/* Nested Subseries options */}
                       {hasSubseries && isSelected && (
-                    <div className="pl-3 pr-1 py-1 space-y-1 bg-black/[0.02] rounded-lg border-l border-black/10 ml-2">
+                        <div className="pl-2.5 pr-1 py-1 space-y-1 bg-amber-50/40 rounded-lg border-l-2 border-amber-400 ml-2">
                           <button
-                        onClick={() => {
-                          setSelectedSubseries('all');
-                          if (isMobile) setIsMobileSidebarOpen(false);
-                        }}
-                        className={`w-full text-left text-[11px] px-2 py-1 rounded-md transition-all flex items-center justify-between cursor-pointer ${
+                            onClick={() => {
+                              setSelectedSubseries('all');
+                              if (isMobile) setIsMobileSidebarOpen(false);
+                            }}
+                            className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
                               selectedSubseries === 'all'
-                            ? 'text-black font-semibold bg-white shadow-sm border border-black/5'
-                                : 'text-brand-muted hover:text-black hover:bg-white/40'
+                                ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-200'
+                                : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
                             }`}
                           >
-                            <span>全部子系列</span>
-                            {selectedSubseries === 'all' && <Check className="h-2.5 w-2.5 text-black/40" />}
+                            <span>全部 {s.name} 圖款</span>
+                            <span className="text-[10px] font-mono text-amber-700 font-semibold">
+                              ({allDesigns.filter(d => d.seriesId === s.id).length}款)
+                            </span>
                           </button>
-                          {s.subseries!.map((sub) => (
-                            <button
-                              key={sub.id}
-                          onClick={() => {
-                            setSelectedSubseries(sub.id);
-                            if (isMobile) setIsMobileSidebarOpen(false);
-                          }}
-                          className={`w-full text-left text-[11px] px-2 py-1 rounded-md transition-all flex items-center justify-between cursor-pointer ${
-                                selectedSubseries === sub.id
-                                  ? 'text-black font-semibold bg-white shadow-sm border border-black/5'
-                                  : 'text-brand-muted hover:text-black hover:bg-white/40'
-                              }`}
-                            >
-                              <span className="truncate">
-                                {sub.name}
-                              </span>
-                              {selectedSubseries === sub.id && <Check className="h-2.5 w-2.5 text-brand-gold" />}
-                            </button>
-                          ))}
+                          {s.subseries!.map((sub) => {
+                            const subCount = allDesigns.filter(d => d.seriesId === s.id && d.subseriesId === sub.id).length;
+                            const isSubSelected = selectedSubseries === sub.id;
+                            return (
+                              <button
+                                key={sub.id}
+                                onClick={() => {
+                                  setSelectedSubseries(sub.id);
+                                  if (isMobile) setIsMobileSidebarOpen(false);
+                                }}
+                                className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
+                                  isSubSelected
+                                    ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-300 ring-1 ring-amber-300/50'
+                                    : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
+                                }`}
+                              >
+                                <span className="truncate flex items-center gap-1">
+                                  {isSubSelected && <span className="text-amber-600 font-bold">✦</span>}
+                                  {sub.name}
+                                </span>
+                                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                                  isSubSelected ? 'bg-amber-100 text-amber-900 font-bold' : 'text-stone-400'
+                                }`}>
+                                  {subCount}款
+                                </span>
+                              </button>
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -549,7 +600,7 @@ export default function Gallery({
 
         {/* RESULTS GRID (lg:col-span-9) */}
         <div className="lg:col-span-9 space-y-5">
-          {/* Active Series/Subseries Header with description */}
+          {/* Active Series Header with description */}
           {(selectedSeries !== 'all' || selectedSubseries !== 'all') && (
             <div className="p-4.5 rounded-2xl bg-white/60 border border-black/5 flex flex-col gap-2 shadow-sm">
               <div className="flex flex-wrap items-center gap-1.5 text-xs text-brand-muted">
@@ -557,43 +608,104 @@ export default function Gallery({
                   {lang === 'en' ? 'Browsing' : '正在瀏覽 / Browsing'}
                 </span>
                 <span className="font-semibold text-black">
-                  {selectedSeries === 'tutuboom' ? 'tutuboom 系列' : PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.name}
+                  {activeSeriesObj?.name}
                 </span>
                 {selectedSubseries !== 'all' && (
                   <>
                     <span className="text-black/30">/</span>
                     <span className="font-semibold text-black">
-                      {PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.subseries?.find(sub => sub.id === selectedSubseries)?.name}
+                      {availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.name}
                     </span>
                   </>
                 )}
               </div>
               
-              {/* Display subseries description (desc) and series description if applicable */}
-              {selectedSeries !== 'tutuboom' && (
-                <div className="text-xs text-brand-text/80 space-y-1.5 mt-1 leading-relaxed">
-                  {/* Series description */}
-                  {PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.desc && (
-                    <p className="flex items-start gap-1.5">
-                      <span className="text-brand-gold select-none">✦</span>
-                      <span>{PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.desc}</span>
-                    </p>
-                  )}
-                  {/* Subseries description */}
-                  {selectedSubseries !== 'all' && PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.subseries?.find(sub => sub.id === selectedSubseries)?.desc && (
-                    <div className="flex items-start gap-2 bg-black/[0.02] p-2.5 rounded-xl border-l-2 border-brand-gold">
-                      <span className="text-brand-gold select-none">ℹ️</span>
-                      <span>{PRODUCTS_DATA.SERIES.find(s => s.id === selectedSeries)?.subseries?.find(sub => sub.id === selectedSubseries)?.desc}</span>
-                    </div>
-                  )}
-                </div>
-              )}
-              {selectedSeries === 'tutuboom' && (
-                <p className="text-xs text-brand-text/85 mt-1 leading-relaxed flex items-start gap-1.5 bg-purple-50/40 p-2.5 rounded-xl border-l-2 border-purple-500">
-                  <span className="text-purple-600 select-none">✦</span>
-                  <span>tutuboom 系列：雙面分體印刷與磨砂一體殼。雙層印刷具有較為明顯的圖層分離效果，單層印刷可以做出半透明、漸變、浮雕之效果。實物和預覽圖可能有色彩差異。</span>
+              {/* Display series description */}
+              {activeSeriesObj?.desc && (
+                <p className="text-xs text-brand-text/80 flex items-start gap-1.5 mt-1 leading-relaxed">
+                  <span className="text-brand-gold select-none">✦</span>
+                  <span>{activeSeriesObj.desc}</span>
                 </p>
               )}
+
+              {/* Subseries description if selected */}
+              {selectedSubseries !== 'all' && availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.desc && (
+                <div className="flex items-start gap-2 bg-black/[0.02] p-2.5 rounded-xl border-l-2 border-brand-gold mt-1 text-xs text-brand-text">
+                  <span className="text-brand-gold select-none">ℹ️</span>
+                  <span>{availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.desc}</span>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Subseries Quick Selector Card when a series with subseries is selected */}
+          {availableSubseries.length > 0 && (
+            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-50/70 via-stone-50/80 to-purple-50/70 border border-stone-200/80 shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-amber-600 animate-pulse" />
+                  <span className="font-serif font-bold text-xs text-stone-800 tracking-wide">
+                    {activeSeriesObj?.name} · 子系列快速選單
+                  </span>
+                  <span className="text-[10px] font-mono text-stone-500 bg-white/80 px-2 py-0.5 rounded-full border border-stone-200">
+                    共 {availableSubseries.length} 個子系列
+                  </span>
+                </div>
+                {selectedSubseries !== 'all' && (
+                  <button
+                    onClick={() => setSelectedSubseries('all')}
+                    className="text-[11px] font-mono text-amber-800 hover:text-black hover:underline flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>顯示全部子系列</span>
+                    <X className="h-3 w-3" />
+                  </button>
+                )}
+              </div>
+
+              {/* Subseries Buttons */}
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSelectedSubseries('all')}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
+                    selectedSubseries === 'all'
+                      ? 'bg-stone-900 text-white border-stone-900 shadow-sm ring-1 ring-stone-900/10'
+                      : 'bg-white/90 text-stone-700 border-stone-200 hover:border-stone-400 hover:bg-white'
+                  }`}
+                >
+                  <span>全部圖款</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                    selectedSubseries === 'all' ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
+                  }`}>
+                    {getSubseriesCount('all')}
+                  </span>
+                </button>
+
+                {availableSubseries.map((sub: Subseries) => {
+                  const count = getSubseriesCount(sub.id);
+                  const isActive = selectedSubseries === sub.id;
+                  return (
+                    <button
+                      key={sub.id}
+                      onClick={() => setSelectedSubseries(sub.id)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
+                        isActive
+                          ? selectedSeries === 'tutuboom'
+                            ? 'bg-purple-700 text-white border-purple-700 shadow-md ring-2 ring-purple-500/20'
+                            : 'bg-amber-700 text-white border-amber-700 shadow-md ring-2 ring-amber-500/20'
+                          : 'bg-white/90 text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-white'
+                      }`}
+                    >
+                      {isActive && <Check className="h-3.5 w-3.5" />}
+                      <span>{sub.name}</span>
+                      <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                        isActive ? 'bg-white/25 text-white' : 'bg-stone-100 text-stone-600'
+                      }`}>
+                        {count}款
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
           <AnimatePresence mode="popLayout">
