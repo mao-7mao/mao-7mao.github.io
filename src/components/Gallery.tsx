@@ -155,7 +155,7 @@ const availableSubseries = useMemo(() => {
 
       // 3. Case Compatibility
       if (selectedCaseCompatible !== 'all' && d.seriesId !== 's8' && !d.id.startsWith('8-')) {
-        if (d.seriesId === 'tutuboom') {
+        if (d.seriesId.startsWith('tutuboom')) {
           if (selectedCaseCompatible === '分離殼') {
             // Both single and double layer designs support Separation Shell (分離殼)
             // Allow this design to pass through
@@ -403,7 +403,7 @@ const availableSubseries = useMemo(() => {
               支援殼體 / Shell Support
             </span>
             <div className="flex flex-wrap gap-1.5">
-              {(selectedSeries === 'tutuboom'
+              {(selectedSeries.startsWith('tutuboom')
                 ? ['all', '分離殼', '一體殼']
                 : ['all', 'SolidX', 'AirX', 'ModNX', 'ClearX', 'Clear']
               ).map((c) => (
@@ -515,16 +515,22 @@ const availableSubseries = useMemo(() => {
           >
             全部系列
           </button>
+          {TUTU_SERIES_LIST.map((ts) => {
+            const isSelected = selectedSeries === ts.id;
+            return (
           <button
-            onClick={() => { setSelectedSeries('tutuboom'); setSelectedSubseries('all'); }}
+                key={ts.id}
+                onClick={() => { setSelectedSeries(ts.id); setSelectedSubseries('all'); }}
             className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
-              selectedSeries === 'tutuboom'
-                ? 'bg-purple-600 text-white border-purple-600 shadow-sm'
-                : 'bg-purple-50/50 text-purple-600 border-purple-100'
+                  isSelected
+                    ? 'bg-purple-700 text-white border-purple-700 shadow-sm'
+                    : 'bg-purple-50/70 text-purple-700 border-purple-200/60 hover:bg-purple-100'
             }`}
           >
-            👾 tutuboom
+                tutu {ts.name}
           </button>
+            );
+          })}
           {PRODUCTS_DATA.SERIES.map((s) => (
             <button
               key={s.id}
@@ -689,7 +695,7 @@ const availableSubseries = useMemo(() => {
                       onClick={() => setSelectedSubseries(sub.id)}
                       className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
                         isActive
-                          ? selectedSeries === 'tutuboom'
+                          ? selectedSeries.startsWith('tutuboom')
                             ? 'bg-purple-700 text-white border-purple-700 shadow-md ring-2 ring-purple-500/20'
                             : 'bg-amber-700 text-white border-amber-700 shadow-md ring-2 ring-amber-500/20'
                           : 'bg-white/90 text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-white'

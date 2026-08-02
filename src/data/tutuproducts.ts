@@ -8,7 +8,7 @@ export const TUTU_SERIES: Series = {
   "subseries": [
     {
       "id": "tb-sub-1",
-      "name": "雙層分體立體系列",
+      "name": "雙層工藝系列",
       "desc": "【雙層印刷】圖案與背景分印於內外兩層背板，呈現獨特懸浮立體分離視覺（適用 tutuboom 分離殼）",
       "designs": [
         {
@@ -146,7 +146,7 @@ export const TUTU_SERIES: Series = {
     },
     {
       "id": "tb-sub-2",
-      "name": "單層質感工藝系列",
+      "name": "單層工藝系列",
       "desc": "【單層印刷】單層精細色彩噴繪，可呈現半透明、漸變、透光與浮雕觸感（適用 tutuboom 分離殼與磨砂一體殼）",
       "designs": [
         {
