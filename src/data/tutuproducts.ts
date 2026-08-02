@@ -249,35 +249,20 @@ export const TUTU_SERIES: Series = {
         },
         {
           "id": "tb-2.5",
-          "title": "印章小狗",
-          "layer": "雙層",
-          "badge": "new",
-          "link": [
-            {
-              "platform": "xhs",
-              "url": "http://xhslink.com/o/7dWqtf7Swqq "
-            },
-            {
-              "platform": "xhs",
-              "url": "http://xhslink.com/o/8ZyAM4g1IZM"
-            },
-            {
-              "platform": "xhs",
-              "url": "http://xhslink.com/o/3CdmnfKDAVx "
-            }
-          ],
+          "title": "古董蕾絲純白",
+          "badge": "",
+          "link": "",
           "models": [
             {
               "name": "分離殼預覽",
               "imgs": [
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-1.webp",
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-3.webp"
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0802-2.webp"
               ]
             },
             {
-              "name": "實物",
+              "name": "一體殼預覽",
               "imgs": [
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0702-2.webp"
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0802-3.webp"
               ]
             }
           ]
@@ -342,7 +327,8 @@ export const TUTU_SERIES: Series = {
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-1.webp"
               ]
             }
-          ]
+          ],
+          "desc": "部分浮雕工藝"
         },
         {
           "id": "tb-2.8",
@@ -528,31 +514,12 @@ export const TUTU_SERIES: Series = {
               ]
             }
           ]
-        },
-        {
-          "id": "tb-2.18",
-          "title": "古董蕾絲純白",
-          "badge": "",
-          "link": "",
-          "models": [
-            {
-              "name": "分離殼預覽",
-              "imgs": [
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0802-2.webp"
-              ]
-            },
-            {
-              "name": "一體殼預覽",
-              "imgs": [
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0802-3.webp"
-              ]
-            }
-          ]
         }
       ]
     }
   ]
 };
+
 
 
 // Export flattened array for backwards compatibility
