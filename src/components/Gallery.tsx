@@ -274,7 +274,7 @@ const availableSubseries = useMemo(() => {
               {/* tutuboom SECTION */}
               <div className="space-y-1 pt-1.5">
                 <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-purple-700 uppercase bg-purple-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>🩵 tutuboom 系列分類</span>
+                  <span>💜 tutuboom </span>
                 </div>
                 <div className="space-y-1">
                   {TUTU_SERIES_LIST.map((ts) => {
@@ -315,7 +315,7 @@ const availableSubseries = useMemo(() => {
               {/* 🦏🛡️  SECTION */}
               <div className="space-y-1 pt-3 border-t border-black/5">
                 <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-700 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>🧡 🦏🛡️  系列分類</span>
+                  <span>🧡 🦏🛡️ </span>
                 </div>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;

@@ -2,7 +2,7 @@ import { Series, Design, Subseries } from './productsData';
 
 export const TUTU_SERIES: Series = {
   "id": "tutuboom",
-  "name": "tutuboom 系列",
+  "name": "工藝分類",
   "nameEm": "雙層分體、單層分體殼與磨砂一體殼特輯",
   "desc": "tutuboom 系列：提供【雙層分體印刷】（具備懸浮立體視覺與豐富層次感）與【單層質感印花】（可呈現半透明、漸變、浮雕效果）。",
   "subseries": [
@@ -141,6 +141,20 @@ export const TUTU_SERIES: Series = {
               ]
             }
           ]
+        },
+        {
+          "id": "tb-1.6",
+          "title": "古董蕾絲藍底",
+          "badge": "",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-1.6/0802-1.webp"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -200,7 +214,7 @@ export const TUTU_SERIES: Series = {
           "id": "tb-2.3",
           "title": "白色鈴蘭",
           "layer": "單層",
-          "badge": "new",
+          "badge": "",
           "link": "",
           "models": [
             {
@@ -492,11 +506,54 @@ export const TUTU_SERIES: Series = {
               ]
             }
           ]
+        },
+        {
+          "id": "tb-2.17",
+          "title": "貓貓雨衣音樂熊",
+          "badge": "new",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0802-1.webp",
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0802-4.webp"
+              ]
+            },
+            {
+              "name": "一體殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0802-5.webp",
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0802-6.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.18",
+          "title": "古董蕾絲純白",
+          "badge": "",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0802-2.webp"
+              ]
+            },
+            {
+              "name": "一體殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0802-3.webp"
+              ]
+            }
+          ]
         }
       ]
     }
   ]
 };
+
 
 // Export flattened array for backwards compatibility
 export const TUTU_PRODUCTS_DATA: Design[] = TUTU_SERIES.subseries

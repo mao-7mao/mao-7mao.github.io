@@ -2294,11 +2294,15 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.cn/o/7sUL6Ud3LlE"
+                  "url": "http://xhslink.cn/o/2YYn9XVE5gQ"
                 },
                 {
                   "platform": "xhs",
                   "url": "http://xhslink.cn/o/AK2L83ZDvS2"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/7sUL6Ud3LlE"
                 }
               ],
               "models": [
@@ -4352,7 +4356,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0802-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/Screenshot 2026-05-31 at 12.51.17 AM.png"
+                  ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0802-3.webp"
                   ]
                 }
               ]
