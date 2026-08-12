@@ -186,26 +186,28 @@ export const TUTU_SERIES: Series = {
         },
         {
           "id": "tb-2.2",
-          "title": "小熊軟糖",
+          "title": "漸變愛心",
           "layer": "單層",
-          "badge": "new",
-          "link": [
-            {
-              "platform": "xhs",
-              "url": "http://xhslink.com/o/9ZSGsDKDPBV"
-            }
-          ],
+          "badge": "hot",
+          "link": "",
           "models": [
             {
               "name": "預覽",
               "imgs": [
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0627-2.webp"
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-4/0720-6.webp",
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框.webp"
+              ]
+            },
+            {
+              "name": "一體殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0713-46.webp"
               ]
             },
             {
               "name": "實物",
               "imgs": [
-                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0701-13.webp"
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7819.webp"
               ]
             }
           ]
@@ -470,6 +472,12 @@ export const TUTU_SERIES: Series = {
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.15/0802-4.webp"
               ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.15/0812-3.webp"
+              ]
             }
           ]
         },
@@ -511,6 +519,174 @@ export const TUTU_SERIES: Series = {
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0802-5.webp",
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0802-6.webp"
+              ]
+            },
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0812-4.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.17/0812-1.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.18",
+          "title": "粉色大衣",
+          "badge": "new",
+          "link": "",
+          "models": [
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0812-52.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0812-2.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.19",
+          "title": "海鹽冰飲磨砂透",
+          "badge": "hot",
+          "link": [
+            {
+              "platform": "xhs",
+              "url": "http://xhslink.cn/o/4av6VASTyh7"
+            }
+          ],
+          "models": [
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.19/0812-48.webp"
+              ]
+            },
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.19/0812-51.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.19/0812-53.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.20",
+          "title": "薄荷漸變星星",
+          "badge": "",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 棕色框2.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A7912.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.21",
+          "title": "粉色漸變愛心",
+          "badge": "hot",
+          "link": [
+            {
+              "platform": "xhs",
+              "url": "http://xhslink.com/o/81yANq4ZhLl"
+            }
+          ],
+          "models": [
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.21/0812-50.webp"
+              ]
+            },
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/白色爱心渐变.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.22",
+          "title": "天空色漸變雲朵",
+          "badge": "",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框2.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8431.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.23",
+          "title": "黑色漸變星星",
+          "badge": "hot",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 黑色框.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A6278.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.24",
+          "title": "紫色漸變星星",
+          "badge": "",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/替换图案 白色框1.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8477.webp"
               ]
             }
           ]

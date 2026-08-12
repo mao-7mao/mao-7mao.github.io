@@ -67,6 +67,7 @@ export default function ProductViewer({
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [tutuboomType, settutuboomType] = useState<'single' | 'double' | 'matte'>('double');
+  const [tutuboomFrameColor, setTutuboomFrameColor] = useState<string>('磨砂透');
 
   const isFavorite = favorites.includes(selectedDesign.id);
 
@@ -376,14 +377,18 @@ export default function ProductViewer({
   // Pricing calculation
   const getPrice = () => {
     // Check if tutuboom design
-    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
-      const layer = selectedDesign.layer || '雙層';
+    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer || istutuboom) {
+      if (selectedCaseType.includes('一體')) {
+        return '142.8 - 159.8元';
+      }
+      const isLimitedFrame = tutuboomFrameColor === '限定透藍框' || tutuboomFrameColor === '限定透粉框';
+      if (isLimitedFrame) {
+        return '308元';
+      }
+      const layer = tutuboomType === 'single' ? '單層' : tutuboomType === 'double' ? '雙層' : (selectedDesign.layer || '雙層');
       if (layer === '單層') {
         if (selectedCaseType.includes('分離')) {
           return '295.8元';
-        }
-        if (selectedCaseType.includes('一體')) {
-          return '142.8 - 159.8元';
         }
         return '142.8 - 295.8元';
       } else {
@@ -483,17 +488,39 @@ export default function ProductViewer({
   };
 
   const getDisplayCaseType = () => {
-    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
-      const layer = selectedDesign.layer || '雙層';
-      if (layer === '單層') {
-        if (selectedCaseType.includes('分離')) return 'tutuboom訂製款分離殼 (單層背板+邊框)';
-        if (selectedCaseType.includes('一體')) return 'tutuboom訂製款磨砂一體殼';
-        return 'tutuboom 訂製系列 (單層)';
-      } else {
-        return 'tutuboom訂製款分離殼 (雙層背板+邊框)';
+    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer || istutuboom) {
+      if (selectedCaseType.includes('一體')) {
+        return 'tutuboom訂製款磨砂一體殼';
       }
+      const craftText = tutuboomType === 'single' ? '單層背板' : '雙層背板';
+      const isLimited = tutuboomFrameColor === '限定透藍框' || tutuboomFrameColor === '限定透粉框';
+      if (isLimited) {
+        return `tutuboom訂製款限定透彩邊框 (${tutuboomFrameColor} + ${craftText})`;
+      }
+      return `tutuboom訂製款分離殼 (${tutuboomFrameColor} + ${craftText})`;
     }
     return selectedCaseType;
+  };
+
+  const getPhoneFrameClass = () => {
+    if (!istutuboom) {
+      return 'border-4 border-slate-800 bg-slate-100';
+    }
+    switch (tutuboomFrameColor) {
+      case '限定透藍框':
+        return 'border-4 border-cyan-400/90 ring-4 ring-cyan-200/60 bg-cyan-50/20 shadow-[0_15px_35px_rgba(34,211,238,0.3)]';
+      case '限定透粉框':
+        return 'border-4 border-pink-400/90 ring-4 ring-pink-200/60 bg-pink-50/20 shadow-[0_15px_35px_rgba(244,114,182,0.3)]';
+      case '迷你粉':
+        return 'border-4 border-pink-300 ring-2 ring-pink-200/50 bg-pink-50/10';
+      case '暗夜黑':
+        return 'border-4 border-slate-900 bg-slate-900/10';
+      case '朱古力':
+        return 'border-4 border-amber-950 bg-amber-900/10';
+      case '磨砂透':
+      default:
+        return 'border-4 border-slate-300/80 bg-slate-100/50';
+    }
   };
 
   const handleNextImage = () => {
@@ -1007,6 +1034,7 @@ export default function ProductViewer({
 
             {/* Step 1: Case Type selection (Determined purely by JSON) */}
             {!isS8OrS9 && (
+              <div className="space-y-4">
               <div>
                 <label className="font-mono text-[10px] tracking-widest text-black/40 uppercase block mb-2.5 font-semibold">
                   🌟選擇殼體種類
@@ -1042,6 +1070,139 @@ export default function ProductViewer({
                 <p className="text-[10px] text-brand-muted mt-2 leading-relaxed italic">
                   * 註：僅展示已上傳之殼體渲染圖，若有未及可留言萬有狀態。
                 </p>
+                </div>
+
+                {/* Tutuboom Customization Panel: Craft & Border Color */}
+                {istutuboom && (
+                  <div className="p-4 bg-purple-50/70 border border-purple-200/80 rounded-2xl space-y-4 shadow-xs">
+                    {/* Craft Selection */}
+                    <div>
+                      <label className="font-mono text-[10px] tracking-wider text-purple-900 uppercase block mb-2 font-bold flex items-center justify-between">
+                        <span className="flex items-center gap-1.5">
+                          <Layers className="h-3.5 w-3.5 text-purple-600" />
+                          <span>工藝選擇 / Craft Type</span>
+                        </span>
+                        <span className="text-[10px] font-sans font-normal text-purple-700 bg-white/80 px-2 py-0.5 rounded-full border border-purple-100">
+                          單層/雙層工藝
+                        </span>
+                      </label>
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          type="button"
+                          onClick={() => settutuboomType('single')}
+                          className={`px-3 py-2 rounded-xl text-xs font-semibold text-left border transition-all cursor-pointer flex flex-col justify-between ${
+                            tutuboomType === 'single'
+                              ? 'bg-purple-900 text-white border-purple-900 shadow-xs'
+                              : 'bg-white/90 text-stone-700 border-purple-100 hover:border-purple-300 hover:bg-white'
+                          }`}
+                        >
+                          <span>單層印刷背板</span>
+                          <span className={`text-[9.5px] mt-1 font-mono ${tutuboomType === 'single' ? 'text-purple-200' : 'text-purple-600'}`}>
+                            常規 295.8元 / 限定 308元
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => settutuboomType('double')}
+                          className={`px-3 py-2 rounded-xl text-xs font-semibold text-left border transition-all cursor-pointer flex flex-col justify-between ${
+                            tutuboomType === 'double'
+                              ? 'bg-purple-900 text-white border-purple-900 shadow-xs'
+                              : 'bg-white/90 text-stone-700 border-purple-100 hover:border-purple-300 hover:bg-white'
+                          }`}
+                        >
+                          <span>雙層印刷背板</span>
+                          <span className={`text-[9.5px] mt-1 font-mono ${tutuboomType === 'double' ? 'text-purple-200' : 'text-purple-600'}`}>
+                            常規 312.8元 / 限定 308元
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Border Color Selection */}
+                    {!selectedCaseType.includes('一體') && (
+                      <div className="pt-3 border-t border-purple-200/60 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <label className="font-mono text-[10px] tracking-wider text-purple-900 uppercase block font-bold flex items-center gap-1.5">
+                            <Sparkles className="h-3.5 w-3.5 text-purple-600 animate-pulse" />
+                            <span>邊框顏色選擇 / Frame Color</span>
+                          </label>
+                          <span className="text-[10px] font-mono text-purple-900 font-bold bg-white/90 px-2 py-0.5 rounded-md border border-purple-200">
+                            {tutuboomFrameColor}
+                          </span>
+                        </div>
+
+                        {/* 1. 常規邊框 */}
+                        <div>
+                          <span className="text-[10px] font-mono font-semibold text-purple-950 block mb-1.5">
+                            ・常規邊框顏色:
+                          </span>
+                          <div className="grid grid-cols-4 gap-1.5">
+                            {[
+                              { id: '磨砂透', colorBg: 'bg-slate-200 border-slate-300' },
+                              { id: '迷你粉', colorBg: 'bg-pink-300 border-pink-400' },
+                              { id: '暗夜黑', colorBg: 'bg-slate-900 border-slate-950 text-white' },
+                              { id: '朱古力', colorBg: 'bg-amber-900 border-amber-950 text-white' },
+                            ].map((f) => (
+                              <button
+                                key={f.id}
+                                type="button"
+                                onClick={() => setTutuboomFrameColor(f.id)}
+                                className={`px-2 py-1.5 rounded-xl text-[11px] font-semibold text-center border transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
+                                  tutuboomFrameColor === f.id
+                                    ? 'bg-purple-900 text-white border-purple-900 shadow-xs'
+                                    : 'bg-white/90 text-stone-700 border-stone-200 hover:border-purple-300'
+                                }`}
+                              >
+                                <span className={`w-3 h-3 rounded-full border shadow-xs ${f.colorBg}`} />
+                                <span className="truncate w-full">{f.id}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 2. 限定透彩邊框 (308元) */}
+                        <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 p-2.5 rounded-xl border border-purple-200/80 space-y-1.5">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-bold text-purple-950 flex items-center gap-1">
+                              <span>✨ 限定透彩邊框</span>
+                              <span className="bg-purple-800 text-white font-mono text-[9px] px-1.5 py-0.2 rounded-full">
+                                限定 308元
+                              </span>
+                            </span>
+                            <span className="text-[9px] text-purple-700 font-mono">單/雙層工藝+背板</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-2">
+                            {[
+                              { id: '限定透藍框', label: '🩵 夏日透藍框', price: '308元', badgeColor: 'bg-cyan-100 border-cyan-300 text-cyan-900' },
+                              { id: '限定透粉框', label: '🩷 夏日透粉框', price: '308元', badgeColor: 'bg-pink-100 border-pink-300 text-pink-900' },
+                            ].map((f) => {
+                              const isSelected = tutuboomFrameColor === f.id;
+                              return (
+                                <button
+                                  key={f.id}
+                                  type="button"
+                                  onClick={() => setTutuboomFrameColor(f.id)}
+                                  className={`px-3 py-2 rounded-xl text-xs font-bold text-left border transition-all cursor-pointer flex items-center justify-between shadow-xs ${
+                                    isSelected
+                                      ? 'bg-gradient-to-r from-purple-900 to-indigo-900 text-white border-purple-900 shadow-xs'
+                                      : 'bg-white/95 text-purple-950 border-purple-200 hover:border-purple-400 hover:bg-white'
+                                  }`}
+                                >
+                                  <span className="truncate">{f.label}</span>
+                                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md shrink-0 ${
+                                    isSelected ? 'bg-white/20 text-white' : f.badgeColor
+                                  }`}>
+                                    {f.price}
+                                  </span>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
 
@@ -1430,7 +1591,7 @@ export default function ProductViewer({
           {/* The Phone Case Art Container */}
           <div className="flex-1 w-full flex items-center justify-center py-6">
             <div 
-              className="relative w-72 h-[420px] rounded-[38px] border-4 border-slate-800 shadow-2xl bg-slate-100 overflow-hidden flex items-center justify-center transition-all duration-300 touch-none"
+              className={`relative w-72 h-[420px] rounded-[38px] shadow-2xl overflow-hidden flex items-center justify-center transition-all duration-300 touch-none ${getPhoneFrameClass()}`}
               style={{
                 boxShadow: '0 25px 60px -15px rgba(0,0,0,0.25)',
               }}
