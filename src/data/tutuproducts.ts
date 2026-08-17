@@ -452,6 +452,13 @@ export const TUTU_SERIES: Series = {
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0715-23.webp"
               ]
+            },
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.14/0817-17.webp",
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.14/0817-18.webp"
+              ]
             }
           ]
         },
@@ -477,6 +484,13 @@ export const TUTU_SERIES: Series = {
               "name": "實物",
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.15/0812-3.webp"
+              ]
+            },
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.15/0817-16.webp",
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.15/0817-15.webp"
               ]
             }
           ]
@@ -551,6 +565,12 @@ export const TUTU_SERIES: Series = {
               "name": "實物",
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0812-2.webp"
+              ]
+            },
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.18/0817-19.webp"
               ]
             }
           ]
@@ -687,6 +707,26 @@ export const TUTU_SERIES: Series = {
               "name": "實物",
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1O3A8477.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.25",
+          "title": "蕾絲花花單層版本",
+          "badge": "",
+          "link": "",
+          "models": [
+            {
+              "name": "一體殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.25/9817-2.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.25/0817-1.webp"
               ]
             }
           ]
