@@ -479,16 +479,16 @@ export default function ProductViewer({
   const getDisplayCaseType = () => {
     if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer || istutuboom) {
       if (selectedCaseType.includes('限定')) {
-        return 'tutuboom訂製款限定透彩邊框 (308元)';
+        return 'tutuboom訂製款限定透彩邊框';
       }
       if (selectedCaseType.includes('一體')) {
-        return 'tutuboom訂製款磨砂一體殼 (142.8-159.8元)';
+        return 'tutuboom訂製款磨砂一體殼';
       }
       const layer = selectedDesign.layer || '雙層';
       if (layer === '單層') {
-        return 'tutuboom訂製款單層分離殼 (168.3-295.8元)';
+        return 'tutuboom訂製款單層分離殼';
       }
-      return 'tutuboom訂製款雙層分離殼 (185.3-312.8元)';
+      return 'tutuboom訂製款雙層分離殼';
     }
     return selectedCaseType;
   };

@@ -50,9 +50,14 @@ export default function ShareCardModal({
 
   const { container, scaleFactor } = getCellSize(shareList.length);
 
-  // Clean the descriptive text for a cleaner look in tight grids
+  // Clean the descriptive text for a cleaner look in tight grids and remove any pricing to avoid bans on social platforms
   const cleanCaseTypeName = (name: string) => {
+    if (!name) return '';
     return name
+      .replace(/\(.*?\)/g, '')
+      .replace(/（.*?）/g, '')
+      .replace(/[\d.]+\s*[-~至到]?\s*[\d.]*\s*元/g, '')
+      .replace(/[$¥NT]/g, '')
       .replace(/tutuboom訂製款/g, '')
       .replace(/訂製系列/g, '')
       .replace(/分離殼/g, '分離')

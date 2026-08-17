@@ -46,6 +46,13 @@ export const TUTU_SERIES: Series = {
           ],
           "models": [
             {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-1.2/0817-1.webp",
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-1.2/0817-3.webp"
+              ]
+            },
+            {
               "name": "分離殼預覽",
               "imgs": [
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-9/0716-1.webp",
