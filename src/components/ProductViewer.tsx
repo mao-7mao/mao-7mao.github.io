@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CASE_TYPES, CaseType, Design } from '../data/productsData';
 import { PRODUCTS_DATA } from '../data/products';
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink, Share2, Heart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink, Share2, Heart, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ShareCardModal from './ShareCardModal';
 import { ShareQueueItem } from '../types';
@@ -57,32 +57,24 @@ export default function ProductViewer({
       'ClearX': { label: 'ClearX 抗黃透明', desc: '裸機感抗黃防摔' },
       'Clear': { label: 'Clear 抗黃防摔', desc: '終結黃化，終身保固' },
       'SolidSuit': { label: 'SolidSuit 經典防摔', desc: '超越軍規，耐用防摔' },
+      '分離殼預覽': { label: '分離殼預覽', desc: '背板+邊框分離工藝' },
+      '一體殼預覽': { label: '磨砂一體殼預覽', desc: '單層印刷·磨砂質感' },
+      '限定透彩邊框預覽': { label: '✨ 限定透彩邊框預覽', desc: '限定透彩邊框+背板 (308元)' },
       '預覽': { label: '預覽圖款', desc: '設計預覽效果' },
       '實物': { label: '實物圖款', desc: '實品實拍' },
     };
-    return zhNames[name] || { label: name, desc: '對應客製規格' };
+    if (zhNames[name]) return zhNames[name];
+    if (name.includes('限定')) return { label: name, desc: '限定透彩邊框+背板 (308元)' };
+    if (name.includes('分離')) return { label: name, desc: '背板+邊框分離工藝' };
+    if (name.includes('一體')) return { label: name, desc: '單層印刷·磨砂質感' };
+    return { label: name, desc: '對應客製規格' };
   };
   // Config state
   const [activeModelIdx, setActiveModelIdx] = useState(0);
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
-  const [tutuboomType, settutuboomType] = useState<'single' | 'double' | 'matte'>('double');
-  const [tutuboomFrameColor, setTutuboomFrameColor] = useState<string>('磨砂透');
 
   const isFavorite = favorites.includes(selectedDesign.id);
-
-  useEffect(() => {
-    if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer) {
-      const initialLayer = selectedDesign.layer || '雙層';
-      if (initialLayer === '單層') {
-        settutuboomType('single');
-      } else if (initialLayer === '雙層') {
-        settutuboomType('double');
-      } else {
-        settutuboomType('matte');
-      }
-    }
-  }, [selectedDesign]);
 
   // Case Mockup fine tuning states (Remove margins/borders adaptively)
   const [showTweakControls, setShowTweakControls] = useState<boolean>(false);
@@ -91,6 +83,7 @@ export default function ProductViewer({
   const [caseImgY, setCaseImgY] = useState<number>(0);
 
   // Stand/Grip custom states
+  const [isAccessoriesOpen, setIsAccessoriesOpen] = useState<boolean>(false);
   const [standImage, setStandImage] = useState<string | null>(null);
   const [standCutout, setStandCutout] = useState<string | null>(null);
   const [processMode, setProcessMode] = useState<'auto' | 'crop' | 'lasso'>('crop');
@@ -144,10 +137,10 @@ export default function ProductViewer({
       return selectedDesign.models || [];
     }
 
-    // If models are already explicitly defined as separate case types (e.g. including '分離' or '一體') in the JSON,
+    // If models are already explicitly defined as separate case types (e.g. including '分離', '一體', or '限定') in the JSON,
     // directly use and respect the models array to achieve a clean one-to-one correspondence.
     const hasExplicitTutuModels = selectedDesign.models?.some(
-      m => m.name.includes('分離') || m.name.includes('一體')
+      m => m.name.includes('分離') || m.name.includes('一體') || m.name.includes('限定')
     );
     if (hasExplicitTutuModels) {
       return selectedDesign.models || [];
@@ -378,21 +371,17 @@ export default function ProductViewer({
   const getPrice = () => {
     // Check if tutuboom design
     if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer || istutuboom) {
+      if (selectedCaseType.includes('限定')) {
+        return '308元';
+      }
       if (selectedCaseType.includes('一體')) {
         return '142.8 - 159.8元';
       }
-      const isLimitedFrame = tutuboomFrameColor === '限定透藍框' || tutuboomFrameColor === '限定透粉框';
-      if (isLimitedFrame) {
-        return '308元';
-      }
-      const layer = tutuboomType === 'single' ? '單層' : tutuboomType === 'double' ? '雙層' : (selectedDesign.layer || '雙層');
+      const layer = selectedDesign.layer || '雙層';
       if (layer === '單層') {
-        if (selectedCaseType.includes('分離')) {
-          return '295.8元';
-        }
-        return '142.8 - 295.8元';
+        return '168.3 - 295.8元';
       } else {
-        return '312.8元';
+        return '185.3 - 312.8元';
       }
     }
 
@@ -489,38 +478,23 @@ export default function ProductViewer({
 
   const getDisplayCaseType = () => {
     if (selectedDesign.id.startsWith('tb-') || selectedDesign.layer || istutuboom) {
+      if (selectedCaseType.includes('限定')) {
+        return 'tutuboom訂製款限定透彩邊框 (308元)';
+      }
       if (selectedCaseType.includes('一體')) {
-        return 'tutuboom訂製款磨砂一體殼';
+        return 'tutuboom訂製款磨砂一體殼 (142.8-159.8元)';
       }
-      const craftText = tutuboomType === 'single' ? '單層背板' : '雙層背板';
-      const isLimited = tutuboomFrameColor === '限定透藍框' || tutuboomFrameColor === '限定透粉框';
-      if (isLimited) {
-        return `tutuboom訂製款限定透彩邊框 (${tutuboomFrameColor} + ${craftText})`;
+      const layer = selectedDesign.layer || '雙層';
+      if (layer === '單層') {
+        return 'tutuboom訂製款單層分離殼 (168.3-295.8元)';
       }
-      return `tutuboom訂製款分離殼 (${tutuboomFrameColor} + ${craftText})`;
+      return 'tutuboom訂製款雙層分離殼 (185.3-312.8元)';
     }
     return selectedCaseType;
   };
 
   const getPhoneFrameClass = () => {
-    if (!istutuboom) {
-      return 'border-4 border-slate-800 bg-slate-100';
-    }
-    switch (tutuboomFrameColor) {
-      case '限定透藍框':
-        return 'border-4 border-cyan-400/90 ring-4 ring-cyan-200/60 bg-cyan-50/20 shadow-[0_15px_35px_rgba(34,211,238,0.3)]';
-      case '限定透粉框':
-        return 'border-4 border-pink-400/90 ring-4 ring-pink-200/60 bg-pink-50/20 shadow-[0_15px_35px_rgba(244,114,182,0.3)]';
-      case '迷你粉':
-        return 'border-4 border-pink-300 ring-2 ring-pink-200/50 bg-pink-50/10';
-      case '暗夜黑':
-        return 'border-4 border-slate-900 bg-slate-900/10';
-      case '朱古力':
-        return 'border-4 border-amber-950 bg-amber-900/10';
-      case '磨砂透':
-      default:
-        return 'border-4 border-slate-300/80 bg-slate-100/50';
-    }
+    return 'border-[3px] border-slate-200 bg-slate-50/70 shadow-sm';
   };
 
   const handleNextImage = () => {
@@ -935,22 +909,227 @@ export default function ProductViewer({
 
   const currentPrice = getPrice();
 
+  const renderDisplayStage = (isMobile = false) => (
+    <div
+      className={`relative flex flex-col justify-between items-center overflow-hidden transition-all w-full ${
+        isMobile
+          ? 'rounded-2xl glass-card p-3.5 sm:p-4 min-h-[420px] my-1 shadow-sm'
+          : 'h-full rounded-3xl glass-card p-6 lg:p-8 min-h-[580px] xl:min-h-[660px] shadow-sm'
+      }`}
+    >
+      {/* Top Header Controls: Model badges (left) and Action buttons (right) */}
+      <div className="w-full flex items-center justify-between gap-2.5 mb-2 z-10">
+        {/* Left: Model switcher buttons */}
+        <div className="flex flex-wrap gap-1.5 items-center max-w-[70%]">
+          {virtualModels.length > 1 ? (
+            virtualModels.map((m, mIdx) => (
+              <button
+                key={`${m.name}-${mIdx}`}
+                onClick={() => {
+                  setActiveModelIdx(mIdx);
+                  setActiveImgIdx(0);
+                  if (!selectedDesign.id.startsWith('8-')) {
+                    setSelectedCaseType(m.name);
+                  }
+                }}
+                className={`text-[9.5px] sm:text-[10px] font-mono px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border transition-all cursor-pointer ${
+                  activeModelIdx === mIdx
+                    ? 'bg-black text-white border-black shadow-xs font-semibold'
+                    : 'bg-white/80 hover:bg-white text-brand-muted border-black/10 backdrop-blur-md shadow-xs'
+                }`}
+              >
+                {m.name}
+              </button>
+            ))
+          ) : (
+            <span className="text-[10.5px] font-mono text-brand-muted/70 tracking-wider">
+              {virtualModels[0]?.name || 'PREVIEW'}
+            </span>
+          )}
+        </div>
+
+        {/* Right: Floating action buttons */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <button
+            onClick={() => setIsZoomed(!isZoomed)}
+            className="p-2 sm:p-2.5 rounded-full bg-white/80 hover:bg-white backdrop-blur-md border border-black/10 text-brand-text shadow-xs hover:scale-105 transition-all cursor-pointer"
+            title="細節縮放"
+          >
+            {isZoomed ? <ZoomOut className="h-4 w-4" /> : <ZoomIn className="h-4 w-4" />}
+          </button>
+          <button
+            onClick={() => onToggleFavorite(selectedDesign.id)}
+            className={`p-2 sm:p-2.5 rounded-full backdrop-blur-md border shadow-xs hover:scale-105 transition-all cursor-pointer ${
+              isFavorite
+                ? 'bg-rose-50 border-rose-200 text-rose-500'
+                : 'bg-white/80 hover:bg-white border-black/10 text-brand-text'
+            }`}
+            title={isFavorite ? '取消收藏' : '加入收藏'}
+          >
+            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current' : ''}`} />
+          </button>
+          <button
+            onClick={handleOpenShareModal}
+            className="p-2 sm:p-2.5 rounded-full bg-white/80 hover:bg-white backdrop-blur-md border border-black/10 text-brand-text shadow-xs hover:scale-105 transition-all cursor-pointer"
+            title="分享卡片"
+          >
+            <Share2 className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* The Phone Case Art Container */}
+      <div className="flex-1 w-full flex items-center justify-center py-4 lg:py-6">
+        <div 
+          className={`relative ${
+            isMobile 
+              ? 'w-64 sm:w-72 h-[380px] sm:h-[420px] rounded-[34px] sm:rounded-[38px]' 
+              : 'w-72 sm:w-80 lg:w-[340px] xl:w-[370px] h-[430px] sm:h-[480px] lg:h-[530px] xl:h-[570px] rounded-[38px] lg:rounded-[44px]'
+          } shadow-lg overflow-hidden flex items-center justify-center transition-all duration-300 touch-none ${getPhoneFrameClass()}`}
+          style={{
+            boxShadow: '0 20px 45px -12px rgba(0,0,0,0.12)',
+          }}
+          onPointerDown={handleMockupPointerDown}
+          onPointerMove={handleMockupPointerMove}
+          onPointerUp={handleMockupPointerUp}
+          onPointerLeave={handleMockupPointerUp}
+          onWheel={handleMockupWheel}
+        >
+          {/* Refined clean interior background */}
+          <div className="absolute inset-0 bg-white/80 transition-colors" />
+
+          {/* Case Texture Rendering over the Phone */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImage}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: isZoomed ? 1.4 : 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.35 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center p-3 select-none"
+            >
+              {currentImage ? (
+                <img 
+                  src={currentImage} 
+                  alt={selectedDesign.title} 
+                  className="max-h-full max-w-full object-contain pointer-events-none" 
+                  draggable="false"
+                  onContextMenu={(e) => e.preventDefault()}
+                  referrerPolicy="no-referrer"
+                  style={{
+                    transform: `scale(${caseImgScale}) translate(${caseImgX}px, ${caseImgY}px)`,
+                  }}
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center text-black/20 gap-2">
+                  <Layers className="h-10 w-10 opacity-30 animate-pulse" />
+                  <span className="font-mono text-[10px]">No Render Image</span>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Dynamic Phone Stand Preview Overlay */}
+          {standCutout && (
+            <div 
+              id={isMobile ? "stand-preview-overlay-mob" : "stand-preview-overlay"}
+              className="absolute z-20 cursor-move select-none pointer-events-auto group/stand"
+              style={{
+                left: `${standX}%`,
+                top: `${standY}%`,
+                width: `${standSize}%`,
+                transform: `translate(-50%, -50%) rotate(${standRotate}deg)`,
+                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.35))',
+                touchAction: 'none'
+              }}
+            >
+              <img 
+                src={standCutout} 
+                alt="手機支架" 
+                className="w-full h-auto object-contain pointer-events-none select-none"
+                draggable="false"
+                referrerPolicy="no-referrer"
+              />
+              
+              {/* Thin dashed outline on hover or active */}
+              <div className="absolute inset-[-3px] border border-dashed border-black/35 rounded-lg pointer-events-none group-hover/stand:border-black/60 transition-colors" />
+              
+              {/* Four Corner Handles for Resizing */}
+              <div className="stand-resize-handle absolute -top-1.5 -left-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nwse-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
+              <div className="stand-resize-handle absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nesw-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
+              <div className="stand-resize-handle absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nesw-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
+              <div className="stand-resize-handle absolute -bottom-1.5 -right-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nwse-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
+
+              {/* Subtle active state focus border */}
+              {(isDraggingStand || isResizingStand) && (
+                <div className="absolute inset-[-6px] border border-dashed border-black rounded-full animate-pulse pointer-events-none opacity-40" />
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Picture Navigation indicators & Arrows */}
+      {images.length > 1 && (
+        <div className="w-full flex items-center justify-between gap-3 mt-1 sm:mt-2">
+          <button
+            onClick={handlePrevImage}
+            className="p-1.5 sm:p-2 rounded-full border border-white/50 bg-white/50 hover:bg-white/80 backdrop-blur-md transition-colors shadow-sm cursor-pointer"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+
+          {/* Thumbnails row */}
+          <div className="flex gap-2 overflow-x-auto no-scrollbar max-w-[65%] py-1">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveImgIdx(i)}
+                className={`relative w-10 h-13 sm:w-11 sm:h-14 rounded-lg bg-white/60 border overflow-hidden p-1 shrink-0 transition-all cursor-pointer ${
+                  activeImgIdx === i 
+                    ? 'border-black ring-1 ring-black/10 scale-105 shadow-xs' 
+                    : 'border-white/50 opacity-65 hover:opacity-100'
+                }`}
+              >
+                <img 
+                  src={img} 
+                  alt="Thumbnail" 
+                  className="w-full h-full object-contain" 
+                  referrerPolicy="no-referrer"
+                />
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={handleNextImage}
+            className="p-1.5 sm:p-2 rounded-full border border-white/50 bg-white/50 hover:bg-white/80 backdrop-blur-md transition-colors shadow-sm cursor-pointer"
+            aria-label="Next image"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+
   return (
-    <div id="product-viewer" className="py-16 px-4 md:px-12 max-w-7xl mx-auto page-enter scroll-mt-12 relative z-10">
+    <div id="product-viewer" className="pt-6 pb-12 sm:py-12 md:py-16 px-4 md:px-12 max-w-7xl mx-auto page-enter scroll-mt-16 relative z-10">
       {/* Editorial Title */}
-      <div className="text-center mb-12">
-        <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase block mb-1">
+      <div className="text-center mb-6 sm:mb-10">
+        <span className="font-mono text-[11px] tracking-[0.25em] text-black/50 uppercase block mb-1">
           Handcrafted Configurator
         </span>
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-brand-text">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-brand-text">
           客製化 <em>瀏覽區</em>
         </h2>
-        <p className="text-xs text-brand-muted mt-2">
-          可以上傳手機配件預覽搭配效果♥️
+        <p className="text-xs text-brand-muted mt-1.5">
+          全系列圖款與不同型號殼體預覽
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
         {/* LEFT COLUMN: Configurator Panel (lg:col-span-5) */}
         <div className="lg:col-span-5 flex flex-col justify-between glass-frosted rounded-3xl p-6 sm:p-8">
           <div className="space-y-6">
@@ -1032,6 +1211,11 @@ export default function ProductViewer({
               )}
             </div>
 
+            {/* Mobile-Only Display Stage: Positioned directly above "🌟選擇殼體種類" */}
+            <div className="block lg:hidden">
+              {renderDisplayStage(true)}
+            </div>
+
             {/* Step 1: Case Type selection (Determined purely by JSON) */}
             {!isS8OrS9 && (
               <div className="space-y-4">
@@ -1071,154 +1255,56 @@ export default function ProductViewer({
                   * 註：僅展示已上傳之殼體渲染圖，若有未及可留言萬有狀態。
                 </p>
                 </div>
-
-                {/* Tutuboom Customization Panel: Craft & Border Color */}
-                {istutuboom && (
-                  <div className="p-4 bg-purple-50/70 border border-purple-200/80 rounded-2xl space-y-4 shadow-xs">
-                    {/* Craft Selection */}
-                    <div>
-                      <label className="font-mono text-[10px] tracking-wider text-purple-900 uppercase block mb-2 font-bold flex items-center justify-between">
-                        <span className="flex items-center gap-1.5">
-                          <Layers className="h-3.5 w-3.5 text-purple-600" />
-                          <span>工藝選擇 / Craft Type</span>
-                        </span>
-                        <span className="text-[10px] font-sans font-normal text-purple-700 bg-white/80 px-2 py-0.5 rounded-full border border-purple-100">
-                          單層/雙層工藝
-                        </span>
-                      </label>
-                      <div className="grid grid-cols-2 gap-2">
-                        <button
-                          type="button"
-                          onClick={() => settutuboomType('single')}
-                          className={`px-3 py-2 rounded-xl text-xs font-semibold text-left border transition-all cursor-pointer flex flex-col justify-between ${
-                            tutuboomType === 'single'
-                              ? 'bg-purple-900 text-white border-purple-900 shadow-xs'
-                              : 'bg-white/90 text-stone-700 border-purple-100 hover:border-purple-300 hover:bg-white'
-                          }`}
-                        >
-                          <span>單層印刷背板</span>
-                          <span className={`text-[9.5px] mt-1 font-mono ${tutuboomType === 'single' ? 'text-purple-200' : 'text-purple-600'}`}>
-                            常規 295.8元 / 限定 308元
-                          </span>
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => settutuboomType('double')}
-                          className={`px-3 py-2 rounded-xl text-xs font-semibold text-left border transition-all cursor-pointer flex flex-col justify-between ${
-                            tutuboomType === 'double'
-                              ? 'bg-purple-900 text-white border-purple-900 shadow-xs'
-                              : 'bg-white/90 text-stone-700 border-purple-100 hover:border-purple-300 hover:bg-white'
-                          }`}
-                        >
-                          <span>雙層印刷背板</span>
-                          <span className={`text-[9.5px] mt-1 font-mono ${tutuboomType === 'double' ? 'text-purple-200' : 'text-purple-600'}`}>
-                            常規 312.8元 / 限定 308元
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Border Color Selection */}
-                    {!selectedCaseType.includes('一體') && (
-                      <div className="pt-3 border-t border-purple-200/60 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <label className="font-mono text-[10px] tracking-wider text-purple-900 uppercase block font-bold flex items-center gap-1.5">
-                            <Sparkles className="h-3.5 w-3.5 text-purple-600 animate-pulse" />
-                            <span>邊框顏色選擇 / Frame Color</span>
-                          </label>
-                          <span className="text-[10px] font-mono text-purple-900 font-bold bg-white/90 px-2 py-0.5 rounded-md border border-purple-200">
-                            {tutuboomFrameColor}
-                          </span>
-                        </div>
-
-                        {/* 1. 常規邊框 */}
-                        <div>
-                          <span className="text-[10px] font-mono font-semibold text-purple-950 block mb-1.5">
-                            ・常規邊框顏色:
-                          </span>
-                          <div className="grid grid-cols-4 gap-1.5">
-                            {[
-                              { id: '磨砂透', colorBg: 'bg-slate-200 border-slate-300' },
-                              { id: '迷你粉', colorBg: 'bg-pink-300 border-pink-400' },
-                              { id: '暗夜黑', colorBg: 'bg-slate-900 border-slate-950 text-white' },
-                              { id: '朱古力', colorBg: 'bg-amber-900 border-amber-950 text-white' },
-                            ].map((f) => (
-                              <button
-                                key={f.id}
-                                type="button"
-                                onClick={() => setTutuboomFrameColor(f.id)}
-                                className={`px-2 py-1.5 rounded-xl text-[11px] font-semibold text-center border transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
-                                  tutuboomFrameColor === f.id
-                                    ? 'bg-purple-900 text-white border-purple-900 shadow-xs'
-                                    : 'bg-white/90 text-stone-700 border-stone-200 hover:border-purple-300'
-                                }`}
-                              >
-                                <span className={`w-3 h-3 rounded-full border shadow-xs ${f.colorBg}`} />
-                                <span className="truncate w-full">{f.id}</span>
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* 2. 限定透彩邊框 (308元) */}
-                        <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 p-2.5 rounded-xl border border-purple-200/80 space-y-1.5">
-                          <div className="flex items-center justify-between">
-                            <span className="text-[10px] font-bold text-purple-950 flex items-center gap-1">
-                              <span>✨ 限定透彩邊框</span>
-                              <span className="bg-purple-800 text-white font-mono text-[9px] px-1.5 py-0.2 rounded-full">
-                                限定 308元
-                              </span>
-                            </span>
-                            <span className="text-[9px] text-purple-700 font-mono">單/雙層工藝+背板</span>
-                          </div>
-                          <div className="grid grid-cols-2 gap-2">
-                            {[
-                              { id: '限定透藍框', label: '🩵 夏日透藍框', price: '308元', badgeColor: 'bg-cyan-100 border-cyan-300 text-cyan-900' },
-                              { id: '限定透粉框', label: '🩷 夏日透粉框', price: '308元', badgeColor: 'bg-pink-100 border-pink-300 text-pink-900' },
-                            ].map((f) => {
-                              const isSelected = tutuboomFrameColor === f.id;
-                              return (
-                                <button
-                                  key={f.id}
-                                  type="button"
-                                  onClick={() => setTutuboomFrameColor(f.id)}
-                                  className={`px-3 py-2 rounded-xl text-xs font-bold text-left border transition-all cursor-pointer flex items-center justify-between shadow-xs ${
-                                    isSelected
-                                      ? 'bg-gradient-to-r from-purple-900 to-indigo-900 text-white border-purple-900 shadow-xs'
-                                      : 'bg-white/95 text-purple-950 border-purple-200 hover:border-purple-400 hover:bg-white'
-                                  }`}
-                                >
-                                  <span className="truncate">{f.label}</span>
-                                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md shrink-0 ${
-                                    isSelected ? 'bg-white/20 text-white' : f.badgeColor
-                                  }`}>
-                                    {f.price}
-                                  </span>
-                                </button>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
               </div>
             )}
 
-            {/* Case Mockup Fine Tuning (Remove margins / borders) */}
+            {/* Step 2 & 3: Inline Compact Toggle Buttons for Tweak & Accessories */}
             <div className="pt-3 border-t border-black/5">
-              <button 
-                onClick={() => setShowTweakControls(!showTweakControls)}
-                className="flex items-center justify-between w-full text-left font-mono text-[10px] tracking-widest text-black/40 uppercase font-semibold hover:text-black transition-colors"
-                type="button"
-              >
-                <span>🎨 渲染圖尺寸微調 (去除白邊/居中)</span>
-                <span className="text-[11px] font-sans font-normal text-black/60 hover:underline">
-                  {showTweakControls ? '隱藏' : '展開'}
-                </span>
-              </button>
-              
+              <div className="flex items-center gap-2">
+                <button 
+                  type="button"
+                  onClick={() => {
+                    setShowTweakControls(!showTweakControls);
+                    if (!showTweakControls) setIsAccessoriesOpen(false);
+                  }}
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl border text-[11px] font-semibold transition-all cursor-pointer shadow-xs ${
+                    showTweakControls
+                      ? 'bg-black text-white border-black'
+                      : 'bg-black/[0.02] hover:bg-black/[0.06] border-black/10 text-brand-text'
+                  }`}
+                >
+                  <span>🎨 尺寸微調</span>
+                  <span className="text-[10px] opacity-70">
+                    ({showTweakControls ? '收合' : '展開'})
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsAccessoriesOpen(!isAccessoriesOpen);
+                    if (!isAccessoriesOpen) setShowTweakControls(false);
+                  }}
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl border text-[11px] font-semibold transition-all cursor-pointer shadow-xs ${
+                    isAccessoriesOpen
+                      ? 'bg-black text-white border-black'
+                      : 'bg-black/[0.02] hover:bg-black/[0.06] border-black/10 text-brand-text'
+                  }`}
+                >
+                  <Sparkles className="h-3 w-3 text-brand-gold" />
+                  <span>配件預覽</span>
+                  {standCutout && (
+                    <span className="bg-amber-400 text-black text-[9px] px-1.5 py-0.2 rounded-full font-bold">
+                      已啟用
+                    </span>
+                  )}
+                  <span className="text-[10px] opacity-70">
+                    ({isAccessoriesOpen ? '收合' : '展開'})
+                  </span>
+                </button>
+              </div>
+
+              {/* Tweak Controls Collapsible Panel */}
               {showTweakControls && (
                 <div className="mt-3 space-y-3 bg-black/[0.02] border border-black/5 rounded-xl p-3.5">
                   <div className="space-y-1">
@@ -1268,205 +1354,183 @@ export default function ProductViewer({
                       setCaseImgX(0);
                       setCaseImgY(0);
                     }}
-                    className="w-full py-1.5 border border-black/5 rounded-lg text-[10px] text-brand-muted hover:bg-black/5 transition-colors font-medium text-center"
+                    className="w-full py-1.5 border border-black/5 rounded-lg text-[10px] text-brand-muted hover:bg-black/5 transition-colors font-medium text-center cursor-pointer"
                     type="button"
                   >
                     重置自適應設定
                   </button>
                 </div>
               )}
-            </div>
 
-            {/* Step 2: Custom stand/grip uploader & auto-cutout preview module */}
-            <div className="pt-4 border-t border-black/5">
-              <label className="font-mono text-[10px] tracking-widest text-black/40 uppercase block mb-3 font-semibold flex items-center gap-1.5">
-                <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-pulse" />
-                🌟預覽您的手機配件（磁吸支架、指環支架等）搭配 (選填)
-              </label>
-
-              {!standImage ? (
-                <div className="border border-dashed border-black/10 hover:border-black/30 rounded-2xl p-5 bg-white/25 text-center transition-all">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleStandUpload}
-                    className="hidden"
-                    id="stand-upload-input"
-                  />
-                  <label htmlFor="stand-upload-input" className="cursor-pointer flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-full bg-black/5 hover:scale-105 transition-transform">
-                      <Upload className="h-5 w-5 text-black/60" />
-                    </div>
-                    <span className="text-xs font-semibold text-brand-text">上傳支架照片</span>
-                    <span className="text-[10px] text-brand-muted leading-relaxed max-w-[220px] mx-auto block">
-                      支援 PNG/JPG 格式，網頁將自動智能去背或提供手動裁切預覽。
-                    </span>
-                  </label>
-                </div>
-              ) : (
-                <div className="space-y-4 bg-white/40 border border-black/5 rounded-2xl p-4">
-                  {/* Mode Selector */}
-                  <div className="flex gap-1 p-0.5 bg-black/5 rounded-lg text-xs">
-                    <button
-                      onClick={() => setProcessMode('auto')}
-                      className={`flex-1 py-1.5 rounded-md font-semibold transition-all ${
-                        processMode === 'auto' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
-                      }`}
-                      type="button"
-                    >
-                      ✨ 智能
-                    </button>
-                    <button
-                      onClick={() => setProcessMode('lasso')}
-                      className={`flex-1 py-1.5 rounded-md font-semibold transition-all ${
-                        processMode === 'lasso' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
-                      }`}
-                      type="button"
-                    >
-                      ✍️ 畫筆套索
-                    </button>
-                    <button
-                      onClick={() => setProcessMode('crop')}
-                      className={`flex-1 py-1.5 rounded-md font-semibold transition-all ${
-                        processMode === 'crop' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
-                      }`}
-                      type="button"
-                    >
-                      🎯 圓形
-                    </button>
-                  </div>
-
-                  {/* Processing Settings Controls */}
-                  {processMode === 'auto' ? (
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[11px] font-medium text-brand-muted">
-                        <span>智能去背容差 (自動鍵合)</span>
-                        <span className="font-mono">{tolerance}</span>
-                      </div>
+              {/* Accessories Upload & Cutout Panel */}
+              {isAccessoriesOpen && (
+                <div className="mt-3 space-y-3">
+                  {!standImage ? (
+                    <div className="border border-dashed border-black/10 hover:border-black/30 rounded-2xl p-4 bg-white/25 text-center transition-all">
                       <input
-                        type="range"
-                        min="5"
-                        max="80"
-                        value={tolerance}
-                        onChange={(e) => setTolerance(parseInt(e.target.value))}
-                        className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                        type="file"
+                        accept="image/*"
+                        onChange={handleStandUpload}
+                        className="hidden"
+                        id="stand-upload-input"
                       />
-                    </div>
-                  ) : processMode === 'lasso' ? (
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-1.5 text-[11px] font-medium text-brand-muted leading-relaxed">
-                        <Scissors className="h-3.5 w-3.5 shrink-0 text-brand-gold animate-bounce" />
-                        <span>請在下方圖片中拖曳滑鼠或手指，畫出主體外圈：</span>
-                      </div>
-                      <div className="relative w-full aspect-square max-w-[280px] mx-auto bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-crosshair touch-none select-none">
-                        <canvas
-                          ref={lassoCanvasRef}
-                          width={300}
-                          height={300}
-                          onPointerDown={handleLassoPointerDown}
-                          onPointerMove={handleLassoPointerMove}
-                          onPointerUp={handleLassoPointerUp}
-                          className="max-w-full max-h-full"
-                        />
-                      </div>
-                      <div className="flex justify-between items-center text-[11px] text-brand-muted">
-                        <span>已繪製 {lassoPoints.length} 個軌跡點</span>
-                        {lassoPoints.length > 0 && (
-                          <button
-                            onClick={() => {
-                              setLassoPoints([]);
-                              setStandCutout(standImage);
-                            }}
-                            className="text-brand-accent hover:underline font-semibold"
-                            type="button"
-                          >
-                            重置畫筆
-                          </button>
-                        )}
-                      </div>
+                      <label htmlFor="stand-upload-input" className="cursor-pointer flex flex-col items-center gap-1.5">
+                        <div className="p-2.5 rounded-full bg-black/5 hover:scale-105 transition-transform">
+                          <Upload className="h-4 w-4 text-black/60" />
+                        </div>
+                        <span className="text-xs font-semibold text-brand-text">上傳支架照片</span>
+                        <span className="text-[10px] text-brand-muted leading-relaxed max-w-[220px] mx-auto block">
+                          支援 PNG/JPG 格式，自動智能去背或提供手動裁切預覽。
+                        </span>
+                      </label>
                     </div>
                   ) : (
-                    <div className="space-y-3">
-                      {/* Live Crop region SVG preview overlay */}
-                      <div 
-                        onPointerDown={handleCropPointerDown}
-                        onPointerMove={handleCropPointerMove}
-                        onPointerUp={handleCropPointerUp}
-                        onWheel={handleCropWheel}
-                        className="relative w-full h-44 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-move touch-none select-none"
-                        title="拖曳滑鼠移動中心，滾動滾輪調整大小"
-                      >
-                        <img 
-                          src={standImage} 
-                          alt="Original Stand" 
-                          className="max-h-full max-w-full object-contain select-none"
-                          referrerPolicy="no-referrer"
-                        />
-                        {/* Real-time SVG Crop Overlay */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                          <defs>
-                            <mask id="crop-mask">
-                              <rect width="100%" height="100%" fill="white" />
-                              <circle cx={`${cropCx}%`} cy={`${cropCy}%`} r={`${cropRadius}%`} fill="black" />
-                            </mask>
-                          </defs>
-                          <rect width="100%" height="100%" fill="rgba(0,0,0,0.5)" mask="url(#crop-mask)" />
-                          <circle cx={`${cropCx}%`} cy={`${cropCy}%`} r={`${cropRadius}%`} fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
-                        </svg>
+                    <div className="space-y-3 bg-white/40 border border-black/5 rounded-2xl p-3.5">
+                      {/* Mode Selector */}
+                      <div className="flex gap-1 p-0.5 bg-black/5 rounded-lg text-xs">
+                        <button
+                          onClick={() => setProcessMode('auto')}
+                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all ${
+                            processMode === 'auto' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
+                          }`}
+                          type="button"
+                        >
+                          ✨ 智能
+                        </button>
+                        <button
+                          onClick={() => setProcessMode('lasso')}
+                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all ${
+                            processMode === 'lasso' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
+                          }`}
+                          type="button"
+                        >
+                          ✍️ 畫筆套索
+                        </button>
+                        <button
+                          onClick={() => setProcessMode('crop')}
+                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all ${
+                            processMode === 'crop' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
+                          }`}
+                          type="button"
+                        >
+                          🎯 圓形
+                        </button>
                       </div>
 
-                      <div className="bg-black/[0.02] border border-black/5 rounded-xl p-3 text-[11px] text-brand-muted space-y-1.5 leading-relaxed">
-                        <div className="flex items-center gap-1.5 text-brand-text font-semibold">
-                          <Move className="h-3.5 w-3.5 text-brand-gold" />
-                          <span>畫框手勢調整說明：</span>
+                      {/* Processing Settings Controls */}
+                      {processMode === 'auto' ? (
+                        <div className="space-y-1.5">
+                          <div className="flex justify-between text-[10px] font-medium text-brand-muted">
+                            <span>智能去背容差</span>
+                            <span className="font-mono">{tolerance}</span>
+                          </div>
+                          <input
+                            type="range"
+                            min="5"
+                            max="80"
+                            value={tolerance}
+                            onChange={(e) => setTolerance(parseInt(e.target.value))}
+                            className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                          />
                         </div>
-                        <p>📍 <b>移動位置</b>：在圖片上按住滑鼠左鍵並<b>拖曳</b>，可改變裁切中心 (X: {cropCx}%, Y: {cropCy}%)</p>
-                        <p>🔍 <b>縮放大小</b>：在圖片上滾動<b>滑鼠滾輪</b>，可即時調整裁切半徑 ({cropRadius}%)</p>
+                      ) : processMode === 'lasso' ? (
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-1.5 text-[10px] font-medium text-brand-muted leading-relaxed">
+                            <Scissors className="h-3 w-3 shrink-0 text-brand-gold animate-bounce" />
+                            <span>請在下方拖曳滑鼠/手指，圈出主體外圈：</span>
+                          </div>
+                          <div className="relative w-full aspect-square max-w-[240px] mx-auto bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-crosshair touch-none select-none">
+                            <canvas
+                              ref={lassoCanvasRef}
+                              width={300}
+                              height={300}
+                              onPointerDown={handleLassoPointerDown}
+                              onPointerMove={handleLassoPointerMove}
+                              onPointerUp={handleLassoPointerUp}
+                              className="max-w-full max-h-full"
+                            />
+                          </div>
+                          <div className="flex justify-between items-center text-[10px] text-brand-muted">
+                            <span>已繪製 {lassoPoints.length} 個軌跡點</span>
+                            {lassoPoints.length > 0 && (
+                              <button
+                                onClick={() => {
+                                  setLassoPoints([]);
+                                  setStandCutout(standImage);
+                                }}
+                                className="text-brand-accent hover:underline font-semibold"
+                                type="button"
+                              >
+                                重置畫筆
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <div 
+                            onPointerDown={handleCropPointerDown}
+                            onPointerMove={handleCropPointerMove}
+                            onPointerUp={handleCropPointerUp}
+                            onWheel={handleCropWheel}
+                            className="relative w-full h-36 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-move touch-none select-none"
+                            title="拖曳滑鼠移動中心，滾動滾輪調整大小"
+                          >
+                            <img 
+                              src={standImage} 
+                              alt="Original Stand" 
+                              className="max-h-full max-w-full object-contain select-none"
+                              referrerPolicy="no-referrer"
+                            />
+                            <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                              <defs>
+                                <mask id="crop-mask">
+                                  <rect width="100%" height="100%" fill="white" />
+                                  <circle cx={`${cropCx}%`} cy={`${cropCy}%`} r={`${cropRadius}%`} fill="black" />
+                                </mask>
+                              </defs>
+                              <rect width="100%" height="100%" fill="rgba(0,0,0,0.5)" mask="url(#crop-mask)" />
+                              <circle cx={`${cropCx}%`} cy={`${cropCy}%`} r={`${cropRadius}%`} fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
+                            </svg>
+                          </div>
+
+                          <div className="bg-black/[0.02] border border-black/5 rounded-lg p-2 text-[10px] text-brand-muted space-y-1">
+                            <p>📍 <b>移動位置</b>：在圖片上按住並<b>拖曳</b>調整中心</p>
+                            <p>🔍 <b>縮放大小</b>：滾動<b>滑鼠滾輪</b>調整裁切半徑 ({cropRadius}%)</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Live placement micro-tuning controls */}
+                      <div className="pt-2 border-t border-black/5 space-y-2">
+                        <div className="space-y-1">
+                          <span className="block text-[10px] text-brand-muted">旋轉角度 Angle: {standRotate}°</span>
+                          <input
+                            type="range"
+                            min="-180"
+                            max="180"
+                            value={standRotate}
+                            onChange={(e) => setStandRotate(parseInt(e.target.value))}
+                            className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                          />
+                        </div>
+
+                        <div className="flex gap-2 pt-1">
+                          <button
+                            onClick={() => {
+                              setStandImage(null);
+                              setStandCutout(null);
+                              originalImageRef.current = null;
+                            }}
+                            className="flex-1 py-1.5 rounded-lg text-[11px] font-semibold border border-black/10 bg-white/20 hover:bg-black/5 text-brand-text flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                          >
+                            <Trash2 className="h-3 w-3" />
+                            <span>移除配件</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
-
-                  {/* Live placement micro-tuning controls */}
-                  <div className="pt-3 border-t border-black/5 space-y-3">
-                    <span className="block text-[10px] font-mono tracking-wider text-black/40 uppercase font-semibold">
-                      ↕️ 支架擺放微調 (請使用鼠標調整)
-                    </span>
-
-                    <div className="bg-black/[0.02] border border-black/5 rounded-xl p-3 text-[11px] text-brand-muted space-y-1.5 leading-relaxed">
-                      <div className="flex items-center gap-1.5 text-brand-text font-semibold">
-                        <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-pulse" />
-                        <span>手機殼支架手勢調整：</span>
-                      </div>
-                      <p>📍 <b>拖曳調整</b>：在右側手機上按住支架，即可<b>自由拖曳</b>移動其位置 ({standX.toFixed(0)}%, {standY.toFixed(0)}%)</p>
-                      <p>🔍 <b>滾輪縮放</b>：在右側手機上，滾動<b>滑鼠滾輪</b>即可即時縮放支架大小 ({standSize}%)</p>
-                    </div>
-                    
-                    <div className="space-y-1">
-                      <span className="block text-[11px] text-brand-muted mb-1">旋轉角度 Angle: {standRotate}°</span>
-                      <input
-                        type="range"
-                        min="-180"
-                        max="180"
-                        value={standRotate}
-                        onChange={(e) => setStandRotate(parseInt(e.target.value))}
-                        className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
-                      />
-                    </div>
-
-                    <div className="flex gap-2 pt-1">
-                      <button
-                        onClick={() => {
-                          setStandImage(null);
-                          setStandCutout(null);
-                          originalImageRef.current = null;
-                        }}
-                        className="flex-1 py-2 rounded-xl text-xs font-semibold border border-black/10 bg-white/20 hover:bg-black/5 text-brand-text flex items-center justify-center gap-1.5 transition-colors"
-                      >
-                        <Trash2 className="h-3.5 w-3.5" />
-                        <span>移除此配件</span>
-                      </button>
-                    </div>
-                  </div>
                 </div>
               )}
             </div>
@@ -1532,191 +1596,9 @@ export default function ProductViewer({
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Huge Display Stage (lg:col-span-7) */}
-        <div className="lg:col-span-7 relative flex flex-col justify-between items-center rounded-3xl glass-card overflow-hidden p-6 min-h-[550px]">
-          {/* Action floating buttons */}
-          <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
-            <button
-              onClick={() => setIsZoomed(!isZoomed)}
-              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all"
-              title="細節縮放"
-            >
-              {isZoomed ? <ZoomOut className="h-4 w-4" /> : <ZoomIn className="h-4 w-4" />}
-            </button>
-            <button
-              onClick={() => onToggleFavorite(selectedDesign.id)}
-              className={`p-2.5 rounded-full backdrop-blur-md border shadow-sm hover:scale-105 transition-all ${
-                isFavorite
-                  ? 'bg-rose-50 border-rose-200 text-rose-500'
-                  : 'bg-white/60 hover:bg-white/80 border-white/40 text-brand-text'
-              }`}
-              title={isFavorite ? '取消收藏' : '加入收藏'}
-            >
-              <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current' : ''}`} />
-            </button>
-            <button
-              onClick={handleOpenShareModal}
-              className="p-2.5 rounded-full bg-white/60 hover:bg-white/80 backdrop-blur-md border border-white/40 text-brand-text shadow-sm hover:scale-105 transition-all cursor-pointer"
-              title="分享卡片"
-            >
-              <Share2 className="h-4 w-4" />
-            </button>
-          </div>
-
-          {/* Display grid model list */}
-          {virtualModels.length > 1 && (
-            <div className="absolute top-4 left-4 z-10 flex gap-2">
-              {virtualModels.map((m, mIdx) => (
-                <button
-                  key={`${m.name}-${mIdx}`}
-                  onClick={() => {
-                    setActiveModelIdx(mIdx);
-                    setActiveImgIdx(0);
-                    if (!selectedDesign.id.startsWith('8-')) {
-                      setSelectedCaseType(m.name);
-                    }
-                  }}
-                  className={`text-[10px] font-mono px-3 py-1.5 rounded-lg border transition-all ${
-                    activeModelIdx === mIdx
-                      ? 'bg-black text-white border-black'
-                      : 'bg-white/40 hover:bg-white/60 text-brand-muted border-white/40 backdrop-blur-md'
-                  }`}
-                >
-                  {m.name}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* The Phone Case Art Container */}
-          <div className="flex-1 w-full flex items-center justify-center py-6">
-            <div 
-              className={`relative w-72 h-[420px] rounded-[38px] shadow-2xl overflow-hidden flex items-center justify-center transition-all duration-300 touch-none ${getPhoneFrameClass()}`}
-              style={{
-                boxShadow: '0 25px 60px -15px rgba(0,0,0,0.25)',
-              }}
-              onPointerDown={handleMockupPointerDown}
-              onPointerMove={handleMockupPointerMove}
-              onPointerUp={handleMockupPointerUp}
-              onPointerLeave={handleMockupPointerUp}
-              onWheel={handleMockupWheel}
-            >
-              {/* Refined clean interior background */}
-              <div className="absolute inset-0 bg-white/80 transition-colors" />
-
-              {/* Case Texture Rendering over the Phone */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentImage}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: isZoomed ? 1.4 : 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.35 }}
-                  className="absolute inset-0 w-full h-full flex items-center justify-center p-3 select-none"
-                >
-                  {currentImage ? (
-                    <img 
-                      src={currentImage} 
-                      alt={selectedDesign.title} 
-                      className="max-h-full max-w-full object-contain pointer-events-none" 
-                      draggable="false"
-                      onContextMenu={(e) => e.preventDefault()}
-                      referrerPolicy="no-referrer"
-                      style={{
-                        transform: `scale(${caseImgScale}) translate(${caseImgX}px, ${caseImgY}px)`,
-                      }}
-                    />
-                  ) : (
-                    <div className="flex flex-col items-center justify-center text-black/20 gap-2">
-                      <Layers className="h-10 w-10 opacity-30 animate-pulse" />
-                      <span className="font-mono text-[10px]">No Render Image</span>
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Dynamic Phone Stand Preview Overlay */}
-              {standCutout && (
-                <div 
-                  id="stand-preview-overlay"
-                  className="absolute z-20 cursor-move select-none pointer-events-auto group/stand"
-                  style={{
-                    left: `${standX}%`,
-                    top: `${standY}%`,
-                    width: `${standSize}%`,
-                    transform: `translate(-50%, -50%) rotate(${standRotate}deg)`,
-                    filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.35))',
-                    touchAction: 'none'
-                  }}
-                >
-                  <img 
-                    src={standCutout} 
-                    alt="手機支架" 
-                    className="w-full h-auto object-contain pointer-events-none select-none"
-                    draggable="false"
-                    referrerPolicy="no-referrer"
-                  />
-                  
-                  {/* Thin dashed outline on hover or active */}
-                  <div className="absolute inset-[-3px] border border-dashed border-black/35 rounded-lg pointer-events-none group-hover/stand:border-black/60 transition-colors" />
-                  
-                  {/* Four Corner Handles for Resizing */}
-                  <div className="stand-resize-handle absolute -top-1.5 -left-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nwse-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
-                  <div className="stand-resize-handle absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nesw-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
-                  <div className="stand-resize-handle absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nesw-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
-                  <div className="stand-resize-handle absolute -bottom-1.5 -right-1.5 w-3.5 h-3.5 bg-white border-2 border-black rounded-full cursor-nwse-resize shadow-md flex items-center justify-center hover:scale-125 transition-all z-30" title="拖曳縮放" />
-
-                  {/* Subtle active state focus border */}
-                  {(isDraggingStand || isResizingStand) && (
-                    <div className="absolute inset-[-6px] border border-dashed border-black rounded-full animate-pulse pointer-events-none opacity-40" />
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Picture Navigation indicators & Arrows */}
-          {images.length > 1 && (
-            <div className="w-full flex items-center justify-between gap-4 mt-2">
-              <button
-                onClick={handlePrevImage}
-                className="p-2 rounded-full border border-white/40 bg-white/40 hover:bg-white/65 backdrop-blur-md transition-colors shadow-sm"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-
-              {/* Thumbnails row */}
-              <div className="flex gap-2.5 overflow-x-auto no-scrollbar max-w-[60%]">
-                {images.map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveImgIdx(i)}
-                    className={`relative w-11 h-14 rounded-lg bg-white/50 border overflow-hidden p-1 shrink-0 transition-all ${
-                      activeImgIdx === i 
-                        ? 'border-black ring-1 ring-black/10 scale-105' 
-                        : 'border-white/40 opacity-65 hover:opacity-100'
-                    }`}
-                  >
-                    <img 
-                      src={img} 
-                      alt="Thumbnail" 
-                      className="w-full h-full object-contain" 
-                      referrerPolicy="no-referrer"
-                    />
-                  </button>
-                ))}
-              </div>
-
-              <button
-                onClick={handleNextImage}
-                className="p-2 rounded-full border border-white/40 bg-white/40 hover:bg-white/65 backdrop-blur-md transition-colors shadow-sm"
-                aria-label="Next image"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          )}
+        {/* Desktop-Only RIGHT COLUMN: Huge Display Stage (lg:col-span-7) */}
+        <div className="hidden lg:flex lg:col-span-7 w-full h-full min-h-[580px]">
+          {renderDisplayStage(false)}
         </div>
       </div>
 

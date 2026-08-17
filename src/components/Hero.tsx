@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-start overflow-hidden px-4 sm:px-8 md:px-16 pt-28 pb-20">
+    <section id="hero" className="relative min-h-[75vh] sm:min-h-[85vh] lg:min-h-[90vh] flex items-center justify-start overflow-hidden px-4 sm:px-8 md:px-16 pt-20 sm:pt-28 pb-12 sm:pb-20">
       {/* Editorial High-Res Photo Banner Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55 transition-transform duration-1000 scale-105"

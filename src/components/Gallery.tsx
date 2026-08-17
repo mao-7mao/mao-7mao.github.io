@@ -807,9 +807,9 @@ const availableSubseries = useMemo(() => {
                                 {d.category}
                               </span>
                               {isActive && (
-                                <span className="text-[10px] bg-black text-brand-gold font-semibold px-1.5 py-0.5 rounded-md flex items-center gap-0.5 scale-90">
-                                  <Check className="h-2.5 w-2.5" />
-                                  <span>已選取</span>
+                                <span className="text-[8.5px] sm:text-[9.5px] bg-black text-brand-gold font-semibold px-1.5 py-0.5 rounded-md flex items-center gap-0.5 shrink-0 whitespace-nowrap">
+                                  <Check className="h-2.5 w-2.5 shrink-0" />
+                                  <span className="whitespace-nowrap">已選取</span>
                                 </span>
                               )}
                             </div>
@@ -859,28 +859,28 @@ const availableSubseries = useMemo(() => {
                           </div>
 
                           {/* Interactive Action Bar (Exposes Both Gallery Viewing & Studio Customization) */}
-                          <div className="mt-4 pt-3 border-t border-black/5 flex gap-2" onClick={(e) => e.stopPropagation()}>
+                          <div className="mt-3.5 pt-2.5 border-t border-black/5 flex gap-1.5 sm:gap-2" onClick={(e) => e.stopPropagation()}>
                             <button
                               onClick={() => handleQuickView(d)}
-                              className="flex-1 py-2 rounded-xl text-[10px] font-bold bg-white/80 hover:bg-black hover:text-white border border-black/5 transition-all text-center flex items-center justify-center gap-1 shadow-sm"
+                              className="flex-1 py-1.5 sm:py-2 px-1 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-bold bg-white/80 hover:bg-black hover:text-white border border-black/10 transition-all text-center flex items-center justify-center gap-0.5 sm:gap-1 shadow-xs whitespace-nowrap"
                               title="快速預覽"
                               type="button"
                             >
-                              <Search className="h-3 w-3" />
-                              <span>快速預覽</span>
+                              <Search className="h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0" />
+                              <span className="whitespace-nowrap">快速預覽</span>
                             </button>
                             <button
                               onClick={() => handleCustomizeInStudio(d)}
-                              className={`flex-1 py-2 rounded-xl text-[10px] font-bold transition-all text-center flex items-center justify-center gap-1 shadow-md hover:scale-[1.02] ${
+                              className={`flex-1 py-1.5 sm:py-2 px-1 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-bold transition-all text-center flex items-center justify-center gap-0.5 sm:gap-1 shadow-xs hover:scale-[1.02] whitespace-nowrap ${
                                 isActive
-                                  ? 'bg-brand-gold text-black font-extrabold animate-pulse'
+                                  ? 'bg-brand-gold text-black font-extrabold shadow-sm'
                                   : 'bg-black text-white'
                               }`}
                               title="進入瀏覽區"
                               type="button"
                             >
-                              <Compass className="h-3 w-3" />
-                              <span>瀏覽區</span>
+                              <Compass className="h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0" />
+                              <span className="whitespace-nowrap">瀏覽區</span>
                             </button>
                           </div>
                         </div>

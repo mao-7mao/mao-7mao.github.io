@@ -2045,6 +2045,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-10.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-20.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-21.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0817-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-25.webp"
                   ]
                 },
@@ -2195,19 +2196,29 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-4.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-5.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-10.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-10.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0817-26.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0817-27.webp"
                   ]
                 },
                 {
                   "name": "AirX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-1.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0817-25.webp"
                   ]
                 },
                 {
                   "name": "ModNX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-2.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0701-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0817-29.webp"
+                  ]
+                },
+                {
+                  "name": "Clear",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-30/0817-28.webp"
                   ]
                 }
               ]
@@ -2259,7 +2270,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-4.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-5.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-5.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0817-20.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0817-21.webp"
                   ]
                 },
                 {
@@ -2804,21 +2817,26 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "AirX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx2.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/airx2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/0817-10.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/0817-11.webp"
                   ]
                 },
                 {
                   "name": "SolidX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/0617-18.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx2.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/0817-12.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/0817-13.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/solidx1.webp"
                   ]
                 },
                 {
                   "name": "ModNX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/2025091009_17.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/2025091009_17.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-1/0817-14.webp"
                   ]
                 }
               ]
@@ -2864,16 +2882,17 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ],
               "models": [
                 {
-                  "name": "SolidX",
+                  "name": "AirX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/0617-30.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/0817-6.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_53.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png"
                   ]
                 },
                 {
-                  "name": "AirX",
+                  "name": "SolidX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_53.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/0617-30.webp"
                   ]
                 },
                 {
@@ -3720,7 +3739,23 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   ]
                 }
               ],
-              "desc": "實物更淺一些"
+              "desc": "實物會比預覽圖淺一些"
+            },
+            {
+              "id": "3-2-26",
+              "title": "海鹽冰飲",
+              "badge": "",
+              "link": "",
+              "models": [
+                {
+                  "name": "SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0817-22.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0817-23.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0817-24.webp"
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -4400,8 +4435,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0817-7.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.50.12 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.56 AM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0817-8.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/Screenshot 2026-05-31 at 12.49.56 AM.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-5/0817-9.webp"
                   ]
                 },
                 {
@@ -4438,7 +4476,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0802-3.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0802-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0817-3.webp"
                   ]
                 }
               ]
