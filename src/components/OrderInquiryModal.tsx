@@ -167,7 +167,7 @@ export default function OrderInquiryModal({
                     <span className="font-semibold text-brand-text text-[13px]">私訊萬有狀態下單 (tutuboom 大陸段包郵)</span>
                   </div>
                   <p className="text-brand-muted text-[11px] leading-relaxed">
-                    <b>tutuboom 系列價格已含大陸段運費（免集運）</b>！請點擊上方「一鍵複製規格資訊」並截圖本預覽畫面，直接私訊萬有狀態，即可輕鬆完成商品款項支付與寄送登記。
+                    <b>tutuboom 系列價格已含大陸段運費</b>！請點擊上方「一鍵複製規格資訊」並截圖本預覽畫面，直接私訊萬有狀態，即可輕鬆完成商品款項支付與寄送登記。
                   </p>
                   <div className="space-y-2 mt-2">
                     <div className="flex items-center justify-between gap-1.5 bg-brand-bg p-2 rounded-lg border border-brand-border">

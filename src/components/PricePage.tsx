@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { CASE_TYPES, tutuboom_CASE_TYPES, NOTES, CaseType } from '../data/productsData';
-import { ShieldCheck, Truck, Scale, AlertCircle, Copy, Check, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { CASE_TYPES, NOTES } from '../data/productsData';
+import { ShieldCheck, Truck, Scale, AlertCircle, Copy, Check, Sparkles, Layers, Info, ArrowDown, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function PricePage() {
   const [copiedText, setCopiedText] = useState<'wechat1' | 'wechat2' | 'line1' | null>(null);
+  const [tutuboomTab, setTutuboomTab] = useState<'split' | 'solid'>('split');
 
   const copyContact = (text: string, type: 'wechat1' | 'wechat2' | 'line1') => {
     navigator.clipboard.writeText(text);
@@ -12,98 +13,409 @@ export default function PricePage() {
     setTimeout(() => setCopiedText(null), 2000);
   };
 
-  const ALL_DISPLAY_TYPES = [...tutuboom_CASE_TYPES, ...CASE_TYPES];
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // tutuboom structured data
+  const tutuboomData = {
+    split: {
+      title: '分離殼 ',
+      subtitle: '雙層 / 單層印刷工藝・背板與邊框可拆裝',
+      craft: [
+        { label: '雙層印刷', desc: '圖層分離效果明顯，立體景深豐富' },
+        { label: '單層印刷', desc: '可做出半透明、漸變、細緻微浮雕效果' },
+      ],
+      modelsSupported: ['iPhone 17 Pro', 'iPhone 17 Pro Max'],
+      regularFrames: ['迷你粉', '暗夜黑', '朱古力', '磨砂透'],
+      limitedFrames: ['夏日限定透藍框', '夏日限定透粉框'],
+      prices: [
+        { name: '單層印刷背板', price: '¥168.3' },
+        { name: '單層印刷背板 + 常規邊框', price: '¥295.8' },
+        { name: '雙層印刷背板', price: '¥185.3' },
+        { name: '雙層印刷背板 + 常規邊框', price: '¥312.8' },
+        { name: '限定透彩邊框 + 背板 (透藍/透粉, 單雙層皆可)', price: '¥308.0' },
+      ]
+    },
+    solid: {
+      title: '一體殼 ',
+      subtitle: '單層印刷工藝・細膩磨砂質感手感',
+      craft: [
+        { label: '單層印刷', desc: '細緻噴繪印刷，磨砂親膚防滑觸感，全包保護' },
+      ],
+      modelsSupported: ['iPhone 16 Pro', 'iPhone 16 Pro Max', 'iPhone 17 Air', 'iPhone 17 Pro', 'iPhone 17 Pro Max'],
+      caseTypes: ['白透磨砂', '全透磨砂', '相機按鈕版'],
+      prices: [
+        { name: '白透 / 全透磨砂殼', price: '¥142.8' },
+        { name: '白透 / 全透磨砂殼 (相機按鈕版)', price: '¥159.8' },
+      ]
+    }
+  };
 
   return (
-    <section id="price-page" className="py-20 px-6 max-w-7xl mx-auto page-enter relative z-10">
-      {/* Eye Brow */}
-      <div className="text-center mb-12">
-        <span className="font-mono text-xs tracking-[0.2em] text-black/50 uppercase block mb-2 font-semibold">
-          規格價格
+    <section id="price-page" className="py-4 sm:py-6 px-3 sm:px-6 md:px-10 max-w-7xl mx-auto page-enter relative z-10">
+      {/* Compact Editorial Header */}
+      <div className="text-center mb-5 sm:mb-7">
+        <span className="font-mono text-[9.5px] sm:text-[10.5px] tracking-[0.2em] text-[#746B84] uppercase block mb-1 font-bold">
+          PRICE & SPECIFICATIONS
         </span>
-        <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
-          殼體規格與 <em>物流說明</em>
+        <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#231F2E]">
+          殼體規格與 <span className="font-serif italic font-normal text-[#8B5CF6]">價格運送說明</span>
         </h2>
-        <p className="text-xs text-brand-muted mt-2 max-w-lg mx-auto leading-relaxed">
-          所有設計皆由官方殼體承載
+        <p className="text-[11.5px] text-[#746B84] mt-1 max-w-md mx-auto leading-relaxed">
+          透明規格與價格標準・官方原廠與高品質訂製工藝
         </p>
+
+        {/* 3 Quick Jump Action Buttons Requested by User */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-4 select-none">
+          <button
+            onClick={() => scrollToSection('tutuboom-price-section')}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#5C5468] hover:bg-[#453D50] text-white text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-[#453D50]/50"
+          >
+            <Sparkles className="h-3.5 w-3.5 text-purple-300" />
+            <span>tutuboom 價格</span>
+            <ArrowDown className="h-3 w-3 opacity-70" />
+          </button>
+
+          <button
+            onClick={() => scrollToSection('rhinoshield-price-section')}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-purple-50 text-[#231F2E] text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-purple-200"
+          >
+            <ShieldCheck className="h-3.5 w-3.5 text-[#8B5CF6]" />
+            <span>🦏價格</span>
+            <ArrowDown className="h-3 w-3 opacity-60 text-[#746B84]" />
+          </button>
+
+          <button
+            onClick={() => scrollToSection('rhinoshield-shipping-section')}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-purple-50 text-[#231F2E] text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-purple-200"
+          >
+            <Truck className="h-3.5 w-3.5 text-[#8B5CF6]" />
+            <span>🦏寄送說明</span>
+            <ArrowDown className="h-3 w-3 opacity-60 text-[#746B84]" />
+          </button>
+        </div>
       </div>
 
-      {/* Case Types Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-        {ALL_DISPLAY_TYPES.map((ct, idx) => {
-          const istutuboom = ct.name.toLowerCase().includes('tutuboom');
-          return (
-            <motion.div
-              key={ct.name}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className={`group relative flex flex-col rounded-2xl overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 ${
-                istutuboom
-                  ? 'bg-gradient-to-b from-rose-50/70 to-amber-50/45 border border-rose-200/80 shadow-md shadow-rose-100/10 hover:shadow-rose-100/40'
-                  : 'glass-card'
-              }`}
-            >
-              {/* Premium Ribbon Tag for tutuboom */}
-              {istutuboom && (
-                <div className="absolute top-0 right-12 z-20">
-                  <span className="text-[8px] font-mono font-extrabold bg-gradient-to-r from-rose-500 to-rose-600 text-white px-2.5 py-0.5 rounded-b-lg shadow-sm tracking-wider uppercase">
-                    tutuboom-Brand
+      {/* 1. TUTUBOOM DEDICATED SHOWCASE SECTION */}
+      <div id="tutuboom-price-section" className="mb-8 sm:mb-10 scroll-mt-20">
+        <div className="bg-white/85 rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-purple-200/80 shadow-[0_6px_25px_rgba(139,92,246,0.05)] backdrop-blur-2xl relative overflow-hidden">
+          {/* Header Banner for tutuboom */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-purple-100">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-xl bg-purple-100/80 text-purple-700 flex items-center justify-center shrink-0 shadow-xs border border-purple-200/60">
+                <Sparkles className="h-4.5 w-4.5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E] flex items-center gap-1.5">
+                    tutuboom <span className="text-purple-600 font-normal italic font-serif text-sm sm:text-base">訂製系列價格</span>
+                  </h3>
+                  <span className="text-[8.5px] font-mono font-bold bg-purple-600 text-white px-2 py-0.5 rounded-full shadow-xs tracking-wider uppercase">
+                    Brand Exclusive
                   </span>
                 </div>
-              )}
+                <p className="text-[11px] text-[#746B84] mt-0.5">
+                  高品質雙層/單層工藝分離殼與輕薄磨砂一體殼
+                </p>
+              </div>
+            </div>
 
+            {/* Tab Switcher */}
+            <div className="flex items-center p-1 bg-purple-100/60 rounded-xl border border-purple-200/60 shrink-0">
+              <button
+                onClick={() => setTutuboomTab('split')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  tutuboomTab === 'split'
+                    ? 'bg-[#5C5468] text-white shadow-xs'
+                    : 'text-[#5C5468] hover:text-[#231F2E] hover:bg-purple-200/50'
+                }`}
+              >
+                <Layers className="h-3.5 w-3.5" />
+                <span>分離殼 </span>
+              </button>
+              <button
+                onClick={() => setTutuboomTab('solid')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  tutuboomTab === 'solid'
+                    ? 'bg-[#5C5468] text-white shadow-xs'
+                    : 'text-[#5C5468] hover:text-[#231F2E] hover:bg-purple-200/50'
+                }`}
+              >
+                <ShieldCheck className="h-3.5 w-3.5" />
+                <span>一體殼 </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="mt-4">
+            <AnimatePresence mode="wait">
+              {tutuboomTab === 'split' ? (
+                <motion.div
+                  key="split-tab"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="space-y-4"
+                >
+                  {/* Info Row: Craft & Compatibility */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                    {/* Craft Process Description */}
+                    <div className="lg:col-span-6 bg-purple-50/50 border border-purple-100 rounded-xl p-3.5 sm:p-4 space-y-2.5">
+                      <div className="flex items-center gap-1.5 text-purple-900 font-semibold text-xs tracking-wide">
+                        <Info className="h-3.5 w-3.5 text-purple-600" />
+                        <span>工藝說明 / Craft Process</span>
+                      </div>
+                      <div className="space-y-1.5 text-[11.5px]">
+                        {tutuboomData.split.craft.map((c, i) => (
+                          <div key={i} className="flex items-start gap-2 bg-white/75 rounded-lg p-2 border border-purple-100/70">
+                            <span className="font-bold text-purple-950 shrink-0">・{c.label}：</span>
+                            <span className="text-[#5C5468] leading-relaxed">{c.desc}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Models & Frames Chips */}
+                    <div className="lg:col-span-6 bg-purple-50/50 border border-purple-100 rounded-xl p-3.5 sm:p-4 space-y-3">
+                      {/* Supported Models */}
+                      <div>
+                        <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
+                          ☁️ 適用型號 / Compatible Models
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {tutuboomData.split.modelsSupported.map((model, i) => (
+                            <span key={i} className="px-2.5 py-0.5 rounded-lg text-xs font-semibold bg-white border border-purple-200/80 text-purple-950 shadow-xs">
+                              {model}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Regular Frames */}
+                      <div>
+                        <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
+                          🎨 常規邊框顏色 / Regular Frames
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {tutuboomData.split.regularFrames.map((color, i) => (
+                            <span key={i} className="px-2.5 py-0.5 rounded-full text-[10.5px] font-medium bg-purple-100/80 border border-purple-200 text-purple-900">
+                              {color}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Limited Frames */}
+                      <div>
+                        <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
+                          ✨ 限定透彩邊框 / Limited Edition
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {tutuboomData.split.limitedFrames.map((color, i) => (
+                            <span key={i} className="px-2.5 py-0.5 rounded-full text-[10.5px] font-semibold bg-gradient-to-r from-pink-100 to-purple-100 border border-purple-300/70 text-purple-900 shadow-xs">
+                              {color}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Price Table Card */}
+                  <div className="bg-white/90 border border-purple-100 rounded-xl p-3.5 sm:p-4 shadow-xs">
+                    <div className="flex items-center justify-between mb-2.5">
+                      <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 font-bold">
+                        訂製價格表格 / Price Breakdown
+                      </span>
+                      <span className="text-[10.5px] text-[#746B84] font-medium">
+                        單層 / 雙層背板與邊框組合
+                      </span>
+                    </div>
+
+                    <div className="divide-y divide-purple-100/70 border border-purple-100 rounded-lg overflow-hidden">
+                      {tutuboomData.split.prices.map((p, idx) => (
+                        <div key={idx} className="flex justify-between items-center py-2 px-3 bg-white hover:bg-purple-50/40 transition-colors text-xs">
+                          <span className="font-medium text-[#231F2E] flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                            {p.name}
+                          </span>
+                          <span className="font-mono font-bold text-purple-700 text-xs sm:text-sm bg-purple-50 px-2.5 py-0.5 rounded-md border border-purple-200/50">
+                            {p.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="solid-tab"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="space-y-4"
+                >
+                  {/* Info Row: Craft & Compatibility */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                    {/* Craft Process Description */}
+                    <div className="lg:col-span-6 bg-purple-50/50 border border-purple-100 rounded-xl p-3.5 sm:p-4 space-y-2.5">
+                      <div className="flex items-center gap-1.5 text-purple-900 font-semibold text-xs tracking-wide">
+                        <Info className="h-3.5 w-3.5 text-purple-600" />
+                        <span>工藝說明 / Craft Process</span>
+                      </div>
+                      <div className="space-y-1.5 text-[11.5px]">
+                        {tutuboomData.solid.craft.map((c, i) => (
+                          <div key={i} className="flex items-start gap-2 bg-white/75 rounded-lg p-2 border border-purple-100/70">
+                            <span className="font-bold text-purple-950 shrink-0">・{c.label}：</span>
+                            <span className="text-[#5C5468] leading-relaxed">{c.desc}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Models & Options Chips */}
+                    <div className="lg:col-span-6 bg-purple-50/50 border border-purple-100 rounded-xl p-3.5 sm:p-4 space-y-3">
+                      {/* Supported Models */}
+                      <div>
+                        <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
+                          ☁️ 適用型號 / Compatible Models
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {tutuboomData.solid.modelsSupported.map((model, i) => (
+                            <span key={i} className="px-2.5 py-0.5 rounded-lg text-xs font-semibold bg-white border border-purple-200/80 text-purple-950 shadow-xs">
+                              {model}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Shell Material Options */}
+                      <div>
+                        <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
+                          🎨 殼體選項 / Shell Finish Options
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {tutuboomData.solid.caseTypes.map((opt, i) => (
+                            <span key={i} className="px-2.5 py-0.5 rounded-full text-[10.5px] font-medium bg-purple-100/80 border border-purple-200 text-purple-900">
+                              {opt}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Price Table Card */}
+                  <div className="bg-white/90 border border-purple-100 rounded-xl p-3.5 sm:p-4 shadow-xs">
+                    <div className="flex items-center justify-between mb-2.5">
+                      <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 font-bold">
+                        訂製價格表格 / Price Breakdown
+                      </span>
+                      <span className="text-[10.5px] text-[#746B84] font-medium">
+                        全包一體磨砂殼
+                      </span>
+                    </div>
+
+                    <div className="divide-y divide-purple-100/70 border border-purple-100 rounded-lg overflow-hidden">
+                      {tutuboomData.solid.prices.map((p, idx) => (
+                        <div key={idx} className="flex justify-between items-center py-2 px-3 bg-white hover:bg-purple-50/40 transition-colors text-xs">
+                          <span className="font-medium text-[#231F2E] flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                            {p.name}
+                          </span>
+                          <span className="font-mono font-bold text-purple-700 text-xs sm:text-sm bg-purple-50 px-2.5 py-0.5 rounded-md border border-purple-200/50">
+                            {p.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Bottom Gray Note Disclaimer */}
+          <div className="mt-4 pt-3 border-t border-purple-100 flex flex-col sm:flex-row gap-2 sm:gap-5 text-[11px] text-stone-500 bg-stone-50/70 rounded-xl p-2.5 border border-stone-200/60">
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className="text-amber-500">💡</span>
+              <span>實物和預覽圖可能有輕微色差，預覽圖僅供工藝參考。</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-purple-500">💡</span>
+              <span>tutuboom 標示價格已含大陸段運費，具體事宜可直接私訊萬有狀態。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. OTHER CASE TYPES GRID (🦏🛡️等其他殼體) */}
+      <div id="rhinoshield-price-section" className="mb-8 sm:mb-10 scroll-mt-20">
+        <div className="flex items-center justify-between gap-2 mb-4">
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E] flex items-center gap-2">
+            <ShieldCheck className="h-5 w-5 text-purple-600" />
+            <span>🦏🛡️殼體品類規格與價格</span>
+          </h3>
+          <span className="text-[11px] text-[#746B84] font-mono hidden sm:inline-block">
+            RhinoShield Specifications
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          {CASE_TYPES.map((ct, idx) => (
+            <motion.div
+              key={ct.name}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: idx * 0.03 }}
+              className="group relative flex flex-col rounded-2xl overflow-hidden glass-card transition-all hover:shadow-md hover:-translate-y-0.5 border border-purple-100"
+            >
               {/* Header */}
-              <div className={`p-5 border-b ${istutuboom ? 'border-rose-100' : 'border-black/5'}`}>
-                <div className="flex items-start justify-between gap-4">
+              <div className="p-3.5 sm:p-4 border-b border-purple-100/70 bg-white/50">
+                <div className="flex items-start justify-between gap-2.5">
                   <div>
-                    <h3 className={`font-serif text-lg font-semibold flex items-center gap-1.5 ${
-                      istutuboom ? 'text-rose-950 font-bold' : 'text-brand-text'
-                    }`}>
-                      {istutuboom && <span className="text-rose-500 text-base animate-pulse">✦</span>}
+                    <h4 className="font-serif text-sm sm:text-base font-bold text-[#231F2E]">
                       {ct.name}
-                    </h3>
+                    </h4>
                     <p 
-                      className={`text-[11px] mt-1 leading-normal ${
-                        istutuboom ? 'text-rose-800/80 font-medium' : 'text-brand-muted'
-                      }`}
+                      className="text-[10.5px] text-[#746B84] mt-0.5 leading-normal"
                       dangerouslySetInnerHTML={{ __html: ct.nameEm }}
                     />
                   </div>
                   <div 
-                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm"
+                    className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-xs border border-purple-100"
                     style={{ 
-                      backgroundColor: istutuboom ? '#ffe4e6' : `${ct.iconBg}`, 
-                      color: istutuboom ? '#f43f5e' : ct.iconColor 
+                      backgroundColor: ct.iconBg || '#f5f0fb', 
+                      color: ct.iconColor || '#8B5CF6' 
                     }}
                   >
-                    <ShieldCheck className="h-5 w-5" />
+                    <ShieldCheck className="h-4 w-4" />
                   </div>
                 </div>
               </div>
 
-              {/* Content Split: Left Info, Right Image */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 items-center">
-                  <div className="sm:col-span-3 space-y-2">
-                    <span className={`font-mono text-[9px] uppercase tracking-wider block font-semibold ${
-                      istutuboom ? 'text-rose-700/60' : 'text-black/40'
-                    }`}>
-                      詳情 / Description
+              {/* Content */}
+              <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 items-center">
+                  <div className="sm:col-span-3 space-y-1">
+                    <span className="font-mono text-[8.5px] uppercase tracking-wider block font-bold text-[#746B84]">
+                      工藝說明 / Details
                     </span>
                     <p 
-                      className={`text-[11px] leading-relaxed ${
-                        istutuboom ? 'text-rose-950/80 font-medium' : 'text-brand-text/80'
-                      }`}
+                      className="text-[11px] leading-relaxed text-[#5C5468]"
                       dangerouslySetInnerHTML={{ __html: ct.desc }}
                     />
                   </div>
                   <div className="sm:col-span-2 flex justify-center">
-                    <div className={`relative w-24 h-32 rounded-xl overflow-hidden p-2 flex items-center justify-center border border-dashed ${
-                      istutuboom ? 'bg-white/60 border-rose-300/60 shadow-sm' : 'bg-white/20 border-black/10'
-                    }`}>
+                    <div className="relative w-16 h-22 rounded-lg overflow-hidden p-1 flex items-center justify-center border border-dashed border-purple-200/80 bg-purple-50/30">
                       {ct.img ? (
                         <img 
                           src={ct.img} 
@@ -112,38 +424,25 @@ export default function PricePage() {
                           referrerPolicy="no-referrer"
                         />
                       ) : (
-                        <span className="text-[10px] text-brand-muted font-mono">Image</span>
+                        <span className="text-[9px] text-[#746B84] font-mono">Image</span>
                       )}
                     </div>
                   </div>
                 </div>
 
                 {/* Price list */}
-                <div className={`mt-5 pt-4 border-t space-y-2 ${istutuboom ? 'border-rose-100' : 'border-black/5'}`}>
-                  <span className={`font-mono text-[9px] uppercase tracking-wider block font-semibold ${
-                    istutuboom ? 'text-rose-700/60' : 'text-black/40'
-                  }`}>
-                    訂製價格 / Models & Prices
+                <div className="pt-2.5 border-t border-purple-100/70 space-y-1">
+                  <span className="font-mono text-[8.5px] uppercase tracking-wider block font-bold text-[#746B84]">
+                    訂製參考價格 / Models & Prices
                   </span>
-                  <div className="space-y-1.5">
+                  <div className="space-y-0.5">
                     {ct.models.map((m, mIdx) => (
                       <div 
                         key={mIdx} 
-                        className={`flex justify-between items-center text-xs pb-1 border-b last:border-0 last:pb-0 ${
-                          istutuboom ? 'border-rose-100/40' : 'border-black/5'
-                        }`}
+                        className="flex justify-between items-center text-xs py-0.5 border-b border-purple-50 last:border-0"
                       >
-                        <span className={`font-sans flex items-center gap-1.5 ${
-                          istutuboom ? 'text-rose-950 font-medium' : 'text-brand-text/90'
-                        }`}>
-                          {istutuboom && <span className="h-1.5 w-1.5 rounded-full bg-rose-500 animate-pulse shrink-0" />}
-                          {m.name}
-                        </span>
-                        <span className={`font-mono font-semibold ${
-                          istutuboom 
-                            ? 'text-rose-600 bg-rose-50/80 px-2 py-0.5 rounded border border-rose-100/30 font-bold' 
-                            : 'text-black'
-                        }`}>
+                        <span className="font-medium text-[#231F2E] text-[11.5px]">{m.name}</span>
+                        <span className="font-mono font-bold text-purple-700 text-xs bg-purple-50 px-2 py-0.2 rounded border border-purple-200/40">
                           {m.price}
                         </span>
                       </div>
@@ -152,40 +451,40 @@ export default function PricePage() {
                 </div>
               </div>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </div>
 
-      {/* Logistics & Shipping Guide */}
-      <div className="glass-frosted rounded-2xl p-6 sm:p-8 mb-12">
-        <div className="flex items-center gap-2 mb-6">
-          <Truck className="h-5 w-5 text-black" />
-          <h3 className="font-serif text-xl font-semibold text-brand-text">
-            商品寄送說明 <em>for🦏🛡️ </em>
+      {/* 3. Logistics & Shipping Guide */}
+      <div id="rhinoshield-shipping-section" className="glass-frosted rounded-2xl sm:rounded-3xl p-4 sm:p-6 mb-8 scroll-mt-20 border border-purple-100 shadow-[0_6px_25px_rgba(139,92,246,0.04)]">
+        <div className="flex items-center gap-2 mb-4">
+          <Truck className="h-5 w-5 text-[#5C5468]" />
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E]">
+            商品寄送說明 <em>for🦏🛡️</em>
           </h3>
         </div>
 
         {/* Schemes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white/40 rounded-xl p-5 border border-white/50 backdrop-blur-md shadow-sm">
-            <span className="inline-block text-[10px] font-mono tracking-widest bg-black text-white px-2.5 py-1 rounded-full mb-3 uppercase font-semibold">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+          <div className="bg-white/75 rounded-xl p-3.5 sm:p-4 border border-purple-100 shadow-xs">
+            <span className="inline-block text-[9px] font-mono tracking-widest bg-[#5C5468] text-white px-2 py-0.5 rounded-full mb-2 uppercase font-semibold">
               Scheme A
             </span>
-            <h4 className="font-sans font-semibold text-sm text-brand-text mb-2">僅購買萬有商品</h4>
-            <ol className="list-decimal list-inside text-xs text-brand-text/80 space-y-1.5 leading-relaxed">
+            <h4 className="font-sans font-bold text-xs sm:text-sm text-[#231F2E] mb-1.5">僅購買萬有商品</h4>
+            <ol className="list-decimal list-inside text-xs text-[#5C5468] space-y-1 leading-relaxed">
               <li>填寫集運委託登記表單（萬有狀態商品滿 <b>225元</b> 即可安排下單，未滿需等待湊單滿額後下單🙇）</li>
               <li>私訊萬有狀態支付商品款項</li>
-              <li>私訊Jimmibobo支付運費並通知留意包裹</li>
-              <li>商品寄達台灣後由jimmibobo代收並拼郵，安排安排寄往大陸</li>
+              <li>私訊 Jimmibobo 支付運費並通知留意包裹</li>
+              <li>商品寄達台灣後由 Jimmibobo 代收並拼郵，安排寄往大陸</li>
             </ol>
           </div>
 
-          <div className="bg-white/40 rounded-xl p-5 border border-white/50 backdrop-blur-md shadow-sm">
-            <span className="inline-block text-[10px] font-mono tracking-widest bg-black text-white px-2.5 py-1 rounded-full mb-3 uppercase font-semibold">
+          <div className="bg-white/75 rounded-xl p-3.5 sm:p-4 border border-purple-100 shadow-xs">
+            <span className="inline-block text-[9px] font-mono tracking-widest bg-[#5C5468] text-white px-2 py-0.5 rounded-full mb-2 uppercase font-semibold">
               Scheme B
             </span>
-            <h4 className="font-sans font-semibold text-sm text-brand-text mb-2">已有 Jimmibobo 其他商品，想合併寄送</h4>
-            <ol className="list-decimal list-inside text-xs text-brand-text/80 space-y-1.5 leading-relaxed">
+            <h4 className="font-sans font-bold text-xs sm:text-sm text-[#231F2E] mb-1.5">已有 Jimmibobo 其他商品，想合併寄送</h4>
+            <ol className="list-decimal list-inside text-xs text-[#5C5468] space-y-1 leading-relaxed">
               <li>私訊萬有狀態並支付手機殼商品款項</li>
               <li>通知集運留意包裹，待所有委託商品集齊</li>
               <li>Jimmibobo 收到萬有商品及其他委託商品</li>
@@ -195,79 +494,75 @@ export default function PricePage() {
         </div>
 
         {/* Methods */}
-        <div className="mb-8">
-          <h4 className="font-serif text-sm font-semibold text-brand-text mb-4 text-center">
+        <div className="mb-5">
+          <h4 className="font-serif text-xs sm:text-sm font-bold text-[#231F2E] mb-3 text-center">
             ✦ 四種彈性寄送方案 ✦
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-4 bg-white/60 rounded-xl border border-black shadow-sm relative">
-              <span className="absolute top-3 right-3 text-[9px] font-mono font-semibold bg-black text-white px-1.5 py-0.5 rounded">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="p-3.5 bg-white rounded-xl border border-purple-300/80 shadow-xs relative">
+              <span className="absolute top-2.5 right-2.5 text-[8.5px] font-mono font-bold bg-[#5C5468] text-white px-1.5 py-0.2 rounded-full">
                 推薦
               </span>
-              <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">拼郵 (默認)</h5>
-              <p className="text-[11px] text-brand-muted mb-2">代收、集運、大陸段轉寄</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">約 ¥25 元起 / <b>300 g</b> <br />（如果🍑一元拍需要加¥5 元）</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal">可與 Jimmibobo （僅ZFB收款）其他委託商品合包寄送，合包寄送時萬有狀態商品包裹需控制在300g以內，總重量不得超過1kg（指加上jimmibobo處所購之產品）。 <br />🙇‍♀️如若超過只能使用順豐寄送。</p>
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">拼郵 (默認)</h5>
+              <p className="text-[10px] text-[#746B84] mb-1.5">代收、集運、大陸段轉寄</p>
+              <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">約 ¥25 元起 / <b>300 g</b> <br />（如果一元拍需加¥5）</div>
+              <p className="text-[10.5px] text-[#5C5468] leading-normal">可與 Jimmibobo 其他委託商品合包寄送，包裹需控制在300g以內，總重量不超過1kg。</p>
             </div>
 
-            <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">
-              <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">Jimmibobo 順豐直郵優惠版</h5>
-              <p className="text-[11px] text-brand-muted mb-2">台灣 → 大陸・jimmibobo專屬福利方案</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">¥55 元 / 1kg</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal"><b>必須</b>與 Jimmibobo 其他委託商品合包。萬有狀態商品包裹需控制在300g以內。</p>
+            <div className="p-3.5 bg-white/75 rounded-xl border border-purple-100 shadow-xs">
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">Jimmibobo 順豐直郵優惠版</h5>
+              <p className="text-[10px] text-[#746B84] mb-1.5">台灣 → 大陸・專屬福利方案</p>
+              <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">¥55 元 / 1kg</div>
+              <p className="text-[10.5px] text-[#5C5468] leading-normal"><b>必須</b>與 Jimmibobo 其他委託商品合包，萬有商品包裹控制在300g以內。</p>
             </div>
 
-            <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">
-              <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">萬有順豐直郵</h5>
-              <p className="text-[11px] text-brand-muted mb-2">台灣 → 大陸・無需拼郵或合包</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">運費到付 (約 ¥80 元)</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal">具體價格依物流報價為準，可直接聯繫萬有安排寄出。</p>
+            <div className="p-3.5 bg-white/75 rounded-xl border border-purple-100 shadow-xs">
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">萬有順豐直郵</h5>
+              <p className="text-[10px] text-[#746B84] mb-1.5">台灣 → 大陸・無需拼郵</p>
+              <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">運費到付 (約 ¥80 元)</div>
+              <p className="text-[10.5px] text-[#5C5468] leading-normal">依實際物流報價為準，可直接聯繫萬有安排寄出。</p>
             </div>
 
-            <div className="p-4 bg-white/30 rounded-xl border border-white/50 backdrop-blur-md shadow-sm">
-              <h5 className="font-sans font-semibold text-xs text-brand-text mb-1.5">犀牛盾官網直郵</h5>
-              <p className="text-[11px] text-brand-muted mb-2">台灣 → 大陸/香港/澳門・訂單滿¥450 元</p>
-              <div className="font-mono text-xs font-semibold text-black mb-2">官方免運費</div>
-              <p className="text-[11px] text-brand-text/70 leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(20%)需自理🙇，可直接聯繫萬有狀態安排。</p>
+            <div className="p-3.5 bg-white/75 rounded-xl border border-purple-100 shadow-xs">
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">🦏🛡️官網直郵</h5>
+              <p className="text-[10px] text-[#746B84] mb-1.5">台灣 → 大陸/香港/澳門</p>
+              <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">滿 ¥450 元免運</div>
+              <p className="text-[10.5px] text-[#5C5468] leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(20%)需自理🙇。</p>
             </div>
           </div>
         </div>
 
         {/* Weight reference */}
-        <div className="bg-white/40 rounded-xl p-5 border border-white/50 backdrop-blur-md flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-          <div className="flex items-start gap-3">
-            <Scale className="h-5 w-5 text-brand-gold shrink-0 mt-0.5" />
+        <div className="bg-purple-50/60 rounded-xl p-3 sm:p-4 border border-purple-100 flex flex-col md:flex-row gap-3 justify-between items-start md:items-center">
+          <div className="flex items-start gap-2.5">
+            <Scale className="h-4.5 w-4.5 text-purple-600 shrink-0 mt-0.5" />
             <div>
-              <h5 className="font-sans font-semibold text-xs text-brand-text mb-1">
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">
                 Jimmibobo 委託寄送重量規則
               </h5>
-              <p className="text-[11px] text-brand-muted leading-relaxed">
+              <p className="text-[11px] text-[#5C5468] leading-relaxed">
                 單份包裹建議不超過 <b>300g</b> (約 2 個手機殼)，<b>每超過 300g</b> 需補運費 <b>¥20 元</b>。如若包裹總重量<b>大於1kg</b>，則無法使用拼郵只能使用順豐寄送🙇。
                 <br />
                 <b>重量參考：</b>單背板含原包裝約 <b>50g</b>；手機殼含原包裝約 <b>125g</b>。
-                <br />
-                偏遠地區若產生額外費用，Jimmibobo 會提前告知，同時需補運費時，Jimmibobo 會私訊另行通知，請留意訊息。
-                <br />
-                以上內容如有更新會再另行通知，謝謝每位各位的耐心閱讀與支持💕
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Notes & Contacts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 glass-frosted rounded-2xl p-6 sm:p-8">
+      {/* 4. Notes & Contacts */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 glass-frosted rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-purple-100">
         <div>
-          <h4 className="font-serif font-semibold text-sm text-brand-text border-l-2 border-black pl-2 mb-4">
+          <h4 className="font-serif font-bold text-xs sm:text-sm text-[#231F2E] border-l-2 border-purple-600 pl-2 mb-3">
             備註與注意事項 / Notice
           </h4>
-          <ul className="space-y-3.5 text-xs text-brand-text/80 leading-relaxed">
+          <ul className="space-y-2 text-xs text-[#5C5468] leading-relaxed">
             {NOTES.slice(0, 4).map((note, i) => (
-              <li key={i}>
-                <span className="font-semibold text-brand-text block mb-0.5">
+              <li key={i} className="bg-white/60 p-2.5 rounded-lg border border-purple-50">
+                <span className="font-bold text-[#231F2E] block mb-0.5 text-[11.5px]">
                   {note.label}：
                 </span>
-                <span dangerouslySetInnerHTML={{ __html: note.val }} />
+                <span className="text-[11px]" dangerouslySetInnerHTML={{ __html: note.val }} />
               </li>
             ))}
           </ul>
@@ -275,49 +570,49 @@ export default function PricePage() {
 
         <div className="flex flex-col justify-between">
           <div>
-            <h4 className="font-serif font-semibold text-sm text-brand-text border-l-2 border-black pl-2 mb-4">
-      聯繫方式 / Contacts
+            <h4 className="font-serif font-bold text-xs sm:text-sm text-[#231F2E] border-l-2 border-purple-600 pl-2 mb-3">
+              聯繫方式 / Contacts
             </h4>
-            <div className="space-y-3.5">
-      {/* 萬有狀態 WeChat */}
-              <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
+            <div className="space-y-2">
+              {/* 萬有狀態 WeChat */}
+              <div className="p-2.5 sm:p-3 bg-white/75 rounded-xl border border-purple-100 flex items-center justify-between shadow-xs">
                 <div>
-                  <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">萬有狀態 WeChat</span>
-                  <span className="text-sm font-semibold font-mono text-brand-text">mussessein-7</span>
+                  <span className="text-[9.5px] text-[#746B84] font-mono uppercase tracking-wider block font-semibold">萬有狀態 WeChat</span>
+                  <span className="text-xs sm:text-sm font-bold font-mono text-[#231F2E]">mussessein-7</span>
                 </div>
                 <button
                   onClick={() => copyContact('mussessein-7', 'wechat1')}
-                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
+                  className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[#5C5468] hover:bg-[#453D50] text-white transition-colors flex items-center gap-1 shadow-xs cursor-pointer"
                 >
                   {copiedText === 'wechat1' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                   <span>{copiedText === 'wechat1' ? '已複製' : '複製'}</span>
                 </button>
               </div>
 
-      {/* 新增的 萬有狀態 Line */}
-              <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
+              {/* 萬有狀態 Line */}
+              <div className="p-2.5 sm:p-3 bg-white/75 rounded-xl border border-purple-100 flex items-center justify-between shadow-xs">
                 <div>
-          <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">萬有狀態 Line</span>
-          <span className="text-sm font-semibold font-mono text-brand-text">esmusssein-</span>
-        </div>
-        <button
-          onClick={() => copyContact('esmusssein-', 'line1')}
-          className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
-        >
-          {copiedText === 'line1' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-          <span>{copiedText === 'line1' ? '已複製' : '複製'}</span>
-        </button>
-      </div>
+                  <span className="text-[9.5px] text-[#746B84] font-mono uppercase tracking-wider block font-semibold">萬有狀態 Line</span>
+                  <span className="text-xs sm:text-sm font-bold font-mono text-[#231F2E]">esmusssein-</span>
+                </div>
+                <button
+                  onClick={() => copyContact('esmusssein-', 'line1')}
+                  className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[#5C5468] hover:bg-[#453D50] text-white transition-colors flex items-center gap-1 shadow-xs cursor-pointer"
+                >
+                  {copiedText === 'line1' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  <span>{copiedText === 'line1' ? '已複製' : '複製'}</span>
+                </button>
+              </div>
 
-      {/* Jimmibobo WeChat */}
-      <div className="p-4 bg-white/40 rounded-xl border border-white/50 backdrop-blur-md flex items-center justify-between shadow-sm">
-        <div>
-          <span className="text-[10px] text-brand-muted font-mono uppercase tracking-wider block">Jimmibobo WeChat</span>
-                  <span className="text-sm font-semibold font-mono text-brand-text">jimmibobotw</span>
+              {/* Jimmibobo WeChat */}
+              <div className="p-2.5 sm:p-3 bg-white/75 rounded-xl border border-purple-100 flex items-center justify-between shadow-xs">
+                <div>
+                  <span className="text-[9.5px] text-[#746B84] font-mono uppercase tracking-wider block font-semibold">Jimmibobo WeChat</span>
+                  <span className="text-xs sm:text-sm font-bold font-mono text-[#231F2E]">jimmibobotw</span>
                 </div>
                 <button
                   onClick={() => copyContact('jimmibobotw', 'wechat2')}
-                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-black text-white hover:opacity-80 transition-opacity flex items-center gap-1 shadow-sm"
+                  className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[#5C5468] hover:bg-[#453D50] text-white transition-colors flex items-center gap-1 shadow-xs cursor-pointer"
                 >
                   {copiedText === 'wechat2' ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                   <span>{copiedText === 'wechat2' ? '已複製' : '複製'}</span>
@@ -326,9 +621,9 @@ export default function PricePage() {
             </div>
           </div>
 
-          <div className="mt-6 p-4 rounded-xl border border-black/10 bg-black/5 flex items-start gap-2.5">
-            <AlertCircle className="h-4.5 w-4.5 text-black shrink-0 mt-0.5" />
-            <p className="text-[11px] text-black/70 leading-normal font-medium">
+          <div className="mt-3.5 p-2.5 sm:p-3 rounded-xl border border-purple-100 bg-purple-50/60 flex items-start gap-2">
+            <AlertCircle className="h-3.5 w-3.5 text-purple-700 shrink-0 mt-0.5" />
+            <p className="text-[10.5px] text-[#5C5468] leading-normal font-medium">
               本頁面之運費與拼郵等細則僅針對運往大陸段，其他地區與國家之購買規則請您聯繫萬有狀態了解詳情 🗺️。
             </p>
           </div>

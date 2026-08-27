@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/products';
 import { TUTU_SERIES_LIST } from '../data/tutuproducts';
 import { Series, Design, Subseries } from '../data/productsData';
@@ -263,13 +264,12 @@ export default function Gallery({
     setModalImgIdx(0);
   };
 
+  const navigate = useNavigate();
+
   const handleCustomizeInStudio = (design: Design) => {
     onSelectDesign(design);
     setQuickViewDesign(null);
-    const el = document.getElementById('product-viewer');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    navigate(`/studio/${design.id}`);
   };
 
   const handleResetFilters = () => {
@@ -282,9 +282,9 @@ export default function Gallery({
 
   const renderSidebarInner = (isMobile: boolean) => (
     <>
-          <div className="flex items-center justify-between pb-3 border-b border-black/5">
-            <h3 className="font-serif font-semibold text-sm text-brand-text flex items-center gap-1.5">
-              <SlidersHorizontal className="h-4 w-4 text-brand-gold" />
+          <div className="flex items-center justify-between pb-2.5 border-b border-purple-100/70">
+            <h3 className="font-serif font-semibold text-xs text-[#231F2E] flex items-center gap-1.5">
+              <SlidersHorizontal className="h-3.5 w-3.5 text-purple-600" />
               <span>{lang === 'en' ? 'Filters' : '智能篩選 / Filters'}</span>
             </h3>
             <button
@@ -292,7 +292,7 @@ export default function Gallery({
             handleResetFilters();
             if (isMobile) setIsMobileSidebarOpen(false);
           }}
-          className="text-[10px] font-mono font-medium text-black hover:underline flex items-center gap-1 cursor-pointer"
+          className="text-[10px] font-mono font-medium text-purple-800 hover:underline flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw className="h-2.5 w-2.5" />
               <span>{lang === 'en' ? 'Reset' : '重置'}</span>
@@ -301,22 +301,22 @@ export default function Gallery({
 
           {/* Search Input */}
           <div className="relative">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-brand-muted" />
+            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-[#746B84]" />
             <input
               type="text"
-          placeholder="搜尋設計名稱、圖號或關鍵字..."
+              placeholder="搜尋設計名稱、圖號..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full text-xs bg-white/50 backdrop-blur-md text-brand-text border border-black/5 rounded-xl pl-9 pr-4 py-3 outline-none focus:border-black transition-all font-sans shadow-sm"
+              className="w-full text-xs bg-white/70 text-[#231F2E] border border-purple-200/70 rounded-xl pl-8 pr-3 py-2 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-400 transition-all font-sans shadow-2xs"
             />
           </div>
 
           {/* Filter 1: Series List */}
           <div>
-            <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block mb-2 font-semibold">
+            <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block mb-1.5 font-semibold">
               系列分類 / Series
             </span>
-        <div className="space-y-1 lg:max-h-[520px] max-h-[260px] overflow-y-auto pr-1 no-scrollbar text-xs">
+        <div className="space-y-1 lg:max-h-[460px] max-h-[240px] overflow-y-auto pr-1 no-scrollbar text-xs">
               {/* ALL DESIGNS BUTTON */}
               <button
                 onClick={() => {
@@ -324,16 +324,16 @@ export default function Gallery({
                   setSelectedSubseries('all');
                   if (isMobile) setIsMobileSidebarOpen(false);
                 }}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-xl text-left transition-all cursor-pointer ${
                   selectedSeries === 'all'
-                    ? 'bg-black text-white font-medium shadow-sm'
-                    : 'text-brand-text hover:bg-white/60'
+                    ? 'bg-[#5C5468] text-white font-semibold shadow-xs'
+                    : 'text-[#231F2E] hover:bg-purple-50/70'
                 }`}
               >
-                <span className="font-semibold">全部設計系列</span>
-                <span className="flex items-center gap-1.5 shrink-0">
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md ${
-                    selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'text-stone-500 bg-black/5'
+                <span className="font-semibold text-xs">全部設計系列</span>
+                <span className="flex items-center gap-1 shrink-0">
+                  <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
+                    selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'text-purple-800 bg-purple-50'
                   }`}>
                     {allDesigns.length}款
                   </span>
@@ -342,18 +342,18 @@ export default function Gallery({
               </button>
 
               {/* tutuboom BRAND SECTION */}
-              <div className="space-y-1.5 pt-2.5">
-                <div className="px-3 py-1.5 font-sans font-bold text-[11px] tracking-wider text-purple-950 uppercase bg-purple-100/80 rounded-xl flex items-center justify-between border border-purple-200/60">
-                  <span className="flex items-center gap-1.5">
+              <div className="space-y-1 pt-2">
+                <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-purple-950 uppercase bg-purple-100/70 rounded-lg flex items-center justify-between border border-purple-200/60">
+                  <span className="flex items-center gap-1">
                     <span>💜</span>
                     <span>tutuboom</span>
                   </span>
-                  <span className="text-[10px] font-mono text-purple-700 font-semibold bg-white/80 px-1.5 py-0.2 rounded-md">
+                  <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
                     {tutuCount}款
                   </span>
                 </div>
 
-                <div className="space-y-1 pl-0.5">
+                <div className="space-y-0.5 pl-0.5">
                   {TUTU_SERIES_LIST.map((ts) => {
                     const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
                     const isSelected = selectedSeries === ts.id;
@@ -365,19 +365,19 @@ export default function Gallery({
                           setSelectedSubseries('all');
                           if (isMobile) setIsMobileSidebarOpen(false);
                         }}
-                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                        className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all cursor-pointer ${
                           isSelected
-                            ? 'bg-purple-900 text-white font-medium shadow-sm'
-                            : 'text-brand-text hover:bg-purple-50/70'
+                            ? 'bg-purple-900 text-white font-medium shadow-xs'
+                            : 'text-[#231F2E] hover:bg-purple-50/70'
                         }`}
                       >
-                        <span className="flex items-center gap-1.5 text-[12px] font-semibold">
-                          <Layers className={`h-3.5 w-3.5 shrink-0 ${isSelected ? 'text-purple-200' : 'text-purple-500'}`} />
+                        <span className="flex items-center gap-1 text-[11.5px] font-semibold">
+                          <Layers className={`h-3 w-3 shrink-0 ${isSelected ? 'text-purple-200' : 'text-purple-500'}`} />
                           <span className="truncate">{ts.name}</span>
                         </span>
                         <span className="flex items-center gap-1 shrink-0">
-                          <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
-                            isSelected ? 'bg-white/20 text-white font-bold' : 'text-purple-600 bg-purple-50'
+                          <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded ${
+                            isSelected ? 'bg-white/20 text-white font-bold' : 'text-purple-700 bg-purple-50'
                           }`}>
                             {count}款
                           </span>
@@ -390,43 +390,43 @@ export default function Gallery({
               </div>
 
               {/* 🦏🛡️ BRAND SECTION */}
-              <div className="space-y-1.5 pt-3 border-t border-black/5">
-                <div className="px-3 py-1.5 font-sans font-bold text-[11px] tracking-wider text-amber-950 uppercase bg-amber-100/80 rounded-xl flex items-center justify-between border border-amber-200/60">
-                  <span className="flex items-center gap-1.5">
-                    <span>🧡</span>
-                    <span>🦏🛡️ </span>
+              <div className="space-y-1 pt-2 border-t border-purple-100/70">
+                <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-[#352F3D] uppercase bg-purple-100/50 rounded-lg flex items-center justify-between border border-purple-200/50">
+                  <span className="flex items-center gap-1">
+                    <span>🦏</span>
+                    <span>🦏🛡️系列</span>
                   </span>
-                  <span className="text-[10px] font-mono text-amber-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded-md">
+                  <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
                     {rhinoCount}款
                   </span>
                 </div>
 
-                <div className="space-y-1 pl-0.5">
+                <div className="space-y-0.5 pl-0.5">
                   {PRODUCTS_DATA.SERIES.map((s) => {
                     const isSelected = selectedSeries === s.id;
                     const hasSubseries = s.subseries && s.subseries.length > 0;
                     const seriesCount = allDesigns.filter((d) => d.seriesId === s.id).length;
                     
                     return (
-                      <div key={s.id} className="space-y-1">
+                      <div key={s.id} className="space-y-0.5">
                         <button
                           onClick={() => {
                             setSelectedSeries(s.id);
                             setSelectedSubseries('all');
                             if (isMobile && !hasSubseries) setIsMobileSidebarOpen(false);
                           }}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                          className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all cursor-pointer ${
                             isSelected && selectedSubseries === 'all'
-                              ? 'bg-amber-700 text-white font-medium shadow-sm'
+                              ? 'bg-[#5C5468] text-white font-medium shadow-xs'
                               : isSelected
-                                ? 'bg-amber-50 text-amber-950 font-semibold border-l-2 border-amber-600 pl-2.5'
-                                : 'text-brand-text/90 hover:bg-amber-50/70'
+                                ? 'bg-purple-50 text-[#231F2E] font-semibold border-l-2 border-purple-600 pl-2'
+                                : 'text-[#231F2E] hover:bg-purple-50/60'
                           }`}
                         >
-                          <span className="truncate">{s.name}</span>
+                          <span className="truncate text-[11.5px]">{s.name}</span>
                           <span className="flex items-center gap-1 shrink-0">
-                            <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
-                              isSelected && selectedSubseries === 'all' ? 'bg-white/20 text-white font-bold' : 'text-amber-800 bg-amber-50'
+                            <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded ${
+                              isSelected && selectedSubseries === 'all' ? 'bg-white/20 text-white font-bold' : 'text-purple-800 bg-purple-50'
                             }`}>
                               {seriesCount}款
                             </span>
@@ -436,20 +436,20 @@ export default function Gallery({
                         
                         {/* Nested Subseries options */}
                         {hasSubseries && isSelected && (
-                          <div className="pl-2.5 pr-1 py-1 space-y-1 bg-amber-50/40 rounded-lg border-l-2 border-amber-400 ml-2">
+                          <div className="pl-2 pr-1 py-1 space-y-0.5 bg-purple-50/50 rounded-lg border-l-2 border-purple-400 ml-1.5">
                             <button
                               onClick={() => {
                                 setSelectedSubseries('all');
                                 if (isMobile) setIsMobileSidebarOpen(false);
                               }}
-                              className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
+                              className={`w-full text-left text-[11px] px-2 py-1 rounded transition-all flex items-center justify-between cursor-pointer ${
                                 selectedSubseries === 'all'
-                                  ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-200'
+                                  ? 'text-[#231F2E] font-bold bg-white shadow-2xs border border-purple-200'
                                   : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
                               }`}
                             >
-                              <span>全部 {s.name} 圖款</span>
-                              <span className="text-[10px] font-mono text-amber-700 font-semibold">
+                              <span>全部 {s.name}</span>
+                              <span className="text-[9.5px] font-mono text-purple-800 font-semibold">
                                 ({allDesigns.filter(d => d.seriesId === s.id).length}款)
                               </span>
                             </button>
@@ -463,18 +463,18 @@ export default function Gallery({
                                     setSelectedSubseries(sub.id);
                                     if (isMobile) setIsMobileSidebarOpen(false);
                                   }}
-                                  className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
+                                  className={`w-full text-left text-[11px] px-2 py-1 rounded transition-all flex items-center justify-between cursor-pointer ${
                                     isSubSelected
-                                      ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-300 ring-1 ring-amber-300/50'
+                                      ? 'text-[#231F2E] font-bold bg-white shadow-2xs border border-purple-300 ring-1 ring-purple-300/40'
                                       : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
                                   }`}
                                 >
                                   <span className="truncate flex items-center gap-1">
-                                    {isSubSelected && <span className="text-amber-600 font-bold">✦</span>}
+                                    {isSubSelected && <span className="text-purple-600 font-bold">✦</span>}
                                     {sub.name}
                                   </span>
-                                  <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
-                                    isSubSelected ? 'bg-amber-100 text-amber-900 font-bold' : 'text-stone-400'
+                                  <span className={`text-[9.5px] font-mono px-1 py-0.2 rounded ${
+                                    isSubSelected ? 'bg-purple-100 text-purple-900 font-bold' : 'text-stone-400'
                                   }`}>
                                     {subCount}款
                                   </span>
@@ -493,24 +493,24 @@ export default function Gallery({
 
           {/* Filter 2: Case Compatibility list */}
           <div>
-            <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block mb-2 font-semibold">
+            <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block mb-1.5 font-semibold">
               支援殼體 / Shell Support
             </span>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1">
               {(selectedSeries.startsWith('tutuboom')
                 ? ['all', '分離殼', '一體殼']
                 : ['all', 'SolidX', 'AirX', 'ModNX', 'ClearX', 'Clear']
               ).map((c) => (
                 <button
                   key={c}
-              onClick={() => {
-                setSelectedCaseCompatible(c);
-                if (isMobile) setIsMobileSidebarOpen(false);
-              }}
-              className={`text-[10px] font-mono px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                  onClick={() => {
+                    setSelectedCaseCompatible(c);
+                    if (isMobile) setIsMobileSidebarOpen(false);
+                  }}
+                  className={`text-[10px] font-mono px-2 py-1 rounded-lg border transition-all cursor-pointer ${
                     selectedCaseCompatible === c
-                      ? 'bg-black text-white border-black shadow-sm'
-                      : 'border-white/40 text-brand-muted bg-white/20 hover:bg-white/50'
+                      ? 'bg-[#5C5468] text-white border-[#5C5468] font-bold shadow-2xs'
+                      : 'border-purple-200/60 bg-white/70 hover:bg-purple-50 text-[#231F2E]'
                   }`}
                 >
                   {c === 'all' ? '全部相容' : c}
@@ -521,15 +521,15 @@ export default function Gallery({
 
           {/* Filter 3: Badges */}
           <div>
-            <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block mb-2 font-semibold">
+            <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block mb-1.5 font-semibold">
               標籤篩選 / Highlights
             </span>
             <div className="grid grid-cols-2 gap-1.5">
               {[
                 { id: 'all', label: '全部圖款', icon: null },
-                { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconColor: 'text-amber-500' },
-                { id: 'new', label: 'NEW 新品', icon: Zap, iconColor: 'text-brand-gold' },
-                { id: 'hot', label: 'HOT 人氣', icon: Star, iconColor: 'text-amber-500' },
+                { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconColor: 'text-purple-600' },
+                { id: 'new', label: 'NEW ', icon: Zap, iconColor: 'text-purple-600' },
+                { id: 'hot', label: 'HOT ', icon: Star, iconColor: 'text-amber-500' },
               ].map((b) => {
                 const Icon = b.icon;
                 const isSelected = selectedBadge === b.id;
@@ -540,13 +540,13 @@ export default function Gallery({
                       setSelectedBadge(b.id);
                       if (isMobile) setIsMobileSidebarOpen(false);
                     }}
-                    className={`text-[10px] tracking-wider font-mono py-2 px-2.5 rounded-xl border transition-all flex items-center justify-center gap-1.5 cursor-pointer select-none ${
+                    className={`text-[10px] tracking-wider font-mono py-1.5 px-2 rounded-xl border transition-all flex items-center justify-center gap-1 cursor-pointer select-none ${
                       isSelected
-                        ? 'bg-black text-white border-black shadow-sm font-semibold'
-                        : 'border-black/5 text-stone-600 hover:bg-white/80 bg-white/40 hover:text-black'
+                        ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-2xs font-semibold'
+                        : 'border-purple-100 text-stone-600 hover:bg-purple-50 bg-white/60 hover:text-black'
                     }`}
                   >
-                    {Icon && <Icon className={`h-3 w-3 ${isSelected ? 'text-amber-300' : b.iconColor}`} />}
+                    {Icon && <Icon className={`h-3 w-3 ${isSelected ? 'text-white' : b.iconColor}`} />}
                     <span>{b.label}</span>
                   </button>
                 );
@@ -557,62 +557,57 @@ export default function Gallery({
   );
 
   return (
-    <section id="gallery-section" className="py-16 px-6 max-w-7xl mx-auto scroll-mt-12 relative z-10">
-      {/* Eye brow section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8 border-b border-black/5 pb-6">
-        <div>
-          <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase block mb-1">
-            Phone Case Gallery
+    <section id="gallery-section" className="pt-3 pb-12 px-3 sm:px-6 max-w-7xl mx-auto scroll-mt-16 relative z-10 page-enter">
+      {/* Compact Editorial Header */}
+      <div className="flex items-center justify-between gap-2 pb-3 mb-4 sm:mb-5 border-b border-purple-100/70">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="font-mono text-[9.5px] sm:text-[10px] tracking-wider text-purple-800 bg-purple-50 px-2 py-0.5 rounded-md uppercase font-bold border border-purple-200/50 shrink-0">
+            Catalog
           </span>
-          <h2 className="font-serif text-3xl font-semibold text-brand-text">
-            瀏覽區
+          <h2 className="font-serif text-base sm:text-lg md:text-xl font-bold text-[#231F2E] truncate">
+            全品類 <span className="font-serif italic font-normal text-purple-600">瀏覽</span>
           </h2>
-          <p className="text-xs text-brand-muted mt-1 leading-relaxed">
-            點擊圖款即可進入預覽與配件搭配
-          </p>
         </div>
-
-        {/* Total stats - Clean minimal count badge without debug info */}
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-xs text-stone-600 bg-white/80 backdrop-blur-md border border-black/5 px-3.5 py-1.5 rounded-xl shadow-xs select-none">
-            {lang === 'en' ? 'Count' : '顯示款數'} : <b className="text-black font-bold ml-1">{filteredDesigns.length}</b> {lang === 'en' ? 'styles' : '款'}
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="font-mono text-[11px] text-purple-900 bg-purple-50/90 border border-purple-200/60 px-2.5 py-1 rounded-lg shadow-2xs select-none">
+            顯示 <b className="text-purple-950 font-bold">{filteredDesigns.length}</b> 款
           </span>
         </div>
       </div>
 
       {/* Mobile Sidebar Toggle Button & Quick Filter pills bar (only visible on mobile) */}
-      <div className="lg:hidden flex flex-col gap-3 mb-6">
+      <div className="lg:hidden flex flex-col gap-2.5 mb-4">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
-            className="flex-1 flex items-center justify-center gap-2 bg-stone-900 text-white hover:bg-black py-3 px-4 rounded-2xl font-semibold text-xs tracking-wider uppercase transition-all shadow-sm active:scale-[0.99] cursor-pointer border border-stone-800"
+            className="flex-1 flex items-center justify-center gap-2 bg-[#5C5468] text-white hover:bg-[#453D50] py-2.5 px-3 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-xs active:scale-[0.99] cursor-pointer"
           >
-            <SlidersHorizontal className="h-4 w-4 text-brand-gold" />
-            <span>系列與篩選 / SERIES ({filteredDesigns.length}款)</span>
+            <SlidersHorizontal className="h-3.5 w-3.5 text-purple-200" />
+            <span>系列與篩選 ({filteredDesigns.length}款)</span>
           </button>
           
           {/* Quick reset button if any filter is active */}
           {(searchQuery || selectedSeries !== 'all' || selectedSubseries !== 'all' || selectedCaseCompatible !== 'all' || selectedBadge !== 'all') && (
             <button
               onClick={handleResetFilters}
-              className="p-3 bg-stone-100/90 text-stone-600 rounded-2xl hover:text-black hover:bg-stone-200 transition-colors border border-stone-200/70 shadow-xs cursor-pointer flex items-center justify-center shrink-0"
+              className="p-2.5 bg-purple-50 text-purple-800 rounded-xl hover:bg-purple-100 transition-colors border border-purple-200/70 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
               title="清除所有篩選"
             >
-              <RefreshCw className="h-4 w-4" />
+              <RefreshCw className="h-3.5 w-3.5" />
             </button>
           )}
         </div>
 
         {/* Quick Badge Filter row */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar -mx-2 px-2">
-          <span className="text-[10px] font-mono text-stone-400 uppercase font-semibold shrink-0 mr-1 flex items-center gap-1 select-none">
-            <Sparkles className="h-3 w-3 text-brand-gold" />
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar -mx-1 px-1">
+          <span className="text-[9.5px] font-mono text-[#746B84] uppercase font-semibold shrink-0 mr-0.5 flex items-center gap-1 select-none">
+            <Sparkles className="h-3 w-3 text-purple-600" />
             <span>標籤</span>
           </span>
           {[
             { id: 'all', label: '全部', icon: null },
-            { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconClass: 'text-amber-500' },
-            { id: 'new', label: 'NEW', icon: Zap, iconClass: 'text-brand-gold' },
+            { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconClass: 'text-purple-600' },
+            { id: 'new', label: 'NEW', icon: Zap, iconClass: 'text-purple-600' },
             { id: 'hot', label: 'HOT', icon: Star, iconClass: 'text-amber-500' },
           ].map((b) => {
             const Icon = b.icon;
@@ -621,43 +616,42 @@ export default function Gallery({
               <button
                 key={b.id}
                 onClick={() => setSelectedBadge(b.id)}
-                className={`text-[10.5px] font-mono font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 flex items-center gap-1 cursor-pointer select-none ${
+                className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-lg whitespace-nowrap transition-all border shrink-0 flex items-center gap-1 cursor-pointer select-none ${
                   isSelected
-                    ? 'bg-black text-white border-black shadow-xs'
-                    : 'bg-white/80 text-stone-600 border-stone-200/70 hover:bg-white'
+                    ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs'
+                    : 'bg-white/80 text-stone-600 border-purple-200/60 hover:bg-purple-50'
                 }`}
               >
-                {Icon && <Icon className={`h-2.5 w-2.5 ${isSelected ? 'text-amber-300' : b.iconClass}`} />}
+                {Icon && <Icon className={`h-2.5 w-2.5 ${isSelected ? 'text-white' : b.iconClass}`} />}
                 <span>{b.label}</span>
               </button>
             );
           })}
         </div>
         
-        {/* Quick horizontal series categories row on mobile with clear tutuboom & 🦏🛡️ brand distinction in two neat rows */}
-        <div className="flex flex-col gap-2 select-none">
+        {/* Quick horizontal series categories row on mobile with clear tutuboom & Rhino distinction */}
+        <div className="flex flex-col gap-1.5 select-none">
           {/* Row 1: 全部系列 + 💜 tutuboom 品牌群組 */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-2 px-2">
-            {/* 全部系列按鈕 */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
             <button
               onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
-              className={`text-[11px] font-semibold px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+              className={`text-[10.5px] font-semibold px-2.5 py-1 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1 ${
                 selectedSeries === 'all'
-                  ? 'bg-black text-white border-black shadow-xs font-bold'
-                  : 'bg-white/90 text-stone-700 border-stone-200/80 hover:bg-white hover:border-stone-400'
+                  ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
+                  : 'bg-white/90 text-[#231F2E] border-purple-200/70 hover:bg-purple-50'
               }`}
             >
               <span>全部系列</span>
-              <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
-                selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'bg-stone-100 text-stone-500'
+              <span className={`text-[9px] font-mono px-1 py-0.1 rounded ${
+                selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'bg-purple-50 text-purple-700'
               }`}>
                 {allDesigns.length}
               </span>
             </button>
 
-            {/* 品牌 1: 💜 tutuboom 品牌群組 */}
-            <div className="flex items-center gap-1.5 shrink-0 bg-purple-50/90 p-1 rounded-2xl border border-purple-200/80">
-              <span className="text-[11px] font-bold text-purple-950 px-2 py-0.5 flex items-center gap-1">
+            {/* tutuboom series */}
+            <div className="flex items-center gap-1 shrink-0 bg-purple-50/80 p-0.5 rounded-xl border border-purple-200/60">
+              <span className="text-[10.5px] font-bold text-purple-950 px-1.5 py-0.5 flex items-center gap-1">
                 <span>💜</span>
                 <span>tutuboom</span>
               </span>
@@ -668,14 +662,14 @@ export default function Gallery({
                   <button
                     key={ts.id}
                     onClick={() => { setSelectedSeries(ts.id); setSelectedSubseries('all'); }}
-                    className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                    className={`text-[10.5px] font-semibold px-2 py-0.5 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1 ${
                       isSelected
                         ? 'bg-purple-900 text-white border-purple-900 shadow-xs font-bold'
-                        : 'bg-white text-purple-950 border-purple-200 hover:bg-purple-100/90'
+                        : 'bg-white text-purple-950 border-purple-200/80 hover:bg-purple-100/70'
                     }`}
                   >
                     <span>{ts.name}</span>
-                    <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                    <span className={`text-[9px] font-mono px-1 py-0.1 rounded ${
                       isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
                     }`}>
                       {count}
@@ -686,12 +680,12 @@ export default function Gallery({
             </div>
           </div>
 
-          {/* Row 2: 🧡 🦏🛡️ 品牌群組 */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-2 px-2">
-            <div className="flex items-center gap-1.5 shrink-0 bg-amber-50/90 p-1 rounded-2xl border border-amber-200/80">
-              <span className="text-[11px] font-bold text-amber-950 px-2 py-0.5 flex items-center gap-1">
-                <span>🧡</span>
-                <span>🦏🛡️ </span>
+          {/* Row 2: 🦏🛡️ 品牌群組 */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
+            <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50">
+              <span className="text-[10.5px] font-bold text-[#231F2E] px-1.5 py-0.5 flex items-center gap-1">
+                <span>🦏</span>
+                <span>🦏🛡️</span>
               </span>
               {PRODUCTS_DATA.SERIES.map((s) => {
                 const isSelected = selectedSeries === s.id;
@@ -700,15 +694,15 @@ export default function Gallery({
                   <button
                     key={s.id}
                     onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
-                    className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                    className={`text-[10.5px] font-semibold px-2.5 py-0.5 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1 ${
                       isSelected
-                        ? 'bg-amber-700 text-white border-amber-700 shadow-xs font-bold'
-                        : 'bg-white text-amber-950 border-amber-200 hover:bg-amber-100/90'
+                        ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
+                        : 'bg-white text-[#231F2E] border-purple-200/80 hover:bg-purple-100/60'
                     }`}
                   >
                     <span>{s.name}</span>
-                    <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
-                      isSelected ? 'bg-white/20 text-white font-bold' : 'bg-amber-100 text-amber-900 font-semibold'
+                    <span className={`text-[9px] font-mono px-1 py-0.1 rounded ${
+                      isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
                     }`}>
                       {count}
                     </span>
@@ -738,29 +732,29 @@ export default function Gallery({
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-              className="fixed top-0 left-0 h-full w-[310px] bg-white shadow-2xl z-50 lg:hidden overflow-y-auto flex flex-col border-r border-stone-200"
+              className="fixed top-0 left-0 h-full w-[300px] bg-white shadow-2xl z-50 lg:hidden overflow-y-auto flex flex-col border-r border-purple-100"
             >
-              <div className="flex items-center justify-between p-5 border-b border-stone-100 bg-stone-50/50">
-                <h3 className="font-serif font-bold text-base text-brand-text flex items-center gap-2">
-                  <SlidersHorizontal className="h-4.5 w-4.5 text-brand-gold animate-pulse" />
+              <div className="flex items-center justify-between p-4 border-b border-purple-100 bg-purple-50/40">
+                <h3 className="font-serif font-bold text-sm text-[#231F2E] flex items-center gap-1.5">
+                  <SlidersHorizontal className="h-4 w-4 text-purple-600" />
                   <span>系列與分類篩選</span>
                 </h3>
                 <button
                   onClick={() => setIsMobileSidebarOpen(false)}
-                  className="p-1.5 rounded-full hover:bg-stone-200/60 text-stone-500 hover:text-black transition-colors cursor-pointer"
+                  className="p-1 rounded-full hover:bg-purple-100 text-stone-500 hover:text-black transition-colors cursor-pointer"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4" />
                 </button>
               </div>
               
-              <div className="p-5 space-y-6 flex-grow">
+              <div className="p-4 space-y-4 flex-grow">
                 {renderSidebarInner(true)}
               </div>
               
-              <div className="p-4 border-t border-stone-100 bg-stone-50">
+              <div className="p-3 border-t border-purple-100 bg-purple-50/30">
                 <button
                   onClick={() => setIsMobileSidebarOpen(false)}
-                  className="w-full py-2.5 bg-black text-white font-semibold text-xs rounded-xl uppercase tracking-wider cursor-pointer text-center"
+                  className="w-full py-2.5 bg-[#5C5468] text-white font-semibold text-xs rounded-xl uppercase tracking-wider cursor-pointer text-center"
                 >
                   套用篩選
                 </button>
@@ -771,38 +765,37 @@ export default function Gallery({
       </AnimatePresence>
 
       {/* Main Container with Sticky Sidebar and Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
         {/* DESKTOP STICKY SIDEBAR FILTERS (lg:col-span-3 - hidden on mobile) */}
-        <div className="hidden lg:block lg:col-span-3 lg:sticky lg:top-24 self-start z-20 space-y-6 glass-frosted rounded-2xl p-5">
+        <div className="hidden lg:block lg:col-span-3 lg:sticky lg:top-20 self-start z-20 space-y-4 glass-frosted rounded-2xl p-4 border border-purple-100/80">
           {renderSidebarInner(false)}
         </div>
 
         {/* RESULTS GRID (lg:col-span-9) */}
-        <div className="lg:col-span-9 space-y-5">
+        <div className="lg:col-span-9 space-y-4">
           {/* Desktop quick horizontal series bar - Split into 2 clear rows */}
-          <div className="hidden lg:flex flex-col gap-2 select-none">
+          <div className="hidden lg:flex flex-col gap-1.5 select-none">
             {/* Row 1: 全部系列 + 💜 tutuboom 品牌群組 */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-              {/* 全部系列按鈕 */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
               <button
                 onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
-                className={`text-xs font-semibold px-3.5 py-1.5 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                className={`text-xs font-semibold px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
                   selectedSeries === 'all'
-                    ? 'bg-black text-white border-black shadow-xs font-bold'
-                    : 'bg-white/90 text-stone-700 border-stone-200/80 hover:bg-white hover:border-stone-400'
+                    ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
+                    : 'bg-white/90 text-[#231F2E] border-purple-200/80 hover:bg-purple-50'
                 }`}
               >
                 <span>全部系列</span>
-                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
-                  selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'bg-stone-100 text-stone-500'
+                <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                  selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'bg-purple-50 text-purple-700'
                 }`}>
                   {allDesigns.length}
                 </span>
               </button>
 
               {/* 品牌 1: 💜 tutuboom 品牌群組 */}
-              <div className="flex items-center gap-1.5 shrink-0 bg-purple-50/90 p-1 rounded-2xl border border-purple-200/80 shadow-2xs">
-                <span className="text-xs font-bold text-purple-950 px-2.5 py-0.5 flex items-center gap-1">
+              <div className="flex items-center gap-1 shrink-0 bg-purple-50/90 p-0.5 rounded-xl border border-purple-200/80 shadow-2xs">
+                <span className="text-xs font-bold text-purple-950 px-2 py-0.5 flex items-center gap-1">
                   <span>💜</span>
                   <span>tutuboom</span>
                 </span>
@@ -813,14 +806,14 @@ export default function Gallery({
                     <button
                       key={ts.id}
                       onClick={() => { setSelectedSeries(ts.id); setSelectedSubseries('all'); }}
-                      className={`text-xs font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
                         isSelected
                           ? 'bg-purple-900 text-white border-purple-900 shadow-xs font-bold'
                           : 'bg-white text-purple-950 border-purple-200 hover:bg-purple-100/90'
                       }`}
                     >
                       <span>{ts.name}</span>
-                      <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
+                      <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
                         isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
                       }`}>
                         {count}
@@ -831,12 +824,12 @@ export default function Gallery({
               </div>
             </div>
 
-            {/* Row 2: 🧡 🦏🛡️ 品牌群組 */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-              <div className="flex items-center gap-1.5 shrink-0 bg-amber-50/90 p-1 rounded-2xl border border-amber-200/80 shadow-2xs">
-                <span className="text-xs font-bold text-amber-950 px-2.5 py-0.5 flex items-center gap-1">
-                  <span>🧡</span>
-                  <span>🦏🛡️ </span>
+            {/* Row 2: 🦏🛡️ 品牌群組 */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
+              <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50 shadow-2xs">
+                <span className="text-xs font-bold text-[#231F2E] px-2 py-0.5 flex items-center gap-1">
+                  <span>🦏</span>
+                  <span>🦏🛡️</span>
                 </span>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;
@@ -845,15 +838,15 @@ export default function Gallery({
                     <button
                       key={s.id}
                       onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
-                      className={`text-xs font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
                         isSelected
-                          ? 'bg-amber-700 text-white border-amber-700 shadow-xs font-bold'
-                          : 'bg-white text-amber-950 border-amber-200 hover:bg-amber-100/90'
+                          ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
+                          : 'bg-white text-[#231F2E] border-purple-200 hover:bg-purple-100/70'
                       }`}
                     >
                       <span>{s.name}</span>
-                      <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
-                        isSelected ? 'bg-white/20 text-white font-bold' : 'bg-amber-100 text-amber-900 font-semibold'
+                      <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                        isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
                       }`}>
                         {count}
                       </span>
@@ -866,31 +859,31 @@ export default function Gallery({
 
           {/* Active Series Header with description & active badges summary */}
           {(selectedSeries !== 'all' || selectedSubseries !== 'all' || selectedBadge !== 'all') && (
-            <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-md border border-black/5 flex flex-col gap-2 shadow-xs">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-brand-muted">
-                <span className="font-mono text-[10px] bg-black/5 text-stone-600 px-2 py-0.5 rounded-lg select-none">
-                  {lang === 'en' ? 'Browsing' : '正在瀏覽 / Browsing'}
+            <div className="p-3.5 rounded-xl bg-white/80 backdrop-blur-md border border-purple-100/80 flex flex-col gap-1.5 shadow-2xs">
+              <div className="flex flex-wrap items-center gap-2 text-xs text-[#746B84]">
+                <span className="font-mono text-[9.5px] bg-purple-50 text-purple-900 border border-purple-200/50 px-2 py-0.5 rounded-md select-none font-semibold">
+                  正在瀏覽
                 </span>
-                <span className="font-semibold text-black">
+                <span className="font-semibold text-[#231F2E]">
                   {selectedSeries === 'all' ? '全部系列' : activeSeriesObj?.name}
                 </span>
                 {selectedSubseries !== 'all' && (
                   <>
-                    <span className="text-black/30">/</span>
-                    <span className="font-semibold text-amber-900">
+                    <span className="text-stone-400">/</span>
+                    <span className="font-semibold text-purple-900">
                       {availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.name}
                     </span>
                   </>
                 )}
                 {selectedBadge !== 'all' && (
-                  <span className="ml-auto inline-flex items-center gap-1 text-[10.5px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
-                    <Sparkles className="h-3 w-3 text-amber-600" />
+                  <span className="ml-auto inline-flex items-center gap-1 text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-purple-50 text-purple-900 border border-purple-200">
+                    <Sparkles className="h-2.5 w-2.5 text-purple-600" />
                     <span>
                       {selectedBadge === 'all_badges'
                         ? 'NEW + HOT 精選'
                         : selectedBadge === 'new'
-                          ? 'NEW 新品'
-                          : 'HOT 人氣'}
+                          ? 'NEW '
+                          : 'HOT '}
                     </span>
                   </span>
                 )}
@@ -898,16 +891,16 @@ export default function Gallery({
               
               {/* Display series description */}
               {activeSeriesObj?.desc && (
-                <p className="text-xs text-stone-600 flex items-start gap-1.5 mt-0.5 leading-relaxed">
-                  <span className="text-brand-gold select-none">✦</span>
+                <p className="text-xs text-stone-600 flex items-start gap-1.5 leading-relaxed">
+                  <span className="text-purple-600 select-none">✦</span>
                   <span>{activeSeriesObj.desc}</span>
                 </p>
               )}
 
               {/* Subseries description if selected */}
               {selectedSubseries !== 'all' && availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.desc && (
-                <div className="flex items-start gap-2 bg-amber-50/60 p-2.5 rounded-xl border-l-2 border-amber-500 mt-1 text-xs text-stone-700">
-                  <span className="text-amber-600 select-none">ℹ️</span>
+                <div className="flex items-start gap-1.5 bg-purple-50/60 p-2 rounded-lg border-l-2 border-purple-500 text-xs text-stone-700">
+                  <span className="text-purple-600 select-none">ℹ️</span>
                   <span>{availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.desc}</span>
                 </div>
               )}
@@ -916,40 +909,40 @@ export default function Gallery({
 
           {/* Subseries Quick Selector Card when a series with subseries is selected */}
           {availableSubseries.length > 0 && (
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-50/80 via-white/90 to-purple-50/80 border border-stone-200/80 shadow-xs space-y-3">
+            <div className="p-3.5 rounded-xl bg-purple-50/40 border border-purple-100 shadow-2xs space-y-2.5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-amber-600 animate-pulse" />
-                  <span className="font-serif font-bold text-xs text-stone-800 tracking-wide">
-                    {activeSeriesObj?.name} · 子系列快速選單
+                  <Sparkles className="h-3.5 w-3.5 text-purple-600" />
+                  <span className="font-serif font-bold text-xs text-[#231F2E] tracking-wide">
+                    {activeSeriesObj?.name} · 子系列選單
                   </span>
-                  <span className="text-[10px] font-mono text-stone-500 bg-white px-2 py-0.5 rounded-full border border-stone-200 shadow-2xs">
+                  <span className="text-[9.5px] font-mono text-purple-800 bg-white px-2 py-0.5 rounded-full border border-purple-200 shadow-2xs">
                     共 {availableSubseries.length} 個子系列
                   </span>
                 </div>
                 {selectedSubseries !== 'all' && (
                   <button
                     onClick={() => setSelectedSubseries('all')}
-                    className="text-[11px] font-mono text-amber-900 hover:text-black hover:underline flex items-center gap-1 cursor-pointer font-medium"
+                    className="text-[10.5px] font-mono text-purple-800 hover:text-black hover:underline flex items-center gap-1 cursor-pointer font-medium"
                   >
-                    <span>顯示全部子系列</span>
+                    <span>全部子系列</span>
                     <X className="h-3 w-3" />
                   </button>
                 )}
               </div>
 
               {/* Subseries Buttons */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 <button
                   onClick={() => setSelectedSubseries('all')}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
+                  className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
                     selectedSubseries === 'all'
-                      ? 'bg-stone-900 text-white border-stone-900 shadow-xs'
-                      : 'bg-white text-stone-700 border-stone-200 hover:border-stone-400 hover:bg-stone-50'
+                      ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-2xs'
+                      : 'bg-white text-stone-700 border-purple-200 hover:border-purple-400 hover:bg-purple-50'
                   }`}
                 >
                   <span>全部圖款</span>
-                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                  <span className={`text-[9.5px] px-1.5 py-0.1 rounded-full font-mono ${
                     selectedSubseries === 'all' ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
                   }`}>
                     {getSubseriesCount('all')}
@@ -963,18 +956,16 @@ export default function Gallery({
                     <button
                       key={sub.id}
                       onClick={() => setSelectedSubseries(sub.id)}
-                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
+                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 cursor-pointer border ${
                         isActive
-                          ? selectedSeries.startsWith('tutuboom')
-                            ? 'bg-purple-900 text-white border-purple-900 shadow-xs ring-2 ring-purple-500/20'
-                            : 'bg-amber-700 text-white border-amber-700 shadow-xs ring-2 ring-amber-500/20'
-                          : 'bg-white text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-amber-50/40'
+                          ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-2xs'
+                          : 'bg-white text-stone-700 border-purple-200 hover:border-purple-400 hover:bg-purple-50'
                       }`}
                     >
-                      {isActive && <Check className="h-3.5 w-3.5" />}
+                      {isActive && <Check className="h-3 w-3" />}
                       <span>{sub.name}</span>
-                      <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                        isActive ? 'bg-white/25 text-white' : 'bg-stone-100 text-stone-600'
+                      <span className={`text-[9.5px] px-1.5 py-0.1 rounded-full font-mono ${
+                        isActive ? 'bg-white/25 text-white' : 'bg-purple-50 text-purple-800'
                       }`}>
                         {count}款
                       </span>
@@ -986,10 +977,10 @@ export default function Gallery({
           )}
           <AnimatePresence mode="popLayout">
             {filteredDesigns.length > 0 ? (
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <motion.div
                   layout
-                  className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
+                  className="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-5"
                 >
                   {displayedDesigns.map((d, index) => {
                     const selectedModel = (selectedCaseCompatible && selectedCaseCompatible !== 'all')
@@ -1015,12 +1006,12 @@ export default function Gallery({
                         onClick={() => handleCardClick(d)}
                         className={`group relative flex flex-col justify-between glass-card rounded-2xl overflow-hidden cursor-pointer transition-all ${
                           isActive
-                            ? 'border-black ring-1 ring-black/10 shadow-md scale-[1.02]'
-                            : 'border-white/40 hover:shadow-xl hover:-translate-y-1'
+                            ? 'border-purple-600 ring-2 ring-purple-400/40 shadow-md scale-[1.01]'
+                            : 'border-purple-100/70 hover:shadow-lg hover:-translate-y-0.5'
                         }`}
                       >
                         {/* Product Preview Image Block */}
-                        <div className="relative w-full aspect-[3/4] bg-neutral-100/50 overflow-hidden flex items-center justify-center p-3 select-none">
+                        <div className="relative w-full aspect-[3/4] bg-neutral-100/40 overflow-hidden flex items-center justify-center p-2.5 select-none">
                           {previewImg ? (
                             <img
                               src={previewImg}
@@ -1032,7 +1023,7 @@ export default function Gallery({
                               referrerPolicy="no-referrer"
                             />
                           ) : (
-                            <div className="flex flex-col items-center justify-center text-brand-muted/30 gap-1.5 font-mono text-[10px]">
+                            <div className="flex flex-col items-center justify-center text-brand-muted/30 gap-1 font-mono text-[10px]">
                               <span>No Preview</span>
                             </div>
                           )}
@@ -1043,10 +1034,10 @@ export default function Gallery({
                               e.stopPropagation();
                               onToggleFavorite(d.id);
                             }}
-                            className={`absolute top-2.5 right-2.5 p-2 rounded-full backdrop-blur-md border shadow-sm transition-all hover:scale-110 z-20 ${
+                            className={`absolute top-2 right-2 p-1.5 rounded-full backdrop-blur-md border shadow-xs transition-all hover:scale-110 z-20 ${
                               isFavorite
                                 ? 'bg-rose-50 border-rose-200 text-rose-500'
-                                : 'bg-white/60 border-white/40 text-black/40 hover:text-rose-500 hover:bg-white'
+                                : 'bg-white/80 border-purple-100 text-purple-700/60 hover:text-rose-500 hover:bg-white'
                             }`}
                             type="button"
                             title={isFavorite ? '取消收藏' : '加入收藏'}
@@ -1056,48 +1047,48 @@ export default function Gallery({
 
                           {/* Top Badges */}
                           {d.badge && (
-                            <span className="absolute top-2 left-2 font-mono text-[8px] font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded shadow-sm bg-black text-white">
+                            <span className="absolute top-2 left-2 font-mono text-[8px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded shadow-xs bg-[#5C5468] text-white">
                               {d.badge}
                             </span>
                           )}
 
                           {/* Layer indicator for tutuboom */}
                           {d.layer && (
-                            <span className="absolute bottom-2 left-2 font-mono text-[8px] font-semibold tracking-wider uppercase bg-black/10 backdrop-blur text-black px-1.5 py-0.5 rounded">
+                            <span className="absolute bottom-2 left-2 font-mono text-[8px] font-bold tracking-wider uppercase bg-purple-900/80 backdrop-blur text-white px-1.5 py-0.5 rounded">
                               {d.layer}
                             </span>
                           )}
                         </div>
 
                         {/* Card Info Details */}
-                        <div className="p-3.5 border-t border-black/5 flex-1 flex flex-col justify-between">
+                        <div className="p-3 border-t border-purple-100/70 flex-1 flex flex-col justify-between">
                           <div>
                             <div className="flex justify-between items-start gap-1">
-                              <span className="font-mono text-[9px] text-brand-muted truncate block mb-1">
+                              <span className="font-mono text-[9px] text-[#746B84] truncate block mb-0.5">
                                 {d.category}
                               </span>
                               {isActive && (
-                                <span className="text-[8.5px] sm:text-[9.5px] bg-black text-brand-gold font-semibold px-1.5 py-0.5 rounded-md flex items-center gap-0.5 shrink-0 whitespace-nowrap">
+                                <span className="text-[8.5px] bg-[#5C5468] text-white font-semibold px-1.5 py-0.2 rounded flex items-center gap-0.5 shrink-0 whitespace-nowrap">
                                   <Check className="h-2.5 w-2.5 shrink-0" />
                                   <span className="whitespace-nowrap">已選取</span>
                                 </span>
                               )}
                             </div>
-                            <h4 className="text-xs font-semibold text-brand-text group-hover:text-black transition-colors line-clamp-1">
+                            <h4 className="text-xs font-semibold text-[#231F2E] group-hover:text-purple-900 transition-colors line-clamp-1">
                               {d.title}
                             </h4>
                             {d.link && getSocialLinks(d.link).length > 0 && (
-                              <div className="mt-2.5 flex flex-wrap gap-1.5" onClick={(e) => e.stopPropagation()}>
+                              <div className="mt-1.5 flex flex-wrap gap-1" onClick={(e) => e.stopPropagation()}>
                                 {getSocialLinks(d.link).map((link, idx) => (
                                   <a
                                     key={idx}
                                     href={link.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2 py-0.5 rounded-full transition-all text-[10px] font-semibold"
+                                    className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-1.5 py-0.2 rounded-md transition-all text-[9.5px] font-semibold"
                                   >
                                     <span>📕 小紅書</span>
-                                    <ExternalLink className="h-2.5 w-2.5" />
+                                    <ExternalLink className="h-2 w-2" />
                                   </a>
                                 ))}
                               </div>
@@ -1105,22 +1096,22 @@ export default function Gallery({
                           </div>
 
                           {/* Bottom Model compatible list tags */}
-                          <div className="mt-3 flex flex-wrap gap-1 items-center justify-between">
+                          <div className="mt-2 flex flex-wrap gap-1 items-center justify-between">
                             <div className="flex flex-wrap gap-1 items-center">
-                              <span className="font-mono text-[9px] font-medium text-black bg-white/70 border border-black/5 px-2 py-0.5 rounded">
+                              <span className="font-mono text-[9px] font-semibold text-purple-900 bg-purple-50 border border-purple-200/60 px-1.5 py-0.2 rounded">
                                 #{d.id}
                               </span>
                               <div className="flex gap-1 overflow-hidden">
                                 {d.models.slice(0, 2).map((m) => (
                                   <span
                                     key={m.name}
-                                    className="font-mono text-[8px] text-brand-muted bg-white/40 border border-white/50 px-1.5 py-0.5 rounded shrink-0"
+                                    className="font-mono text-[8px] text-stone-500 bg-white/70 border border-purple-100 px-1.5 py-0.2 rounded shrink-0"
                                   >
                                     {m.name}
                                   </span>
                                 ))}
                                 {d.models.length > 2 && (
-                                  <span className="font-mono text-[8px] text-brand-muted bg-white/40 border border-white/50 px-1 py-0.5 rounded shrink-0">
+                                  <span className="font-mono text-[8px] text-stone-500 bg-white/70 border border-purple-100 px-1 py-0.2 rounded shrink-0">
                                     +{d.models.length - 2}
                                   </span>
                                 )}
@@ -1128,28 +1119,28 @@ export default function Gallery({
                             </div>
                           </div>
 
-                          {/* Interactive Action Bar (Exposes Both Gallery Viewing & Studio Customization) */}
-                          <div className="mt-3.5 pt-2.5 border-t border-black/5 flex gap-1.5 sm:gap-2" onClick={(e) => e.stopPropagation()}>
+                          {/* Interactive Action Bar */}
+                          <div className="mt-2.5 pt-2 border-t border-purple-100/70 flex gap-1.5" onClick={(e) => e.stopPropagation()}>
                             <button
                               onClick={() => handleQuickView(d)}
-                              className="flex-1 py-1.5 sm:py-2 px-1 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-bold bg-white/80 hover:bg-black hover:text-white border border-black/10 transition-all text-center flex items-center justify-center gap-0.5 sm:gap-1 shadow-xs whitespace-nowrap"
+                              className="flex-1 py-1.5 px-1 rounded-lg text-[9.5px] font-bold bg-purple-50/80 hover:bg-purple-100 text-purple-950 border border-purple-200/70 transition-all text-center flex items-center justify-center gap-1 shadow-2xs whitespace-nowrap cursor-pointer"
                               title="快速預覽"
                               type="button"
                             >
-                              <Search className="h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0" />
+                              <Search className="h-2.5 w-2.5 shrink-0 text-purple-700" />
                               <span className="whitespace-nowrap">快速預覽</span>
                             </button>
                             <button
                               onClick={() => handleCustomizeInStudio(d)}
-                              className={`flex-1 py-1.5 sm:py-2 px-1 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-bold transition-all text-center flex items-center justify-center gap-0.5 sm:gap-1 shadow-xs hover:scale-[1.02] whitespace-nowrap ${
+                              className={`flex-1 py-1.5 px-1 rounded-lg text-[9.5px] font-bold transition-all text-center flex items-center justify-center gap-1 shadow-2xs hover:scale-[1.02] whitespace-nowrap cursor-pointer ${
                                 isActive
-                                  ? 'bg-brand-gold text-black font-extrabold shadow-sm'
-                                  : 'bg-black text-white'
+                                  ? 'bg-[#5C5468] text-white font-extrabold shadow-xs'
+                                  : 'bg-[#5C5468] text-white hover:bg-[#453D50]'
                               }`}
                               title="進入瀏覽區"
                               type="button"
                             >
-                              <Compass className="h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0" />
+                              <Compass className="h-2.5 w-2.5 shrink-0 text-purple-200" />
                               <span className="whitespace-nowrap">瀏覽區</span>
                             </button>
                           </div>
@@ -1160,10 +1151,10 @@ export default function Gallery({
                 </motion.div>
                 
                 {filteredDesigns.length > visibleCount && (
-                  <div className="flex justify-center pt-6 pb-2">
+                  <div className="flex justify-center pt-4 pb-2">
                     <button
                       onClick={() => setVisibleCount((prev) => prev + 24)}
-                      className="px-8 py-3 rounded-xl bg-white hover:bg-black hover:text-white text-black border border-black/10 hover:border-black font-semibold text-xs transition-all duration-300 flex items-center gap-2 shadow-sm tracking-wide font-sans hover:-translate-y-0.5"
+                      className="px-6 py-2.5 rounded-xl bg-white hover:bg-[#5C5468] hover:text-white text-[#231F2E] border border-purple-200 hover:border-[#5C5468] font-semibold text-xs transition-all duration-300 flex items-center gap-2 shadow-2xs tracking-wide font-sans cursor-pointer"
                     >
                       <span>
                         顯示更多款式 ({filteredDesigns.length - visibleCount} 款)
@@ -1176,16 +1167,16 @@ export default function Gallery({
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="w-full py-20 flex flex-col items-center justify-center text-center glass-frosted rounded-2xl p-6"
+                className="w-full py-16 flex flex-col items-center justify-center text-center glass-frosted rounded-2xl p-6 border border-purple-100"
               >
-                <SlidersHorizontal className="h-8 w-8 text-brand-muted opacity-30 mb-3 animate-bounce" />
-                <h4 className="font-serif font-semibold text-brand-text mb-1">未找到相符設計</h4>
-                <p className="text-xs text-brand-muted max-w-xs">
+                <SlidersHorizontal className="h-7 w-7 text-purple-400 opacity-60 mb-2 animate-bounce" />
+                <h4 className="font-serif font-semibold text-[#231F2E] mb-1">未找到相符設計</h4>
+                <p className="text-xs text-stone-500 max-w-xs">
                   很抱歉，沒有找到符合您篩選條件的設計款手機殼。請嘗試清除搜尋字詞或重置篩選器。
                 </p>
                 <button
                   onClick={handleResetFilters}
-                  className="mt-4 font-mono text-xs bg-black text-white hover:opacity-85 px-4 py-2 rounded-xl transition-colors"
+                  className="mt-3 font-mono text-xs bg-[#5C5468] text-white hover:bg-[#453D50] px-4 py-2 rounded-xl transition-colors cursor-pointer"
                 >
                   重置所有篩選
                 </button>
@@ -1203,31 +1194,30 @@ export default function Gallery({
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative w-full max-w-4xl bg-white rounded-[28px] overflow-hidden shadow-2xl border border-black/5 flex flex-col md:flex-row max-h-[90vh] md:max-h-none"
+              className="relative w-full max-w-3xl bg-white rounded-[24px] overflow-hidden shadow-2xl border border-purple-100 flex flex-col md:flex-row max-h-[90vh] md:max-h-none"
             >
               {/* Close Button */}
               <button
                 onClick={() => setQuickViewDesign(null)}
-                className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-black/5 hover:bg-black/10 transition-colors text-stone-600 hover:text-black"
+                className="absolute top-3.5 right-3.5 z-50 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors text-stone-600 hover:text-black cursor-pointer"
                 aria-label="Close quick view"
                 type="button"
               >
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4" />
               </button>
 
               {/* Left Side: Mock Stage Carousel */}
-              <div className="w-full md:w-1/2 bg-slate-100/70 flex flex-col items-center justify-center p-6 min-h-[300px] md:min-h-[460px] relative select-none border-b md:border-b-0 md:border-r border-black/5">
+              <div className="w-full md:w-1/2 bg-purple-50/30 flex flex-col items-center justify-center p-5 min-h-[280px] md:min-h-[420px] relative select-none border-b md:border-b-0 md:border-r border-purple-100">
 
-                {/* Badge (New/Hot) inside image stage to prevent overlap with close button */}
+                {/* Badge inside image stage */}
                 {quickViewDesign.badge && (
-                  <span className="absolute top-4 left-4 z-20 font-mono text-[9px] tracking-wider uppercase px-2 py-1 rounded font-extrabold bg-black text-white shadow-sm">
+                  <span className="absolute top-3.5 left-3.5 z-20 font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 rounded font-bold bg-[#5C5468] text-white shadow-xs">
                     {quickViewDesign.badge}
                   </span>
                 )}
 
                 {/* Main image container */}
-                <div className="relative w-48 h-[270px] rounded-[24px] border-2 border-slate-800/80 bg-slate-50 shadow-lg overflow-hidden flex items-center justify-center group/img z-10">
-                  
+                <div className="relative w-44 h-[250px] rounded-[22px] border-2 border-stone-700/60 bg-white shadow-md overflow-hidden flex items-center justify-center group/img z-10">
                   {quickViewDesign.models?.[modalModelIdx]?.imgs?.[modalImgIdx] ? (
                     <img
                       src={quickViewDesign.models[modalModelIdx].imgs[modalImgIdx]}
@@ -1236,27 +1226,27 @@ export default function Gallery({
                       referrerPolicy="no-referrer"
                     />
                   ) : (
-                    <span className="text-xs text-brand-muted opacity-40">無預覽效果</span>
+                    <span className="text-xs text-stone-400">無預覽效果</span>
                   )}
 
-                  {/* Left and Right arrows inside image container */}
+                  {/* Left and Right arrows */}
                   {quickViewDesign.models?.[modalModelIdx]?.imgs && quickViewDesign.models[modalModelIdx].imgs.length > 1 && (
                     <>
                       <button
                         onClick={() => setModalImgIdx(prev => (prev === 0 ? quickViewDesign.models[modalModelIdx].imgs.length - 1 : prev - 1))}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs hover:scale-110 active:scale-95 cursor-pointer z-20"
+                        className="absolute left-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
                         type="button"
                         title="上一張圖片"
                       >
-                        <ChevronLeft className="h-4 w-4" />
+                        <ChevronLeft className="h-3.5 w-3.5" />
                       </button>
                       <button
                         onClick={() => setModalImgIdx(prev => (prev === quickViewDesign.models[modalModelIdx].imgs.length - 1 ? 0 : prev + 1))}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs hover:scale-110 active:scale-95 cursor-pointer z-20"
+                        className="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
                         type="button"
                         title="下一張圖片"
                       >
-                        <ChevronRight className="h-4 w-4" />
+                        <ChevronRight className="h-3.5 w-3.5" />
                       </button>
                     </>
                   )}
@@ -1264,67 +1254,67 @@ export default function Gallery({
 
                 {/* Navigation bar with Left/Right Arrows & Dots indicators */}
                 {quickViewDesign.models?.[modalModelIdx]?.imgs && quickViewDesign.models[modalModelIdx].imgs.length > 1 && (
-                  <div className="flex items-center justify-center gap-2.5 mt-4 z-10 w-full px-2">
+                  <div className="flex items-center justify-center gap-2 mt-3 z-10 w-full px-2">
                     <button
                       onClick={() => setModalImgIdx(prev => (prev === 0 ? quickViewDesign.models[modalModelIdx].imgs.length - 1 : prev - 1))}
-                      className="p-1.5 rounded-full bg-white hover:bg-black hover:text-white text-black/70 transition-all border border-black/10 shadow-sm active:scale-90 cursor-pointer flex items-center justify-center shrink-0"
+                      className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
                       type="button"
                       title="上一張"
                     >
-                      <ChevronLeft className="h-4 w-4" />
+                      <ChevronLeft className="h-3.5 w-3.5" />
                     </button>
 
-                    <div className="flex items-center gap-2 bg-white/90 px-3 py-1.5 rounded-full border border-black/5 shadow-sm">
+                    <div className="flex items-center gap-1.5 bg-white/90 px-2.5 py-1 rounded-full border border-purple-100 shadow-2xs">
                     {quickViewDesign.models[modalModelIdx].imgs.map((_, imgIdx) => (
                       <button
                         key={imgIdx}
                         onClick={() => setModalImgIdx(imgIdx)}
-                          className={`h-2 rounded-full transition-all cursor-pointer ${
-                            modalImgIdx === imgIdx ? 'bg-black w-5' : 'bg-black/20 hover:bg-black/50 w-2'
+                          className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                            modalImgIdx === imgIdx ? 'bg-[#5C5468] w-4' : 'bg-purple-200 hover:bg-purple-400 w-1.5'
                         }`}
                         type="button"
                           title={`切換至第 ${imgIdx + 1} 張`}
                       />
                     ))}
-                      <span className="font-mono text-[10px] text-black/60 font-semibold ml-0.5 select-none">
+                      <span className="font-mono text-[9.5px] text-purple-900 font-semibold ml-0.5 select-none">
                         {modalImgIdx + 1}/{quickViewDesign.models[modalModelIdx].imgs.length}
                       </span>
                     </div>
 
                     <button
                       onClick={() => setModalImgIdx(prev => (prev === quickViewDesign.models[modalModelIdx].imgs.length - 1 ? 0 : prev + 1))}
-                      className="p-1.5 rounded-full bg-white hover:bg-black hover:text-white text-black/70 transition-all border border-black/10 shadow-sm active:scale-90 cursor-pointer flex items-center justify-center shrink-0"
+                      className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
                       type="button"
                       title="下一張"
                     >
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight className="h-3.5 w-3.5" />
                     </button>
                   </div>
                 )}
               </div>
 
               {/* Right Side: Details & Actions */}
-              <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none">
-                <div className="space-y-5">
+              <div className="w-full md:w-1/2 p-5 md:p-6 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none">
+                <div className="space-y-4">
                   {/* Category */}
                   <div>
-                    <span className="font-mono text-[10px] tracking-widest text-black/50 uppercase block font-semibold">
+                    <span className="font-mono text-[9.5px] tracking-widest text-[#746B84] uppercase block font-semibold">
                       {quickViewDesign.category}
                     </span>
                   </div>
 
                   {/* Title & Design ID & Favorite Button */}
-                  <div className="flex justify-between items-start gap-4">
+                  <div className="flex justify-between items-start gap-3">
                     <div className="flex-1">
-                    <h3 className="font-serif text-2xl font-bold text-brand-text leading-tight">
+                    <h3 className="font-serif text-xl font-bold text-[#231F2E] leading-tight">
                       {quickViewDesign.title}
                     </h3>
-                    <div className="flex items-center gap-2 mt-1.5">
-                      <span className="font-mono text-xs text-black/60 bg-black/[0.03] border border-black/5 px-2.5 py-0.5 rounded-md">
+                    <div className="flex items-center gap-1.5 mt-1.5">
+                      <span className="font-mono text-[11px] text-purple-900 bg-purple-50 border border-purple-200/60 px-2 py-0.5 rounded-md font-semibold">
                           圖號 #{quickViewDesign.id}
                       </span>
                       {quickViewDesign.layer && (
-                        <span className="font-sans text-xs font-semibold text-black/80 bg-black/[0.03] border border-black/5 px-2.5 py-0.5 rounded-md">
+                        <span className="font-sans text-[11px] font-semibold text-[#231F2E] bg-purple-100/60 border border-purple-200/60 px-2 py-0.5 rounded-md">
                             分類: {quickViewDesign.layer}
                         </span>
                       )}
@@ -1337,32 +1327,32 @@ export default function Gallery({
                         e.stopPropagation();
                         onToggleFavorite(quickViewDesign.id);
                       }}
-                      className={`p-3 rounded-full border shadow-sm transition-all hover:scale-110 shrink-0 ${
+                      className={`p-2.5 rounded-full border shadow-2xs transition-all hover:scale-110 shrink-0 cursor-pointer ${
                         favorites.includes(quickViewDesign.id)
                           ? 'bg-rose-50 border-rose-200 text-rose-500'
-                          : 'bg-neutral-50 hover:bg-black/5 border-black/5 text-black/40 hover:text-rose-500'
+                          : 'bg-white hover:bg-purple-50 border-purple-200 text-purple-700/60 hover:text-rose-500'
                       }`}
                       type="button"
                       title={favorites.includes(quickViewDesign.id) ? '取消收藏' : '加入收藏'}
                     >
-                      <Heart className={`h-5 w-5 ${favorites.includes(quickViewDesign.id) ? 'fill-current' : ''}`} />
+                      <Heart className={`h-4 w-4 ${favorites.includes(quickViewDesign.id) ? 'fill-current' : ''}`} />
                     </button>
                   </div>
 
                   {/* Description if present */}
                   {quickViewDesign.desc && (
-                    <p className="text-xs text-brand-muted leading-relaxed italic bg-amber-50/40 border border-amber-200/20 p-3 rounded-xl">
+                    <p className="text-xs text-stone-600 leading-relaxed italic bg-purple-50/50 border border-purple-100 p-2.5 rounded-xl">
                       📝 {quickViewDesign.desc}
                     </p>
                   )}
 
                   {/* Model/Case Types tabs inside modal */}
                   {quickViewDesign.models && quickViewDesign.models.length > 0 && (
-                    <div className="space-y-2">
-                      <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block font-semibold">
+                    <div className="space-y-1.5">
+                      <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
                         殼體預覽切換 / Shell Models
                       </span>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5">
                         {quickViewDesign.models.map((m, mIdx) => (
                           <button
                             key={m.name}
@@ -1370,10 +1360,10 @@ export default function Gallery({
                               setModalModelIdx(mIdx);
                               setModalImgIdx(0);
                             }}
-                            className={`text-xs px-3 py-2 rounded-xl border transition-all ${
+                            className={`text-xs px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
                               modalModelIdx === mIdx
-                                ? 'bg-black text-white border-black font-semibold'
-                                : 'border-black/5 hover:bg-black/5 bg-white'
+                                ? 'bg-[#5C5468] text-white border-[#5C5468] font-semibold'
+                                : 'border-purple-200/70 hover:bg-purple-50 bg-white text-[#231F2E]'
                             }`}
                             type="button"
                           >
@@ -1386,20 +1376,20 @@ export default function Gallery({
 
                   {/* Social media / LRB Link */}
                   {quickViewDesign.link && getSocialLinks(quickViewDesign.link).length > 0 && (
-                    <div className="space-y-2 pt-2">
-                      <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block font-semibold">
+                    <div className="space-y-1.5 pt-1">
+                      <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
                         社群平台展示 / Social Link
                       </span>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5">
                         {getSocialLinks(quickViewDesign.link).map((link, idx) => (
                           <a
                             key={idx}
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-100 px-3 py-1.5 rounded-full transition-all text-xs font-semibold"
+                            className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/60 px-2.5 py-1 rounded-md transition-all text-xs font-semibold"
                           >
-                            <span className="text-sm">📕</span>
+                            <span className="text-xs">📕</span>
                             <span>小紅書</span>
                             <ExternalLink className="h-3 w-3" />
                           </a>
@@ -1410,22 +1400,22 @@ export default function Gallery({
                 </div>
 
                 {/* Primary CTA Action */}
-                <div className="mt-8 pt-5 border-t border-black/5 space-y-3">
+                <div className="mt-5 pt-3.5 border-t border-purple-100 space-y-2">
                   <button
                     onClick={() => handleCustomizeInStudio(quickViewDesign)}
-                    className="w-full py-4 rounded-full bg-black text-white hover:bg-stone-900 transition-all font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg hover:scale-[1.01]"
+                    className="w-full py-3 rounded-full bg-[#5C5468] text-white hover:bg-[#453D50] transition-all font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-sm hover:scale-[1.01] cursor-pointer"
                     type="button"
                   >
-                    <Compass className="h-4 w-4 text-brand-gold" />
-                    <span>進入瀏覽區瀏覽 🎨</span>
+                    <Compass className="h-4 w-4 text-purple-200" />
+                    <span>進入客製化瀏覽區 🎨</span>
                   </button>
 
                   <button
                     onClick={() => setQuickViewDesign(null)}
-                    className="w-full py-3 rounded-full border border-black/10 hover:bg-black/5 transition-colors font-semibold text-xs text-brand-muted uppercase text-center"
+                    className="w-full py-2 rounded-full border border-purple-200 hover:bg-purple-50 transition-colors font-semibold text-xs text-stone-600 uppercase text-center cursor-pointer"
                     type="button"
                   >
-                    返回全品類
+                    關閉
                   </button>
                 </div>
               </div>

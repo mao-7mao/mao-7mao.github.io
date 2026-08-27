@@ -2,6 +2,7 @@ import React from 'react';
 import { Design } from '../data/productsData';
 import { X, Heart, Sparkles, Trash2, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 interface FavoritesDrawerProps {
   isOpen: boolean;
@@ -9,7 +10,6 @@ interface FavoritesDrawerProps {
   favorites: string[];
   onToggleFavorite: (id: string) => void;
   onSelectDesign: (design: Design) => void;
-  scrollToSection: (id: string) => void;
   allDesigns: Design[];
 }
 
@@ -19,9 +19,10 @@ export default function FavoritesDrawer({
   favorites,
   onToggleFavorite,
   onSelectDesign,
-  scrollToSection,
   allDesigns,
 }: FavoritesDrawerProps) {
+  const navigate = useNavigate();
+
   // Find full design objects from favorite IDs
   const favoriteDesigns = React.useMemo(() => {
     return favorites
@@ -63,7 +64,7 @@ export default function FavoritesDrawer({
               </div>
               <button
                 onClick={onClose}
-                className="p-2 rounded-full hover:bg-black/5 text-stone-500 hover:text-black transition-colors"
+                className="p-2 rounded-full hover:bg-black/5 text-stone-500 hover:text-black transition-colors cursor-pointer"
                 title="關閉"
               >
                 <X className="h-5 w-5" />
@@ -128,11 +129,9 @@ export default function FavoritesDrawer({
                             onClick={() => {
                               onSelectDesign(d);
                               onClose();
-                              setTimeout(() => {
-                                scrollToSection('product-viewer');
-                              }, 150);
+                              navigate(`/studio/${d.id}`);
                             }}
-                            className="flex-grow flex items-center justify-center gap-1 py-1.5 px-3 rounded-lg text-[10px] font-bold bg-black text-white hover:bg-neutral-800 transition-colors"
+                            className="flex-grow flex items-center justify-center gap-1 py-1.5 px-3 rounded-lg text-[10px] font-bold bg-black text-white hover:bg-neutral-800 transition-colors cursor-pointer"
                             type="button"
                           >
                             <span>進入瀏覽區</span>
@@ -141,7 +140,7 @@ export default function FavoritesDrawer({
 
                           <button
                             onClick={() => onToggleFavorite(d.id)}
-                            className="p-1.5 rounded-lg border border-black/5 hover:border-rose-100 text-stone-400 hover:text-rose-500 hover:bg-rose-50 transition-all"
+                            className="p-1.5 rounded-lg border border-black/5 hover:border-rose-100 text-stone-400 hover:text-rose-500 hover:bg-rose-50 transition-all cursor-pointer"
                             title="取消收藏"
                             type="button"
                           >
@@ -166,12 +165,12 @@ export default function FavoritesDrawer({
                   <button
                     onClick={() => {
                       onClose();
-                      scrollToSection('gallery-section');
+                      navigate('/gallery');
                     }}
-                    className="mt-5 inline-flex items-center gap-1.5 px-4 py-2 bg-black text-white hover:opacity-90 rounded-xl text-xs font-semibold transition-all shadow-sm"
+                    className="mt-5 inline-flex items-center gap-1.5 px-4 py-2 bg-black text-white hover:opacity-90 rounded-xl text-xs font-semibold transition-all shadow-sm cursor-pointer"
                   >
                     <Sparkles className="h-3 w-3 text-brand-gold animate-spin-slow" />
-                    <span>去瀏覽區逛逛</span>
+                    <span>去全品類逛逛</span>
                   </button>
                 </div>
               )}

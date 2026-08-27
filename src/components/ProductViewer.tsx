@@ -75,6 +75,7 @@ export default function ProductViewer({
   const [isZoomed, setIsZoomed] = useState(false);
 
   const isFavorite = favorites.includes(selectedDesign.id);
+  const [isDetailsExpanded, setIsDetailsExpanded] = useState(false);
 
   // Case Mockup fine tuning states (Remove margins/borders adaptively)
   const [showTweakControls, setShowTweakControls] = useState<boolean>(false);
@@ -934,15 +935,15 @@ export default function ProductViewer({
                 }}
                 className={`text-[9.5px] sm:text-[10px] font-mono px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border transition-all cursor-pointer ${
                   activeModelIdx === mIdx
-                    ? 'bg-black text-white border-black shadow-xs font-semibold'
-                    : 'bg-white/80 hover:bg-white text-brand-muted border-black/10 backdrop-blur-md shadow-xs'
+                    ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-semibold'
+                    : 'bg-white/80 hover:bg-purple-50 text-stone-600 border-purple-200/80 backdrop-blur-md shadow-xs'
                 }`}
               >
                 {m.name}
               </button>
             ))
           ) : (
-            <span className="text-[10.5px] font-mono text-brand-muted/70 tracking-wider">
+            <span className="text-[10.5px] font-mono text-[#746B84] tracking-wider">
               {virtualModels[0]?.name || 'PREVIEW'}
             </span>
           )}
@@ -952,28 +953,28 @@ export default function ProductViewer({
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <button
             onClick={() => setIsZoomed(!isZoomed)}
-            className="p-2 sm:p-2.5 rounded-full bg-white/80 hover:bg-white backdrop-blur-md border border-black/10 text-brand-text shadow-xs hover:scale-105 transition-all cursor-pointer"
+            className="p-2 sm:p-2.5 rounded-full bg-white/85 hover:bg-purple-50 backdrop-blur-md border border-purple-100 text-[#231F2E] shadow-xs hover:scale-105 transition-all cursor-pointer"
             title="細節縮放"
           >
-            {isZoomed ? <ZoomOut className="h-4 w-4" /> : <ZoomIn className="h-4 w-4" />}
+            {isZoomed ? <ZoomOut className="h-4 w-4 text-purple-600" /> : <ZoomIn className="h-4 w-4 text-purple-600" />}
           </button>
           <button
             onClick={() => onToggleFavorite(selectedDesign.id)}
             className={`p-2 sm:p-2.5 rounded-full backdrop-blur-md border shadow-xs hover:scale-105 transition-all cursor-pointer ${
               isFavorite
                 ? 'bg-rose-50 border-rose-200 text-rose-500'
-                : 'bg-white/80 hover:bg-white border-black/10 text-brand-text'
+                : 'bg-white/85 hover:bg-purple-50 border-purple-100 text-[#231F2E]'
             }`}
             title={isFavorite ? '取消收藏' : '加入收藏'}
           >
-            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current' : ''}`} />
+            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current' : 'text-purple-600'}`} />
           </button>
           <button
             onClick={handleOpenShareModal}
-            className="p-2 sm:p-2.5 rounded-full bg-white/80 hover:bg-white backdrop-blur-md border border-black/10 text-brand-text shadow-xs hover:scale-105 transition-all cursor-pointer"
+            className="p-2 sm:p-2.5 rounded-full bg-white/85 hover:bg-purple-50 backdrop-blur-md border border-purple-100 text-[#231F2E] shadow-xs hover:scale-105 transition-all cursor-pointer"
             title="分享卡片"
           >
-            <Share2 className="h-4 w-4" />
+            <Share2 className="h-4 w-4 text-purple-600" />
           </button>
         </div>
       </div>
@@ -1086,10 +1087,10 @@ export default function ProductViewer({
               <button
                 key={i}
                 onClick={() => setActiveImgIdx(i)}
-                className={`relative w-10 h-13 sm:w-11 sm:h-14 rounded-lg bg-white/60 border overflow-hidden p-1 shrink-0 transition-all cursor-pointer ${
+                className={`relative w-10 h-13 sm:w-11 sm:h-14 rounded-lg bg-white/70 border overflow-hidden p-1 shrink-0 transition-all cursor-pointer ${
                   activeImgIdx === i 
-                    ? 'border-black ring-1 ring-black/10 scale-105 shadow-xs' 
-                    : 'border-white/50 opacity-65 hover:opacity-100'
+                    ? 'border-purple-600 ring-2 ring-purple-500/30 scale-105 shadow-xs' 
+                    : 'border-purple-100/70 opacity-65 hover:opacity-100'
                 }`}
               >
                 <img 
@@ -1104,7 +1105,7 @@ export default function ProductViewer({
 
           <button
             onClick={handleNextImage}
-            className="p-1.5 sm:p-2 rounded-full border border-white/50 bg-white/50 hover:bg-white/80 backdrop-blur-md transition-colors shadow-sm cursor-pointer"
+            className="p-1.5 sm:p-2 rounded-full border border-purple-100 bg-white/70 hover:bg-purple-50 backdrop-blur-md transition-colors shadow-sm cursor-pointer text-[#231F2E]"
             aria-label="Next image"
           >
             <ChevronRight className="h-4 w-4" />
@@ -1115,115 +1116,133 @@ export default function ProductViewer({
   );
 
   return (
-    <div id="product-viewer" className="pt-6 pb-12 sm:py-12 md:py-16 px-4 md:px-12 max-w-7xl mx-auto page-enter scroll-mt-16 relative z-10">
-      {/* Editorial Title */}
-      <div className="text-center mb-6 sm:mb-10">
-        <span className="font-mono text-[11px] tracking-[0.25em] text-black/50 uppercase block mb-1">
-          Handcrafted Configurator
-        </span>
-        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-brand-text">
-          客製化 <em>瀏覽區</em>
-        </h2>
-        <p className="text-xs text-brand-muted mt-1.5">
-          全系列圖款與不同型號殼體預覽
+    <div id="product-viewer" className="pt-3 pb-10 sm:py-8 md:py-10 px-3 sm:px-6 md:px-10 max-w-7xl mx-auto page-enter scroll-mt-16 relative z-10">
+      {/* Compact Editorial Header */}
+      <div className="flex items-center justify-between gap-2 pb-3 mb-3 sm:mb-5 border-b border-purple-100/70">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="font-mono text-[9.5px] sm:text-[10px] tracking-wider text-purple-800 bg-purple-50 px-2 py-0.5 rounded-md uppercase font-bold border border-purple-200/50 shrink-0">
+            Studio
+          </span>
+          <h2 className="font-serif text-base sm:text-lg md:text-xl font-bold text-[#231F2E] truncate">
+            客製化 <span className="font-serif italic font-normal text-purple-600">瀏覽區</span>
+          </h2>
+        </div>
+        <p className="text-[11px] text-[#746B84] font-sans hidden sm:block shrink-0">
+          單獨瀏覽區
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+      {/* Mobile-Only Display Stage: Positioned at the VERY TOP for instant preview */}
+      <div className="block lg:hidden mb-4">
+        {renderDisplayStage(true)}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
         {/* LEFT COLUMN: Configurator Panel (lg:col-span-5) */}
-        <div className="lg:col-span-5 flex flex-col justify-between glass-frosted rounded-3xl p-6 sm:p-8">
-          <div className="space-y-6">
+        <div className="lg:col-span-5 flex flex-col justify-between glass-frosted rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-purple-100/80">
+          <div className="space-y-4 sm:space-y-5">
             {/* Design Identifier Head */}
-            <div className="border-b border-black/5 pb-4 space-y-3">
+            <div className="border-b border-purple-100/70 pb-3.5 space-y-2.5">
               <div>
-                <span className="font-mono text-[10px] tracking-widest text-black/40 font-semibold uppercase block mb-1">
+                <span className="font-mono text-[9.5px] tracking-widest text-[#746B84] font-semibold uppercase block mb-0.5">
                   Active Selection / 正在瀏覽
                 </span>
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="font-serif text-xl font-bold text-brand-text leading-tight">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E] leading-tight">
                       {selectedDesign.title}
                     </h3>
-                    <div className="flex items-center gap-2 mt-1.5">
-                      <span className="font-mono text-xs text-black/60 bg-white/50 border border-black/5 px-2.5 py-1 rounded-md">
+                    <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+                      <span className="font-mono text-[11px] text-[#5C5468] bg-purple-50/80 border border-purple-200/60 px-2 py-0.5 rounded-md font-semibold">
                         圖號 #{selectedDesign.id}
                       </span>
                       {selectedDesign.layer && (
-                        <span className="font-sans text-xs font-semibold text-black/80 bg-white/70 border border-black/5 px-2.5 py-1 rounded-md">
-                          分類: {selectedDesign.layer}
+                        <span className="font-sans text-[11px] font-semibold text-purple-900 bg-purple-100/60 border border-purple-200/60 px-2 py-0.5 rounded-md">
+                          {selectedDesign.layer}
                         </span>
                       )}
-                    </div>
-                    {selectedDesign.link && getSocialLinks(selectedDesign.link).length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-2.5">
-                        {getSocialLinks(selectedDesign.link).map((link, idx) => (
+                      {selectedDesign.link && getSocialLinks(selectedDesign.link).length > 0 && (
+                        getSocialLinks(selectedDesign.link).map((link, idx) => (
                           <a
                             key={idx}
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2.5 py-1 rounded-full transition-all text-[11px] font-semibold hover:scale-[1.02]"
+                            className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2 py-0.5 rounded-md transition-all text-[11px] font-semibold hover:scale-[1.02]"
                           >
-                            <span className="text-sm">📕</span>
+                            <span className="text-xs">📕</span>
                             <span>小紅書</span>
-                            <ExternalLink className="h-3 w-3" />
+                            <ExternalLink className="h-2.5 w-2.5" />
                           </a>
-                        ))}
-                      </div>
-                    )}
+                        ))
+                      )}
+                    </div>
                   </div>
                   {selectedDesign.badge && (
-                    <span className="font-mono text-[9px] tracking-wider uppercase px-2 py-1 rounded font-semibold shrink-0 bg-black text-white">
+                    <span className="font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 rounded font-bold shrink-0 bg-[#5C5468] text-white shadow-xs">
                       {selectedDesign.badge}
                     </span>
                   )}
                 </div>
               </div>
 
-              {/* Series and Subseries text info */}
-              {subInfo && (
-                <div className="p-3 bg-black/[0.02] border border-black/5 rounded-xl text-[11px] leading-relaxed text-brand-text/90">
-                  <div className="font-sans font-bold text-black/80 mb-0.5 flex items-center gap-1">
-                    <span>📂 所屬系列:</span>
-                    <span className="text-brand-gold">{subInfo.seriesName}</span>
-                    {subInfo.subseriesName && (
-                      <>
-                        <span className="text-black/30">/</span>
-                        <span>{subInfo.subseriesName}</span>
-                      </>
+              {/* Collapsible Series & Remarks Info Accordion */}
+              {(subInfo || selectedDesign.desc) && (
+                <div className="border border-purple-100/80 rounded-xl overflow-hidden bg-purple-50/40">
+                  <button
+                    type="button"
+                    onClick={() => setIsDetailsExpanded(!isDetailsExpanded)}
+                    className="w-full flex items-center justify-between px-3 py-2 text-[11px] font-medium text-purple-900 hover:bg-purple-100/50 transition-colors cursor-pointer"
+                  >
+                    <div className="flex items-center gap-1.5 truncate">
+                      <span className="text-purple-700">📂</span>
+                      <span className="font-semibold truncate">
+                        {subInfo ? `${subInfo.seriesName}${subInfo.subseriesName ? ` · ${subInfo.subseriesName}` : ''}` : '系列與產品備註'}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[10px] text-purple-700 shrink-0 ml-2">
+                      <span>{isDetailsExpanded ? '收合' : '詳情'}</span>
+                      {isDetailsExpanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                    </div>
+                  </button>
+
+                  <AnimatePresence>
+                    {isDetailsExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden border-t border-purple-100/60 p-3 space-y-2 text-[11px] leading-relaxed bg-white/70"
+                      >
+                        {subInfo && (
+                          <div>
+                            <span className="font-bold text-[#231F2E]">所屬系列：</span>
+                            <span className="text-purple-800">{subInfo.seriesName}</span>
+                            {subInfo.subseriesName && <span className="text-stone-600"> / {subInfo.subseriesName}</span>}
+                            {subInfo.desc && <p className="text-stone-500 italic mt-0.5">{subInfo.desc}</p>}
+                          </div>
+                        )}
+                        {selectedDesign.desc && (
+                          <div className="pt-1.5 border-t border-stone-100 text-amber-900">
+                            <span className="font-bold text-amber-800">📝 產品備註：</span>
+                            <span>{selectedDesign.desc}</span>
+                          </div>
+                        )}
+                      </motion.div>
                     )}
-                  </div>
-                  {subInfo.desc && (
-                    <p className="text-brand-muted italic mt-0.5">{subInfo.desc}</p>
-                  )}
+                  </AnimatePresence>
                 </div>
               )}
-
-              {/* Design level specific remarks box */}
-              {selectedDesign.desc && (
-                <div className="p-3 bg-amber-50/50 border border-amber-200/40 rounded-xl text-[11px] leading-relaxed text-amber-900 flex items-start gap-2 shadow-sm">
-                  <span className="text-amber-600 shrink-0 mt-0.5 select-none">📝</span>
-                  <div>
-                    <span className="font-bold">產品備註：</span>
-                    <span>{selectedDesign.desc}</span>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Mobile-Only Display Stage: Positioned directly above "🌟選擇殼體種類" */}
-            <div className="block lg:hidden">
-              {renderDisplayStage(true)}
             </div>
 
             {/* Step 1: Case Type selection (Determined purely by JSON) */}
             {!isS8OrS9 && (
-              <div className="space-y-4">
-              <div>
-                <label className="font-mono text-[10px] tracking-widest text-black/40 uppercase block mb-2.5 font-semibold">
-                  🌟選擇殼體種類
+              <div className="space-y-2.5">
+                <label className="font-mono text-[10px] tracking-widest text-[#746B84] uppercase block font-semibold">
+                  🌟 選擇殼體種類
                 </label>
-                <div className="grid grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-2 gap-2">
                   {virtualModels.map((m, mIdx) => {
                     const displayInfo = getCaseTypeDisplayName(m.name);
                     const isSelected = selectedCaseType === m.name;
@@ -1235,31 +1254,30 @@ export default function ProductViewer({
                           setActiveModelIdx(mIdx);
                           setActiveImgIdx(0);
                         }}
-                        className={`flex flex-col text-left p-3 rounded-xl border transition-all ${
+                        className={`flex flex-col text-left p-2.5 rounded-xl border transition-all cursor-pointer ${
                           isSelected
-                            ? 'bg-black text-white border-black shadow-sm'
-                            : 'border-black/5 hover:bg-white bg-white/40'
+                            ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-sm'
+                            : 'border-purple-100/80 hover:bg-purple-50/70 bg-white/60 text-[#231F2E]'
                         }`}
                       >
-                        <span className={`text-xs font-semibold ${isSelected ? 'text-white' : 'text-brand-text'}`}>
+                        <span className={`text-xs font-semibold ${isSelected ? 'text-white' : 'text-[#231F2E]'}`}>
                           {displayInfo.label}
                         </span>
-                        <span className={`text-[10px] mt-1 line-clamp-1 ${isSelected ? 'text-white/60' : 'text-brand-muted'}`}>
+                        <span className={`text-[10px] mt-0.5 line-clamp-1 ${isSelected ? 'text-white/80' : 'text-stone-500'}`}>
                           {displayInfo.desc}
                         </span>
                       </button>
                     );
                   })}
                 </div>
-                <p className="text-[10px] text-brand-muted mt-2 leading-relaxed italic">
+                <p className="text-[10px] text-stone-500 leading-relaxed italic">
                   * 註：僅展示已上傳之殼體渲染圖，若有未及可留言萬有狀態。
                 </p>
-                </div>
               </div>
             )}
 
             {/* Step 2 & 3: Inline Compact Toggle Buttons for Tweak & Accessories */}
-            <div className="pt-3 border-t border-black/5">
+            <div className="pt-2.5 border-t border-purple-100/70">
               <div className="flex items-center gap-2">
                 <button 
                   type="button"
@@ -1267,10 +1285,10 @@ export default function ProductViewer({
                     setShowTweakControls(!showTweakControls);
                     if (!showTweakControls) setIsAccessoriesOpen(false);
                   }}
-                  className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl border text-[11px] font-semibold transition-all cursor-pointer shadow-xs ${
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-xl border text-[11px] font-semibold transition-all cursor-pointer shadow-xs ${
                     showTweakControls
-                      ? 'bg-black text-white border-black'
-                      : 'bg-black/[0.02] hover:bg-black/[0.06] border-black/10 text-brand-text'
+                      ? 'bg-[#5C5468] text-white border-[#5C5468]'
+                      : 'bg-purple-50/60 hover:bg-purple-100/70 border-purple-200/60 text-[#231F2E]'
                   }`}
                 >
                   <span>🎨 尺寸微調</span>
@@ -1279,22 +1297,22 @@ export default function ProductViewer({
                   </span>
                 </button>
 
-                <button
+                <button 
                   type="button"
                   onClick={() => {
                     setIsAccessoriesOpen(!isAccessoriesOpen);
                     if (!isAccessoriesOpen) setShowTweakControls(false);
                   }}
-                  className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl border text-[11px] font-semibold transition-all cursor-pointer shadow-xs ${
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-xl border text-[11px] font-semibold transition-all cursor-pointer shadow-xs ${
                     isAccessoriesOpen
-                      ? 'bg-black text-white border-black'
-                      : 'bg-black/[0.02] hover:bg-black/[0.06] border-black/10 text-brand-text'
+                      ? 'bg-[#5C5468] text-white border-[#5C5468]'
+                      : 'bg-purple-50/60 hover:bg-purple-100/70 border-purple-200/60 text-[#231F2E]'
                   }`}
                 >
-                  <Sparkles className="h-3 w-3 text-brand-gold" />
+                  <Sparkles className="h-3 w-3 text-purple-600" />
                   <span>配件預覽</span>
                   {standCutout && (
-                    <span className="bg-amber-400 text-black text-[9px] px-1.5 py-0.2 rounded-full font-bold">
+                    <span className="bg-purple-600 text-white text-[9px] px-1.5 py-0.2 rounded-full font-bold">
                       已啟用
                     </span>
                   )}
@@ -1306,11 +1324,11 @@ export default function ProductViewer({
 
               {/* Tweak Controls Collapsible Panel */}
               {showTweakControls && (
-                <div className="mt-3 space-y-3 bg-black/[0.02] border border-black/5 rounded-xl p-3.5">
+                <div className="mt-3 space-y-3 bg-purple-50/50 border border-purple-100 rounded-xl p-3.5">
                   <div className="space-y-1">
-                    <div className="flex justify-between text-[11px] text-brand-muted">
+                    <div className="flex justify-between text-[11px] text-stone-600">
                       <span>手機殼大小縮放 (自適應調節):</span>
-                      <span className="font-mono font-semibold">{caseImgScale.toFixed(2)}x</span>
+                      <span className="font-mono font-semibold text-purple-800">{caseImgScale.toFixed(2)}x</span>
                     </div>
                     <input
                       type="range"
@@ -1319,31 +1337,31 @@ export default function ProductViewer({
                       step="0.05"
                       value={caseImgScale}
                       onChange={(e) => setCaseImgScale(parseFloat(e.target.value))}
-                      className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                      className="w-full accent-purple-600 h-1 bg-purple-100 rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 text-[11px]">
                     <div>
-                      <span className="block text-brand-muted mb-1">水平偏置 X: {caseImgX}px</span>
+                      <span className="block text-stone-600 mb-1">水平偏置 X: {caseImgX}px</span>
                       <input
                         type="range"
                         min="-60"
                         max="60"
                         value={caseImgX}
                         onChange={(e) => setCaseImgX(parseInt(e.target.value))}
-                        className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                        className="w-full accent-purple-600 h-1 bg-purple-100 rounded-lg appearance-none cursor-pointer"
                       />
                     </div>
                     <div>
-                      <span className="block text-brand-muted mb-1">垂直偏置 Y: {caseImgY}px</span>
+                      <span className="block text-stone-600 mb-1">垂直偏置 Y: {caseImgY}px</span>
                       <input
                         type="range"
                         min="-60"
                         max="60"
                         value={caseImgY}
                         onChange={(e) => setCaseImgY(parseInt(e.target.value))}
-                        className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                        className="w-full accent-purple-600 h-1 bg-purple-100 rounded-lg appearance-none cursor-pointer"
                       />
                     </div>
                   </div>
@@ -1354,7 +1372,7 @@ export default function ProductViewer({
                       setCaseImgX(0);
                       setCaseImgY(0);
                     }}
-                    className="w-full py-1.5 border border-black/5 rounded-lg text-[10px] text-brand-muted hover:bg-black/5 transition-colors font-medium text-center cursor-pointer"
+                    className="w-full py-1.5 border border-purple-200/60 rounded-lg text-[10px] text-purple-800 hover:bg-purple-100/50 transition-colors font-semibold text-center cursor-pointer"
                     type="button"
                   >
                     重置自適應設定
@@ -1366,7 +1384,7 @@ export default function ProductViewer({
               {isAccessoriesOpen && (
                 <div className="mt-3 space-y-3">
                   {!standImage ? (
-                    <div className="border border-dashed border-black/10 hover:border-black/30 rounded-2xl p-4 bg-white/25 text-center transition-all">
+                    <div className="border border-dashed border-purple-200 hover:border-purple-400 rounded-2xl p-4 bg-white/40 text-center transition-all">
                       <input
                         type="file"
                         accept="image/*"
@@ -1375,23 +1393,23 @@ export default function ProductViewer({
                         id="stand-upload-input"
                       />
                       <label htmlFor="stand-upload-input" className="cursor-pointer flex flex-col items-center gap-1.5">
-                        <div className="p-2.5 rounded-full bg-black/5 hover:scale-105 transition-transform">
-                          <Upload className="h-4 w-4 text-black/60" />
+                        <div className="p-2.5 rounded-full bg-purple-50 hover:scale-105 transition-transform text-purple-700">
+                          <Upload className="h-4 w-4" />
                         </div>
-                        <span className="text-xs font-semibold text-brand-text">上傳支架照片</span>
-                        <span className="text-[10px] text-brand-muted leading-relaxed max-w-[220px] mx-auto block">
+                        <span className="text-xs font-semibold text-[#231F2E]">上傳支架照片</span>
+                        <span className="text-[10px] text-stone-500 leading-relaxed max-w-[220px] mx-auto block">
                           支援 PNG/JPG 格式，自動智能去背或提供手動裁切預覽。
                         </span>
                       </label>
                     </div>
                   ) : (
-                    <div className="space-y-3 bg-white/40 border border-black/5 rounded-2xl p-3.5">
+                    <div className="space-y-3 bg-white/70 border border-purple-100 rounded-2xl p-3.5">
                       {/* Mode Selector */}
-                      <div className="flex gap-1 p-0.5 bg-black/5 rounded-lg text-xs">
+                      <div className="flex gap-1 p-0.5 bg-purple-50 rounded-lg text-xs">
                         <button
                           onClick={() => setProcessMode('auto')}
-                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all ${
-                            processMode === 'auto' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
+                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all cursor-pointer ${
+                            processMode === 'auto' ? 'bg-[#5C5468] shadow-sm text-white' : 'text-stone-600 hover:text-purple-900'
                           }`}
                           type="button"
                         >
@@ -1399,8 +1417,8 @@ export default function ProductViewer({
                         </button>
                         <button
                           onClick={() => setProcessMode('lasso')}
-                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all ${
-                            processMode === 'lasso' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
+                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all cursor-pointer ${
+                            processMode === 'lasso' ? 'bg-[#5C5468] shadow-sm text-white' : 'text-stone-600 hover:text-purple-900'
                           }`}
                           type="button"
                         >
@@ -1408,8 +1426,8 @@ export default function ProductViewer({
                         </button>
                         <button
                           onClick={() => setProcessMode('crop')}
-                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all ${
-                            processMode === 'crop' ? 'bg-white shadow-sm text-black' : 'text-brand-muted hover:text-black'
+                          className={`flex-1 py-1 rounded-md font-semibold text-[11px] transition-all cursor-pointer ${
+                            processMode === 'crop' ? 'bg-[#5C5468] shadow-sm text-white' : 'text-stone-600 hover:text-purple-900'
                           }`}
                           type="button"
                         >
@@ -1420,9 +1438,9 @@ export default function ProductViewer({
                       {/* Processing Settings Controls */}
                       {processMode === 'auto' ? (
                         <div className="space-y-1.5">
-                          <div className="flex justify-between text-[10px] font-medium text-brand-muted">
+                          <div className="flex justify-between text-[10px] font-medium text-stone-600">
                             <span>智能去背容差</span>
-                            <span className="font-mono">{tolerance}</span>
+                            <span className="font-mono font-semibold text-purple-800">{tolerance}</span>
                           </div>
                           <input
                             type="range"
@@ -1430,16 +1448,16 @@ export default function ProductViewer({
                             max="80"
                             value={tolerance}
                             onChange={(e) => setTolerance(parseInt(e.target.value))}
-                            className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                            className="w-full accent-purple-600 h-1 bg-purple-100 rounded-lg appearance-none cursor-pointer"
                           />
                         </div>
                       ) : processMode === 'lasso' ? (
                         <div className="space-y-2">
-                          <div className="flex items-center gap-1.5 text-[10px] font-medium text-brand-muted leading-relaxed">
-                            <Scissors className="h-3 w-3 shrink-0 text-brand-gold animate-bounce" />
+                          <div className="flex items-center gap-1.5 text-[10px] font-medium text-stone-600 leading-relaxed">
+                            <Scissors className="h-3 w-3 shrink-0 text-purple-600 animate-bounce" />
                             <span>請在下方拖曳滑鼠/手指，圈出主體外圈：</span>
                           </div>
-                          <div className="relative w-full aspect-square max-w-[240px] mx-auto bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-crosshair touch-none select-none">
+                          <div className="relative w-full aspect-square max-w-[240px] mx-auto bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-purple-100 cursor-crosshair touch-none select-none">
                             <canvas
                               ref={lassoCanvasRef}
                               width={300}
@@ -1450,7 +1468,7 @@ export default function ProductViewer({
                               className="max-w-full max-h-full"
                             />
                           </div>
-                          <div className="flex justify-between items-center text-[10px] text-brand-muted">
+                          <div className="flex justify-between items-center text-[10px] text-stone-600">
                             <span>已繪製 {lassoPoints.length} 個軌跡點</span>
                             {lassoPoints.length > 0 && (
                               <button
@@ -1458,7 +1476,7 @@ export default function ProductViewer({
                                   setLassoPoints([]);
                                   setStandCutout(standImage);
                                 }}
-                                className="text-brand-accent hover:underline font-semibold"
+                                className="text-purple-700 hover:underline font-semibold"
                                 type="button"
                               >
                                 重置畫筆
@@ -1473,7 +1491,7 @@ export default function ProductViewer({
                             onPointerMove={handleCropPointerMove}
                             onPointerUp={handleCropPointerUp}
                             onWheel={handleCropWheel}
-                            className="relative w-full h-36 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-black/5 cursor-move touch-none select-none"
+                            className="relative w-full h-36 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center border border-purple-100 cursor-move touch-none select-none"
                             title="拖曳滑鼠移動中心，滾動滾輪調整大小"
                           >
                             <img 
@@ -1494,7 +1512,7 @@ export default function ProductViewer({
                             </svg>
                           </div>
 
-                          <div className="bg-black/[0.02] border border-black/5 rounded-lg p-2 text-[10px] text-brand-muted space-y-1">
+                          <div className="bg-purple-50/50 border border-purple-100 rounded-lg p-2 text-[10px] text-stone-600 space-y-1">
                             <p>📍 <b>移動位置</b>：在圖片上按住並<b>拖曳</b>調整中心</p>
                             <p>🔍 <b>縮放大小</b>：滾動<b>滑鼠滾輪</b>調整裁切半徑 ({cropRadius}%)</p>
                           </div>
@@ -1502,16 +1520,16 @@ export default function ProductViewer({
                       )}
 
                       {/* Live placement micro-tuning controls */}
-                      <div className="pt-2 border-t border-black/5 space-y-2">
+                      <div className="pt-2 border-t border-purple-100 space-y-2">
                         <div className="space-y-1">
-                          <span className="block text-[10px] text-brand-muted">旋轉角度 Angle: {standRotate}°</span>
+                          <span className="block text-[10px] text-stone-600">旋轉角度 Angle: {standRotate}°</span>
                           <input
                             type="range"
                             min="-180"
                             max="180"
                             value={standRotate}
                             onChange={(e) => setStandRotate(parseInt(e.target.value))}
-                            className="w-full accent-black h-1 bg-black/10 rounded-lg appearance-none cursor-pointer"
+                            className="w-full accent-purple-600 h-1 bg-purple-100 rounded-lg appearance-none cursor-pointer"
                           />
                         </div>
 
@@ -1522,7 +1540,7 @@ export default function ProductViewer({
                               setStandCutout(null);
                               originalImageRef.current = null;
                             }}
-                            className="flex-1 py-1.5 rounded-lg text-[11px] font-semibold border border-black/10 bg-white/20 hover:bg-black/5 text-brand-text flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                            className="flex-1 py-1.5 rounded-lg text-[11px] font-semibold border border-purple-200 bg-white hover:bg-purple-50 text-[#231F2E] flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                           >
                             <Trash2 className="h-3 w-3" />
                             <span>移除配件</span>
@@ -1537,12 +1555,12 @@ export default function ProductViewer({
           </div>
 
           {/* Pricing & Order Action bar */}
-          <div className="mt-8 pt-6 border-t border-black/5">
-            <div className="flex justify-between items-baseline mb-4">
-              <span className="font-mono text-[10px] tracking-widest text-black/40 uppercase">
+          <div className="mt-6 pt-4 border-t border-purple-100/80">
+            <div className="flex justify-between items-baseline mb-3">
+              <span className="font-mono text-[10px] tracking-widest text-stone-500 uppercase font-semibold">
                 參考定價 / Reference Price
               </span>
-              <span className="font-serif text-2xl font-bold text-black italic">
+              <span className="font-serif text-2xl font-bold text-[#231F2E] italic">
                 {currentPrice}
               </span>
             </div>
@@ -1550,47 +1568,47 @@ export default function ProductViewer({
             <div className="flex flex-col">
               <button
                 onClick={() => onOpenOrderModal(getDisplayCaseType(), '', '', '', currentPrice)}
-                className="w-full flex items-center justify-center gap-2 rounded-full py-4 bg-black text-white hover:scale-[1.01] transition-transform font-semibold text-xs tracking-wider uppercase shadow-md mb-3 cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 rounded-full py-3.5 bg-[#5C5468] text-white hover:bg-[#453D50] hover:scale-[1.01] transition-all font-semibold text-xs tracking-wider uppercase shadow-[0_8px_20px_rgba(92,84,104,0.25)] mb-2.5 cursor-pointer"
               >
-                <ShoppingBag className="h-4.5 w-4.5 text-brand-gold" />
+                <ShoppingBag className="h-4.5 w-4.5 text-purple-200" />
                 <span>諮詢萬有狀態</span>
               </button>
 
               <div className="grid grid-cols-3 gap-2">
-              <button
-                onClick={() => onToggleFavorite(selectedDesign.id)}
-                  className={`flex items-center justify-center gap-1.5 rounded-full py-3.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
-                  isFavorite
-                    ? 'bg-rose-50 border-rose-200 text-rose-500 hover:bg-rose-100'
-                    : 'border-black/10 bg-white hover:bg-black/5 text-black'
-                }`}
-                title={isFavorite ? '取消收藏' : '加入收藏'}
-              >
-                  <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current text-rose-500' : 'text-brand-gold'}`} />
+                <button
+                  onClick={() => onToggleFavorite(selectedDesign.id)}
+                  className={`flex items-center justify-center gap-1.5 rounded-full py-2.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
+                    isFavorite
+                      ? 'bg-rose-50 border-rose-200 text-rose-500 hover:bg-rose-100'
+                      : 'border-purple-200/70 bg-white/80 hover:bg-purple-50 text-[#231F2E]'
+                  }`}
+                  title={isFavorite ? '取消收藏' : '加入收藏'}
+                >
+                  <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current text-rose-500' : 'text-purple-600'}`} />
                   <span>{isFavorite ? '已收藏' : '收藏'}</span>
-              </button>
+                </button>
 
-              <button
+                <button
                   onClick={handleAddToComparison}
-                  className={`flex items-center justify-center gap-1.5 rounded-full py-3.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
+                  className={`flex items-center justify-center gap-1.5 rounded-full py-2.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
                     isCurrentInShareList()
-                      ? 'bg-amber-50 border-amber-200 text-amber-600 hover:bg-amber-100'
-                      : 'border-black/10 bg-white hover:bg-black/5 text-black'
+                      ? 'bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100'
+                      : 'border-purple-200/70 bg-white/80 hover:bg-purple-50 text-[#231F2E]'
                   }`}
                   title="加入對比清單"
                 >
-                  <Layers className={`h-4 w-4 ${isCurrentInShareList() ? 'text-amber-500' : 'text-brand-gold'}`} />
+                  <Layers className={`h-4 w-4 ${isCurrentInShareList() ? 'text-amber-600' : 'text-purple-600'}`} />
                   <span>{isCurrentInShareList() ? '已入對比' : '加入對比'}</span>
                 </button>
 
                 <button
                   onClick={handleOpenShareModal}
-                  className="flex items-center justify-center gap-1.5 rounded-full py-3.5 border border-black/10 bg-white hover:bg-black/5 text-black hover:scale-[1.02] transition-all font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer"
+                  className="flex items-center justify-center gap-1.5 rounded-full py-2.5 border border-purple-200/70 bg-white/80 hover:bg-purple-50 text-[#231F2E] hover:scale-[1.02] transition-all font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer"
                   title="生成分享卡片"
-              >
-                  <Share2 className="h-4 w-4 text-brand-gold" />
-                <span>分享卡片</span>
-              </button>
+                >
+                  <Share2 className="h-4 w-4 text-purple-600" />
+                  <span>分享卡片</span>
+                </button>
               </div>
             </div>
           </div>

@@ -184,7 +184,7 @@ export const CASE_TYPES: CaseType[] = [
 export const NOTES: NoteItem[] = [
   { label: '下單方式', val: '可截圖傳訊息告知：圖款編號 ＋ 機型 ＋ 殼體 ＋ 殼體顏色或者直接填寫jimmibobo專屬表格<br>如若需要訂製款水壺、ipad殼等產品請私訊' },
   { label: '製作時間', val: '所有商品均非現貨，官網下單，下單後約 3-5 個工作日出貨，遇到特殊節日或公休可能會更久，敬請見諒🙇' },
-  { label: '添加官網貼紙', val: '如需在定制款基礎上添加犀牛盾官網的貼紙（需要提供貼紙的準確名稱，描述添加的具體位置），按照「貼紙價格（TWD）/4」計算' },
+  { label: '添加官網貼紙', val: '如需在定制款基礎上添加🦏🛡️官網的貼紙（需要提供貼紙的準確名稱，描述添加的具體位置），按照「貼紙價格（TWD）/4」計算' },
   { label: '注意事項', val: '預覽圖僅供參考，實際色彩請您以實物為準<br><strong>❕本頁面價格及運費僅針對中國大陸，寄送至其他國家or地區煩請詳詢萬有狀態</strong>' },
   { label: '聯繫方式', val: '萬有狀態🫧：<strong>mussessein-7</strong>  <br>萬有狀態line：<strong>esmusssein-</strong> <br>Jimmibobo🫧：<strong>jimmibobotw</strong>' }
 ];
@@ -198,20 +198,20 @@ export const TUTUBOOM_PRICES = [
 export const TUTUBOOM_CASE_TYPES: CaseType[] = [
   {
     name: 'tutuboom',
-    nameEm: '分離殼/一體殼',
+    nameEm: '分離殼 / 一體殼',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/tutuboom.webp',
-    desc: '<b>【分離殼】</b>：具有雙層印刷、單層印刷之印刷工藝類型<br>・雙層印刷：圖層分離效果較為明顯<br>・單層印刷：可做出半透明、漸變、浮雕之效果<br>・☁️適用型號：17pro/17pro max<br>・🎨常規邊框顏色：迷你粉、暗夜黑、朱古力、磨砂透<br>・✨限定透彩邊框：限定透藍框、限定透粉框（單層/雙層工藝+背板 308元）<br><br><b>【一體殼(磨砂殼)】</b>：單層印刷<br>・適用型號：16pro/16pro max/air/17pro/17pro max<br><br>💡實物和預覽圖可能有色差，預覽圖僅供參考<br>💡tutuboom價格含大陸段運費，具體可直接詢問萬有狀態',
-    iconBg: '#f0ede8',
-    iconColor: '#eeaedc',
+    desc: '<b>【分離殼工藝】</b><br>・雙層印刷：圖層分離立體效果明顯，層次深邃豐富<br>・單層印刷：可展現半透明、漸變、細緻微浮雕質感<br><br><b>【一體殼(磨砂)工藝】</b><br>・單層精緻印刷，搭配細膩磨砂觸感背板',
+    iconBg: '#f5f0fb',
+    iconColor: '#9333ea',
     icon: 'Layers',
     models: [
-      { name: 'tutuboom訂製款單層印刷背板', price: '168.3元' },
-      { name: 'tutuboom訂製款單層印刷背板+常規邊框', price: '295.8元' },
-      { name: 'tutuboom訂製款雙層印刷背板', price: '185.3元' },
-      { name: 'tutuboom訂製款雙層印刷背板+常規邊框', price: '312.8元' },
-      { name: 'tutuboom訂製款限定透彩邊框+背板(透藍/透粉)', price: '308元' },
-      { name: 'tutuboom訂製款白透/全透磨砂殼', price: '142.8元' },
-      { name: 'tutuboom訂製款白透/全透磨砂殼(相機按鈕版)', price: '159.8元' }
+      { name: '分離殼・單層印刷背板', price: '168.3元' },
+      { name: '分離殼・單層印刷背板 + 常規邊框', price: '295.8元' },
+      { name: '分離殼・雙層印刷背板', price: '185.3元' },
+      { name: '分離殼・雙層印刷背板 + 常規邊框', price: '312.8元' },
+      { name: '分離殼・限定透彩邊框 + 背板 (透藍/透粉)', price: '308元' },
+      { name: '一體殼・白透 / 全透磨砂殼', price: '142.8元' },
+      { name: '一體殼・白透 / 全透磨砂殼 (相機按鈕版)', price: '159.8元' }
     ]
   }
 ];

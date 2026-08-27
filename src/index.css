@@ -1,64 +1,157 @@
 @import "tailwindcss";
 
-/* 固定使用 Light 模式,不論使用者系統/瀏覽器是深色或淺色模式 */
+/* 固定使用 Light 模式，不論使用者系統／瀏覽器是深色或淺色模式 */
 :root {
   color-scheme: light;
 }
 
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans TC', sans-serif;
-  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --font-serif: Georgia, 'Playfair Display', Cambria, 'Times New Roman', Times, 'Noto Serif CJK TC', serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  /* ================================
+     Typography
+     ================================= */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans TC', sans-serif;
 
-  --color-brand-bg: #F2F2F7;
-  --color-brand-card: rgba(255, 255, 255, 0.6);
-  --color-brand-text: #1D1D1F;
-  --color-brand-muted: #8E8E93;
-  --color-brand-accent: #000000;
-  --color-brand-gold: #c5974a;
-  --color-brand-border: rgba(0, 0, 0, 0.08);
-  --color-brand-dark: #1D1D1F;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+
+  --font-serif: Georgia, 'Playfair Display', Cambria,
+    'Times New Roman', Times, 'Noto Serif CJK TC', serif;
+
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+
+  /* ================================
+     Brand Colors
+     Dusty Haze Purple / 灰霧紫
+     ================================= */
+
+  /* 背景：非常淡的灰紫白 */
+  --color-brand-bg: #F7F5F8;
+
+  /* 卡片：帶一點暖灰的透明白 */
+  --color-brand-card: rgba(255, 255, 255, 0.82);
+
+  /* 主要文字：深灰紫，而不是純黑 */
+  --color-brand-text: #302C35;
+
+  /* 次要文字：柔和灰紫 */
+  --color-brand-muted: #77717D;
+
+  /* 
+     主色：
+     從原本鮮豔 #8B5CF6
+     改成低飽和霧灰紫
+  */
+  --color-brand-accent: #81758F;
+
+  /*
+     高亮紫：
+     用於 hover、active、focus、icon highlight
+     比主色稍微亮，但不刺眼
+  */
+  --color-brand-accent-soft: #A79BB5;
+
+  /*
+     淡紫背景：
+     適合 badge、selected state、hover background
+  */
+  --color-brand-accent-light: #ECE8F0;
+
+  /* 輔助色：柔和灰紫，不再使用偏鮮的紫金色 */
+  --color-brand-gold: #9A8BA6;
+
+  /* 邊框：極淡灰紫 */
+  --color-brand-border: rgba(129, 117, 143, 0.15);
+
+  /* 深色區塊：沉穩灰紫 */
+  --color-brand-dark: #514A58;
 }
 
+
 @layer utilities {
+
+  /* =================================
+     Glass Card
+     ================================= */
+
   .glass-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    border: 1px solid rgba(129, 117, 143, 0.14);
+
+    /*
+      降低紫色陰影濃度，
+      避免整個頁面出現紫色光暈
+    */
+    box-shadow:
+      0 10px 30px rgba(81, 74, 88, 0.045);
   }
+
+
+  /* =================================
+     Frosted Glass
+     ================================= */
 
   .glass-frosted {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+
+    border: 1px solid rgba(129, 117, 143, 0.18);
+
+    box-shadow:
+      0 20px 50px rgba(81, 74, 88, 0.055);
   }
 
+
+  /* =================================
+     Dark Glass
+     ================================= */
+
   .glass-dark {
-    background: rgba(29, 29, 31, 0.85);
+    background: rgba(55, 50, 61, 0.90);
+
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
   }
+
+
+  /* =================================
+     Smooth Scroll
+     ================================= */
 
   .smooth-scroll {
     scroll-behavior: smooth;
   }
 
+
+  /* =================================
+     Hide Scrollbar
+     ================================= */
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 }
 
-/* Custom premium transitions */
+
+/* =================================
+   Custom Premium Transitions
+   ================================= */
+
 .page-enter {
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -68,16 +161,21 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Protection to prevent right click / long press saving on mobile and desktop */
+
+/* =================================
+   Image Protection
+   ================================= */
+
 img {
-  -webkit-touch-callout: none !important; /* Disable iOS Safari long press menu */
-  -webkit-user-select: none !important; /* Disable text/image selection */
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
   user-select: none !important;
-  -webkit-user-drag: none !important; /* Disable dragging */
+  -webkit-user-drag: none !important;
 }

@@ -472,6 +472,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.15",
           "title": "蔬果總動員2",
+          "layer": "單層",
           "badge": "new",
           "link": "",
           "models": [
@@ -505,6 +506,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.16",
           "title": "雨之獨白2",
+          "layer": "單層",
           "badge": "new",
           "link": "",
           "models": [
@@ -525,6 +527,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.17",
           "title": "貓貓雨衣音樂熊",
+          "layer": "單層",
           "badge": "new",
           "link": "",
           "models": [
@@ -559,6 +562,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.18",
           "title": "粉色大衣",
+          "layer": "單層",
           "badge": "new",
           "link": "",
           "models": [
@@ -585,6 +589,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.19",
           "title": "海鹽冰飲磨砂透",
+          "layer": "單層",
           "badge": "hot",
           "link": [
             {
@@ -616,6 +621,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.20",
           "title": "薄荷漸變星星",
+          "layer": "單層",
           "badge": "",
           "link": "",
           "models": [
@@ -636,6 +642,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.21",
           "title": "粉色漸變愛心",
+          "layer": "單層",
           "badge": "hot",
           "link": [
             {
@@ -661,6 +668,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.22",
           "title": "天空色漸變雲朵",
+          "layer": "單層",
           "badge": "",
           "link": "",
           "models": [
@@ -681,6 +689,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.23",
           "title": "黑色漸變星星",
+          "layer": "單層",
           "badge": "hot",
           "link": "",
           "models": [
@@ -701,6 +710,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.24",
           "title": "紫色漸變星星",
+          "layer": "單層",
           "badge": "",
           "link": "",
           "models": [
@@ -721,6 +731,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.25",
           "title": "蕾絲花花單層版本",
+          "layer": "單層",
           "badge": "",
           "link": "",
           "models": [
@@ -741,6 +752,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.26",
           "title": "霧藍編織幸運草",
+          "layer": "單層",
           "badge": "new",
           "link": "",
           "models": [
@@ -762,6 +774,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.27",
           "title": "蝴蝶結小熊藍紫",
+          "layer": "單層",
           "badge": "new",
           "link": "",
           "models": [
@@ -782,6 +795,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.28",
           "title": "芭樂果茶",
+          "layer": "單層",
           "badge": "new",
           "link": [
             {
@@ -808,6 +822,7 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.29",
           "title": "海星圓舞曲",
+          "layer": "單層",
           "badge": "new",
           "link": [
             {
@@ -836,6 +851,7 @@ export const TUTU_SERIES: Series = {
   ]
 };
 
+// Export flattened array for backwards compatibility
 // Export flattened array for backwards compatibility
 export const TUTU_PRODUCTS_DATA: Design[] = TUTU_SERIES.subseries
   ? TUTU_SERIES.subseries.flatMap((s) => s.designs)
