@@ -226,8 +226,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-07-15.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-06-53.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0827-44.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-07-15.png"
                   ]
                 },
                 {
@@ -240,6 +240,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "SolidX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-15-09.png"
+                  ]
+                },
+                {
+                  "name": "Clear",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-06-53.png"
                   ]
                 }
               ]
@@ -1240,6 +1246,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/0827-45.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/Screenshot 2026-05-30 at 11.23.42 PM.png"
                   ]
                 },
@@ -2020,6 +2027,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0827-23.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0827-25.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0827-24.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0629-11.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0724-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0724-6.webp",
@@ -2272,7 +2282,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-4.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-5.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0817-20.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0817-21.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0817-21.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0827-55.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0827-56.webp"
                   ]
                 },
                 {
@@ -2329,7 +2341,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0812-30.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-26.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-10.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0812-29.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0812-29.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-12.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-13.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-14.webp"
                   ]
                 },
                 {
@@ -2361,7 +2376,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-14.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-15.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-23.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-25.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-25.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-6.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-7.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-47.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-49.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-50.webp"
                   ]
                 },
                 {
@@ -2369,6 +2389,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-16.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0730-24.webp"
+                  ]
+                },
+                {
+                  "name": "Clear",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-33/0827-8.webp"
                   ]
                 }
               ]
@@ -2886,7 +2912,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/0817-6.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_53.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/2025112021_52.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/0827-15.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-3/0827-16.webp"
                   ]
                 },
                 {
@@ -3022,8 +3050,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0827-20.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0625-1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_11.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_11.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0827-21.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0827-22.webp"
                   ]
                 },
                 {
@@ -3093,6 +3124,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "platform": "xhs",
                   "url": "http://xhslink.com/o/6zBH0dt0vpZ "
+                },
+                {
+                  "platform": "xhs",
+                  "url": "https://xhslink.cn/o/8octF1eWKum"
                 }
               ],
               "models": [
@@ -3754,6 +3789,15 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0817-23.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0817-24.webp"
                   ]
+                },
+                {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0827-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0827-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0827-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-26/0827-28.webp"
+                  ]
                 }
               ]
             }
@@ -4350,6 +4394,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.47.22 AM.png"
                   ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0827-34.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0827-35.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0827-36.webp"
+                  ]
                 }
               ]
             },
@@ -4726,7 +4778,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "AirX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-4.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0730-6.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0730-6.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0827-9.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0827-10.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0827-11.webp"
                   ]
                 },
                 {
@@ -5557,10 +5612,24 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": "",
               "models": [
                 {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/0827-31.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/0827-32.webp"
+                  ]
+                },
+                {
+                  "name": "Clear",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/0827-33.webp"
+                  ]
+                },
+                {
                   "name": "ModNX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/Screenshot 2026-05-31 at 1.05.44 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/Screenshot 2026-05-31 at 1.05.34 AM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/Screenshot 2026-05-31 at 1.05.34 AM.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-6/0827-1.webp"
                   ]
                 }
               ]
@@ -5589,7 +5658,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "AirX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0730-28.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0730-31.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0730-31.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0827-30.webp"
                   ]
                 },
                 {
@@ -5603,6 +5673,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0730-29.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0730-30.webp"
+                  ]
+                },
+                {
+                  "name": "Clear",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-1-8/0827-29.webp"
                   ]
                 }
               ]
@@ -5754,6 +5830,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "platform": "xhs",
                   "url": " http://xhslink.com/o/4yRke7a6fns"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "https://xhslink.cn/o/8dqhDXpF7J9"
                 }
               ],
               "models": [
@@ -5838,15 +5918,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": "",
               "models": [
                 {
-                  "name": "SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-5.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-8.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-11.webp"
-                  ]
-                },
-                {
                   "name": "AirX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0812-8.webp",
@@ -5858,6 +5929,17 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-4.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-9.webp"
+                  ]
+                },
+                {
+                  "name": "SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0827-5.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0626-5.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-8.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0623-11.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-11/0827-51.webp"
                   ]
                 },
                 {

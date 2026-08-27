@@ -75,7 +75,7 @@ export default function Gallery({
           list.push({
             ...design,
             category: s.name,
-            seriesId: s.id,
+            seriesId: s.id, // e.g. "tb-sub-1", "tb-sub-2"
             subseriesId: 'all',
           });
         });
@@ -110,29 +110,61 @@ export default function Gallery({
     return list;
   }, []);
 
+  // Helper to detect tutuboom series
+  const isTutuSeriesId = (id?: string) => {
+    if (!id) return false;
+    return id.startsWith('tb-') || id.startsWith('tutuboom');
+  };
+
+  // Brand counts
+  const tutuCount = useMemo(() => allDesigns.filter((d) => isTutuSeriesId(d.seriesId)).length, [allDesigns]);
+  const rhinoCount = useMemo(() => allDesigns.filter((d) => !isTutuSeriesId(d.seriesId)).length, [allDesigns]);
+
   // Currently active series object & available subseries
   const activeSeriesObj = useMemo(() => {
+    if (selectedSeries === 'brand-tutuboom') {
+      return {
+        id: 'brand-tutuboom',
+        name: 'tutuboom  (全部)',
+        desc: 'tutuboom ，包含雙層工藝分離殼與單層一體殼等原創款式。',
+      };
+    }
+    if (selectedSeries === 'brand-rhino') {
+      return {
+        id: 'brand-rhino',
+        name: '🦏🛡️ (全部)',
+        desc: '🦏🛡️ ，支援 SolidX、AirX、ClearX、ModNX 等多種兼容殼體。',
+      };
+    }
     const tutuMatch = TUTU_SERIES_LIST.find((s) => s.id === selectedSeries);
     if (tutuMatch) return tutuMatch;
     return PRODUCTS_DATA.SERIES.find((s) => s.id === selectedSeries);
   }, [selectedSeries]);
 
-const availableSubseries = useMemo(() => {
-  if (!activeSeriesObj || !('subseries' in activeSeriesObj) || !activeSeriesObj.subseries) return [];
-  return activeSeriesObj.subseries;
-}, [activeSeriesObj]);
+  const availableSubseries = useMemo(() => {
+    if (!activeSeriesObj || !('subseries' in activeSeriesObj) || !activeSeriesObj.subseries) return [];
+    return activeSeriesObj.subseries;
+  }, [activeSeriesObj]);
 
   const getSubseriesCount = (subId: string) => {
     if (selectedSeries === 'all') return 0;
+    if (selectedSeries === 'brand-tutuboom') {
+      if (subId === 'all') return tutuCount;
+      return allDesigns.filter((d) => d.seriesId === subId).length;
+    }
+    if (selectedSeries === 'brand-rhino') {
+      if (subId === 'all') return rhinoCount;
+      return allDesigns.filter((d) => d.seriesId === subId).length;
+    }
     if (subId === 'all') {
       return allDesigns.filter((d) => d.seriesId === selectedSeries).length;
     }
     return allDesigns.filter((d) => d.seriesId === selectedSeries && d.subseriesId === subId).length;
   };
 
-  // Filtered designs
+  // Filtered designs with automatic prioritization of new & hot badges
   const filteredDesigns = useMemo(() => {
-    return allDesigns.filter((d) => {
+    const list = allDesigns.filter((d) => {
       // 1. Search Query
       const query = searchQuery.trim().toLowerCase();
       if (query) {
@@ -143,8 +175,12 @@ const availableSubseries = useMemo(() => {
         if (!matchesId && !matchesTitle && !matchesCategory) return false;
       }
 
-      // 2. Series Selection
-      if (selectedSeries !== 'all' && d.seriesId !== selectedSeries) {
+      // 2. Series & Brand Selection
+      if (selectedSeries === 'brand-tutuboom') {
+        if (!isTutuSeriesId(d.seriesId)) return false;
+      } else if (selectedSeries === 'brand-rhino') {
+        if (isTutuSeriesId(d.seriesId)) return false;
+      } else if (selectedSeries !== 'all' && d.seriesId !== selectedSeries) {
         return false;
       }
 
@@ -155,7 +191,7 @@ const availableSubseries = useMemo(() => {
 
       // 3. Case Compatibility
       if (selectedCaseCompatible !== 'all' && d.seriesId !== 's8' && !d.id.startsWith('8-')) {
-        if (d.seriesId.startsWith('tutuboom')) {
+        if (isTutuSeriesId(d.seriesId)) {
           if (selectedCaseCompatible === '分離殼') {
             // Both single and double layer designs support Separation Shell (分離殼)
             // Allow this design to pass through
@@ -178,12 +214,37 @@ const availableSubseries = useMemo(() => {
         }
       }
 
-      // 4. Badge Filter
-      if (selectedBadge !== 'all' && d.badge !== selectedBadge) {
+      // 4. Badge Filter (all, new, hot, or new+hot composite)
+      if (selectedBadge === 'new' && d.badge !== 'new') {
+        return false;
+      }
+      if (selectedBadge === 'hot' && d.badge !== 'hot') {
+        return false;
+      }
+      if (selectedBadge === 'all_badges' && d.badge !== 'new' && d.badge !== 'hot') {
+        return false;
+      }
+      if (
+        selectedBadge !== 'all' &&
+        selectedBadge !== 'new' &&
+        selectedBadge !== 'hot' &&
+        selectedBadge !== 'all_badges' &&
+        d.badge !== selectedBadge
+      ) {
         return false;
       }
 
       return true;
+    });
+
+    // 自動將 new、hot 標籤往前排（new 權重 2, hot 權重 1, 其他 0）
+    return [...list].sort((a, b) => {
+      const getBadgeWeight = (badge?: string) => {
+        if (badge === 'new') return 2;
+        if (badge === 'hot') return 1;
+        return 0;
+      };
+      return getBadgeWeight(b.badge) - getBadgeWeight(a.badge);
     });
   }, [allDesigns, searchQuery, selectedSeries, selectedSubseries, selectedCaseCompatible, selectedBadge]);
 
@@ -256,27 +317,43 @@ const availableSubseries = useMemo(() => {
               系列分類 / Series
             </span>
         <div className="space-y-1 lg:max-h-[520px] max-h-[260px] overflow-y-auto pr-1 no-scrollbar text-xs">
+              {/* ALL DESIGNS BUTTON */}
               <button
                 onClick={() => {
                   setSelectedSeries('all');
                   setSelectedSubseries('all');
-              if (isMobile) setIsMobileSidebarOpen(false);
+                  if (isMobile) setIsMobileSidebarOpen(false);
                 }}
-            className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
                   selectedSeries === 'all'
-                ? 'bg-black text-white font-medium shadow-sm'
+                    ? 'bg-black text-white font-medium shadow-sm'
                     : 'text-brand-text hover:bg-white/60'
                 }`}
               >
-                <span>全部設計系列</span>
-                {selectedSeries === 'all' && <Check className="h-3 w-3" />}
+                <span className="font-semibold">全部設計系列</span>
+                <span className="flex items-center gap-1.5 shrink-0">
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md ${
+                    selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'text-stone-500 bg-black/5'
+                  }`}>
+                    {allDesigns.length}款
+                  </span>
+                  {selectedSeries === 'all' && <Check className="h-3 w-3" />}
+                </span>
               </button>
-              {/* tutuboom SECTION */}
-              <div className="space-y-1 pt-1.5">
-                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-purple-700 uppercase bg-purple-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>💜 tutuboom </span>
+
+              {/* tutuboom BRAND SECTION */}
+              <div className="space-y-1.5 pt-2.5">
+                <div className="px-3 py-1.5 font-sans font-bold text-[11px] tracking-wider text-purple-950 uppercase bg-purple-100/80 rounded-xl flex items-center justify-between border border-purple-200/60">
+                  <span className="flex items-center gap-1.5">
+                    <span>💜</span>
+                    <span>tutuboom</span>
+                  </span>
+                  <span className="text-[10px] font-mono text-purple-700 font-semibold bg-white/80 px-1.5 py-0.2 rounded-md">
+                    {tutuCount}款
+                  </span>
                 </div>
-                <div className="space-y-1">
+
+                <div className="space-y-1 pl-0.5">
                   {TUTU_SERIES_LIST.map((ts) => {
                     const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
                     const isSelected = selectedSeries === ts.id;
@@ -288,7 +365,7 @@ const availableSubseries = useMemo(() => {
                           setSelectedSubseries('all');
                           if (isMobile) setIsMobileSidebarOpen(false);
                         }}
-                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
                           isSelected
                             ? 'bg-purple-900 text-white font-medium shadow-sm'
                             : 'text-brand-text hover:bg-purple-50/70'
@@ -312,87 +389,104 @@ const availableSubseries = useMemo(() => {
                 </div>
               </div>
 
-              {/* 🦏🛡️  SECTION */}
-              <div className="space-y-1 pt-3 border-t border-black/5">
-                <div className="px-3 py-1 font-sans font-bold text-[10px] tracking-wider text-amber-700 uppercase bg-amber-50 rounded-md mb-2 flex items-center justify-between">
-                  <span>🧡 🦏🛡️ </span>
+              {/* 🦏🛡️ BRAND SECTION */}
+              <div className="space-y-1.5 pt-3 border-t border-black/5">
+                <div className="px-3 py-1.5 font-sans font-bold text-[11px] tracking-wider text-amber-950 uppercase bg-amber-100/80 rounded-xl flex items-center justify-between border border-amber-200/60">
+                  <span className="flex items-center gap-1.5">
+                    <span>🧡</span>
+                    <span>🦏🛡️ </span>
+                  </span>
+                  <span className="text-[10px] font-mono text-amber-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded-md">
+                    {rhinoCount}款
+                  </span>
                 </div>
-                {PRODUCTS_DATA.SERIES.map((s) => {
-                  const isSelected = selectedSeries === s.id;
-                  const hasSubseries = s.subseries && s.subseries.length > 0;
-                  
-                  return (
-                    <div key={s.id} className="space-y-1">
-                      <button
-                        onClick={() => {
-                          setSelectedSeries(s.id);
-                          setSelectedSubseries('all');
-                          if (isMobile && !hasSubseries) setIsMobileSidebarOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
-                          isSelected && selectedSubseries === 'all'
-                            ? 'bg-black text-white font-medium shadow-sm'
-                            : isSelected
-                              ? 'bg-amber-50 text-amber-950 font-semibold border-l-2 border-amber-600 pl-2.5'
-                              : 'text-brand-text/90 hover:bg-white/60'
-                        }`}
-                      >
-                        <span className="truncate">{s.name}</span>
-                        {isSelected && selectedSubseries === 'all' && <Check className="h-3 w-3" />}
-                      </button>
-                      
-                      {/* Nested Subseries options */}
-                      {hasSubseries && isSelected && (
-                        <div className="pl-2.5 pr-1 py-1 space-y-1 bg-amber-50/40 rounded-lg border-l-2 border-amber-400 ml-2">
-                          <button
-                            onClick={() => {
-                              setSelectedSubseries('all');
-                              if (isMobile) setIsMobileSidebarOpen(false);
-                            }}
-                            className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
-                              selectedSubseries === 'all'
-                                ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-200'
-                                : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
-                            }`}
-                          >
-                            <span>全部 {s.name} 圖款</span>
-                            <span className="text-[10px] font-mono text-amber-700 font-semibold">
-                              ({allDesigns.filter(d => d.seriesId === s.id).length}款)
+
+                <div className="space-y-1 pl-0.5">
+                  {PRODUCTS_DATA.SERIES.map((s) => {
+                    const isSelected = selectedSeries === s.id;
+                    const hasSubseries = s.subseries && s.subseries.length > 0;
+                    const seriesCount = allDesigns.filter((d) => d.seriesId === s.id).length;
+                    
+                    return (
+                      <div key={s.id} className="space-y-1">
+                        <button
+                          onClick={() => {
+                            setSelectedSeries(s.id);
+                            setSelectedSubseries('all');
+                            if (isMobile && !hasSubseries) setIsMobileSidebarOpen(false);
+                          }}
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                            isSelected && selectedSubseries === 'all'
+                              ? 'bg-amber-700 text-white font-medium shadow-sm'
+                              : isSelected
+                                ? 'bg-amber-50 text-amber-950 font-semibold border-l-2 border-amber-600 pl-2.5'
+                                : 'text-brand-text/90 hover:bg-amber-50/70'
+                          }`}
+                        >
+                          <span className="truncate">{s.name}</span>
+                          <span className="flex items-center gap-1 shrink-0">
+                            <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                              isSelected && selectedSubseries === 'all' ? 'bg-white/20 text-white font-bold' : 'text-amber-800 bg-amber-50'
+                            }`}>
+                              {seriesCount}款
                             </span>
-                          </button>
-                          {s.subseries!.map((sub) => {
-                            const subCount = allDesigns.filter(d => d.seriesId === s.id && d.subseriesId === sub.id).length;
-                            const isSubSelected = selectedSubseries === sub.id;
-                            return (
-                              <button
-                                key={sub.id}
-                                onClick={() => {
-                                  setSelectedSubseries(sub.id);
-                                  if (isMobile) setIsMobileSidebarOpen(false);
-                                }}
-                                className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
-                                  isSubSelected
-                                    ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-300 ring-1 ring-amber-300/50'
-                                    : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
-                                }`}
-                              >
-                                <span className="truncate flex items-center gap-1">
-                                  {isSubSelected && <span className="text-amber-600 font-bold">✦</span>}
-                                  {sub.name}
-                                </span>
-                                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
-                                  isSubSelected ? 'bg-amber-100 text-amber-900 font-bold' : 'text-stone-400'
-                                }`}>
-                                  {subCount}款
-                                </span>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                            {isSelected && selectedSubseries === 'all' && <Check className="h-3 w-3 text-white" />}
+                          </span>
+                        </button>
+                        
+                        {/* Nested Subseries options */}
+                        {hasSubseries && isSelected && (
+                          <div className="pl-2.5 pr-1 py-1 space-y-1 bg-amber-50/40 rounded-lg border-l-2 border-amber-400 ml-2">
+                            <button
+                              onClick={() => {
+                                setSelectedSubseries('all');
+                                if (isMobile) setIsMobileSidebarOpen(false);
+                              }}
+                              className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
+                                selectedSubseries === 'all'
+                                  ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-200'
+                                  : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
+                              }`}
+                            >
+                              <span>全部 {s.name} 圖款</span>
+                              <span className="text-[10px] font-mono text-amber-700 font-semibold">
+                                ({allDesigns.filter(d => d.seriesId === s.id).length}款)
+                              </span>
+                            </button>
+                            {s.subseries!.map((sub) => {
+                              const subCount = allDesigns.filter(d => d.seriesId === s.id && d.subseriesId === sub.id).length;
+                              const isSubSelected = selectedSubseries === sub.id;
+                              return (
+                                <button
+                                  key={sub.id}
+                                  onClick={() => {
+                                    setSelectedSubseries(sub.id);
+                                    if (isMobile) setIsMobileSidebarOpen(false);
+                                  }}
+                                  className={`w-full text-left text-[11.5px] px-2.5 py-1.5 rounded-md transition-all flex items-center justify-between cursor-pointer ${
+                                    isSubSelected
+                                      ? 'text-amber-950 font-bold bg-white shadow-sm border border-amber-300 ring-1 ring-amber-300/50'
+                                      : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
+                                  }`}
+                                >
+                                  <span className="truncate flex items-center gap-1">
+                                    {isSubSelected && <span className="text-amber-600 font-bold">✦</span>}
+                                    {sub.name}
+                                  </span>
+                                  <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                                    isSubSelected ? 'bg-amber-100 text-amber-900 font-bold' : 'text-stone-400'
+                                  }`}>
+                                    {subCount}款
+                                  </span>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -428,27 +522,35 @@ const availableSubseries = useMemo(() => {
           {/* Filter 3: Badges */}
           <div>
             <span className="font-mono text-[10px] tracking-wider text-black/40 uppercase block mb-2 font-semibold">
-              標籤 / Highlights
+              標籤篩選 / Highlights
             </span>
-            <div className="grid grid-cols-3 gap-1.5">
-              {['all', 'new', 'hot'].map((b) => (
-                <button
-                  key={b}
-              onClick={() => {
-                setSelectedBadge(b);
-                if (isMobile) setIsMobileSidebarOpen(false);
-              }}
-              className={`text-[10px] tracking-wider font-mono py-1.5 rounded-lg border transition-all uppercase flex items-center justify-center gap-1 cursor-pointer ${
-                    selectedBadge === b
-                      ? 'bg-black text-white border-black shadow-sm'
-                      : 'border-white/40 text-brand-muted hover:bg-white/50 bg-white/20'
-                  }`}
-                >
-                  {b === 'new' && <Zap className="h-3 w-3 text-brand-gold" />}
-                  {b === 'hot' && <Star className="h-3 w-3 text-brand-gold" />}
-                  <span>{b === 'all' ? '全部' : b}</span>
-                </button>
-              ))}
+            <div className="grid grid-cols-2 gap-1.5">
+              {[
+                { id: 'all', label: '全部圖款', icon: null },
+                { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconColor: 'text-amber-500' },
+                { id: 'new', label: 'NEW 新品', icon: Zap, iconColor: 'text-brand-gold' },
+                { id: 'hot', label: 'HOT 人氣', icon: Star, iconColor: 'text-amber-500' },
+              ].map((b) => {
+                const Icon = b.icon;
+                const isSelected = selectedBadge === b.id;
+                return (
+                  <button
+                    key={b.id}
+                    onClick={() => {
+                      setSelectedBadge(b.id);
+                      if (isMobile) setIsMobileSidebarOpen(false);
+                    }}
+                    className={`text-[10px] tracking-wider font-mono py-2 px-2.5 rounded-xl border transition-all flex items-center justify-center gap-1.5 cursor-pointer select-none ${
+                      isSelected
+                        ? 'bg-black text-white border-black shadow-sm font-semibold'
+                        : 'border-black/5 text-stone-600 hover:bg-white/80 bg-white/40 hover:text-black'
+                    }`}
+                  >
+                    {Icon && <Icon className={`h-3 w-3 ${isSelected ? 'text-amber-300' : b.iconColor}`} />}
+                    <span>{b.label}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
     </>
@@ -457,7 +559,7 @@ const availableSubseries = useMemo(() => {
   return (
     <section id="gallery-section" className="py-16 px-6 max-w-7xl mx-auto scroll-mt-12 relative z-10">
       {/* Eye brow section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 border-b border-black/5 pb-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8 border-b border-black/5 pb-6">
         <div>
           <span className="font-mono text-xs tracking-[0.25em] text-black/50 uppercase block mb-1">
             Phone Case Gallery
@@ -465,85 +567,156 @@ const availableSubseries = useMemo(() => {
           <h2 className="font-serif text-3xl font-semibold text-brand-text">
             瀏覽區
           </h2>
-          <p className="text-xs text-brand-muted mt-1 leading-relaxed">點擊圖款即可進入瀏覽區瀏覽
+          <p className="text-xs text-brand-muted mt-1 leading-relaxed">
+            點擊圖款即可進入預覽與配件搭配
           </p>
         </div>
 
-        {/* Total stats */}
-        <div className="flex flex-col items-end gap-1">
-          <span className="font-mono text-xs text-brand-muted bg-white/50 border border-black/5 px-3.5 py-1.5 rounded-lg select-none">
-            {lang === 'en' ? 'Count' : '顯示款數'} : <b className="text-black font-semibold">{filteredDesigns.length}</b> {lang === 'en' ? 'styles' : '款'}
-          </span>
-          <span className="text-[9px] font-mono text-black/40 bg-white/40 px-2 py-0.5 rounded border border-black/5">
-            all:{allDesigns.length} | filtered:{filteredDesigns.length} | series:{selectedSeries} | sub:{selectedSubseries} | comp:{selectedCaseCompatible} | badge:{selectedBadge} | q:"{searchQuery}"
+        {/* Total stats - Clean minimal count badge without debug info */}
+        <div className="flex items-center gap-2">
+          <span className="font-mono text-xs text-stone-600 bg-white/80 backdrop-blur-md border border-black/5 px-3.5 py-1.5 rounded-xl shadow-xs select-none">
+            {lang === 'en' ? 'Count' : '顯示款數'} : <b className="text-black font-bold ml-1">{filteredDesigns.length}</b> {lang === 'en' ? 'styles' : '款'}
           </span>
         </div>
       </div>
 
-      {/* Mobile Sidebar Toggle Button & Quick Badge bar (only visible on mobile) */}
-      <div className="lg:hidden flex flex-col gap-2.5 mb-6">
-        <div className="flex items-center gap-2.5">
+      {/* Mobile Sidebar Toggle Button & Quick Filter pills bar (only visible on mobile) */}
+      <div className="lg:hidden flex flex-col gap-3 mb-6">
+        <div className="flex items-center gap-2">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
-            className="flex-1 flex items-center justify-center gap-2 bg-black text-white hover:bg-stone-900 py-3 px-4 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-md active:scale-98 cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-2 bg-stone-900 text-white hover:bg-black py-3 px-4 rounded-2xl font-semibold text-xs tracking-wider uppercase transition-all shadow-sm active:scale-[0.99] cursor-pointer border border-stone-800"
           >
             <SlidersHorizontal className="h-4 w-4 text-brand-gold" />
-            <span>系列與篩選 / Series ({filteredDesigns.length}款)</span>
+            <span>系列與篩選 / SERIES ({filteredDesigns.length}款)</span>
           </button>
           
           {/* Quick reset button if any filter is active */}
           {(searchQuery || selectedSeries !== 'all' || selectedSubseries !== 'all' || selectedCaseCompatible !== 'all' || selectedBadge !== 'all') && (
             <button
               onClick={handleResetFilters}
-              className="p-3 bg-stone-100 text-stone-600 rounded-xl hover:text-black hover:bg-stone-200 transition-colors border border-stone-200/50 cursor-pointer"
+              className="p-3 bg-stone-100/90 text-stone-600 rounded-2xl hover:text-black hover:bg-stone-200 transition-colors border border-stone-200/70 shadow-xs cursor-pointer flex items-center justify-center shrink-0"
               title="清除所有篩選"
             >
               <RefreshCw className="h-4 w-4" />
             </button>
           )}
         </div>
-        
-        {/* Quick horizontal categories row on mobile so users can instantly jump to series */}
-        <div className="flex gap-1.5 overflow-x-auto pb-1.5 no-scrollbar -mx-2 px-2">
-          <button
-            onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
-            className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
-              selectedSeries === 'all'
-                ? 'bg-black text-white border-black shadow-sm'
-                : 'bg-white/80 text-stone-600 border-stone-200/60'
-            }`}
-          >
-            全部系列
-          </button>
-          {TUTU_SERIES_LIST.map((ts) => {
-            const isSelected = selectedSeries === ts.id;
+
+        {/* Quick Badge Filter row */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar -mx-2 px-2">
+          <span className="text-[10px] font-mono text-stone-400 uppercase font-semibold shrink-0 mr-1 flex items-center gap-1 select-none">
+            <Sparkles className="h-3 w-3 text-brand-gold" />
+            <span>標籤</span>
+          </span>
+          {[
+            { id: 'all', label: '全部', icon: null },
+            { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconClass: 'text-amber-500' },
+            { id: 'new', label: 'NEW', icon: Zap, iconClass: 'text-brand-gold' },
+            { id: 'hot', label: 'HOT', icon: Star, iconClass: 'text-amber-500' },
+          ].map((b) => {
+            const Icon = b.icon;
+            const isSelected = selectedBadge === b.id;
             return (
-          <button
-                key={ts.id}
-                onClick={() => { setSelectedSeries(ts.id); setSelectedSubseries('all'); }}
-            className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
+              <button
+                key={b.id}
+                onClick={() => setSelectedBadge(b.id)}
+                className={`text-[10.5px] font-mono font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 flex items-center gap-1 cursor-pointer select-none ${
                   isSelected
-                    ? 'bg-purple-700 text-white border-purple-700 shadow-sm'
-                    : 'bg-purple-50/70 text-purple-700 border-purple-200/60 hover:bg-purple-100'
-            }`}
-          >
-                tutu {ts.name}
-          </button>
+                    ? 'bg-black text-white border-black shadow-xs'
+                    : 'bg-white/80 text-stone-600 border-stone-200/70 hover:bg-white'
+                }`}
+              >
+                {Icon && <Icon className={`h-2.5 w-2.5 ${isSelected ? 'text-amber-300' : b.iconClass}`} />}
+                <span>{b.label}</span>
+              </button>
             );
           })}
-          {PRODUCTS_DATA.SERIES.map((s) => (
+        </div>
+        
+        {/* Quick horizontal series categories row on mobile with clear tutuboom & 🦏🛡️ brand distinction in two neat rows */}
+        <div className="flex flex-col gap-2 select-none">
+          {/* Row 1: 全部系列 + 💜 tutuboom 品牌群組 */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-2 px-2">
+            {/* 全部系列按鈕 */}
             <button
-              key={s.id}
-              onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
-              className={`text-[10.5px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
-                selectedSeries === s.id
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
-                  : 'bg-white/80 text-stone-600 border-stone-200/60'
+              onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
+              className={`text-[11px] font-semibold px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                selectedSeries === 'all'
+                  ? 'bg-black text-white border-black shadow-xs font-bold'
+                  : 'bg-white/90 text-stone-700 border-stone-200/80 hover:bg-white hover:border-stone-400'
               }`}
             >
-              {s.name}
+              <span>全部系列</span>
+              <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'bg-stone-100 text-stone-500'
+              }`}>
+                {allDesigns.length}
+              </span>
             </button>
-          ))}
+
+            {/* 品牌 1: 💜 tutuboom 品牌群組 */}
+            <div className="flex items-center gap-1.5 shrink-0 bg-purple-50/90 p-1 rounded-2xl border border-purple-200/80">
+              <span className="text-[11px] font-bold text-purple-950 px-2 py-0.5 flex items-center gap-1">
+                <span>💜</span>
+                <span>tutuboom</span>
+              </span>
+              {TUTU_SERIES_LIST.map((ts) => {
+                const isSelected = selectedSeries === ts.id;
+                const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
+                return (
+                  <button
+                    key={ts.id}
+                    onClick={() => { setSelectedSeries(ts.id); setSelectedSubseries('all'); }}
+                    className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                      isSelected
+                        ? 'bg-purple-900 text-white border-purple-900 shadow-xs font-bold'
+                        : 'bg-white text-purple-950 border-purple-200 hover:bg-purple-100/90'
+                    }`}
+                  >
+                    <span>{ts.name}</span>
+                    <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                      isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
+                    }`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Row 2: 🧡 🦏🛡️ 品牌群組 */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-2 px-2">
+            <div className="flex items-center gap-1.5 shrink-0 bg-amber-50/90 p-1 rounded-2xl border border-amber-200/80">
+              <span className="text-[11px] font-bold text-amber-950 px-2 py-0.5 flex items-center gap-1">
+                <span>🧡</span>
+                <span>🦏🛡️ </span>
+              </span>
+              {PRODUCTS_DATA.SERIES.map((s) => {
+                const isSelected = selectedSeries === s.id;
+                const count = allDesigns.filter((d) => d.seriesId === s.id).length;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
+                    className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                      isSelected
+                        ? 'bg-amber-700 text-white border-amber-700 shadow-xs font-bold'
+                        : 'bg-white text-amber-950 border-amber-200 hover:bg-amber-100/90'
+                    }`}
+                  >
+                    <span>{s.name}</span>
+                    <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                      isSelected ? 'bg-white/20 text-white font-bold' : 'bg-amber-100 text-amber-900 font-semibold'
+                    }`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -606,29 +779,126 @@ const availableSubseries = useMemo(() => {
 
         {/* RESULTS GRID (lg:col-span-9) */}
         <div className="lg:col-span-9 space-y-5">
-          {/* Active Series Header with description */}
-          {(selectedSeries !== 'all' || selectedSubseries !== 'all') && (
-            <div className="p-4.5 rounded-2xl bg-white/60 border border-black/5 flex flex-col gap-2 shadow-sm">
-              <div className="flex flex-wrap items-center gap-1.5 text-xs text-brand-muted">
-                <span className="font-mono text-[10px] bg-black/5 px-1.5 py-0.5 rounded">
+          {/* Desktop quick horizontal series bar - Split into 2 clear rows */}
+          <div className="hidden lg:flex flex-col gap-2 select-none">
+            {/* Row 1: 全部系列 + 💜 tutuboom 品牌群組 */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+              {/* 全部系列按鈕 */}
+              <button
+                onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
+                className={`text-xs font-semibold px-3.5 py-1.5 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                  selectedSeries === 'all'
+                    ? 'bg-black text-white border-black shadow-xs font-bold'
+                    : 'bg-white/90 text-stone-700 border-stone-200/80 hover:bg-white hover:border-stone-400'
+                }`}
+              >
+                <span>全部系列</span>
+                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
+                  selectedSeries === 'all' ? 'bg-white/20 text-white font-bold' : 'bg-stone-100 text-stone-500'
+                }`}>
+                  {allDesigns.length}
+                </span>
+              </button>
+
+              {/* 品牌 1: 💜 tutuboom 品牌群組 */}
+              <div className="flex items-center gap-1.5 shrink-0 bg-purple-50/90 p-1 rounded-2xl border border-purple-200/80 shadow-2xs">
+                <span className="text-xs font-bold text-purple-950 px-2.5 py-0.5 flex items-center gap-1">
+                  <span>💜</span>
+                  <span>tutuboom</span>
+                </span>
+                {TUTU_SERIES_LIST.map((ts) => {
+                  const isSelected = selectedSeries === ts.id;
+                  const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
+                  return (
+                    <button
+                      key={ts.id}
+                      onClick={() => { setSelectedSeries(ts.id); setSelectedSubseries('all'); }}
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                        isSelected
+                          ? 'bg-purple-900 text-white border-purple-900 shadow-xs font-bold'
+                          : 'bg-white text-purple-950 border-purple-200 hover:bg-purple-100/90'
+                      }`}
+                    >
+                      <span>{ts.name}</span>
+                      <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
+                        isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
+                      }`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Row 2: 🧡 🦏🛡️ 品牌群組 */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+              <div className="flex items-center gap-1.5 shrink-0 bg-amber-50/90 p-1 rounded-2xl border border-amber-200/80 shadow-2xs">
+                <span className="text-xs font-bold text-amber-950 px-2.5 py-0.5 flex items-center gap-1">
+                  <span>🧡</span>
+                  <span>🦏🛡️ </span>
+                </span>
+                {PRODUCTS_DATA.SERIES.map((s) => {
+                  const isSelected = selectedSeries === s.id;
+                  const count = allDesigns.filter((d) => d.seriesId === s.id).length;
+                  return (
+                    <button
+                      key={s.id}
+                      onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-xl whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                        isSelected
+                          ? 'bg-amber-700 text-white border-amber-700 shadow-xs font-bold'
+                          : 'bg-white text-amber-950 border-amber-200 hover:bg-amber-100/90'
+                      }`}
+                    >
+                      <span>{s.name}</span>
+                      <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
+                        isSelected ? 'bg-white/20 text-white font-bold' : 'bg-amber-100 text-amber-900 font-semibold'
+                      }`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Active Series Header with description & active badges summary */}
+          {(selectedSeries !== 'all' || selectedSubseries !== 'all' || selectedBadge !== 'all') && (
+            <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-md border border-black/5 flex flex-col gap-2 shadow-xs">
+              <div className="flex flex-wrap items-center gap-2 text-xs text-brand-muted">
+                <span className="font-mono text-[10px] bg-black/5 text-stone-600 px-2 py-0.5 rounded-lg select-none">
                   {lang === 'en' ? 'Browsing' : '正在瀏覽 / Browsing'}
                 </span>
                 <span className="font-semibold text-black">
-                  {activeSeriesObj?.name}
+                  {selectedSeries === 'all' ? '全部系列' : activeSeriesObj?.name}
                 </span>
                 {selectedSubseries !== 'all' && (
                   <>
                     <span className="text-black/30">/</span>
-                    <span className="font-semibold text-black">
+                    <span className="font-semibold text-amber-900">
                       {availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.name}
                     </span>
                   </>
+                )}
+                {selectedBadge !== 'all' && (
+                  <span className="ml-auto inline-flex items-center gap-1 text-[10.5px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
+                    <Sparkles className="h-3 w-3 text-amber-600" />
+                    <span>
+                      {selectedBadge === 'all_badges'
+                        ? 'NEW + HOT 精選'
+                        : selectedBadge === 'new'
+                          ? 'NEW 新品'
+                          : 'HOT 人氣'}
+                    </span>
+                  </span>
                 )}
               </div>
               
               {/* Display series description */}
               {activeSeriesObj?.desc && (
-                <p className="text-xs text-brand-text/80 flex items-start gap-1.5 mt-1 leading-relaxed">
+                <p className="text-xs text-stone-600 flex items-start gap-1.5 mt-0.5 leading-relaxed">
                   <span className="text-brand-gold select-none">✦</span>
                   <span>{activeSeriesObj.desc}</span>
                 </p>
@@ -636,8 +906,8 @@ const availableSubseries = useMemo(() => {
 
               {/* Subseries description if selected */}
               {selectedSubseries !== 'all' && availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.desc && (
-                <div className="flex items-start gap-2 bg-black/[0.02] p-2.5 rounded-xl border-l-2 border-brand-gold mt-1 text-xs text-brand-text">
-                  <span className="text-brand-gold select-none">ℹ️</span>
+                <div className="flex items-start gap-2 bg-amber-50/60 p-2.5 rounded-xl border-l-2 border-amber-500 mt-1 text-xs text-stone-700">
+                  <span className="text-amber-600 select-none">ℹ️</span>
                   <span>{availableSubseries.find((sub: Subseries) => sub.id === selectedSubseries)?.desc}</span>
                 </div>
               )}
@@ -646,21 +916,21 @@ const availableSubseries = useMemo(() => {
 
           {/* Subseries Quick Selector Card when a series with subseries is selected */}
           {availableSubseries.length > 0 && (
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-50/70 via-stone-50/80 to-purple-50/70 border border-stone-200/80 shadow-sm space-y-3">
+            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-50/80 via-white/90 to-purple-50/80 border border-stone-200/80 shadow-xs space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-amber-600 animate-pulse" />
                   <span className="font-serif font-bold text-xs text-stone-800 tracking-wide">
                     {activeSeriesObj?.name} · 子系列快速選單
                   </span>
-                  <span className="text-[10px] font-mono text-stone-500 bg-white/80 px-2 py-0.5 rounded-full border border-stone-200">
+                  <span className="text-[10px] font-mono text-stone-500 bg-white px-2 py-0.5 rounded-full border border-stone-200 shadow-2xs">
                     共 {availableSubseries.length} 個子系列
                   </span>
                 </div>
                 {selectedSubseries !== 'all' && (
                   <button
                     onClick={() => setSelectedSubseries('all')}
-                    className="text-[11px] font-mono text-amber-800 hover:text-black hover:underline flex items-center gap-1 cursor-pointer"
+                    className="text-[11px] font-mono text-amber-900 hover:text-black hover:underline flex items-center gap-1 cursor-pointer font-medium"
                   >
                     <span>顯示全部子系列</span>
                     <X className="h-3 w-3" />
@@ -674,8 +944,8 @@ const availableSubseries = useMemo(() => {
                   onClick={() => setSelectedSubseries('all')}
                   className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
                     selectedSubseries === 'all'
-                      ? 'bg-stone-900 text-white border-stone-900 shadow-sm ring-1 ring-stone-900/10'
-                      : 'bg-white/90 text-stone-700 border-stone-200 hover:border-stone-400 hover:bg-white'
+                      ? 'bg-stone-900 text-white border-stone-900 shadow-xs'
+                      : 'bg-white text-stone-700 border-stone-200 hover:border-stone-400 hover:bg-stone-50'
                   }`}
                 >
                   <span>全部圖款</span>
@@ -696,9 +966,9 @@ const availableSubseries = useMemo(() => {
                       className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer border ${
                         isActive
                           ? selectedSeries.startsWith('tutuboom')
-                            ? 'bg-purple-700 text-white border-purple-700 shadow-md ring-2 ring-purple-500/20'
-                            : 'bg-amber-700 text-white border-amber-700 shadow-md ring-2 ring-amber-500/20'
-                          : 'bg-white/90 text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-white'
+                            ? 'bg-purple-900 text-white border-purple-900 shadow-xs ring-2 ring-purple-500/20'
+                            : 'bg-amber-700 text-white border-amber-700 shadow-xs ring-2 ring-amber-500/20'
+                          : 'bg-white text-stone-700 border-stone-200 hover:border-amber-400 hover:bg-amber-50/40'
                       }`}
                     >
                       {isActive && <Check className="h-3.5 w-3.5" />}

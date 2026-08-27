@@ -737,13 +737,104 @@ export const TUTU_SERIES: Series = {
               ]
             }
           ]
+        },
+        {
+          "id": "tb-2.26",
+          "title": "霧藍編織幸運草",
+          "badge": "new",
+          "link": "",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.26/0827-6.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.26/0827-1.webp"
+              ]
+            }
+          ],
+          "desc": "單層浮雕工藝"
+        },
+        {
+          "id": "tb-2.27",
+          "title": "蝴蝶結小熊藍紫",
+          "badge": "new",
+          "link": "",
+          "models": [
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.27/0827-5.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.27/0827-2.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tb-2.28",
+          "title": "芭樂果茶",
+          "badge": "new",
+          "link": [
+            {
+              "platform": "xhs",
+              "url": "https://xhslink.cn/o/52GYn9S7kTf"
+            }
+          ],
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.28/0827-7.webp"
+              ]
+            },
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.28/0827-3.webp"
+              ]
+            }
+          ],
+          "desc": "單層浮雕工藝"
+        },
+        {
+          "id": "tb-2.29",
+          "title": "海星圓舞曲",
+          "badge": "new",
+          "link": [
+            {
+              "platform": "xhs",
+              "url": "https://xhslink.cn/o/A0Ywv2rYjXM"
+            }
+          ],
+          "models": [
+            {
+              "name": "限定透彩邊框預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.29/0827-8.webp"
+              ]
+            },
+            {
+              "name": "實物",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.29/0827-4.webp"
+              ]
+            }
+          ],
+          "desc": "單層浮雕工藝"
         }
       ]
     }
   ]
 };
-
-
 
 // Export flattened array for backwards compatibility
 export const TUTU_PRODUCTS_DATA: Design[] = TUTU_SERIES.subseries
