@@ -393,7 +393,7 @@ export default function Gallery({
               <div className="space-y-1 pt-2 border-t border-purple-100/70">
                 <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-[#352F3D] uppercase bg-purple-100/50 rounded-lg flex items-center justify-between border border-purple-200/50">
                   <span className="flex items-center gap-1">
-                    <span>🦏</span>
+                    <span>🧡</span>
                     <span>🦏🛡️系列</span>
                   </span>
                   <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
@@ -684,7 +684,7 @@ export default function Gallery({
           <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
             <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50">
               <span className="text-[10.5px] font-bold text-[#231F2E] px-1.5 py-0.5 flex items-center gap-1">
-                <span>🦏</span>
+                <span>🧡</span>
                 <span>🦏🛡️</span>
               </span>
               {PRODUCTS_DATA.SERIES.map((s) => {

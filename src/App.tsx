@@ -301,39 +301,61 @@ function AppContent() {
         </AnimatePresence>
       </main>
 
-      {/* Mobile Ergonomic Bottom Tab Navigation Bar - 3 tabs (瀏覽區、全品類、價格運送) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/92 backdrop-blur-2xl border-t border-purple-100/80 px-4 py-1.5 flex items-center justify-around shadow-[0_-4px_24px_rgba(139,92,246,0.06)]">
+      {/* Mobile Ergonomic Bottom Tab Navigation Bar - 4 tabs (首頁、瀏覽區、全品類、價格運送) with compact height & font size */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-2xl border-t border-purple-100/80 px-1 sm:px-2 py-0.5 sm:py-1 h-12 flex items-center justify-around shadow-[0_-3px_16px_rgba(81,74,88,0.06)]">
+        {/* 1. 首頁 */}
         <button
-          onClick={() => navigate('/studio')}
-          className={`flex flex-col items-center justify-center gap-0.5 py-1.5 px-4 rounded-xl transition-all cursor-pointer select-none ${
-            isStudioActive ? 'text-purple-700 font-bold scale-105' : 'text-stone-400 font-medium hover:text-stone-600'
+          onClick={() => navigate('/')}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all cursor-pointer select-none ${
+            location.pathname === '/'
+              ? 'text-[#302C35] font-bold bg-[#ECE8F0]/80 shadow-2xs'
+              : 'text-[#77717D] font-medium hover:text-[#302C35]'
           }`}
         >
-          <Compass className={`h-5 w-5 ${isStudioActive ? 'stroke-[2.5] text-purple-700' : ''}`} />
-          <span className="text-[10.5px]">瀏覽區</span>
+          <Home className={`h-4 w-4 ${location.pathname === '/' ? 'stroke-[2.4] text-[#514A58]' : ''}`} />
+          <span className="text-[9.5px] leading-tight whitespace-nowrap">首頁</span>
         </button>
 
+        {/* 2. 瀏覽區 */}
         <button
-          onClick={() => navigate('/gallery')}
-          className={`flex flex-col items-center justify-center gap-0.5 py-1.5 px-4 rounded-xl transition-all relative cursor-pointer select-none ${
-            location.pathname === '/gallery' ? 'text-purple-700 font-bold scale-105' : 'text-stone-400 font-medium hover:text-stone-600'
+          onClick={() => navigate('/studio')}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all cursor-pointer select-none ${
+            isStudioActive
+              ? 'text-[#302C35] font-bold bg-[#ECE8F0]/80 shadow-2xs'
+              : 'text-[#77717D] font-medium hover:text-[#302C35]'
           }`}
         >
-          <Layers className={`h-5 w-5 ${location.pathname === '/gallery' ? 'stroke-[2.5] text-purple-700' : ''}`} />
-          <span className="text-[10.5px]">全品類</span>
+          <Compass className={`h-4 w-4 ${isStudioActive ? 'stroke-[2.4] text-[#514A58]' : ''}`} />
+          <span className="text-[9.5px] leading-tight whitespace-nowrap">瀏覽區</span>
+        </button>
+
+        {/* 3. 全品類 */}
+        <button
+          onClick={() => navigate('/gallery')}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all relative cursor-pointer select-none ${
+            location.pathname === '/gallery'
+              ? 'text-[#302C35] font-bold bg-[#ECE8F0]/80 shadow-2xs'
+              : 'text-[#77717D] font-medium hover:text-[#302C35]'
+          }`}
+        >
+          <Layers className={`h-4 w-4 ${location.pathname === '/gallery' ? 'stroke-[2.4] text-[#514A58]' : ''}`} />
+          <span className="text-[9.5px] leading-tight whitespace-nowrap">全品類</span>
           {location.pathname !== '/gallery' && (
-            <span className="absolute top-1.5 right-3.5 w-1.5 h-1.5 rounded-full bg-purple-500" />
+            <span className="absolute top-1 right-2 sm:right-3 w-1.5 h-1.5 rounded-full bg-[#81758F]" />
           )}
         </button>
 
+        {/* 4. 價格運送 */}
         <button
           onClick={() => navigate('/pricing')}
-          className={`flex flex-col items-center justify-center gap-0.5 py-1.5 px-4 rounded-xl transition-all cursor-pointer select-none ${
-            location.pathname === '/pricing' ? 'text-purple-700 font-bold scale-105' : 'text-stone-400 font-medium hover:text-stone-600'
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all cursor-pointer select-none ${
+            location.pathname === '/pricing'
+              ? 'text-[#302C35] font-bold bg-[#ECE8F0]/80 shadow-2xs'
+              : 'text-[#77717D] font-medium hover:text-[#302C35]'
           }`}
         >
-          <ShieldCheck className={`h-5 w-5 ${location.pathname === '/pricing' ? 'stroke-[2.5] text-purple-700' : ''}`} />
-          <span className="text-[10.5px]">價格運送</span>
+          <ShieldCheck className={`h-4 w-4 ${location.pathname === '/pricing' ? 'stroke-[2.4] text-[#514A58]' : ''}`} />
+          <span className="text-[9.5px] leading-tight whitespace-nowrap">價格運送</span>
         </button>
       </div>
 
@@ -346,7 +368,7 @@ function AppContent() {
           <div className="text-[11px] text-stone-500 leading-relaxed tracking-wider font-sans">
             看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
-            © 2026 萬有狀態 Omnistate. All Rights Reserved.
+            © 2026 萬有狀態 Omnistate.
           </div>
         </div>
       </footer>
