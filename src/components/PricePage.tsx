@@ -84,7 +84,7 @@ export default function PricePage() {
           殼體規格與 <span className="font-serif italic font-normal text-[#8B5CF6]">價格運送說明</span>
         </h2>
         <p className="text-[11.5px] text-[#746B84] mt-1 max-w-md mx-auto leading-relaxed">
-          透明規格與價格標準・官方原廠與高品質訂製工藝
+          
         </p>
 
         {/* 3 Quick Jump Action Buttons Requested by User */}
@@ -103,7 +103,7 @@ export default function PricePage() {
             className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-purple-50 text-[#231F2E] text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-purple-200"
           >
             <ShieldCheck className="h-3.5 w-3.5 text-[#8B5CF6]" />
-            <span>犀牛盾價格</span>
+            <span>🦏🛡️價格</span>
             <ArrowDown className="h-3 w-3 opacity-60 text-[#746B84]" />
           </button>
 
@@ -112,7 +112,7 @@ export default function PricePage() {
             className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-purple-50 text-[#231F2E] text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-purple-200"
           >
             <Truck className="h-3.5 w-3.5 text-[#8B5CF6]" />
-            <span>犀牛盾商品寄送說明</span>
+            <span>🦏🛡️商品寄送說明</span>
             <ArrowDown className="h-3 w-3 opacity-60 text-[#746B84]" />
           </button>
         </div>
@@ -374,13 +374,13 @@ export default function PricePage() {
         </div>
       </div>
 
-      {/* 2. OTHER CASE TYPES GRID (犀牛盾等其他殼體) */}
+      {/* 2. OTHER CASE TYPES GRID (🦏🛡️等其他殼體) */}
       <div id="rhinoshield-price-section" className="mb-8 sm:mb-10 scroll-mt-20">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-2.5 mb-3.5">
           <div>
             <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E] flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-[#81758F]" />
-              <span>🦏 犀牛盾等官方殼體品類規格與參考價格</span>
+              <span>🦏🛡️殼體品類規格與參考價格</span>
             </h3>
             <p className="text-[11.5px] text-[#746B84] mt-0.5">
               點擊下方快捷按鈕可快速切換查看特定殼體規格與價格
@@ -540,7 +540,7 @@ export default function PricePage() {
               onClick={() => setSelectedRhinoCase('all')}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-white hover:bg-purple-50 text-[#5C5468] border border-purple-200 shadow-2xs transition-all cursor-pointer"
             >
-              <span>查看所有犀牛盾官方殼體規格 ({CASE_TYPES.length} 款)</span>
+              <span>查看所有🦏🛡️殼體規格 ({CASE_TYPES.length} 款)</span>
             </button>
           </div>
         )}
@@ -551,7 +551,7 @@ export default function PricePage() {
         <div className="flex items-center gap-2 mb-4">
           <Truck className="h-5 w-5 text-[#5C5468]" />
           <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E]">
-            犀牛盾商品寄送說明 <em>for 🦏 犀牛盾 & 官方殼體</em>
+            商品寄送說明 <em>for🦏🛡️</em>
           </h3>
         </div>
 
@@ -615,7 +615,7 @@ export default function PricePage() {
             </div>
 
             <div className="p-3.5 bg-white/75 rounded-xl border border-purple-100 shadow-xs">
-              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">犀牛盾官網直郵</h5>
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">🦏🛡️官網直郵</h5>
               <p className="text-[10px] text-[#746B84] mb-1.5">台灣 → 大陸/香港/澳門</p>
               <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">滿 ¥450 元免運</div>
               <p className="text-[10.5px] text-[#5C5468] leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(20%)需自理🙇。</p>
