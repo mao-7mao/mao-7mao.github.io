@@ -527,7 +527,7 @@ export default function PricePage() {
               <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">🦏🛡️官網直郵</h5>
               <p className="text-[10px] text-[#746B84] mb-1.5">台灣 → 大陸/香港/澳門</p>
               <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">滿 ¥450 元免運</div>
-              <p className="text-[10.5px] text-[#5C5468] leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(20%)需自理🙇。</p>
+              <p className="text-[10.5px] text-[#5C5468] leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(商品價值的20%)需自理🙇。</p>
             </div>
           </div>
         </div>
