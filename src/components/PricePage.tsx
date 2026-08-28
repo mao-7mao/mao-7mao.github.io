@@ -49,13 +49,13 @@ export default function PricePage() {
       ],
       modelsSupported: ['iPhone 17 Pro', 'iPhone 17 Pro Max'],
       regularFrames: ['迷你粉', '暗夜黑', '朱古力', '磨砂透'],
-      limitedFrames: ['夏日限定透藍框', '夏日限定透粉框'],
+      limitedFrames: ['限定透藍框', '限定透粉框'],
       prices: [
         { name: '單層印刷背板', price: '¥168.3' },
         { name: '單層印刷背板 + 常規邊框', price: '¥295.8' },
         { name: '雙層印刷背板', price: '¥185.3' },
         { name: '雙層印刷背板 + 常規邊框', price: '¥312.8' },
-        { name: '夏日限定透彩邊框 + 背板 (透藍/透粉, 單雙層皆可)', price: '¥308.0' },
+        { name: '限定透彩邊框 + 背板 (透藍/透粉, 單雙層皆可)', price: '¥308.0' },
       ]
     },
     solid: {
@@ -232,7 +232,7 @@ export default function PricePage() {
                       {/* Limited Frames */}
                       <div>
                         <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
-                          ✨ 夏日限定透彩邊框 / Limited Edition
+                          ✨ 限定透彩邊框 / Limited Edition
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {tutuboomData.split.limitedFrames.map((color, i) => (
