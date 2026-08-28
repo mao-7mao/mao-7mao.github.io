@@ -168,6 +168,67 @@
   }
 }
 
+/* Logo Interactive Shimmer Light & Sparkle Animation */
+@keyframes logoShimmerSweep {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+  }
+  60% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-logo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-logo-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 100%
+  );
+  animation: logoShimmerSweep 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes logoSparkleGlow {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 2px rgba(129, 117, 143, 0.4));
+  }
+  30% {
+    transform: scale(1.18) rotate(15deg);
+    filter: drop-shadow(0 0 8px rgba(167, 155, 181, 0.9));
+  }
+  60% {
+    transform: scale(0.95) rotate(-10deg);
+    filter: drop-shadow(0 0 3px rgba(129, 117, 143, 0.5));
+  }
+}
+
+.animate-sparkle-glow {
+  animation: logoSparkleGlow 3.6s ease-in-out infinite;
+}
+
+
 
 /* =================================
    Image Protection
