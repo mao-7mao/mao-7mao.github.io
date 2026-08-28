@@ -60,20 +60,6 @@ export default function NavigationHeader({
         </NavLink>
 
         <NavLink
-          to="/studio"
-          className={({ isActive }) =>
-            `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
-              isActive || isStudioActive
-                ? 'bg-[#5C5468] text-white shadow-xs scale-[1.02]'
-                : 'text-[#77717D] hover:text-[#302C35] hover:bg-purple-100/70'
-            }`
-          }
-        >
-          <Compass className="h-3.5 w-3.5" />
-          <span>瀏覽區</span>
-        </NavLink>
-
-        <NavLink
           to="/gallery"
           className={({ isActive }) =>
             `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
@@ -96,6 +82,20 @@ export default function NavigationHeader({
               {allDesignsCount}
             </span>
           )}
+        </NavLink>
+
+        <NavLink
+          to="/studio"
+          className={({ isActive }) =>
+            `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
+              isActive || isStudioActive
+                ? 'bg-[#5C5468] text-white shadow-xs scale-[1.02]'
+                : 'text-[#77717D] hover:text-[#302C35] hover:bg-purple-100/70'
+            }`
+          }
+        >
+          <Compass className="h-3.5 w-3.5" />
+          <span>瀏覽區</span>
         </NavLink>
 
         <NavLink

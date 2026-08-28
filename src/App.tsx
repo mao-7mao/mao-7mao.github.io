@@ -316,20 +316,7 @@ function AppContent() {
           <span className="text-[9.5px] leading-tight whitespace-nowrap">首頁</span>
         </button>
 
-        {/* 2. 瀏覽區 */}
-        <button
-          onClick={() => navigate('/studio')}
-          className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all cursor-pointer select-none ${
-            isStudioActive
-              ? 'text-[#302C35] font-bold bg-[#ECE8F0]/80 shadow-2xs'
-              : 'text-[#77717D] font-medium hover:text-[#302C35]'
-          }`}
-        >
-          <Compass className={`h-4 w-4 ${isStudioActive ? 'stroke-[2.4] text-[#514A58]' : ''}`} />
-          <span className="text-[9.5px] leading-tight whitespace-nowrap">瀏覽區</span>
-        </button>
-
-        {/* 3. 全品類 */}
+        {/* 2. 全品類 */}
         <button
           onClick={() => navigate('/gallery')}
           className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all relative cursor-pointer select-none ${
@@ -343,6 +330,19 @@ function AppContent() {
           {location.pathname !== '/gallery' && (
             <span className="absolute top-1 right-2 sm:right-3 w-1.5 h-1.5 rounded-full bg-[#81758F]" />
           )}
+        </button>
+
+        {/* 3. 瀏覽區 */}
+        <button
+          onClick={() => navigate('/studio')}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-1 px-0.5 rounded-lg transition-all cursor-pointer select-none ${
+            isStudioActive
+              ? 'text-[#302C35] font-bold bg-[#ECE8F0]/80 shadow-2xs'
+              : 'text-[#77717D] font-medium hover:text-[#302C35]'
+          }`}
+        >
+          <Compass className={`h-4 w-4 ${isStudioActive ? 'stroke-[2.4] text-[#514A58]' : ''}`} />
+          <span className="text-[9.5px] leading-tight whitespace-nowrap">瀏覽區</span>
         </button>
 
         {/* 4. 價格運送 */}
@@ -368,7 +368,7 @@ function AppContent() {
           <div className="text-[11px] text-stone-500 leading-relaxed tracking-wider font-sans">
             看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
-            © 2026 萬有狀態 Omnistate.
+            © 2026 萬有狀態 Omnistate. All Rights Reserved.
           </div>
         </div>
       </footer>
