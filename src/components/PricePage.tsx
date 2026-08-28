@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function PricePage() {
   const [copiedText, setCopiedText] = useState<'wechat1' | 'wechat2' | 'line1' | null>(null);
   const [tutuboomTab, setTutuboomTab] = useState<'split' | 'solid'>('split');
+  const [selectedRhinoCase, setSelectedRhinoCase] = useState<string>('all');
 
   const copyContact = (text: string, type: 'wechat1' | 'wechat2' | 'line1') => {
     navigator.clipboard.writeText(text);
@@ -20,10 +21,27 @@ export default function PricePage() {
     }
   };
 
+  // Helper to extract clean short name for shortcut buttons
+  const getShortCaseName = (rawName: string) => {
+    if (rawName.includes('AirX')) return 'AirX';
+    if (rawName.includes('ModNX')) return 'ModNX';
+    if (rawName.includes('ClearX')) return 'ClearX';
+    if (rawName.includes('SolidX')) return 'SolidX';
+    if (rawName.includes('Clear')) return 'Clear';
+    if (rawName.includes('SolidSuit')) return 'SolidSuit';
+    if (rawName.includes('不重複')) return '微醺斑比不重複';
+    if (rawName.includes('小動物') || rawName.includes('連連看')) return '微醺斑比連連看/花花';
+    return rawName.replace(/\(.*?\)/g, '').trim();
+  };
+
+  const filteredCaseTypes = selectedRhinoCase === 'all' 
+    ? CASE_TYPES 
+    : CASE_TYPES.filter(ct => ct.name === selectedRhinoCase);
+
   // tutuboom structured data
   const tutuboomData = {
     split: {
-      title: '分離殼 ',
+      title: '分離殼 (可換背板)',
       subtitle: '雙層 / 單層印刷工藝・背板與邊框可拆裝',
       craft: [
         { label: '雙層印刷', desc: '圖層分離效果明顯，立體景深豐富' },
@@ -37,11 +55,11 @@ export default function PricePage() {
         { name: '單層印刷背板 + 常規邊框', price: '¥295.8' },
         { name: '雙層印刷背板', price: '¥185.3' },
         { name: '雙層印刷背板 + 常規邊框', price: '¥312.8' },
-        { name: '限定透彩邊框 + 背板 (透藍/透粉, 單雙層皆可)', price: '¥308.0' },
+        { name: '夏日限定透彩邊框 + 背板 (透藍/透粉, 單雙層皆可)', price: '¥308.0' },
       ]
     },
     solid: {
-      title: '一體殼 ',
+      title: '一體殼 (磨砂殼)',
       subtitle: '單層印刷工藝・細膩磨砂質感手感',
       craft: [
         { label: '單層印刷', desc: '細緻噴繪印刷，磨砂親膚防滑觸感，全包保護' },
@@ -85,7 +103,7 @@ export default function PricePage() {
             className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-purple-50 text-[#231F2E] text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-purple-200"
           >
             <ShieldCheck className="h-3.5 w-3.5 text-[#8B5CF6]" />
-            <span>🦏價格</span>
+            <span>犀牛盾價格</span>
             <ArrowDown className="h-3 w-3 opacity-60 text-[#746B84]" />
           </button>
 
@@ -94,7 +112,7 @@ export default function PricePage() {
             className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-purple-50 text-[#231F2E] text-xs font-semibold shadow-xs hover:scale-[1.02] transition-all cursor-pointer border border-purple-200"
           >
             <Truck className="h-3.5 w-3.5 text-[#8B5CF6]" />
-            <span>🦏寄送說明</span>
+            <span>犀牛盾商品寄送說明</span>
             <ArrowDown className="h-3 w-3 opacity-60 text-[#746B84]" />
           </button>
         </div>
@@ -135,7 +153,7 @@ export default function PricePage() {
                 }`}
               >
                 <Layers className="h-3.5 w-3.5" />
-                <span>分離殼 </span>
+                <span>分離殼 (可換背板)</span>
               </button>
               <button
                 onClick={() => setTutuboomTab('solid')}
@@ -146,7 +164,7 @@ export default function PricePage() {
                 }`}
               >
                 <ShieldCheck className="h-3.5 w-3.5" />
-                <span>一體殼 </span>
+                <span>一體殼 (磨砂殼)</span>
               </button>
             </div>
           </div>
@@ -214,7 +232,7 @@ export default function PricePage() {
                       {/* Limited Frames */}
                       <div>
                         <span className="font-mono text-[9.5px] uppercase tracking-wider text-purple-900/70 block mb-1 font-bold">
-                          ✨ 限定透彩邊框 / Limited Edition
+                          ✨ 夏日限定透彩邊框 / Limited Edition
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {tutuboomData.split.limitedFrames.map((color, i) => (
@@ -356,103 +374,176 @@ export default function PricePage() {
         </div>
       </div>
 
-      {/* 2. OTHER CASE TYPES GRID (🦏🛡️等其他殼體) */}
+      {/* 2. OTHER CASE TYPES GRID (犀牛盾等其他殼體) */}
       <div id="rhinoshield-price-section" className="mb-8 sm:mb-10 scroll-mt-20">
-        <div className="flex items-center justify-between gap-2 mb-4">
-          <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E] flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-purple-600" />
-            <span>🦏🛡️殼體品類規格與價格</span>
-          </h3>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2.5 mb-3.5">
+          <div>
+            <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E] flex items-center gap-2">
+              <ShieldCheck className="h-5 w-5 text-[#81758F]" />
+              <span>🦏 犀牛盾等官方殼體品類規格與參考價格</span>
+            </h3>
+            <p className="text-[11.5px] text-[#746B84] mt-0.5">
+              點擊下方快捷按鈕可快速切換查看特定殼體規格與價格
+            </p>
+          </div>
           <span className="text-[11px] text-[#746B84] font-mono hidden sm:inline-block">
-            RhinoShield Specifications
+            RhinoShield & Official Cases ({CASE_TYPES.length} 款)
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {CASE_TYPES.map((ct, idx) => (
-            <motion.div
-              key={ct.name}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: idx * 0.03 }}
-              className="group relative flex flex-col rounded-2xl overflow-hidden glass-card transition-all hover:shadow-md hover:-translate-y-0.5 border border-purple-100"
+        {/* 殼體快捷按鈕列 (Quick Case Type Shortcut Selector) */}
+        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-2 sm:p-2.5 border border-purple-200/70 shadow-2xs mb-4">
+          <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            {/* 全部按鈕 */}
+            <button
+              onClick={() => setSelectedRhinoCase('all')}
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
+                selectedRhinoCase === 'all'
+                  ? 'bg-[#5C5468] text-white shadow-xs scale-[1.02]'
+                  : 'bg-purple-50/70 text-[#5C5468] hover:bg-purple-100 hover:text-[#231F2E] border border-purple-100'
+              }`}
             >
-              {/* Header */}
-              <div className="p-3.5 sm:p-4 border-b border-purple-100/70 bg-white/50">
-                <div className="flex items-start justify-between gap-2.5">
-                  <div>
-                    <h4 className="font-serif text-sm sm:text-base font-bold text-[#231F2E]">
-                      {ct.name}
-                    </h4>
-                    <p 
-                      className="text-[10.5px] text-[#746B84] mt-0.5 leading-normal"
-                      dangerouslySetInnerHTML={{ __html: ct.nameEm }}
-                    />
-                  </div>
-                  <div 
-                    className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-xs border border-purple-100"
-                    style={{ 
-                      backgroundColor: ct.iconBg || '#f5f0fb', 
-                      color: ct.iconColor || '#8B5CF6' 
-                    }}
-                  >
-                    <ShieldCheck className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
+              <span>全部殼體</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                selectedRhinoCase === 'all' ? 'bg-white/25 text-white' : 'bg-purple-200/60 text-[#5C5468]'
+              }`}>
+                {CASE_TYPES.length}
+              </span>
+            </button>
 
-              {/* Content */}
-              <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-3">
-                <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 items-center">
-                  <div className="sm:col-span-3 space-y-1">
-                    <span className="font-mono text-[8.5px] uppercase tracking-wider block font-bold text-[#746B84]">
-                      工藝說明 / Details
-                    </span>
-                    <p 
-                      className="text-[11px] leading-relaxed text-[#5C5468]"
-                      dangerouslySetInnerHTML={{ __html: ct.desc }}
-                    />
-                  </div>
-                  <div className="sm:col-span-2 flex justify-center">
-                    <div className="relative w-16 h-22 rounded-lg overflow-hidden p-1 flex items-center justify-center border border-dashed border-purple-200/80 bg-purple-50/30">
-                      {ct.img ? (
-                        <img 
-                          src={ct.img} 
-                          alt={ct.name} 
-                          className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
-                          referrerPolicy="no-referrer"
-                        />
-                      ) : (
-                        <span className="text-[9px] text-[#746B84] font-mono">Image</span>
-                      )}
+            {/* 各殼體快捷按鈕 */}
+            {CASE_TYPES.map((ct) => {
+              const shortName = getShortCaseName(ct.name);
+              const isSelected = selectedRhinoCase === ct.name;
+              return (
+                <button
+                  key={ct.name}
+                  onClick={() => setSelectedRhinoCase(ct.name)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
+                    isSelected
+                      ? 'bg-[#5C5468] text-white shadow-xs scale-[1.02]'
+                      : 'bg-white text-[#5C5468] hover:bg-purple-50 hover:text-[#231F2E] border border-purple-200/60 shadow-2xs'
+                  }`}
+                >
+                  <span 
+                    className="w-2 h-2 rounded-full shrink-0" 
+                    style={{ backgroundColor: isSelected ? '#ECE8F0' : (ct.iconColor || '#81758F') }} 
+                  />
+                  <span>{shortName}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 殼體卡片列表 (支援全部展示與單殼體獨立聚焦) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <AnimatePresence mode="popLayout">
+            {filteredCaseTypes.map((ct, idx) => (
+              <motion.div
+                key={ct.name}
+                layout
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25, delay: idx * 0.02 }}
+                className="group relative flex flex-col rounded-2xl overflow-hidden glass-card transition-all hover:shadow-md border border-purple-100/90"
+              >
+                {/* Header */}
+                <div className="p-3.5 sm:p-4 border-b border-purple-100/70 bg-white/50">
+                  <div className="flex items-start justify-between gap-2.5">
+                    <div>
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <h4 className="font-serif text-sm sm:text-base font-bold text-[#231F2E]">
+                          {ct.name}
+                        </h4>
+                        {selectedRhinoCase === ct.name && (
+                          <span className="text-[9px] bg-[#ECE8F0] text-[#5C5468] font-mono px-1.5 py-0.2 rounded font-semibold">
+                            已選中
+                          </span>
+                        )}
+                      </div>
+                      <p 
+                        className="text-[10.5px] text-[#746B84] mt-0.5 leading-normal"
+                        dangerouslySetInnerHTML={{ __html: ct.nameEm }}
+                      />
+                    </div>
+                    <div 
+                      className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-xs border border-purple-100"
+                      style={{ 
+                        backgroundColor: ct.iconBg || '#f5f0fb', 
+                        color: ct.iconColor || '#8B5CF6' 
+                      }}
+                    >
+                      <ShieldCheck className="h-4 w-4" />
                     </div>
                   </div>
                 </div>
 
-                {/* Price list */}
-                <div className="pt-2.5 border-t border-purple-100/70 space-y-1">
-                  <span className="font-mono text-[8.5px] uppercase tracking-wider block font-bold text-[#746B84]">
-                    訂製參考價格 / Models & Prices
-                  </span>
-                  <div className="space-y-0.5">
-                    {ct.models.map((m, mIdx) => (
-                      <div 
-                        key={mIdx} 
-                        className="flex justify-between items-center text-xs py-0.5 border-b border-purple-50 last:border-0"
-                      >
-                        <span className="font-medium text-[#231F2E] text-[11.5px]">{m.name}</span>
-                        <span className="font-mono font-bold text-purple-700 text-xs bg-purple-50 px-2 py-0.2 rounded border border-purple-200/40">
-                          {m.price}
-                        </span>
+                {/* Content */}
+                <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 items-center">
+                    <div className="sm:col-span-3 space-y-1">
+                      <span className="font-mono text-[8.5px] uppercase tracking-wider block font-bold text-[#746B84]">
+                        工藝說明 / Details
+                      </span>
+                      <p 
+                        className="text-[11px] leading-relaxed text-[#5C5468]"
+                        dangerouslySetInnerHTML={{ __html: ct.desc }}
+                      />
+                    </div>
+                    <div className="sm:col-span-2 flex justify-center">
+                      <div className="relative w-16 h-22 rounded-lg overflow-hidden p-1 flex items-center justify-center border border-dashed border-purple-200/80 bg-purple-50/30">
+                        {ct.img ? (
+                          <img 
+                            src={ct.img} 
+                            alt={ct.name} 
+                            className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
+                            referrerPolicy="no-referrer"
+                          />
+                        ) : (
+                          <span className="text-[9px] text-[#746B84] font-mono">Image</span>
+                        )}
                       </div>
-                    ))}
+                    </div>
+                  </div>
+
+                  {/* Price list */}
+                  <div className="pt-2.5 border-t border-purple-100/70 space-y-1">
+                    <span className="font-mono text-[8.5px] uppercase tracking-wider block font-bold text-[#746B84]">
+                      訂製參考價格 / Models & Prices
+                    </span>
+                    <div className="space-y-0.5">
+                      {ct.models.map((m, mIdx) => (
+                        <div 
+                          key={mIdx} 
+                          className="flex justify-between items-center text-xs py-0.5 border-b border-purple-50 last:border-0"
+                        >
+                          <span className="font-medium text-[#231F2E] text-[11.5px]">{m.name}</span>
+                          <span className="font-mono font-bold text-[#5C5468] text-xs bg-purple-50 px-2 py-0.2 rounded border border-purple-200/40">
+                            {m.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
+
+        {/* 若只選中單個殼體時，顯示返回全部按鈕 */}
+        {selectedRhinoCase !== 'all' && (
+          <div className="text-center mt-4">
+            <button
+              onClick={() => setSelectedRhinoCase('all')}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-white hover:bg-purple-50 text-[#5C5468] border border-purple-200 shadow-2xs transition-all cursor-pointer"
+            >
+              <span>查看所有犀牛盾官方殼體規格 ({CASE_TYPES.length} 款)</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* 3. Logistics & Shipping Guide */}
@@ -460,7 +551,7 @@ export default function PricePage() {
         <div className="flex items-center gap-2 mb-4">
           <Truck className="h-5 w-5 text-[#5C5468]" />
           <h3 className="font-serif text-lg sm:text-xl font-bold text-[#231F2E]">
-            商品寄送說明 <em>for🦏🛡️</em>
+            犀牛盾商品寄送說明 <em>for 🦏 犀牛盾 & 官方殼體</em>
           </h3>
         </div>
 
@@ -524,10 +615,10 @@ export default function PricePage() {
             </div>
 
             <div className="p-3.5 bg-white/75 rounded-xl border border-purple-100 shadow-xs">
-              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">🦏🛡️官網直郵</h5>
+              <h5 className="font-sans font-bold text-xs text-[#231F2E] mb-0.5">犀牛盾官網直郵</h5>
               <p className="text-[10px] text-[#746B84] mb-1.5">台灣 → 大陸/香港/澳門</p>
               <div className="font-mono text-xs font-bold text-purple-700 mb-1.5">滿 ¥450 元免運</div>
-              <p className="text-[10.5px] text-[#5C5468] leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(商品價值的20%)需自理🙇。</p>
+              <p className="text-[10.5px] text-[#5C5468] leading-normal">訂單滿 450 元 (CNY)。可能產生稅金(20%)需自理🙇。</p>
             </div>
           </div>
         </div>

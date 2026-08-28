@@ -368,7 +368,7 @@ function AppContent() {
           <div className="text-[11px] text-stone-500 leading-relaxed tracking-wider font-sans">
             看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
-            © 2026 萬有狀態 Omnistate. All Rights Reserved.
+            © 2026 萬有狀態 Omnistate.
           </div>
         </div>
       </footer>
