@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/products';
 import { TUTU_SERIES_LIST } from '../data/tutuproducts';
@@ -40,6 +41,23 @@ export default function Gallery({
   const [quickViewDesign, setQuickViewDesign] = useState<(Design & { category?: string }) | null>(null);
   const [modalModelIdx, setModalModelIdx] = useState(0);
   const [modalImgIdx, setModalImgIdx] = useState(0);
+
+  // Keyboard and scroll lock handling for modal
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setQuickViewDesign(null);
+      }
+    };
+    if (quickViewDesign) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [quickViewDesign]);
 
   // Reset pagination when any filter changes to keep rendering fast
   React.useEffect(() => {
@@ -255,12 +273,22 @@ export default function Gallery({
   }, [filteredDesigns, visibleCount]);
 
   const handleCardClick = (design: Design) => {
-    onSelectDesign(design);
+    handleQuickView(design);
   };
 
   const handleQuickView = (design: Design & { category?: string }) => {
+    onSelectDesign(design);
     setQuickViewDesign(design);
-    setModalModelIdx(0);
+    let initialModelIdx = 0;
+    if (selectedCaseCompatible && selectedCaseCompatible !== 'all' && design.models) {
+      const matchedIdx = design.models.findIndex((m) => {
+        const mName = m.name.toLowerCase();
+        const cComp = selectedCaseCompatible.toLowerCase();
+        return mName === cComp || mName.includes(cComp) || cComp.includes(mName);
+      });
+      if (matchedIdx !== -1) initialModelIdx = matchedIdx;
+    }
+    setModalModelIdx(initialModelIdx);
     setModalImgIdx(0);
   };
 
@@ -828,7 +856,7 @@ export default function Gallery({
             <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
               <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50 shadow-2xs">
                 <span className="text-xs font-bold text-[#231F2E] px-2 py-0.5 flex items-center gap-1">
-                  <span>🦏</span>
+                  <span>🧡</span>
                   <span>🦏🛡️</span>
                 </span>
                 {PRODUCTS_DATA.SERIES.map((s) => {
@@ -1187,19 +1215,31 @@ export default function Gallery({
       </div>
 
       {/* Quick View Lightbox Modal */}
+      {typeof document !== 'undefined' && quickViewDesign && createPortal(
       <AnimatePresence>
-        {quickViewDesign && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-md">
+          {(() => {
+            const activeModel = quickViewDesign.models?.[modalModelIdx] || quickViewDesign.models?.[0];
+            const activeImgs = activeModel?.imgs || [];
+            const safeImgIdx = (modalImgIdx >= 0 && modalImgIdx < activeImgs.length) ? modalImgIdx : 0;
+            const currentImgUrl = activeImgs[safeImgIdx] || '';
+
+            return (
+              <div 
+                key="quick-view-overlay"
+                onClick={() => setQuickViewDesign(null)}
+                className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/65 backdrop-blur-md cursor-pointer overflow-y-auto"
+              >
             <motion.div
+                  onClick={(e) => e.stopPropagation()}
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative w-full max-w-3xl bg-white rounded-[24px] overflow-hidden shadow-2xl border border-purple-100 flex flex-col md:flex-row max-h-[90vh] md:max-h-none"
+                  className="relative w-full max-w-3xl bg-white rounded-[24px] overflow-hidden shadow-2xl border border-purple-100 flex flex-col md:flex-row max-h-[90vh] md:max-h-none cursor-default my-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setQuickViewDesign(null)}
-                className="absolute top-3.5 right-3.5 z-50 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors text-stone-600 hover:text-black cursor-pointer"
+                    className="absolute top-3.5 right-3.5 z-50 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors text-stone-600 hover:text-black cursor-pointer shadow-xs"
                 aria-label="Close quick view"
                 type="button"
               >
@@ -1218,9 +1258,9 @@ export default function Gallery({
 
                 {/* Main image container */}
                 <div className="relative w-44 h-[250px] rounded-[22px] border-2 border-stone-700/60 bg-white shadow-md overflow-hidden flex items-center justify-center group/img z-10">
-                  {quickViewDesign.models?.[modalModelIdx]?.imgs?.[modalImgIdx] ? (
+                      {currentImgUrl ? (
                     <img
-                      src={quickViewDesign.models[modalModelIdx].imgs[modalImgIdx]}
+                          src={currentImgUrl}
                       alt={quickViewDesign.title}
                       className="max-h-full max-w-full object-contain pointer-events-none"
                       referrerPolicy="no-referrer"
@@ -1230,10 +1270,10 @@ export default function Gallery({
                   )}
 
                   {/* Left and Right arrows */}
-                  {quickViewDesign.models?.[modalModelIdx]?.imgs && quickViewDesign.models[modalModelIdx].imgs.length > 1 && (
+                      {activeImgs.length > 1 && (
                     <>
                       <button
-                        onClick={() => setModalImgIdx(prev => (prev === 0 ? quickViewDesign.models[modalModelIdx].imgs.length - 1 : prev - 1))}
+                            onClick={() => setModalImgIdx(prev => (prev === 0 ? activeImgs.length - 1 : prev - 1))}
                         className="absolute left-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
                         type="button"
                         title="上一張圖片"
@@ -1241,7 +1281,7 @@ export default function Gallery({
                         <ChevronLeft className="h-3.5 w-3.5" />
                       </button>
                       <button
-                        onClick={() => setModalImgIdx(prev => (prev === quickViewDesign.models[modalModelIdx].imgs.length - 1 ? 0 : prev + 1))}
+                            onClick={() => setModalImgIdx(prev => (prev === activeImgs.length - 1 ? 0 : prev + 1))}
                         className="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
                         type="button"
                         title="下一張圖片"
@@ -1253,10 +1293,10 @@ export default function Gallery({
                 </div>
 
                 {/* Navigation bar with Left/Right Arrows & Dots indicators */}
-                {quickViewDesign.models?.[modalModelIdx]?.imgs && quickViewDesign.models[modalModelIdx].imgs.length > 1 && (
+                    {activeImgs.length > 1 && (
                   <div className="flex items-center justify-center gap-2 mt-3 z-10 w-full px-2">
                     <button
-                      onClick={() => setModalImgIdx(prev => (prev === 0 ? quickViewDesign.models[modalModelIdx].imgs.length - 1 : prev - 1))}
+                          onClick={() => setModalImgIdx(prev => (prev === 0 ? activeImgs.length - 1 : prev - 1))}
                       className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
                       type="button"
                       title="上一張"
@@ -1265,24 +1305,24 @@ export default function Gallery({
                     </button>
 
                     <div className="flex items-center gap-1.5 bg-white/90 px-2.5 py-1 rounded-full border border-purple-100 shadow-2xs">
-                    {quickViewDesign.models[modalModelIdx].imgs.map((_, imgIdx) => (
+                          {activeImgs.map((_, imgIdx) => (
                       <button
                         key={imgIdx}
                         onClick={() => setModalImgIdx(imgIdx)}
                           className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                            modalImgIdx === imgIdx ? 'bg-[#5C5468] w-4' : 'bg-purple-200 hover:bg-purple-400 w-1.5'
+                                safeImgIdx === imgIdx ? 'bg-[#5C5468] w-4' : 'bg-purple-200 hover:bg-purple-400 w-1.5'
                         }`}
                         type="button"
                           title={`切換至第 ${imgIdx + 1} 張`}
                       />
                     ))}
                       <span className="font-mono text-[9.5px] text-purple-900 font-semibold ml-0.5 select-none">
-                        {modalImgIdx + 1}/{quickViewDesign.models[modalModelIdx].imgs.length}
+                            {safeImgIdx + 1}/{activeImgs.length}
                       </span>
                     </div>
 
                     <button
-                      onClick={() => setModalImgIdx(prev => (prev === quickViewDesign.models[modalModelIdx].imgs.length - 1 ? 0 : prev + 1))}
+                          onClick={() => setModalImgIdx(prev => (prev === activeImgs.length - 1 ? 0 : prev + 1))}
                       className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
                       type="button"
                       title="下一張"
@@ -1309,7 +1349,7 @@ export default function Gallery({
                     <h3 className="font-serif text-xl font-bold text-[#231F2E] leading-tight">
                       {quickViewDesign.title}
                     </h3>
-                    <div className="flex items-center gap-1.5 mt-1.5">
+                          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
                       <span className="font-mono text-[11px] text-purple-900 bg-purple-50 border border-purple-200/60 px-2 py-0.5 rounded-md font-semibold">
                           圖號 #{quickViewDesign.id}
                       </span>
@@ -1361,7 +1401,7 @@ export default function Gallery({
                               setModalImgIdx(0);
                             }}
                             className={`text-xs px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
-                              modalModelIdx === mIdx
+                                  (modalModelIdx === mIdx || (!quickViewDesign.models[modalModelIdx] && mIdx === 0))
                                 ? 'bg-[#5C5468] text-white border-[#5C5468] font-semibold'
                                 : 'border-purple-200/70 hover:bg-purple-50 bg-white text-[#231F2E]'
                             }`}
@@ -1421,8 +1461,11 @@ export default function Gallery({
               </div>
             </motion.div>
           </div>
+            );
+          })()}
+        </AnimatePresence>,
+        document.body
         )}
-      </AnimatePresence>
     </section>
   );
 }

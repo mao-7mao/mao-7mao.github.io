@@ -4508,7 +4508,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-6",
               "title": "雙飛燕-粉/白",
               "badge": "",
-              "link": "",
+              "link": [
+                {
+                  "platform": "xhs",
+                  "url": "https://xhslink.cn/o/AS0qoEmn6Hy"
+                }
+              ],
               "models": [
                 {
                   "name": "AirX",
