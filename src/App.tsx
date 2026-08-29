@@ -13,7 +13,7 @@ import { PRODUCTS_DATA } from './data/products';
 import { TUTU_SERIES_LIST } from './data/tutuproducts';
 import { Design, Subseries } from './data/productsData';
 import { ShareQueueItem } from './types';
-import { ArrowUp, Compass, Layers, ShieldCheck, Heart, Home } from 'lucide-react';
+import { ArrowUp, Compass, Layers, ShieldCheck, Heart, Home, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function AppContent() {
@@ -361,10 +361,44 @@ function AppContent() {
 
       {/* Minimal Footer */}
       <footer className="py-10 px-6 border-t border-purple-100/70 bg-white/70 text-center mb-14 md:mb-0 relative z-10">
-        <div className="max-w-2xl mx-auto space-y-3">
-          <p className="font-serif text-sm italic text-purple-900">
-            「redbook: 萬有狀態」
-          </p>
+        <div className="max-w-2xl mx-auto space-y-4">
+          {/* Xiaohongshu Links Group */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 flex-wrap">
+            <span className="font-mono text-[10px] text-[#746B84] uppercase tracking-wider font-semibold mr-1">
+              小紅書 / REDBOOK:
+            </span>
+            <a
+              href=" https://xhslink.cn/o/9lK63SaKcNM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
+            >
+              <span>📕</span>
+              <span>萬有狀態</span>
+              <ExternalLink className="h-3 w-3 opacity-70" />
+            </a>
+            <a
+              href=" https://xhslink.cn/o/AgtvphqTFc4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
+            >
+              <span>📕</span>
+              <span>jimmmibobo</span>
+              <ExternalLink className="h-3 w-3 opacity-70" />
+            </a>
+            <a
+              href="https://xhslink.cn/o/3vyYylktaC2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
+            >
+              <span>📕</span>
+              <span>Hey there：）</span>
+              <ExternalLink className="h-3 w-3 opacity-70" />
+            </a>
+          </div>
+
           <div className="text-[11px] text-stone-500 leading-relaxed tracking-wider font-sans">
             看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
