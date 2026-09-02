@@ -73,8 +73,8 @@ export const CASE_TYPES: CaseType[] = [
     iconColor: '#8a7868',
     icon: 'Layers',
     models: [
-      { name: '訂製款磁吸背板+邊框', price: '260元' },
-      { name: '訂製款非磁吸背板+邊框', price: '220元' },
+      { name: '訂製款磁吸背板+邊框', price: '249元' },
+      { name: '訂製款非磁吸背板+邊框', price: '209元' },
       { name: '訂製款磁吸背板', price: '190元' },
       { name: '訂製款非磁吸背板', price: '95元' }
     ]
