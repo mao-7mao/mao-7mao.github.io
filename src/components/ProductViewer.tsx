@@ -458,7 +458,7 @@ export default function ProductViewer({
       return '245 - 315元';
     }
     if (sType === 'modnx') {
-      return '95 - 245元';
+      return '95 - 260元';
     }
 
     const getNormalizedName = (name: string) => {

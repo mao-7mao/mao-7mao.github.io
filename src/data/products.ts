@@ -55,7 +55,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-2",
               "title": "黃黑灰格紋",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -70,6 +69,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0902-11.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-14-57-10.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-15-03-16.png"
                   ]
@@ -92,7 +92,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-3",
               "title": "黃粉藍格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -127,8 +126,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "1-1-4",
               "title": "彩色蠟筆+小雲朵「文字可更換」",
-              "desc": "小雲朵為收費貼紙需+12.5元",
               "badge": "hot",
+              "desc": "小雲朵為收費貼紙需+12.5元",
               "link": [
                 {
                   "platform": "xhs",
@@ -173,7 +172,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-5",
               "title": "竹編格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -213,7 +211,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-6",
               "title": "灰綠格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -254,7 +251,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-7",
               "title": "彩虹格紋小笑臉",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -296,7 +292,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-8",
               "title": "粉色方形格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -323,7 +318,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-9",
               "title": "藍紫橙格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -352,7 +346,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-10",
               "title": "綠色編織",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -385,7 +378,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-11",
               "title": "粉黃肌理不規則正方形格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -405,7 +397,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-12",
               "title": "粉泥灰&黑白機理不規則正方形格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -433,7 +424,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-13",
               "title": "藍橙不規則鏤空格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -453,7 +443,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-14",
               "title": "粉紫不規則鏤空格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -479,7 +468,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-15",
               "title": "黑白方格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -506,7 +494,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-16",
               "title": "藍色扭扭格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -520,7 +507,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-17",
               "title": "黃黑斜格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -584,7 +570,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-19",
               "title": "經典斜格紋-多色",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -617,7 +602,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-20",
               "title": "薄荷奶咖",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -656,7 +640,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-21",
               "title": "黑莓霓光",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -692,7 +675,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-22",
               "title": "冰霧霓光",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -724,7 +706,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-23",
               "title": "琥珀霓光",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -800,6 +781,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/0902-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/0724-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031122_23.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-2/2026031122_22.png",
@@ -812,7 +794,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-3",
               "title": "黃粉格紋實色",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -840,7 +821,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-4",
               "title": "藍色大衣",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -854,7 +834,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-5",
               "title": "編織星星格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -868,7 +847,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-6",
               "title": "花花格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -879,6 +857,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-6/0902-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-6/Screenshot 2026-05-30 at 11.04.38 PM.png"
                   ]
                 }
@@ -888,7 +867,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-7",
               "title": "紗籠線條格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -908,7 +886,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-8",
               "title": "朦朧彩色格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -947,7 +924,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-10",
               "title": "浮雕粉豬豬",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -967,7 +943,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-11",
               "title": "秋意格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -981,7 +956,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-12",
               "title": "粉色布藝格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -995,7 +969,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-13",
               "title": "黑白千鳥格",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1009,7 +982,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-14",
               "title": "薄荷綠鼠尾草綠實色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1029,7 +1001,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-15",
               "title": "彩虹格",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -1055,7 +1026,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-16",
               "title": "黃棕蠟筆格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1100,7 +1070,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-18",
               "title": "紫色斜格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1114,7 +1083,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-19",
               "title": "瓦楞格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1134,7 +1102,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-2-20",
               "title": "畫筆斜紅格紋米色背景",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1160,7 +1127,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-1",
               "title": "咖啡薄荷綠燕麥灰愛心格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1174,7 +1140,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-2",
               "title": "抹茶綠愛心格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1201,7 +1166,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-3",
               "title": "紫色愛心格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1221,7 +1185,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-4",
               "title": "白色底色黑色愛心格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1241,7 +1204,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-5",
               "title": "白色愛心格紋-mini-透明背景",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -1301,7 +1263,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-7",
               "title": "格紋刺繡愛心黑",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1328,7 +1289,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-8",
               "title": "抹布藝愛心灰色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1354,7 +1314,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-3-9",
               "title": "布藝愛心紫色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1380,7 +1339,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-4-1",
               "title": "綠色條紋橫",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1394,7 +1352,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-4-2",
               "title": "灰粉條紋橫",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1408,7 +1365,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-4-3",
               "title": "黃咖斜條紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1422,7 +1378,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-4-4",
               "title": "薄荷咖條紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1442,7 +1397,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-4-5",
               "title": "粉咖條紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1456,7 +1410,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-4-6",
               "title": "have a nice day",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1490,7 +1443,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-1",
               "title": "粉光圈",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1510,7 +1462,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-2",
               "title": "水果柵欄",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -1540,6 +1491,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-3/0902-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-3/0902-12.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-3/Screenshot 2026-05-30 at 11.40.19 PM.png"
                   ]
                 },
@@ -1555,7 +1508,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-4",
               "title": "自然版畫棕色",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1571,7 +1523,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-5",
               "title": "自然版畫綠色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1585,7 +1536,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-6",
               "title": "條紋四葉草",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1605,7 +1555,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-7",
               "title": "愛心青草地",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1625,7 +1574,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-8",
               "title": "草莓彩格",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1639,7 +1587,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-9",
               "title": "草莓小狗",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1653,7 +1600,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-10",
               "title": "咖啡杯",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -1674,7 +1620,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-11",
               "title": "藍色山脈",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1688,7 +1633,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-12",
               "title": "海的顏色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -1702,7 +1646,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-13",
               "title": "復古絲帶兔兔",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -1716,7 +1659,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-14",
               "title": "復古絲帶熊熊",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1730,7 +1672,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-15",
               "title": "復古絲帶貓貓",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1744,7 +1685,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-16",
               "title": "閃閃扶桑花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -1766,7 +1706,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-17",
               "title": "閃閃扶桑花藍色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1780,7 +1719,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-18",
               "title": "閃閃四葉草",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1794,7 +1732,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-19",
               "title": "條紋蝴蝶結",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1820,7 +1757,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-20",
               "title": "波點鏤空貼紙",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1845,7 +1781,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-21",
               "title": "印章百合花-多色系",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1877,7 +1812,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-22",
               "title": "粉草莓",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1901,7 +1835,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-23",
               "title": "紅草莓",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -1943,7 +1876,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-24",
               "title": "星星花花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -1959,7 +1891,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-25",
               "title": "星星花花藍色系",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -2079,7 +2010,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-27",
               "title": "印章小狗",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2130,7 +2060,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-28",
               "title": "蝕刻之翼",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2198,7 +2127,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-30",
               "title": "脆冰冰",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2237,7 +2165,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-31",
               "title": "線條鬱金香",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2269,9 +2196,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "2-1-32",
               "title": "印章jelly bear 小熊軟糖圓點版",
-              "desc": "與2-1-26的區別是以圓點的方式呈現印章質感",
               "badge": "new",
-              "link": "",
+              "desc": "與2-1-26的區別是以圓點的方式呈現印章質感",
               "models": [
                 {
                   "name": "SolidX",
@@ -2403,7 +2329,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-1-34",
               "title": "雨之獨白",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2486,7 +2411,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-2-2",
               "title": "橘貓睡睡",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -2577,7 +2501,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-3-2",
               "title": "草莓瑞士捲",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -2600,7 +2523,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-3-3",
               "title": "藍莓瑞士捲",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2623,7 +2545,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-3-4",
               "title": "抹茶蛋糕",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -2637,7 +2558,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-3-5",
               "title": "芒果蛋糕",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2651,7 +2571,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-3-6",
               "title": "草莓蛋糕豎",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2665,7 +2584,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "2-3-7",
               "title": "黃棕格紋布丁",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2680,14 +2598,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
         {
           "id": "s2-4",
           "name": "Hey there:)",
-          "nameEm": "🔔本系列請聯繫Hey there",
           "desc": "🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款",
           "designs": [
             {
               "id": "2-4-1",
               "title": "ht6腳咪【✨完售展示】",
               "badge": "",
-              "link": "",
+              "desc": "新款敬請期待",
               "models": [
                 {
                   "name": "ModNX",
@@ -2703,15 +2620,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-4-1/六腳咪03.jpg"
                   ]
                 }
-              ],
-              "desc": "新款敬請期待"
+              ]
             },
             {
               "id": "2-4-2",
               "title": "ht四宮格【✨完售展示】",
-              "desc": "新款敬請期待",
               "badge": "",
-              "link": "",
+              "desc": "新款敬請期待",
               "models": [
                 {
                   "name": "ModNX",
@@ -2724,9 +2639,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "2-4-3",
               "title": "ht奶牛貓【✨完售展示】",
-              "desc": "新款敬請期待",
               "badge": "",
-              "link": "",
+              "desc": "新款敬請期待",
               "models": [
                 {
                   "name": "ModNX",
@@ -2753,9 +2667,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "2-4-4",
               "title": "ht點點布丁狗【✨完售展示】",
-              "desc": "新款敬請期待",
               "badge": "",
-              "link": "",
+              "desc": "新款敬請期待",
               "models": [
                 {
                   "name": "ModNX",
@@ -2776,9 +2689,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "2-4-5",
               "title": "Pei鬼鬼【✨完售展示】",
-              "desc": "新款敬請期待",
               "badge": "",
-              "link": "",
+              "desc": "新款敬請期待",
               "models": [
                 {
                   "name": "ModNX",
@@ -2871,7 +2783,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-2",
               "title": "貓貓玩具熊透色-藍",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -2935,7 +2846,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-4",
               "title": "貓貓玩具熊滿-紅黑",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -2964,7 +2874,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-5",
               "title": "貓貓玩具熊滿-紅漸變",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -2993,7 +2902,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-6",
               "title": "貓貓玩具熊滿-粉藍",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3007,7 +2915,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-7",
               "title": "貓貓玩具熊透色-綠",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3030,7 +2937,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-8",
               "title": "貓貓玩具熊透色-紫",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3045,7 +2951,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-9",
               "title": "貓貓玩具熊透色-黑白",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3078,7 +2983,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-1-10",
               "title": "貓貓雨衣熊",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3167,7 +3071,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-2",
               "title": "冰藍冰飲",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3194,7 +3097,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-3",
               "title": "草莓冰飲",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3217,7 +3119,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-4",
               "title": "芒果冰飲",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3246,7 +3147,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-5",
               "title": "滿滿心心",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3317,7 +3217,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-7",
               "title": "雪酪粉黑小天使-滿",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3412,7 +3311,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-10",
               "title": "蝴蝶結小熊粉藍色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3436,7 +3334,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-11",
               "title": "蝴蝶結小熊鼠尾草綠",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3458,7 +3355,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-12",
               "title": "雙色微織-鬱金香",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3516,7 +3412,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-14",
               "title": "波浪愛心紅白色版",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3536,7 +3431,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-15",
               "title": "雙色微織-太陽花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3557,7 +3451,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-16",
               "title": "橘白微織小花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3577,7 +3470,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-17",
               "title": "玉色禮物小兔",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3592,7 +3484,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-18",
               "title": "水色禮物小兔",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3612,7 +3503,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-19",
               "title": "微織玫瑰",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3632,7 +3522,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-20",
               "title": "灰褐色蝴蝶",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3653,7 +3542,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-21",
               "title": "藍紫色蝴蝶",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3667,7 +3555,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-22",
               "title": "小馬紅色",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3683,7 +3570,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-23",
               "title": "小松鼠",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -3707,7 +3593,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-24",
               "title": "像素花花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3742,6 +3627,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-25",
               "title": "愛心泡泡",
               "badge": "",
+              "desc": "實物會比預覽圖淺一些",
               "link": [
                 {
                   "platform": "xhs",
@@ -3770,17 +3656,16 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-25/0902-8.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-25/0801-11.webp"
                   ]
                 }
-              ],
-              "desc": "實物會比預覽圖淺一些"
+              ]
             },
             {
               "id": "3-2-26",
               "title": "海鹽冰飲",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3811,7 +3696,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-1",
               "title": "微織藍格",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3847,7 +3731,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-2",
               "title": "微織紅格",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -3869,11 +3752,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-3",
               "title": "白粉微織格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-3/0902-4.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-3-3/Screenshot 2026-06-01 at 12.44.48 AM.png"
                   ]
                 },
@@ -3895,7 +3778,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-4",
               "title": "白藍微織格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3915,7 +3797,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-5",
               "title": "黃粉微織格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3942,7 +3823,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-6",
               "title": "黃綠微織格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3957,7 +3837,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-3-7",
               "title": "白色愛心微織格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4032,7 +3911,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-2",
               "title": "童話蕾絲橫-白",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4066,7 +3944,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-3",
               "title": "童話蕾絲橫-藍",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4100,7 +3977,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-4",
               "title": "童話蕾絲橫-灰",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4135,7 +4011,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-5",
               "title": "童話蕾絲橫-橙",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4167,7 +4042,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-6",
               "title": "童話蕾絲豎-紫",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4201,7 +4075,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-7",
               "title": "童話蕾絲豎-白",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4223,7 +4096,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-8",
               "title": "童話蕾絲豎-藍",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4243,7 +4115,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-9",
               "title": "童話蕾絲豎-灰",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4269,7 +4140,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-1-10",
               "title": "童話蕾絲豎-橙",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -4367,7 +4237,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-3",
               "title": "花花絲帶",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4543,7 +4412,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-7",
               "title": "愛心雙飛燕-白",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4559,7 +4427,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-8",
               "title": "愛心雙飛燕-粉",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -4579,7 +4446,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-9",
               "title": "蝴蝶結小熊膠帶",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4617,7 +4483,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-10",
               "title": "蘋果小熊膠帶",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4638,7 +4503,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-11",
               "title": "花花貓咪",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4660,7 +4524,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-12",
               "title": "領結小狗",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4701,7 +4564,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-14",
               "title": "粉色蝴蝶蕾絲",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -4715,7 +4577,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-15",
               "title": "蕾絲鬱金香",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -4814,7 +4675,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-17",
               "title": "鈴蘭刺繡白",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4852,7 +4712,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-18",
               "title": "愛心熊熊",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4927,7 +4786,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-20",
               "title": "綿綿牛仔蕾絲",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -4967,7 +4825,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
         {
           "id": "s5-1",
           "name": "波點",
-          "desc": "",
           "designs": [
             {
               "id": "5-1-1",
@@ -5067,7 +4924,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-1-3",
               "title": "白色波點",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ClearX",
@@ -5095,6 +4951,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-21-59-27.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/2026-05-27-22-02-47.png"
                   ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-3/0902-5.webp"
+                  ]
                 }
               ]
             },
@@ -5102,7 +4964,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-1-4",
               "title": "透色波點系列",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5144,7 +5005,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-1-5",
               "title": "滿印波點系列",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5166,7 +5026,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-1-6",
               "title": "鏤空波點",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5196,7 +5055,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-1-7",
               "title": "彩色波點",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5250,7 +5108,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-1",
               "title": "紙膠帶-系列",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5275,11 +5132,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-2",
               "title": "星星襖",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-2/0902-6.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-2/2025091009_36.png"
                   ]
                 }
@@ -5289,7 +5146,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-3",
               "title": "薄巧滿",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5309,7 +5165,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-4",
               "title": "薄巧透",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5335,7 +5190,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-5",
               "title": "藍粉蝴蝶結",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5349,7 +5203,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-6",
               "title": "眩暈愛心",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5363,7 +5216,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-7",
               "title": "黃白小碎花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5377,7 +5229,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-8",
               "title": "彩色花花",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5406,7 +5257,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-9",
               "title": "像素風水果派對",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5429,7 +5279,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-10",
               "title": "彩色星星",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5446,6 +5295,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/0902-7.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.24 AM.png"
                   ]
                 },
@@ -5461,7 +5311,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-11",
               "title": "藍色漸變白色雲朵",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5482,7 +5331,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-12",
               "title": "漸變粉底白色愛心",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5496,7 +5344,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-13",
               "title": "紫色漸變底白色四角星星",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5510,7 +5357,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "5-2-14",
               "title": "黑底白四角星",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5537,7 +5383,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-1",
               "title": "牛仔藍風鈴花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5551,7 +5396,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-2",
               "title": "布藝拼接",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5566,7 +5410,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-3",
               "title": "淺藍牛仔雪花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5580,7 +5423,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-4",
               "title": "做舊粉牛仔櫻花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5600,7 +5442,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-5",
               "title": "藍牛仔櫻花",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5614,7 +5455,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-6",
               "title": "牛仔星星-系列",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -5643,7 +5483,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-7",
               "title": "牛仔條紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5657,7 +5496,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-1-8",
               "title": "茸茸豹紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -5698,7 +5536,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-1",
               "title": "泥灰雪酪粉格紋",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5712,7 +5549,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-2",
               "title": "草莓蛋糕毛衣",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -5732,7 +5568,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-3",
               "title": "綿綿毛衣",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5746,7 +5581,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-4",
               "title": "黑白毛衣",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5766,7 +5600,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-5",
               "title": "兔兔毛衣",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5780,7 +5613,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-6",
               "title": "奶牛毛衣",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -5792,6 +5624,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-6/0902-10.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/6-2-6/2025113023_44.jpg"
                   ]
                 }
@@ -5801,7 +5634,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-7",
               "title": "森林編織",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5874,7 +5706,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-9",
               "title": "毛毛愛心格紋",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5900,7 +5731,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-10",
               "title": "菱形格紋毛衣",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -5920,7 +5750,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "6-2-11",
               "title": "茸茸波波點點",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -5978,13 +5807,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
         {
           "id": "s7-1",
           "name": "漸變暈染",
-          "desc": "",
           "designs": [
             {
               "id": "7-1-1",
               "title": "金龍魚",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -5998,7 +5825,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-1-2",
               "title": "佳樂水",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -6012,7 +5838,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-1-3",
               "title": "橙黑",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -6026,7 +5851,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-1-4",
               "title": "淺藍渲染",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -6040,7 +5864,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-1-5",
               "title": "藍紫漸變",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -6066,7 +5889,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-1",
               "title": "格紋楊桃星星",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -6080,7 +5902,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-2",
               "title": "渲染楊桃星星",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6094,7 +5915,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-3",
               "title": "鬱金香綠橘",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6108,7 +5928,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-4",
               "title": "鬱金香紅藍",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6122,7 +5941,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-5",
               "title": "蕨",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6137,7 +5955,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-6",
               "title": "蝴蝶蘭",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6152,7 +5969,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-7",
               "title": "粉百合",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6167,7 +5983,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-8",
               "title": "梔子",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6206,7 +6021,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "7-2-9",
               "title": "牽牛花",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6261,7 +6075,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-1-modnx",
               "title": "刺繡玩具熊淺色ModNX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🍋🧸ModNX",
@@ -6279,7 +6092,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-1-solidx",
               "title": "刺繡玩具熊淺色solidx",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🍋🧸SolidX",
@@ -6333,7 +6145,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-2-solidx",
               "title": "刺繡玩具熊深色solidx",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🍊🧸SolidX",
@@ -6354,7 +6165,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-2-modnx",
               "title": "刺繡玩具熊深色ModNX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🍊🧸ModNX",
@@ -6387,7 +6197,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-3-airx",
               "title": "刺繡兔兔白色AirX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🤍🐰AirX",
@@ -6411,7 +6220,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-3-solidx",
               "title": "刺繡兔兔白色solidx",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🤍🐰SolidX",
@@ -6428,7 +6236,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-3-modnx",
               "title": "刺繡兔兔白色ModNX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🤍🐰ModNX",
@@ -6452,7 +6259,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-3-clear",
               "title": "刺繡兔兔白色Clear",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🤍🐰Clear",
@@ -6472,11 +6278,15 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-4-airx",
               "title": "刺繡兔兔灰色AirX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🩶🐰AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0902-13.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0902-14.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0902-15.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0902-16.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0902-17.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0724-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0724-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-airx/0724-3.webp",
@@ -6490,7 +6300,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-4-solidx",
               "title": "刺繡兔兔灰色solidx",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🩶🐰SolidX",
@@ -6505,7 +6314,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-4-modnx",
               "title": "刺繡兔兔灰色ModNX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🩶🐰ModNX",
@@ -6527,7 +6335,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-5-airx",
               "title": "刺繡兔兔黃色AirX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🟡🐰AirX",
@@ -6542,7 +6349,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-5-solidx",
               "title": "刺繡兔兔黃色SolidX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🟡🐰SolidX",
@@ -6557,7 +6363,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-5-modnx",
               "title": "刺繡兔兔黃色ModNX",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "🟡🐰ModNX",
@@ -6602,7 +6407,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-6-solidx",
               "title": "針線時光熊SolidX",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "🧶🧸",
@@ -6620,7 +6424,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "8-6-modnx",
               "title": "針線時光熊ModNX",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "🧶🧸",
@@ -6647,7 +6450,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "9-1-1",
               "title": "+格紋背景",
               "badge": "hot",
-              "link": "",
               "models": [
                 {
                   "name": "AirX",
@@ -6706,7 +6508,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "9-1-3",
               "title": "客製化文字",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6738,7 +6539,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "9-2-1",
               "title": "+格紋背景",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -6760,7 +6560,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "9-2-2",
               "title": "透明背景",
               "badge": "",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",
@@ -6794,7 +6593,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "9-3-1",
               "title": "+格紋背景",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -6838,7 +6636,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "9-3-2",
               "title": "透明背景",
               "badge": "new",
-              "link": "",
               "models": [
                 {
                   "name": "ModNX",

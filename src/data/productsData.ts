@@ -12,7 +12,7 @@ export interface Design {
   id: string;
   title: string;
   badge: string;
-  link: string | DesignLink[] | Record<string, string>;
+  link?: string | DesignLink[] | Record<string, string>;
   models: ModelImg[];
   layer?: string;
   desc?: string;
@@ -73,8 +73,8 @@ export const CASE_TYPES: CaseType[] = [
     iconColor: '#8a7868',
     icon: 'Layers',
     models: [
-      { name: '訂製款磁吸背板+邊框', price: '245元' },
-      { name: '訂製款非磁吸背板+邊框', price: '200元' },
+      { name: '訂製款磁吸背板+邊框', price: '260元' },
+      { name: '訂製款非磁吸背板+邊框', price: '220元' },
       { name: '訂製款磁吸背板', price: '190元' },
       { name: '訂製款非磁吸背板', price: '95元' }
     ]
