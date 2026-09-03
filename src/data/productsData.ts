@@ -75,8 +75,8 @@ export const CASE_TYPES: CaseType[] = [
     models: [
       { name: '訂製款磁吸背板+邊框', price: '255元' },
       { name: '訂製款非磁吸背板+邊框', price: '215元' },
-      { name: '訂製款磁吸背板', price: '190元' },
-      { name: '訂製款非磁吸背板', price: '95元' }
+      { name: '訂製款磁吸背板', price: '200元' },
+      { name: '訂製款非磁吸背板', price: '110元' }
     ]
   },
   {
