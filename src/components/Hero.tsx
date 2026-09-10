@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-1 text-[10px] font-mono text-amber-800/80 bg-amber-100/60 px-2 py-0.5 rounded-md font-semibold shrink-0">
               <Calendar className="h-3 w-3" />
-              <span>2026/09/02 更新</span>
+              <span>2026/09/10 更新</span>
             </div>
           </div>
 
@@ -97,8 +97,8 @@ export default function Hero() {
             <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
               <span className="text-sm shrink-0">🏷️</span>
               <div>
-                <span className="font-bold text-[#231F2E]">【ModNX調漲】</span>
-                <span>2026年9月2日調漲</span>
+                <span className="font-bold text-[#231F2E]">【18系列上新】</span>
+                <span>18系列已上新🌟</span>
               </div>
             </div>
 

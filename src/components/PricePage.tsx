@@ -47,15 +47,15 @@ export default function PricePage() {
         { label: '雙層印刷', desc: '圖層分離效果明顯，立體景深豐富' },
         { label: '單層印刷', desc: '可做出半透明、漸變、細緻微浮雕效果' },
       ],
-      modelsSupported: ['iPhone 17 Pro', 'iPhone 17 Pro Max'],
+      modelsSupported: ['iPhone 17-18 Pro', 'iPhone 17-18 Pro Max'],
       regularFrames: ['迷你粉', '暗夜黑', '朱古力', '磨砂透'],
-      limitedFrames: ['限定透藍框', '限定透粉框'],
+      limitedFrames: ['限定透藍框', '限定透粉框', '限定透綠框', '限定透黃框'],
       prices: [
         { name: '單層印刷背板', price: '¥168.3' },
         { name: '單層印刷背板 + 常規邊框', price: '¥295.8' },
         { name: '雙層印刷背板', price: '¥185.3' },
         { name: '雙層印刷背板 + 常規邊框', price: '¥312.8' },
-        { name: '限定透彩邊框 + 背板 (透藍/透粉, 單雙層皆可)', price: '¥308.0' },
+        { name: '限定透彩邊框 + 背板 (單雙層皆可)', price: '¥308.0' },
       ]
     },
     solid: {

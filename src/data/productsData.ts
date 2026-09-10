@@ -56,7 +56,7 @@ export interface NoteItem {
 export const CASE_TYPES: CaseType[] = [
   {
     name: 'AirX(不含運費)',
-    nameEm: '訂製款極致氣墊緩衝手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供15-17機型及SamsungS26、S26u</span>',
+    nameEm: '訂製款極致氣墊緩衝手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone15-18機型及SamsungS26、S26u</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/airx.webp',
     desc: '雙側減壓氣室設計，手感曲線雕塑，長時間手持亦常保舒適<br/><span style="font-size: 0.85em; color: #666;">本款默認磁吸</span>',
     iconBg: '#e8f3f8',
@@ -81,7 +81,7 @@ export const CASE_TYPES: CaseType[] = [
   },
   {
     name: 'ClearX(不含運費)',
-    nameEm: '訂製款裸機感抗黃防摔透明殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone17pro、17promax機型</span>',
+    nameEm: '訂製款裸機感抗黃防摔透明殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone17-18機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/clearx.webp',
     desc: '1mm 超薄側邊，還原 iPhone 裸機手感，四角防護配置獨家柔韌吸震配方，有效吸收外部衝擊力，終結黃化，終身保固',
     iconBg: '#f5f0e8',
@@ -94,7 +94,7 @@ export const CASE_TYPES: CaseType[] = [
   },
   {
     name: 'SolidX(不含運費)',
-    nameEm: '訂製款經典防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供Samsung及iPhone15-17機型，其中透色款為17系列專屬</span>',
+    nameEm: '訂製款經典防摔手機殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供Samsung及iPhone15-18機型，其中透色款為17-18系列專屬</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/solidx2.webp',
     desc: '強化四角與內部設計，全面升級防摔力道',
     iconBg: '#fdf0ec',
@@ -192,7 +192,7 @@ export const NOTES: NoteItem[] = [
 export const TUTUBOOM_PRICES = [
   { name: 'tutuboom訂製款單層背板+常規邊框', price: '295.8元' },
   { name: 'tutuboom訂製款雙層背板+常規邊框', price: '312.8元' },
-  { name: 'tutuboom訂製款限定透彩邊框+背板(透藍/透粉,單雙層皆可)', price: '308元' }
+  { name: 'tutuboom訂製款限定透彩邊框+背板(單雙層皆可)', price: '308元' }
 ];
 
 export const TUTUBOOM_CASE_TYPES: CaseType[] = [
@@ -209,7 +209,7 @@ export const TUTUBOOM_CASE_TYPES: CaseType[] = [
       { name: '分離殼・單層印刷背板 + 常規邊框', price: '295.8元' },
       { name: '分離殼・雙層印刷背板', price: '185.3元' },
       { name: '分離殼・雙層印刷背板 + 常規邊框', price: '312.8元' },
-      { name: '分離殼・限定透彩邊框 + 背板 (透藍/透粉)', price: '308元' },
+      { name: '分離殼・限定透彩邊框 + 背板', price: '308元' },
       { name: '一體殼・白透 / 全透磨砂殼', price: '142.8元' },
       { name: '一體殼・白透 / 全透磨砂殼 (相機按鈕版)', price: '159.8元' }
     ]
