@@ -421,8 +421,8 @@ export default function Gallery({
               <div className="space-y-1 pt-2 border-t border-purple-100/70">
                 <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-[#352F3D] uppercase bg-purple-100/50 rounded-lg flex items-center justify-between border border-purple-200/50">
                   <span className="flex items-center gap-1">
-                    <span>🧡</span>
-                    <span>🦏🛡️系列</span>
+                    <span>🦏</span>
+                    <span>犀牛盾系列</span>
                   </span>
                   <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
                     {rhinoCount}款
@@ -556,8 +556,8 @@ export default function Gallery({
               {[
                 { id: 'all', label: '全部圖款', icon: null },
                 { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconColor: 'text-purple-600' },
-                { id: 'new', label: 'NEW ', icon: Zap, iconColor: 'text-purple-600' },
-                { id: 'hot', label: 'HOT ', icon: Star, iconColor: 'text-amber-500' },
+                { id: 'new', label: 'NEW', icon: Zap, iconColor: 'text-purple-600' },
+                { id: 'hot', label: 'HOT', icon: Star, iconColor: 'text-amber-500' },
               ].map((b) => {
                 const Icon = b.icon;
                 const isSelected = selectedBadge === b.id;
@@ -593,7 +593,7 @@ export default function Gallery({
             Catalog
           </span>
           <h2 className="font-serif text-base sm:text-lg md:text-xl font-bold text-[#231F2E] truncate">
-            全品類 <span className="font-serif italic font-normal text-purple-600">瀏覽</span>
+            全品類 <span className="font-serif italic font-normal text-purple-600">瀏覽圖鑑</span>
           </h2>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -708,12 +708,12 @@ export default function Gallery({
             </div>
           </div>
 
-          {/* Row 2: 🦏🛡️ 品牌群組 */}
+          {/* Row 2: 犀牛盾 品牌群組 */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
             <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50">
               <span className="text-[10.5px] font-bold text-[#231F2E] px-1.5 py-0.5 flex items-center gap-1">
-                <span>🧡</span>
-                <span>🦏🛡️</span>
+                <span>🦏</span>
+                <span>犀牛盾</span>
               </span>
               {PRODUCTS_DATA.SERIES.map((s) => {
                 const isSelected = selectedSeries === s.id;
@@ -852,12 +852,12 @@ export default function Gallery({
               </div>
             </div>
 
-            {/* Row 2: 🦏🛡️ 品牌群組 */}
+            {/* Row 2: 犀牛盾 品牌群組 */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
               <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50 shadow-2xs">
                 <span className="text-xs font-bold text-[#231F2E] px-2 py-0.5 flex items-center gap-1">
-                  <span>🧡</span>
-                  <span>🦏🛡️</span>
+                  <span>🦏</span>
+                  <span>犀牛盾</span>
                 </span>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;
@@ -910,8 +910,8 @@ export default function Gallery({
                       {selectedBadge === 'all_badges'
                         ? 'NEW + HOT 精選'
                         : selectedBadge === 'new'
-                          ? 'NEW '
-                          : 'HOT '}
+                          ? 'NEW'
+                          : 'HOT'}
                     </span>
                   </span>
                 )}
@@ -1216,7 +1216,7 @@ export default function Gallery({
 
       {/* Quick View Lightbox Modal */}
       {typeof document !== 'undefined' && quickViewDesign && createPortal(
-      <AnimatePresence>
+        <AnimatePresence>
           {(() => {
             const activeModel = quickViewDesign.models?.[modalModelIdx] || quickViewDesign.models?.[0];
             const activeImgs = activeModel?.imgs || [];
@@ -1229,243 +1229,243 @@ export default function Gallery({
                 onClick={() => setQuickViewDesign(null)}
                 className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/65 backdrop-blur-md cursor-pointer overflow-y-auto"
               >
-            <motion.div
+                <motion.div
                   onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                  initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 15 }}
                   className="relative w-full max-w-3xl bg-white rounded-[24px] overflow-hidden shadow-2xl border border-purple-100 flex flex-col md:flex-row max-h-[90vh] md:max-h-none cursor-default my-auto"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setQuickViewDesign(null)}
-                    className="absolute top-3.5 right-3.5 z-50 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors text-stone-600 hover:text-black cursor-pointer shadow-xs"
-                aria-label="Close quick view"
-                type="button"
-              >
-                <X className="h-4 w-4" />
-              </button>
-
-              {/* Left Side: Mock Stage Carousel */}
-              <div className="w-full md:w-1/2 bg-purple-50/30 flex flex-col items-center justify-center p-5 min-h-[280px] md:min-h-[420px] relative select-none border-b md:border-b-0 md:border-r border-purple-100">
-
-                {/* Badge inside image stage */}
-                {quickViewDesign.badge && (
-                  <span className="absolute top-3.5 left-3.5 z-20 font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 rounded font-bold bg-[#5C5468] text-white shadow-xs">
-                    {quickViewDesign.badge}
-                  </span>
-                )}
-
-                {/* Main image container */}
-                <div className="relative w-44 h-[250px] rounded-[22px] border-2 border-stone-700/60 bg-white shadow-md overflow-hidden flex items-center justify-center group/img z-10">
-                      {currentImgUrl ? (
-                    <img
-                          src={currentImgUrl}
-                      alt={quickViewDesign.title}
-                      className="max-h-full max-w-full object-contain pointer-events-none"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    <span className="text-xs text-stone-400">無預覽效果</span>
-                  )}
-
-                  {/* Left and Right arrows */}
-                      {activeImgs.length > 1 && (
-                    <>
-                      <button
-                            onClick={() => setModalImgIdx(prev => (prev === 0 ? activeImgs.length - 1 : prev - 1))}
-                        className="absolute left-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
-                        type="button"
-                        title="上一張圖片"
-                      >
-                        <ChevronLeft className="h-3.5 w-3.5" />
-                      </button>
-                      <button
-                            onClick={() => setModalImgIdx(prev => (prev === activeImgs.length - 1 ? 0 : prev + 1))}
-                        className="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
-                        type="button"
-                        title="下一張圖片"
-                      >
-                        <ChevronRight className="h-3.5 w-3.5" />
-                      </button>
-                    </>
-                  )}
-                </div>
-
-                {/* Navigation bar with Left/Right Arrows & Dots indicators */}
-                    {activeImgs.length > 1 && (
-                  <div className="flex items-center justify-center gap-2 mt-3 z-10 w-full px-2">
-                    <button
-                          onClick={() => setModalImgIdx(prev => (prev === 0 ? activeImgs.length - 1 : prev - 1))}
-                      className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
-                      type="button"
-                      title="上一張"
-                    >
-                      <ChevronLeft className="h-3.5 w-3.5" />
-                    </button>
-
-                    <div className="flex items-center gap-1.5 bg-white/90 px-2.5 py-1 rounded-full border border-purple-100 shadow-2xs">
-                          {activeImgs.map((_, imgIdx) => (
-                      <button
-                        key={imgIdx}
-                        onClick={() => setModalImgIdx(imgIdx)}
-                          className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                                safeImgIdx === imgIdx ? 'bg-[#5C5468] w-4' : 'bg-purple-200 hover:bg-purple-400 w-1.5'
-                        }`}
-                        type="button"
-                          title={`切換至第 ${imgIdx + 1} 張`}
-                      />
-                    ))}
-                      <span className="font-mono text-[9.5px] text-purple-900 font-semibold ml-0.5 select-none">
-                            {safeImgIdx + 1}/{activeImgs.length}
-                      </span>
-                    </div>
-
-                    <button
-                          onClick={() => setModalImgIdx(prev => (prev === activeImgs.length - 1 ? 0 : prev + 1))}
-                      className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
-                      type="button"
-                      title="下一張"
-                    >
-                      <ChevronRight className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Right Side: Details & Actions */}
-              <div className="w-full md:w-1/2 p-5 md:p-6 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none">
-                <div className="space-y-4">
-                  {/* Category */}
-                  <div>
-                    <span className="font-mono text-[9.5px] tracking-widest text-[#746B84] uppercase block font-semibold">
-                      {quickViewDesign.category}
-                    </span>
-                  </div>
-
-                  {/* Title & Design ID & Favorite Button */}
-                  <div className="flex justify-between items-start gap-3">
-                    <div className="flex-1">
-                    <h3 className="font-serif text-xl font-bold text-[#231F2E] leading-tight">
-                      {quickViewDesign.title}
-                    </h3>
-                          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-                      <span className="font-mono text-[11px] text-purple-900 bg-purple-50 border border-purple-200/60 px-2 py-0.5 rounded-md font-semibold">
-                          圖號 #{quickViewDesign.id}
-                      </span>
-                      {quickViewDesign.layer && (
-                        <span className="font-sans text-[11px] font-semibold text-[#231F2E] bg-purple-100/60 border border-purple-200/60 px-2 py-0.5 rounded-md">
-                            分類: {quickViewDesign.layer}
-                        </span>
-                      )}
-                    </div>
-                    </div>
-
-                    {/* Favorite Button in Quick View */}
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onToggleFavorite(quickViewDesign.id);
-                      }}
-                      className={`p-2.5 rounded-full border shadow-2xs transition-all hover:scale-110 shrink-0 cursor-pointer ${
-                        favorites.includes(quickViewDesign.id)
-                          ? 'bg-rose-50 border-rose-200 text-rose-500'
-                          : 'bg-white hover:bg-purple-50 border-purple-200 text-purple-700/60 hover:text-rose-500'
-                      }`}
-                      type="button"
-                      title={favorites.includes(quickViewDesign.id) ? '取消收藏' : '加入收藏'}
-                    >
-                      <Heart className={`h-4 w-4 ${favorites.includes(quickViewDesign.id) ? 'fill-current' : ''}`} />
-                    </button>
-                  </div>
-
-                  {/* Description if present */}
-                  {quickViewDesign.desc && (
-                    <p className="text-xs text-stone-600 leading-relaxed italic bg-purple-50/50 border border-purple-100 p-2.5 rounded-xl">
-                      📝 {quickViewDesign.desc}
-                    </p>
-                  )}
-
-                  {/* Model/Case Types tabs inside modal */}
-                  {quickViewDesign.models && quickViewDesign.models.length > 0 && (
-                    <div className="space-y-1.5">
-                      <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
-                        殼體預覽切換 / Shell Models
-                      </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {quickViewDesign.models.map((m, mIdx) => (
-                          <button
-                            key={m.name}
-                            onClick={() => {
-                              setModalModelIdx(mIdx);
-                              setModalImgIdx(0);
-                            }}
-                            className={`text-xs px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
-                                  (modalModelIdx === mIdx || (!quickViewDesign.models[modalModelIdx] && mIdx === 0))
-                                ? 'bg-[#5C5468] text-white border-[#5C5468] font-semibold'
-                                : 'border-purple-200/70 hover:bg-purple-50 bg-white text-[#231F2E]'
-                            }`}
-                            type="button"
-                          >
-                            {m.name}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Social media / LRB Link */}
-                  {quickViewDesign.link && getSocialLinks(quickViewDesign.link).length > 0 && (
-                    <div className="space-y-1.5 pt-1">
-                      <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
-                        社群平台展示 / Social Link
-                      </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {getSocialLinks(quickViewDesign.link).map((link, idx) => (
-                          <a
-                            key={idx}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/60 px-2.5 py-1 rounded-md transition-all text-xs font-semibold"
-                          >
-                            <span className="text-xs">📕</span>
-                            <span>小紅書</span>
-                            <ExternalLink className="h-3 w-3" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Primary CTA Action */}
-                <div className="mt-5 pt-3.5 border-t border-purple-100 space-y-2">
-                  <button
-                    onClick={() => handleCustomizeInStudio(quickViewDesign)}
-                    className="w-full py-3 rounded-full bg-[#5C5468] text-white hover:bg-[#453D50] transition-all font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-sm hover:scale-[1.01] cursor-pointer"
-                    type="button"
-                  >
-                    <Compass className="h-4 w-4 text-purple-200" />
-                    <span>進入客製化瀏覽區 🎨</span>
-                  </button>
-
+                >
+                  {/* Close Button */}
                   <button
                     onClick={() => setQuickViewDesign(null)}
-                    className="w-full py-2 rounded-full border border-purple-200 hover:bg-purple-50 transition-colors font-semibold text-xs text-stone-600 uppercase text-center cursor-pointer"
+                    className="absolute top-3.5 right-3.5 z-50 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors text-stone-600 hover:text-black cursor-pointer shadow-xs"
+                    aria-label="Close quick view"
                     type="button"
                   >
-                    關閉
+                    <X className="h-4 w-4" />
                   </button>
-                </div>
+
+                  {/* Left Side: Mock Stage Carousel */}
+                  <div className="w-full md:w-1/2 bg-purple-50/30 flex flex-col items-center justify-center p-5 min-h-[280px] md:min-h-[420px] relative select-none border-b md:border-b-0 md:border-r border-purple-100">
+
+                    {/* Badge inside image stage */}
+                    {quickViewDesign.badge && (
+                      <span className="absolute top-3.5 left-3.5 z-20 font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 rounded font-bold bg-[#5C5468] text-white shadow-xs">
+                        {quickViewDesign.badge}
+                      </span>
+                    )}
+
+                    {/* Main image container */}
+                    <div className="relative w-44 h-[250px] rounded-[22px] border-2 border-stone-700/60 bg-white shadow-md overflow-hidden flex items-center justify-center group/img z-10">
+                      {currentImgUrl ? (
+                        <img
+                          src={currentImgUrl}
+                          alt={quickViewDesign.title}
+                          className="max-h-full max-w-full object-contain pointer-events-none"
+                          referrerPolicy="no-referrer"
+                        />
+                      ) : (
+                        <span className="text-xs text-stone-400">無預覽效果</span>
+                      )}
+
+                      {/* Left and Right arrows */}
+                      {activeImgs.length > 1 && (
+                        <>
+                          <button
+                            onClick={() => setModalImgIdx(prev => (prev === 0 ? activeImgs.length - 1 : prev - 1))}
+                            className="absolute left-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
+                            type="button"
+                            title="上一張圖片"
+                          >
+                            <ChevronLeft className="h-3.5 w-3.5" />
+                          </button>
+                          <button
+                            onClick={() => setModalImgIdx(prev => (prev === activeImgs.length - 1 ? 0 : prev + 1))}
+                            className="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all opacity-80 group-hover/img:opacity-100 shadow-md backdrop-blur-xs cursor-pointer z-20"
+                            type="button"
+                            title="下一張圖片"
+                          >
+                            <ChevronRight className="h-3.5 w-3.5" />
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    {/* Navigation bar with Left/Right Arrows & Dots indicators */}
+                    {activeImgs.length > 1 && (
+                      <div className="flex items-center justify-center gap-2 mt-3 z-10 w-full px-2">
+                        <button
+                          onClick={() => setModalImgIdx(prev => (prev === 0 ? activeImgs.length - 1 : prev - 1))}
+                          className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
+                          type="button"
+                          title="上一張"
+                        >
+                          <ChevronLeft className="h-3.5 w-3.5" />
+                        </button>
+
+                        <div className="flex items-center gap-1.5 bg-white/90 px-2.5 py-1 rounded-full border border-purple-100 shadow-2xs">
+                          {activeImgs.map((_, imgIdx) => (
+                            <button
+                              key={imgIdx}
+                              onClick={() => setModalImgIdx(imgIdx)}
+                              className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                                safeImgIdx === imgIdx ? 'bg-[#5C5468] w-4' : 'bg-purple-200 hover:bg-purple-400 w-1.5'
+                              }`}
+                              type="button"
+                              title={`切換至第 ${imgIdx + 1} 張`}
+                            />
+                          ))}
+                          <span className="font-mono text-[9.5px] text-purple-900 font-semibold ml-0.5 select-none">
+                            {safeImgIdx + 1}/{activeImgs.length}
+                          </span>
+                        </div>
+
+                        <button
+                          onClick={() => setModalImgIdx(prev => (prev === activeImgs.length - 1 ? 0 : prev + 1))}
+                          className="p-1 rounded-full bg-white hover:bg-purple-100 text-stone-700 transition-all border border-purple-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
+                          type="button"
+                          title="下一張"
+                        >
+                          <ChevronRight className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right Side: Details & Actions */}
+                  <div className="w-full md:w-1/2 p-5 md:p-6 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none">
+                    <div className="space-y-4">
+                      {/* Category */}
+                      <div>
+                        <span className="font-mono text-[9.5px] tracking-widest text-[#746B84] uppercase block font-semibold">
+                          {quickViewDesign.category || '精選設計 / Curated Design'}
+                        </span>
+                      </div>
+
+                      {/* Title & Design ID & Favorite Button */}
+                      <div className="flex justify-between items-start gap-3">
+                        <div className="flex-1">
+                          <h3 className="font-serif text-xl font-bold text-[#231F2E] leading-tight">
+                            {quickViewDesign.title}
+                          </h3>
+                          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                            <span className="font-mono text-[11px] text-purple-900 bg-purple-50 border border-purple-200/60 px-2 py-0.5 rounded-md font-semibold">
+                              圖號 #{quickViewDesign.id}
+                            </span>
+                            {quickViewDesign.layer && (
+                              <span className="font-sans text-[11px] font-semibold text-[#231F2E] bg-purple-100/60 border border-purple-200/60 px-2 py-0.5 rounded-md">
+                                分類: {quickViewDesign.layer}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Favorite Button in Quick View */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onToggleFavorite(quickViewDesign.id);
+                          }}
+                          className={`p-2.5 rounded-full border shadow-2xs transition-all hover:scale-110 shrink-0 cursor-pointer ${
+                            favorites.includes(quickViewDesign.id)
+                              ? 'bg-rose-50 border-rose-200 text-rose-500'
+                              : 'bg-white hover:bg-purple-50 border-purple-200 text-purple-700/60 hover:text-rose-500'
+                          }`}
+                          type="button"
+                          title={favorites.includes(quickViewDesign.id) ? '取消收藏' : '加入收藏'}
+                        >
+                          <Heart className={`h-4 w-4 ${favorites.includes(quickViewDesign.id) ? 'fill-current' : ''}`} />
+                        </button>
+                      </div>
+
+                      {/* Description if present */}
+                      {quickViewDesign.desc && (
+                        <p className="text-xs text-stone-600 leading-relaxed italic bg-purple-50/50 border border-purple-100 p-2.5 rounded-xl">
+                          📝 {quickViewDesign.desc}
+                        </p>
+                      )}
+
+                      {/* Model/Case Types tabs inside modal */}
+                      {quickViewDesign.models && quickViewDesign.models.length > 0 && (
+                        <div className="space-y-1.5">
+                          <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
+                            殼體預覽切換 / Shell Models
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {quickViewDesign.models.map((m, mIdx) => (
+                              <button
+                                key={m.name}
+                                onClick={() => {
+                                  setModalModelIdx(mIdx);
+                                  setModalImgIdx(0);
+                                }}
+                                className={`text-xs px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                                  (modalModelIdx === mIdx || (!quickViewDesign.models[modalModelIdx] && mIdx === 0))
+                                    ? 'bg-[#5C5468] text-white border-[#5C5468] font-semibold'
+                                    : 'border-purple-200/70 hover:bg-purple-50 bg-white text-[#231F2E]'
+                                }`}
+                                type="button"
+                              >
+                                {m.name}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Social media / LRB Link */}
+                      {quickViewDesign.link && getSocialLinks(quickViewDesign.link).length > 0 && (
+                        <div className="space-y-1.5 pt-1">
+                          <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
+                            社群平台展示 / Social Link
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {getSocialLinks(quickViewDesign.link).map((link, idx) => (
+                              <a
+                                key={idx}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/60 px-2.5 py-1 rounded-md transition-all text-xs font-semibold"
+                              >
+                                <span className="text-xs">📕</span>
+                                <span>小紅書</span>
+                                <ExternalLink className="h-3 w-3" />
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Primary CTA Action */}
+                    <div className="mt-5 pt-3.5 border-t border-purple-100 space-y-2">
+                      <button
+                        onClick={() => handleCustomizeInStudio(quickViewDesign)}
+                        className="w-full py-3 rounded-full bg-[#5C5468] text-white hover:bg-[#453D50] transition-all font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-sm hover:scale-[1.01] cursor-pointer"
+                        type="button"
+                      >
+                        <Compass className="h-4 w-4 text-purple-200" />
+                        <span>進入客製化瀏覽區 🎨</span>
+                      </button>
+
+                      <button
+                        onClick={() => setQuickViewDesign(null)}
+                        className="w-full py-2 rounded-full border border-purple-200 hover:bg-purple-50 transition-colors font-semibold text-xs text-stone-600 uppercase text-center cursor-pointer"
+                        type="button"
+                      >
+                        關閉
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          </div>
             );
           })()}
         </AnimatePresence>,
         document.body
-        )}
+      )}
     </section>
   );
 }
