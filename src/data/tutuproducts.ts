@@ -1,5 +1,6 @@
 import { Series, Design, Subseries } from './productsData';
 
+
 export const TUTU_SERIES: Series = {
   "id": "tutuboom",
   "name": "工藝分類",
@@ -14,13 +15,13 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-1.1",
           "title": "絲帶花花",
-          "layer": "雙層",
           "badge": "hot",
-          "link": "",
+          "layer": "雙層",
           "models": [
             {
               "name": "預覽",
               "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-1.1/0915-15.webp",
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/1.webp",
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/2.webp"
               ]
@@ -36,7 +37,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-1.2",
           "title": "白底黑波點",
-          "layer": "雙層",
           "badge": "hot",
           "link": [
             {
@@ -44,6 +44,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.com/o/5C3YUpDSyAy"
             }
           ],
+          "layer": "雙層",
           "models": [
             {
               "name": "限定透彩邊框預覽",
@@ -70,7 +71,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-1.3",
           "title": "粉色背景雙飛燕",
-          "layer": "雙層",
           "badge": "",
           "link": [
             {
@@ -78,6 +78,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.com/o/5x0oiP54wNL "
             }
           ],
+          "layer": "雙層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -96,9 +97,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-1.4",
           "title": "紫色愛心雙飛燕",
-          "layer": "雙層",
           "badge": "",
-          "link": "",
+          "layer": "雙層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -117,7 +117,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-1.5",
           "title": "印章小狗",
-          "layer": "雙層",
           "badge": "hot",
           "link": [
             {
@@ -133,6 +132,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.com/o/3CdmnfKDAVx "
             }
           ],
+          "layer": "雙層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -153,7 +153,7 @@ export const TUTU_SERIES: Series = {
           "id": "tb-1.6",
           "title": "古董蕾絲藍底",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -173,9 +173,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.1",
           "title": "黑底白波點",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "預覽",
@@ -194,9 +193,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.2",
           "title": "漸變愛心",
-          "layer": "單層",
           "badge": "hot",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "預覽",
@@ -222,9 +220,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.3",
           "title": "白色鈴蘭",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -244,9 +241,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.4",
           "title": "天空藍像素愛心",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -260,7 +256,7 @@ export const TUTU_SERIES: Series = {
           "id": "tb-2.5",
           "title": "古董蕾絲純白",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -279,7 +275,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.6",
           "title": "小熊軟糖",
-          "layer": "單層",
           "badge": "new",
           "link": [
             {
@@ -291,6 +286,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.com/o/3CdLkHpafVq"
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -309,14 +305,15 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.7",
           "title": "梔子",
-          "layer": "單層",
           "badge": "new",
+          "desc": "部分浮雕工藝",
           "link": [
             {
               "platform": "xhs",
               "url": " http://xhslink.com/o/71GGTL6dhP4 "
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -336,15 +333,13 @@ export const TUTU_SERIES: Series = {
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/0629-1.webp"
               ]
             }
-          ],
-          "desc": "部分浮雕工藝"
+          ]
         },
         {
           "id": "tb-2.8",
           "title": "海鹽檸檬條紋",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -357,9 +352,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.9",
           "title": "蜜瓜冰飲",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -372,9 +366,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.10",
           "title": "冰藍冰飲",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -387,9 +380,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.11",
           "title": "草莓冰飲",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -402,9 +394,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.12",
           "title": "芒果冰飲",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -417,7 +408,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.13",
           "title": "印章小狗",
-          "layer": "單層",
           "badge": "new",
           "link": [
             {
@@ -425,6 +415,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.com/o/1srV37dHHAI "
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "一體殼預覽",
@@ -443,9 +434,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.14",
           "title": "印章jelly bear 圓點版",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -472,9 +462,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.15",
           "title": "蔬果總動員2",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -506,9 +495,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.16",
           "title": "雨之獨白2",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -527,9 +515,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.17",
           "title": "貓貓雨衣音樂熊",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -562,9 +549,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.18",
           "title": "粉色大衣",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "限定透彩邊框預覽",
@@ -589,7 +575,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.19",
           "title": "海鹽冰飲磨砂透",
-          "layer": "單層",
           "badge": "hot",
           "link": [
             {
@@ -597,6 +582,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.cn/o/4av6VASTyh7"
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "限定透彩邊框預覽",
@@ -621,9 +607,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.20",
           "title": "薄荷漸變星星",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -642,7 +627,6 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.21",
           "title": "粉色漸變愛心",
-          "layer": "單層",
           "badge": "hot",
           "link": [
             {
@@ -650,6 +634,7 @@ export const TUTU_SERIES: Series = {
               "url": "http://xhslink.com/o/81yANq4ZhLl"
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "限定透彩邊框預覽",
@@ -668,9 +653,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.22",
           "title": "天空色漸變雲朵",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -689,9 +673,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.23",
           "title": "黑色漸變星星",
-          "layer": "單層",
           "badge": "hot",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -710,9 +693,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.24",
           "title": "紫色漸變星星",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -731,9 +713,8 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.25",
           "title": "蕾絲花花單層版本",
-          "layer": "單層",
           "badge": "",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "一體殼預覽",
@@ -752,9 +733,9 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.26",
           "title": "霧藍編織幸運草",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "desc": "單層浮雕工藝",
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -768,15 +749,13 @@ export const TUTU_SERIES: Series = {
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.26/0827-1.webp"
               ]
             }
-          ],
-          "desc": "單層浮雕工藝"
+          ]
         },
         {
           "id": "tb-2.27",
           "title": "蝴蝶結小熊藍紫",
-          "layer": "單層",
           "badge": "new",
-          "link": "",
+          "layer": "單層",
           "models": [
             {
               "name": "限定透彩邊框預覽",
@@ -795,14 +774,15 @@ export const TUTU_SERIES: Series = {
         {
           "id": "tb-2.28",
           "title": "芭樂果茶",
-          "layer": "單層",
           "badge": "new",
+          "desc": "單層浮雕工藝",
           "link": [
             {
               "platform": "xhs",
               "url": "https://xhslink.cn/o/52GYn9S7kTf"
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "分離殼預覽",
@@ -816,20 +796,20 @@ export const TUTU_SERIES: Series = {
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.28/0827-3.webp"
               ]
             }
-          ],
-          "desc": "單層浮雕工藝"
+          ]
         },
         {
           "id": "tb-2.29",
           "title": "海星圓舞曲",
-          "layer": "單層",
           "badge": "new",
+          "desc": "單層浮雕工藝",
           "link": [
             {
               "platform": "xhs",
               "url": "https://xhslink.cn/o/A0Ywv2rYjXM"
             }
           ],
+          "layer": "單層",
           "models": [
             {
               "name": "限定透彩邊框預覽",
@@ -843,8 +823,7 @@ export const TUTU_SERIES: Series = {
                 "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.29/0827-4.webp"
               ]
             }
-          ],
-          "desc": "單層浮雕工藝"
+          ]
         }
       ]
     }

@@ -81,7 +81,7 @@ export default function PricePage() {
           PRICE & SPECIFICATIONS
         </span>
         <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#231F2E]">
-          殼體規格與 <span className="font-serif italic font-normal text-[#8B5CF6]">價格運送說明</span>
+          價格與 <span className="font-serif italic font-normal text-[#8B5CF6]">運送說明</span>
         </h2>
         <p className="text-[11.5px] text-[#746B84] mt-1 max-w-md mx-auto leading-relaxed">
           
@@ -383,11 +383,11 @@ export default function PricePage() {
               <span>🦏🛡️殼體品類規格與參考價格</span>
             </h3>
             <p className="text-[11.5px] text-[#746B84] mt-0.5">
-              點擊下方快捷按鈕可快速切換查看特定殼體規格與價格
+              點擊下方快捷按鈕可快速切換查看特定殼體與價格
             </p>
           </div>
           <span className="text-[11px] text-[#746B84] font-mono hidden sm:inline-block">
-            RhinoShield & Official Cases ({CASE_TYPES.length} 款)
+            Official Cases ({CASE_TYPES.length} 款)
           </span>
         </div>
 
