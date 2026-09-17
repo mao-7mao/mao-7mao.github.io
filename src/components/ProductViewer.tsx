@@ -443,7 +443,7 @@ export default function ProductViewer({
     
     // Prioritize clearx and solidsuit matching to avoid collision with clear or solidx rules
     if (sType === 'clearx') {
-      return '315 - 350元';
+      return '350元';
     }
     if (sType === 'solidsuit') {
       return '190 - 290元';

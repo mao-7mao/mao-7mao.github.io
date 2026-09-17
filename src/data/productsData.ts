@@ -83,13 +83,12 @@ export const CASE_TYPES: CaseType[] = [
     name: 'ClearX(不含運費)',
     nameEm: '訂製款裸機感抗黃防摔透明殼<br/><span style="font-size: 0.85em; color: #666;">本殼體提供iPhone17-18機型</span>',
     img: 'https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/type/clearx.webp',
-    desc: '1mm 超薄側邊，還原 iPhone 裸機手感，四角防護配置獨家柔韌吸震配方，有效吸收外部衝擊力，終結黃化，終身保固',
+    desc: '還原 iPhone 裸機手感，四角防護配置獨家柔韌吸震配方，默認磁吸',
     iconBg: '#f5f0e8',
     iconColor: '#9a7850',
     icon: 'Smartphone',
     models: [
-      { name: '訂製款磁吸clearX', price: '350元' },
-      { name: '訂製款非磁吸clearX', price: '315元' }
+      { name: '訂製款clearx', price: '350元' }
     ]
   },
   {
@@ -145,8 +144,7 @@ export const CASE_TYPES: CaseType[] = [
       { name: '微醺斑比不重複排版非磁吸背板+邊框', price: '245元' },
       { name: '微醺斑比不重複排版磁吸背板', price: '235元' },
       { name: '微醺斑比不重複排版非磁吸背板', price: '155元' },
-      { name: '微醺斑比不重複排版磁吸clearx', price: '385元' },
-      { name: '微醺斑比不重複排版非磁吸clearx', price: '350元' },
+      { name: '微醺斑比不重複排版clearx', price: '385元' },
       { name: '微醺斑比不重複排版磁吸clear', price: '340元' },
       { name: '微醺斑比不重複排版非磁吸clear', price: '280元' },
       { name: '微醺斑比不重複排版磁吸solidx', price: '335元' },
@@ -169,8 +167,7 @@ export const CASE_TYPES: CaseType[] = [
       { name: '微醺斑比小動物連連看&花花排版非磁吸背板+邊框', price: '220元' },
       { name: '微醺斑比小動物連連看&花花排版磁吸背板', price: '210元' },
       { name: '微醺斑比小動物連連看&花花排版非磁吸背板', price: '120元' },
-      { name: '微醺斑比小動物連連看&花花排版磁吸clearx', price: '365元' },
-      { name: '微醺斑比小動物連連看&花花排版非磁吸clearx', price: '330元' },
+      { name: '微醺斑比小動物連連看&花花排版clearx', price: '365元' },
       { name: '微醺斑比小動物連連看&花花排版磁吸clear', price: '325元' },
       { name: '微醺斑比小動物連連看&花花排版非磁吸clear', price: '255元' },
       { name: '微醺斑比小動物連連看&花花排版磁吸solidx', price: '310元' },

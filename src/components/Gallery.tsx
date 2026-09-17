@@ -422,7 +422,7 @@ export default function Gallery({
                 <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-[#352F3D] uppercase bg-purple-100/50 rounded-lg flex items-center justify-between border border-purple-200/50">
                   <span className="flex items-center gap-1">
                     <span>🦏</span>
-                    <span>犀牛盾系列</span>
+                    <span>🦏🛡️系列</span>
                   </span>
                   <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
                     {rhinoCount}款
@@ -708,12 +708,12 @@ export default function Gallery({
             </div>
           </div>
 
-          {/* Row 2: 犀牛盾 品牌群組 */}
+          {/* Row 2: 🦏🛡️ 品牌群組 */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
             <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50">
               <span className="text-[10.5px] font-bold text-[#231F2E] px-1.5 py-0.5 flex items-center gap-1">
                 <span>🦏</span>
-                <span>犀牛盾</span>
+                <span>🦏🛡️</span>
               </span>
               {PRODUCTS_DATA.SERIES.map((s) => {
                 const isSelected = selectedSeries === s.id;
@@ -852,12 +852,12 @@ export default function Gallery({
               </div>
             </div>
 
-            {/* Row 2: 犀牛盾 品牌群組 */}
+            {/* Row 2: 🦏🛡️ 品牌群組 */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
               <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50 shadow-2xs">
                 <span className="text-xs font-bold text-[#231F2E] px-2 py-0.5 flex items-center gap-1">
                   <span>🦏</span>
-                  <span>犀牛盾</span>
+                  <span>🦏🛡️</span>
                 </span>
                 {PRODUCTS_DATA.SERIES.map((s) => {
                   const isSelected = selectedSeries === s.id;
