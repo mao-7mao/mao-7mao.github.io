@@ -9,7 +9,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
         {
           "id": "s1-1",
           "name": "鏤空格紋",
-          "desc": "會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
           "designs": [
             {
               "id": "1-1-1",
@@ -59,6 +58,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0919-95.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0919-96.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0812-45.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0812-46.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0812-47.webp",
@@ -77,7 +78,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/2026-05-26-14-57-48.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0919-93.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-2/0919-94.webp"
                   ]
                 },
                 {
@@ -104,6 +106,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/0919-100.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/0919-101.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/0919-102.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-33-16.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-36-09.png"
                   ]
@@ -111,7 +116,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/2026-05-26-15-33-39.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/0919-97.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/0919-98.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-3/0919-99.webp"
                   ]
                 },
                 {
@@ -216,6 +223,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "ModNX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0910-36.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-108.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-16-19.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-15-40.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2025091110_54_1.png"
@@ -224,6 +232,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-105.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-106.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0910-37.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0827-44.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-07-15.png"
@@ -232,7 +242,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2026-05-26-20-14-30.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-103.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-104.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-107.webp"
                   ]
                 },
                 {
@@ -271,7 +283,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/2026-05-26-19-56-35.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-7/0919-109.webp"
                   ]
                 },
                 {
@@ -364,6 +376,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/0919-111.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/0919-112.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/0919-113.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.43.57 PM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.44.10 PM.png"
                   ]
@@ -371,7 +386,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/Screenshot 2026-05-30 at 10.44.23 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-10/0919-110.webp"
                   ]
                 }
               ]
@@ -461,7 +476,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0612-2.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0919-114.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-14/0919-115.webp"
                   ]
                 }
               ]
@@ -536,8 +552,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": " http://xhslink.com/o/4yRke7a6fns",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": " http://xhslink.com/o/4yRke7a6fns"
                 }
               ],
               "models": [
@@ -738,7 +754,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 }
               ]
             }
-
           ]
         },
         {
@@ -904,8 +919,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/4z60dKW6fZe",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/4z60dKW6fZe"
                 }
               ],
               "models": [
@@ -1008,7 +1023,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-15/Screenshot 2026-05-30 at 11.17.10 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-15/0919-116.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-15/0919-117.webp"
                   ]
                 },
                 {
@@ -1149,7 +1165,60 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-21/0910-7.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-21/0919-92.webp"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1-2-22",
+              "title": "芭樂果茶",
+              "badge": "new",
+              "models": [
+                {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-22/0919-2.webp"
+                  ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-22/0919-1.webp"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1-2-23",
+              "title": "霧紫格紋波點",
+              "badge": "new",
+              "models": [
+                {
+                  "name": "ClearX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-136.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-142.webp"
+                  ]
+                },
+                {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-141.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-137.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-138.webp"
+                  ]
+                },
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-139.webp"
+                  ]
+                },
+                {
+                  "name": "SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-23/0919-140.webp"
                   ]
                 }
               ]
@@ -1259,7 +1328,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/Screenshot 2026-05-30 at 11.24.54 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-5/0919-118.webp"
                   ]
                 }
               ]
@@ -1317,7 +1386,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-7/Screenshot 2026-05-30 at 11.30.10 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-7/0919-119.webp"
                   ]
                 }
               ]
@@ -1342,7 +1411,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-8/Screenshot 2026-05-30 at 11.31.21 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-3-8/0919-120.webp"
                   ]
                 }
               ]
@@ -1785,7 +1854,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-19/Screenshot 2026-05-29 at 11.56.37 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-19/0919-121.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-19/0919-122.webp"
                   ]
                 }
               ]
@@ -1959,6 +2029,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0919-12.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/IMG_1423.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0724-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-26/0724-5.webp",
@@ -2065,6 +2136,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0919-13.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0919-14.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0919-15.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0706-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-2.webp",
@@ -2096,7 +2170,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0623-5.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0919-123.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-27/0919-124.webp"
                   ]
                 },
                 {
@@ -2141,8 +2216,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "new",
               "link": [
                 {
-                  "platform": "xhs",
-                  "url": "http://xhslink.com/o/7hce8ufWW3Y"
+                  "url": "http://xhslink.com/o/7hce8ufWW3Y",
+                  "platform": "xhs"
                 }
               ],
               "models": [
@@ -2253,6 +2328,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0919-16.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-32/0715-3.webp",
@@ -2295,15 +2371,15 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "2-1-33",
               "title": "蔬果總動員",
-              "badge": "new",
+              "badge": "hot",
               "link": [
                 {
                   "platform": "xhs",
                   "url": "http://xhslink.cn/o/2YYn9XVE5gQ"
                 },
                 {
-                  "url": "http://xhslink.cn/o/AK2L83ZDvS2",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/AK2L83ZDvS2"
                 },
                 {
                   "platform": "xhs",
@@ -2409,8 +2485,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-34/0730-37.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-34/0730-42.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-34/0919-125.webp"
                   ]
                 },
                 {
@@ -2433,8 +2508,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": " http://xhslink.com/o/REdBHok1hh ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": " http://xhslink.com/o/REdBHok1hh "
                 }
               ],
               "models": [
@@ -2483,8 +2558,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "platform": "xhs",
-                  "url": "http://xhslink.com/o/1YL28ccehyp "
+                  "url": "http://xhslink.com/o/1YL28ccehyp ",
+                  "platform": "xhs"
                 }
               ],
               "models": [
@@ -2667,7 +2742,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
         {
           "id": "s2-4",
           "name": "Hey there:)",
-          "desc": "🔔本系列請聯繫Hey there或也可聯繫萬有狀態詢問「hey there」之QR code付款",
           "designs": [
             {
               "id": "2-4-1",
@@ -2799,7 +2873,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
     {
       "id": "s3",
       "name": "微織工坊系列",
-      "desc": "會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本，同時該系列實物比預覽圖暗，請以實物為主🙇",
       "subseries": [
         {
           "id": "s3-1",
@@ -2874,8 +2947,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "platform": "xhs",
-                  "url": "  http://xhslink.com/o/1Z4sXiIIIKC  "
+                  "url": "  http://xhslink.com/o/1Z4sXiIIIKC  ",
+                  "platform": "xhs"
                 },
                 {
                   "url": "http://xhslink.com/o/A2JR8dKzcau ",
@@ -3025,6 +3098,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0919-138.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0919-139.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0919-140.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0919-142.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0827-20.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0625-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_11.png",
@@ -3045,6 +3122,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_15.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_12_1.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/2025121920_12.png"
+                  ]
+                },
+                {
+                  "name": "ClearX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-1-9/0919-141.webp"
                   ]
                 }
               ]
@@ -3096,12 +3179,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "url": " http://xhslink.com/o/5kyix3HHnSW "
                 },
                 {
-                  "url": "http://xhslink.com/o/6zBH0dt0vpZ ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/6zBH0dt0vpZ "
                 },
                 {
-                  "url": "https://xhslink.cn/o/8octF1eWKum",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "https://xhslink.cn/o/8octF1eWKum"
                 }
               ],
               "models": [
@@ -3208,7 +3291,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/Screenshot 2026-05-31 at 12.32.47 AM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/0919-126.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-4/0919-127.webp"
                   ]
                 }
               ]
@@ -3255,8 +3339,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "url": "http://xhslink.com/o/657wjLVwkvC  "
                 },
                 {
-                  "url": " http://xhslink.com/o/4yRke7a6fns",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": " http://xhslink.com/o/4yRke7a6fns"
                 }
               ],
               "models": [
@@ -3342,12 +3426,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "platform": "xhs",
-                  "url": "http://xhslink.com/o/5Kk3cffNRph "
+                  "url": "http://xhslink.com/o/5Kk3cffNRph ",
+                  "platform": "xhs"
                 },
                 {
-                  "platform": "xhs",
-                  "url": " http://xhslink.com/o/8bOdRra9Poj  "
+                  "url": " http://xhslink.com/o/8bOdRra9Poj  ",
+                  "platform": "xhs"
                 }
               ],
               "models": [
@@ -3452,8 +3536,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": " http://xhslink.com/o/GFTujcKTMg ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": " http://xhslink.com/o/GFTujcKTMg "
                 }
               ],
               "models": [
@@ -3466,6 +3550,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/0919-18.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/0919-19.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/0919-20.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-13/2025122210_28.png"
                   ]
                 },
@@ -3930,7 +4017,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
     {
       "id": "s4",
       "name": "蕾絲系列",
-      "desc": "會透出手機本身的顏色，會有凹凸質感，可以備注底色做成滿印版本",
       "subseries": [
         {
           "id": "s4-1",
@@ -3938,7 +4024,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
           "designs": [
             {
               "id": "4-1-1",
-              "title": "童話蕾絲橫-紫",
+              "title": "童話蕾絲橫-多色系",
               "badge": "hot",
               "link": [
                 {
@@ -3950,125 +4036,30 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-23-38.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0624-2.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-43.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-32.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-21.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-22.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-23.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-24.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-32.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-36.webp"
                   ]
                 },
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-41.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-42.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-35.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-33.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-25.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0624-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-43.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-7.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-8.webp"
-                  ]
-                },
-                {
-                  "name": "ModNX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-18.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-05.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-3.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-4.webp"
-                  ]
-                },
-                {
-                  "name": "AirX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-01.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-30.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-5.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-6.webp"
-                  ]
-                },
-                {
-                  "name": "Clear",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-2.webp"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-2",
-              "title": "童話蕾絲橫-白",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-22.png"
-                  ]
-                },
-                {
-                  "name": "SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-04.png"
-                  ]
-                },
-                {
-                  "name": "ModNX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-46-24.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-53.png"
-                  ]
-                },
-                {
-                  "name": "AirX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-45-47.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-40-33.png"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-3",
-              "title": "童話蕾絲橫-藍",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-12-05.png"
-                  ]
-                },
-                {
-                  "name": "SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-57.png"
-                  ]
-                },
-                {
-                  "name": "ModNX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-11-49.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-09-20.png"
-                  ]
-                },
-                {
-                  "name": "AirX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-39.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-12.png"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-4",
-              "title": "童話蕾絲橫-灰",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-04-40.png"
-                  ]
-                },
-                {
-                  "name": "SolidX",
-                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-8.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-04.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-57.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0721-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-11.png"
                   ]
@@ -4076,163 +4067,142 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-26.png"
-                  ]
-                },
-                {
-                  "name": "AirX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0721-2.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-41.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0629-3.webp"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-5",
-              "title": "童話蕾絲橫-橙",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-06-57.png"
-                  ]
-                },
-                {
-                  "name": "SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-07-18.png"
-                  ]
-                },
-                {
-                  "name": "ModNX",
-                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-39.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-38.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-31.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-18.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-05.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-40.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-46-24.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-47-53.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-11-49.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-09-20.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-26.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-07-50.png"
                   ]
                 },
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-45.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-46.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-47.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-44.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-37.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-26.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-27.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-28.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-29.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-29-01.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/2026-05-27-01-30-30.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-5.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-6.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-45-47.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/2026-05-27-01-40-33.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-39.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-3/2026-05-27-10-10-12.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0721-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/2026-05-27-13-05-41.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-4/0629-3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-5/2026-05-27-13-06-39.png"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-6",
-              "title": "童話蕾絲豎-紫",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-19.png"
-                  ]
-                },
-                {
-                  "name": "SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-35.png"
                   ]
                 },
                 {
                   "name": "Clear",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-51.png"
-                  ]
-                },
-                {
-                  "name": "AirX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-20-16.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-22-12.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-21-17.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-34.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0919-30.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-1/0915-2.webp"
                   ]
                 }
               ]
             },
             {
-              "id": "4-1-7",
-              "title": "童話蕾絲豎-白",
+              "id": "4-1-2",
+              "title": "童話蕾絲豎-多色系",
               "badge": "hot",
               "models": [
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-23-28.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-52.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-60.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-62.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-65.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-86.webp"
                   ]
                 },
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-53.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-54.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-55.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-57.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-61.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-64.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-66.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-67.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-68.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-69.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-73.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-74.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-81.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-82.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-83.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-84.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-85.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-35.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/0617-33.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-22-13.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-24-12.png"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-8",
-              "title": "童話蕾絲豎-藍",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-8/2026-05-27-22-27-12.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-7/2026-05-27-22-24-12.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-8/2026-05-27-22-28-19.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-30-42.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-10/2026-05-27-22-32-48.png"
                   ]
                 },
                 {
-                  "name": "SolidX",
+                  "name": "ModNX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-8/2026-05-27-22-28-19.png"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-9",
-              "title": "童話蕾絲豎-灰",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-31-16.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-56.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-91.webp"
                   ]
                 },
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-58.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-59.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-63.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-70.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-71.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-75.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-76.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-77.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-78.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-79.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-80.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-87.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-88.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-89.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-48.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-49.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-50.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-51.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-20-16.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-22-12.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-21-17.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-30-58.png"
                   ]
                 },
                 {
-                  "name": "SolidX",
+                  "name": "Clear",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-9/2026-05-27-22-30-42.png"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "4-1-10",
-              "title": "童話蕾絲豎-橙",
-              "badge": "",
-              "models": [
-                {
-                  "name": "ClearX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-10/2026-05-27-22-32-13.png"
-                  ]
-                },
-                {
-                  "name": "SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-10/2026-05-27-22-32-48.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-90.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-2/0919-72.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-1-6/2026-05-27-13-19-51.png"
                   ]
                 }
               ]
@@ -4249,12 +4219,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": "  http://xhslink.com/o/8fEJIJDVzRh ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "  http://xhslink.com/o/8fEJIJDVzRh "
                 },
                 {
-                  "url": "http://xhslink.com/o/BwrRhtZdP5 ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/BwrRhtZdP5 "
                 }
               ],
               "models": [
@@ -4323,6 +4293,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0919-7.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0617-36.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/0730-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-3/Screenshot 2026-05-31 at 12.46.33 AM.png",
@@ -4477,6 +4448,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0919-6.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/0802-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-6/Screenshot 2026-05-31 at 12.51.17 AM.png"
                   ]
@@ -4629,8 +4601,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/7tg0VoKFs9a ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/7tg0VoKFs9a "
                 }
               ],
               "models": [
@@ -4710,6 +4682,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0919-5.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0623-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0713-12.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-16/0713-15.webp",
@@ -4826,7 +4799,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-18/0623-12.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-18/0919-128.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-18/0919-129.webp"
                   ]
                 }
               ]
@@ -4902,7 +4876,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
     {
       "id": "s5",
       "name": "幾何律動系列",
-      "desc": "波點與連續圖形的結合",
       "subseries": [
         {
           "id": "s5-1",
@@ -4914,12 +4887,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/5YjvuNLS3uC ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/5YjvuNLS3uC "
                 },
                 {
-                  "platform": "xhs",
-                  "url": " http://xhslink.com/o/2a9sobbY54v "
+                  "url": " http://xhslink.com/o/2a9sobbY54v ",
+                  "platform": "xhs"
                 }
               ],
               "models": [
@@ -4932,7 +4905,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/2026-05-27-22-10-02.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/0919-131.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-1/0919-130.webp"
                   ]
                 },
                 {
@@ -4963,8 +4937,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "platform": "xhs"
                 },
                 {
-                  "url": "http://xhslink.com/o/73muBBV0Dej",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/73muBBV0Dej"
                 }
               ],
               "models": [
@@ -5088,8 +5062,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.28.53 AM.png",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/Screenshot 2026-06-01 at 1.28.33 AM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-4/0919-132.webp"
                   ]
                 }
               ]
@@ -5152,6 +5125,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "SolidX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-7/0919-17.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-7/0915-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-7/0623-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-1-7/0623-2.webp",
@@ -5380,7 +5354,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/0617-21.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/0617-10.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/0617-9.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/0617-8.webp ",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/0617-8.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.52 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.42 AM.png",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/5-2-10/Screenshot 2026-05-31 at 1.01.35 AM.png"
@@ -5764,8 +5738,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "url": " http://xhslink.com/o/4yRke7a6fns"
                 },
                 {
-                  "url": "https://xhslink.cn/o/8dqhDXpF7J9",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "https://xhslink.cn/o/8dqhDXpF7J9"
                 }
               ],
               "models": [
@@ -5897,7 +5871,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
     {
       "id": "s7",
       "name": "氣息流光系列",
-      "desc": "以漸變暈染和噴繪為主，呈現出一種流動的氣息感",
       "subseries": [
         {
           "id": "s7-1",
@@ -5983,12 +5956,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "AirX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-6/0910-40.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-6/0910-42.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-6/0910-42.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-6/0919-3.webp"
                   ]
                 },
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-6/0919-4.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/7-1-6/0910-41.webp"
                   ]
                 }
@@ -6153,7 +6128,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
     {
       "id": "s8",
       "name": "刺繡貼圖特輯",
-      "desc": "可以和以上任意背景組合搭配",
       "subseries": [
         {
           "id": "s8-1",
@@ -6173,6 +6147,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "🍋🧸AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0919-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0919-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0919-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0919-9.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0724-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0724-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-1-airx/0724-3.webp",
@@ -6257,26 +6235,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ]
             },
             {
-              "id": "8-2-solidx",
-              "title": "刺繡玩具熊深色solidx",
-              "badge": "",
-              "models": [
-                {
-                  "name": "🍊🧸SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-2.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-3.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-4.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-5.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-6.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-7.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-8.webp"
-                  ]
-                }
-              ]
-            },
-            {
               "id": "8-2-modnx",
               "title": "刺繡玩具熊深色ModNX",
               "badge": "",
@@ -6298,6 +6256,26 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/0724-12.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/0724-13.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-modnx/0724-14.webp"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "8-2-solidx",
+              "title": "刺繡玩具熊深色solidx",
+              "badge": "",
+              "models": [
+                {
+                  "name": "🍊🧸SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-5.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-6.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-7.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-2-solidx/0724-8.webp"
                   ]
                 }
               ]
@@ -6332,17 +6310,14 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ]
             },
             {
-              "id": "8-3-solidx",
-              "title": "刺繡兔兔白色solidx",
+              "id": "8-3-clear",
+              "title": "刺繡兔兔白色Clear",
               "badge": "",
               "models": [
                 {
-                  "name": "🤍🐰SolidX",
+                  "name": "🤍🐰Clear",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-2.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-3.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-4.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-clear/0724-1.webp"
                   ]
                 }
               ]
@@ -6371,14 +6346,17 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ]
             },
             {
-              "id": "8-3-clear",
-              "title": "刺繡兔兔白色Clear",
+              "id": "8-3-solidx",
+              "title": "刺繡兔兔白色solidx",
               "badge": "",
               "models": [
                 {
-                  "name": "🤍🐰Clear",
+                  "name": "🤍🐰SolidX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-clear/0724-1.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-2.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-3.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-3-solidx/0724-4.webp"
                   ]
                 }
               ]
@@ -6412,20 +6390,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ]
             },
             {
-              "id": "8-4-solidx",
-              "title": "刺繡兔兔灰色solidx",
-              "badge": "",
-              "models": [
-                {
-                  "name": "🩶🐰SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/0724-1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/0724-2.webp"
-                  ]
-                }
-              ]
-            },
-            {
               "id": "8-4-modnx",
               "title": "刺繡兔兔灰色ModNX",
               "badge": "",
@@ -6436,6 +6400,20 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/0724-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/0724-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-modnx/0724-3.webp"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "8-4-solidx",
+              "title": "刺繡兔兔灰色solidx",
+              "badge": "",
+              "models": [
+                {
+                  "name": "🩶🐰SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/0724-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-4-solidx/0724-2.webp"
                   ]
                 }
               ]
@@ -6461,20 +6439,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ]
             },
             {
-              "id": "8-5-solidx",
-              "title": "刺繡兔兔黃色SolidX",
-              "badge": "",
-              "models": [
-                {
-                  "name": "🟡🐰SolidX",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/0724-1.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/0724-2.webp"
-                  ]
-                }
-              ]
-            },
-            {
               "id": "8-5-modnx",
               "title": "刺繡兔兔黃色ModNX",
               "badge": "",
@@ -6484,6 +6448,20 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/0724-1.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-modnx/0724-2.webp"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "8-5-solidx",
+              "title": "刺繡兔兔黃色SolidX",
+              "badge": "",
+              "models": [
+                {
+                  "name": "🟡🐰SolidX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/0724-1.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-5-solidx/0724-2.webp"
                   ]
                 }
               ]
@@ -6519,6 +6497,20 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               ]
             },
             {
+              "id": "8-6-modnx",
+              "title": "針線時光熊ModNX",
+              "badge": "new",
+              "models": [
+                {
+                  "name": "🧶🧸",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-modnx/0713-48.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-modnx/0713-58.webp"
+                  ]
+                }
+              ]
+            },
+            {
               "id": "8-6-solidx",
               "title": "針線時光熊SolidX",
               "badge": "new",
@@ -6531,20 +6523,6 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-50.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-56.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-solidx/0713-57.webp"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "8-6-modnx",
-              "title": "針線時光熊ModNX",
-              "badge": "new",
-              "models": [
-                {
-                  "name": "🧶🧸",
-                  "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-modnx/0713-48.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/8-6-modnx/0713-58.webp"
                   ]
                 }
               ]
@@ -6741,8 +6719,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/g7.webp",
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/g10.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-1/0919-135.webp"
                   ]
                 }
               ]
@@ -6779,7 +6756,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ClearX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/t1.webp"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/0919-133.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/9-3-2/0919-134.webp"
                   ]
                 },
                 {

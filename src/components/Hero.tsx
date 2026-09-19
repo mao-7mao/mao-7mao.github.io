@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-1 text-[10px] font-mono text-amber-800/80 bg-amber-100/60 px-2 py-0.5 rounded-md font-semibold shrink-0">
               <Calendar className="h-3 w-3" />
-              <span>2026/09/10 更新</span>
+              <span>2026/09/20 更新</span>
             </div>
           </div>
 
@@ -90,15 +90,15 @@ export default function Hero() {
               <span className="text-sm shrink-0">✨</span>
               <div>
                 <span className="font-bold text-[#231F2E]">【全系列圖款上新】</span>
-                <span>tutuboom單層圖款淡色系 單層浮雕圖款</span>
+                <span>浮雕三葉草、芭樂果茶、海星圓舞曲🐚</span>
               </div>
             </div>
 
             <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
               <span className="text-sm shrink-0">🏷️</span>
               <div>
-                <span className="font-bold text-[#231F2E]">【18系列上新】</span>
-                <span>18系列已上新🌟</span>
+                <span className="font-bold text-[#231F2E]">【ClearX系列升級】</span>
+                <span>ClearX殼體已升級且新版只提供透明磁吸款</span>
               </div>
             </div>
 
