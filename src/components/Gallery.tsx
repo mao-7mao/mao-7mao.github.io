@@ -1110,7 +1110,7 @@ export default function Gallery({
                                       rel="noopener noreferrer"
                                       className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-1.5 py-0.2 rounded-md transition-all text-[9.5px] font-semibold"
                                     >
-                                      <span>{PLATFORM_INFO[link.platform]?.icon || '📕'} {PLATFORM_INFO[link.platform]?.label || '小紅書'}</span>
+                                      <span>{PLATFORM_INFO[link.platform]?.icon || '📕'} {PLATFORM_INFO[link.platform]?.label || (link.platform === 'xhs' ? '小紅書' : link.platform)}</span>
                                       <ExternalLink className="h-2 w-2" />
                                     </a>
                                   ))}
@@ -1438,7 +1438,7 @@ export default function Gallery({
                                       className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/60 px-2.5 py-1 rounded-md transition-all text-xs font-semibold"
                                     >
                                       <span className="text-xs">{PLATFORM_INFO[link.platform]?.icon || '📕'}</span>
-                                      <span>{PLATFORM_INFO[link.platform]?.label || '小紅書'}</span>
+                                      <span>{PLATFORM_INFO[link.platform]?.label || (link.platform === 'xhs' ? '小紅書' : link.platform)}</span>
                                       <ExternalLink className="h-3 w-3" />
                                     </a>
                                   ))}

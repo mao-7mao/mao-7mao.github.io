@@ -15,36 +15,74 @@ export const PLATFORM_INFO: Record<string, { label: string; icon: string }> = {
   rhinoshield: { label: '犀牛盾官網', icon: '🦏🛡️' },
 };
 
+function isValidUrlString(url: string): boolean {
+  if (!url) return false;
+  const trimmed = url.trim();
+  if (trimmed.length === 0) return false;
+  // Must look like an actual web link
+  return /^https?:\/\//i.test(trimmed) || trimmed.includes('xhslink.') || trimmed.includes('rhinoshield.') || (trimmed.includes('.') && !trimmed.includes(' '));
+}
+
 /**
  * Normalizes any supported link structure into a clean array of DesignLink with trimmed URLs.
+ * If a design does not have a link defined in JSON, returns an empty array immediately.
  */
-export function normalizeLinks(link: Design['link'] | Pick<Design, 'link'> | null | undefined): DesignLink[] {
-  if (!link) return [];
-  // If a design object was passed instead of raw link field:
-  const rawLink = typeof link === 'object' && link !== null && 'link' in link ? (link as any).link : link;
+export function normalizeLinks(input: Design | Pick<Design, 'link'> | Design['link'] | null | undefined): DesignLink[] {
+  if (!input) return [];
+
+  let rawLink: any = input;
+
+  // If a design object (or design-like entity) was passed:
+  if (typeof input === 'object' && input !== null) {
+    if ('id' in input || 'models' in input || 'title' in input || 'badge' in input || 'subseries' in input) {
+      // It is a Design object! Extract only its explicit `link` property.
+      // If the design doesn't have a `link` property or it's empty, return empty immediately.
+      rawLink = (input as any).link;
+    } else if ('link' in input) {
+      rawLink = (input as any).link;
+    }
+  }
+
+  // If no link was specified in JSON or it's falsy (undefined, null, empty string), return empty array
   if (!rawLink) return [];
 
+  // 1. Array of Link objects: [{ platform: 'xhs', url: '...' }]
   if (Array.isArray(rawLink)) {
     return rawLink
       .filter((item): item is DesignLink => Boolean(item && typeof item === 'object' && typeof item.url === 'string'))
       .map((item) => ({
-        platform: (item.platform || '').trim().toLowerCase(),
+        platform: (item.platform || '').trim().toLowerCase() || 'xhs',
         url: item.url.trim(),
       }))
-      .filter((item) => item.url.length > 0);
+      .filter((item) => item.url.length > 0 && isValidUrlString(item.url));
   }
+
+  // 2. Single string URL
   if (typeof rawLink === 'string') {
     const trimmed = rawLink.trim();
-    return trimmed ? [{ platform: 'xhs', url: trimmed }] : [];
+    if (trimmed.length > 0 && isValidUrlString(trimmed)) {
+      return [{ platform: 'xhs', url: trimmed }];
+    }
+    return [];
   }
-  if (typeof rawLink === 'object') {
+
+  // 3. Dictionary of { [platform]: url }
+  if (typeof rawLink === 'object' && rawLink !== null && !('models' in rawLink) && !('id' in rawLink) && !('title' in rawLink)) {
     return Object.entries(rawLink)
-      .filter(([_, url]) => typeof url === 'string' && (url as string).trim().length > 0)
+      .filter(([platform, url]) => {
+        if (typeof url !== 'string') return false;
+        const trimmed = url.trim();
+        if (trimmed.length === 0 || !isValidUrlString(trimmed)) return false;
+        // Never allow internal design attributes as platform names
+        if (['id', 'title', 'badge', 'models', 'layer', 'desc'].includes(platform)) return false;
+        return true;
+      })
       .map(([platform, url]) => ({
-        platform: platform.trim().toLowerCase(),
+        platform: platform.trim().toLowerCase() || 'xhs',
         url: (url as string).trim(),
       }));
   }
+
   return [];
 }
 

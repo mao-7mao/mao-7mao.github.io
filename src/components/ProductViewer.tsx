@@ -1164,7 +1164,7 @@ export default function ProductViewer({
                           className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2 py-0.5 rounded-md transition-all text-[11px] font-semibold hover:scale-[1.02]"
                         >
                           <span className="text-xs">{PLATFORM_INFO[link.platform]?.icon || '📕'}</span>
-                          <span>{PLATFORM_INFO[link.platform]?.label || '小紅書'}</span>
+                          <span>{PLATFORM_INFO[link.platform]?.label || (link.platform === 'xhs' ? '小紅書' : link.platform)}</span>
                           <ExternalLink className="h-2.5 w-2.5" />
                         </a>
                       ))}
