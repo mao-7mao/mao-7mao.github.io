@@ -76,11 +76,11 @@ export default function Hero() {
           <div className="flex items-center justify-between gap-2 pb-2.5 mb-3 border-b border-amber-200/50">
             <div className="flex items-center gap-1.5 text-amber-900 font-bold text-xs sm:text-sm font-serif">
               <Pin className="h-3.5 w-3.5 text-amber-600 fill-amber-500 shrink-0" />
-              <span>Notice Memo</span>
+              <span>更新說明與重要公告 / Notice Memo</span>
             </div>
             <div className="flex items-center gap-1 text-[10px] font-mono text-amber-800/80 bg-amber-100/60 px-2 py-0.5 rounded-md font-semibold shrink-0">
               <Calendar className="h-3 w-3" />
-              <span>2026/09/20 更新</span>
+              <span>20261013 更新</span>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ export default function Hero() {
             <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
               <span className="text-sm shrink-0">✨</span>
               <div>
-                <span className="font-bold text-[#231F2E]">【全系列圖款上新】</span>
+                <span className="font-bold text-[#231F2E]">【圖款上新】</span>
                 <span>浮雕三葉草、芭樂果茶、海星圓舞曲🐚</span>
               </div>
             </div>
@@ -102,15 +102,17 @@ export default function Hero() {
               </div>
             </div>
 
-
+            <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
+              <span className="text-sm shrink-0">🩵</span>
+              <div>
+                <span className="font-bold text-[#231F2E]">【入駐rhinoshield創作者】</span>
+                <span>可以直接在rhinoshield官網下單部分圖款</span>
+              </div>
+            </div>
           </div>
 
           {/* Quick Action Footer in Memo */}
-          <div className="mt-3 pt-2.5 border-t border-amber-200/50 flex items-center justify-between">
-            <span className="text-[10px] text-amber-800/70 italic font-mono">
-              * 具體庫存與現貨情況以私訊確認為準
-            </span>
-          </div>
+ 
         </motion.div>
       </div>
     </section>

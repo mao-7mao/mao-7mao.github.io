@@ -3,10 +3,91 @@ export interface ModelImg {
   imgs: string[];
 }
 
+export type PlatformType = 'xhs' | 'rhinoshield' | string;
+
 export interface DesignLink {
-  platform: string;
+  platform: PlatformType;
   url: string;
 }
+
+export const PLATFORM_INFO: Record<string, { label: string; icon: string }> = {
+  xhs: { label: '小紅書', icon: '📕' },
+  rhinoshield: { label: '犀牛盾官網', icon: '🦏🛡️' },
+};
+
+/**
+ * Normalizes any supported link structure into a clean array of DesignLink with trimmed URLs.
+ */
+export function normalizeLinks(link: Design['link'] | Pick<Design, 'link'> | null | undefined): DesignLink[] {
+  if (!link) return [];
+  // If a design object was passed instead of raw link field:
+  const rawLink = typeof link === 'object' && link !== null && 'link' in link ? (link as any).link : link;
+  if (!rawLink) return [];
+
+  if (Array.isArray(rawLink)) {
+    return rawLink
+      .filter((item): item is DesignLink => Boolean(item && typeof item === 'object' && typeof item.url === 'string'))
+      .map((item) => ({
+        platform: (item.platform || '').trim().toLowerCase(),
+        url: item.url.trim(),
+      }))
+      .filter((item) => item.url.length > 0);
+  }
+  if (typeof rawLink === 'string') {
+    const trimmed = rawLink.trim();
+    return trimmed ? [{ platform: 'xhs', url: trimmed }] : [];
+  }
+  if (typeof rawLink === 'object') {
+    return Object.entries(rawLink)
+      .filter(([_, url]) => typeof url === 'string' && (url as string).trim().length > 0)
+      .map(([platform, url]) => ({
+        platform: platform.trim().toLowerCase(),
+        url: (url as string).trim(),
+      }));
+  }
+  return [];
+}
+
+/**
+ * Returns official RhinoShield store URL if configured and non-empty.
+ * Tolerant of raw url or http/https, preserving original domain and query params, but trimmed.
+ */
+export function getOfficialUrl(design?: Pick<Design, 'link'> | Design['link'] | null): string | null {
+  if (!design) return null;
+  const links = normalizeLinks(design);
+  const official = links.find((l) => l.platform.toLowerCase() === 'rhinoshield');
+  if (official && official.url.trim().length > 0) {
+    const trimmed = official.url.trim();
+    if (/^https?:\/\//i.test(trimmed)) {
+      return trimmed;
+    }
+    return `https://${trimmed}`;
+  }
+  return null;
+}
+
+/**
+ * Checks whether a design has been listed on RhinoShield official store.
+ */
+export function isOfficialRhinoShield(design?: Pick<Design, 'link'> | Design['link'] | null): boolean {
+  return !!getOfficialUrl(design);
+}
+
+/**
+ * Returns showcase links (e.g. Xiaohongshu), strictly excluding rhinoshield platform.
+ * URLs are guaranteed to be trimmed and non-empty.
+ * Displays regardless of whether the design is listed on the official store.
+ */
+export function getShowcaseLinks(design?: Pick<Design, 'link'> | Design['link'] | null): DesignLink[] {
+  if (!design) return [];
+  const normalized = normalizeLinks(design);
+  return normalized.filter((l) => l.platform.toLowerCase() !== 'rhinoshield' && l.url.trim().length > 0);
+}
+
+/**
+ * Backwards compatibility alias for getShowcaseLinks
+ */
+export const getSocialLinks = getShowcaseLinks;
 
 export interface Design {
   id: string;

@@ -3,9 +3,10 @@ import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/products';
 import { TUTU_SERIES_LIST } from '../data/tutuproducts';
-import { Series, Design, Subseries } from '../data/productsData';
+import { Series, Design, Subseries, getOfficialUrl, getShowcaseLinks, PLATFORM_INFO } from '../data/productsData';
 import { Search, SlidersHorizontal, Check, RefreshCw, Star, Layers, Zap, ExternalLink, Compass, X, ChevronLeft, ChevronRight, ShoppingBag, Heart, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import OfficialStoreBadge, { OfficialStoreTag } from './OfficialStoreBadge';
 
 const convertToTC = (s: string) => s;
 
@@ -69,39 +70,12 @@ export default function Gallery({
     setSelectedCaseCompatible('all');
   }, [selectedSeries, setSelectedCaseCompatible]);
 
-  const getSocialLinks = (link: any): { platform: string; url: string }[] => {
-    if (!link) return [];
-    if (Array.isArray(link)) {
-      return link;
-    }
-    if (typeof link === 'string') {
-      return [{ platform: 'xhs', url: link }];
-    }
-    if (typeof link === 'object') {
-      return Object.entries(link).map(([platform, url]) => ({ platform, url: url as string }));
-    }
-    return [];
-  };
 
   // Flatten designs list for filtering
   const allDesigns = useMemo(() => {
     const list: (Design & { category: string; seriesId: string; subseriesId: string })[] = [];
 
-    // tutuboom products
-    TUTU_SERIES_LIST.forEach((s) => {
-      if (s.designs) {
-        s.designs.forEach((design: Design) => {
-          list.push({
-            ...design,
-            category: s.name,
-            seriesId: s.id, // e.g. "tb-sub-1", "tb-sub-2"
-            subseriesId: 'all',
-          });
-        });
-      }
-    });
-
-    // Products Data Series
+    // Products Data Series (RhinoShield)
     PRODUCTS_DATA.SERIES.forEach((series) => {
       if (series.subseries && series.subseries.length) {
         series.subseries.forEach((sub) => {
@@ -120,6 +94,20 @@ export default function Gallery({
             ...design,
             category: series.name,
             seriesId: series.id,
+            subseriesId: 'all',
+          });
+        });
+      }
+    });
+
+    // tutuboom products
+    TUTU_SERIES_LIST.forEach((s) => {
+      if (s.designs) {
+        s.designs.forEach((design: Design) => {
+          list.push({
+            ...design,
+            category: s.name,
+            seriesId: s.id, // e.g. "tb-sub-1", "tb-sub-2"
             subseriesId: 'all',
           });
         });
@@ -369,60 +357,12 @@ export default function Gallery({
                 </span>
               </button>
 
-              {/* tutuboom BRAND SECTION */}
-              <div className="space-y-1 pt-2">
-                <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-purple-950 uppercase bg-purple-100/70 rounded-lg flex items-center justify-between border border-purple-200/60">
-                  <span className="flex items-center gap-1">
-                    <span>💜</span>
-                    <span>tutuboom</span>
-                  </span>
-                  <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
-                    {tutuCount}款
-                  </span>
-                </div>
-
-                <div className="space-y-0.5 pl-0.5">
-                  {TUTU_SERIES_LIST.map((ts) => {
-                    const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
-                    const isSelected = selectedSeries === ts.id;
-                    return (
-                      <button
-                        key={ts.id}
-                        onClick={() => {
-                          setSelectedSeries(ts.id);
-                          setSelectedSubseries('all');
-                          if (isMobile) setIsMobileSidebarOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all cursor-pointer ${
-                          isSelected
-                            ? 'bg-purple-900 text-white font-medium shadow-xs'
-                            : 'text-[#231F2E] hover:bg-purple-50/70'
-                        }`}
-                      >
-                        <span className="flex items-center gap-1 text-[11.5px] font-semibold">
-                          <Layers className={`h-3 w-3 shrink-0 ${isSelected ? 'text-purple-200' : 'text-purple-500'}`} />
-                          <span className="truncate">{ts.name}</span>
-                        </span>
-                        <span className="flex items-center gap-1 shrink-0">
-                          <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded ${
-                            isSelected ? 'bg-white/20 text-white font-bold' : 'text-purple-700 bg-purple-50'
-                          }`}>
-                            {count}款
-                          </span>
-                          {isSelected && <Check className="h-3 w-3 text-white" />}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
               {/* 🦏🛡️ BRAND SECTION */}
-              <div className="space-y-1 pt-2 border-t border-purple-100/70">
+              <div className="space-y-1 pt-2">
                 <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-[#352F3D] uppercase bg-purple-100/50 rounded-lg flex items-center justify-between border border-purple-200/50">
                   <span className="flex items-center gap-1">
                     <span>🦏</span>
-                    <span>🦏🛡️系列</span>
+                    <span>犀牛盾系列</span>
                   </span>
                   <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
                     {rhinoCount}款
@@ -516,6 +456,54 @@ export default function Gallery({
                   })}
                 </div>
               </div>
+
+              {/* tutuboom BRAND SECTION */}
+              <div className="space-y-1 pt-2 border-t border-purple-100/70">
+                <div className="px-2.5 py-1 font-sans font-bold text-[10.5px] tracking-wider text-purple-950 uppercase bg-purple-100/70 rounded-lg flex items-center justify-between border border-purple-200/60">
+                  <span className="flex items-center gap-1">
+                    <span>💜</span>
+                    <span>tutuboom</span>
+                  </span>
+                  <span className="text-[9.5px] font-mono text-purple-800 font-semibold bg-white/80 px-1.5 py-0.2 rounded">
+                    {tutuCount}款
+                  </span>
+                </div>
+
+                <div className="space-y-0.5 pl-0.5">
+                  {TUTU_SERIES_LIST.map((ts) => {
+                    const count = allDesigns.filter((d) => d.seriesId === ts.id).length;
+                    const isSelected = selectedSeries === ts.id;
+                    return (
+                      <button
+                        key={ts.id}
+                        onClick={() => {
+                          setSelectedSeries(ts.id);
+                          setSelectedSubseries('all');
+                          if (isMobile) setIsMobileSidebarOpen(false);
+                        }}
+                        className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all cursor-pointer ${
+                          isSelected
+                            ? 'bg-purple-900 text-white font-medium shadow-xs'
+                            : 'text-[#231F2E] hover:bg-purple-50/70'
+                        }`}
+                      >
+                        <span className="flex items-center gap-1 text-[11.5px] font-semibold">
+                          <Layers className={`h-3 w-3 shrink-0 ${isSelected ? 'text-purple-200' : 'text-purple-500'}`} />
+                          <span className="truncate">{ts.name}</span>
+                        </span>
+                        <span className="flex items-center gap-1 shrink-0">
+                          <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded ${
+                            isSelected ? 'bg-white/20 text-white font-bold' : 'text-purple-700 bg-purple-50'
+                          }`}>
+                            {count}款
+                          </span>
+                          {isSelected && <Check className="h-3 w-3 text-white" />}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -556,8 +544,8 @@ export default function Gallery({
               {[
                 { id: 'all', label: '全部圖款', icon: null },
                 { id: 'all_badges', label: 'NEW + HOT', icon: Sparkles, iconColor: 'text-purple-600' },
-                { id: 'new', label: 'NEW', icon: Zap, iconColor: 'text-purple-600' },
-                { id: 'hot', label: 'HOT', icon: Star, iconColor: 'text-amber-500' },
+                { id: 'new', label: 'NEW 新品', icon: Zap, iconColor: 'text-purple-600' },
+                { id: 'hot', label: 'HOT 人氣', icon: Star, iconColor: 'text-amber-500' },
               ].map((b) => {
                 const Icon = b.icon;
                 const isSelected = selectedBadge === b.id;
@@ -659,7 +647,7 @@ export default function Gallery({
         
         {/* Quick horizontal series categories row on mobile with clear tutuboom & Rhino distinction */}
         <div className="flex flex-col gap-1.5 select-none">
-          {/* Row 1: 全部系列 + 💜 tutuboom 品牌群組 */}
+          {/* Row 1: 全部系列 + 🦏 犀牛盾 品牌群組 */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
             <button
               onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
@@ -677,7 +665,39 @@ export default function Gallery({
               </span>
             </button>
 
-            {/* tutuboom series */}
+            {/* 犀牛盾 series */}
+            <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50">
+              <span className="text-[10.5px] font-bold text-[#231F2E] px-1.5 py-0.5 flex items-center gap-1">
+                <span>🦏</span>
+                <span>犀牛盾</span>
+              </span>
+              {PRODUCTS_DATA.SERIES.map((s) => {
+                const isSelected = selectedSeries === s.id;
+                const count = allDesigns.filter((d) => d.seriesId === s.id).length;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
+                    className={`text-[10.5px] font-semibold px-2.5 py-0.5 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1 ${
+                      isSelected
+                        ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
+                        : 'bg-white text-[#231F2E] border-purple-200/80 hover:bg-purple-100/60'
+                    }`}
+                  >
+                    <span>{s.name}</span>
+                    <span className={`text-[9px] font-mono px-1 py-0.1 rounded ${
+                      isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
+                    }`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Row 2: 💜 tutuboom 品牌群組 */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
             <div className="flex items-center gap-1 shrink-0 bg-purple-50/80 p-0.5 rounded-xl border border-purple-200/60">
               <span className="text-[10.5px] font-bold text-purple-950 px-1.5 py-0.5 flex items-center gap-1">
                 <span>💜</span>
@@ -697,38 +717,6 @@ export default function Gallery({
                     }`}
                   >
                     <span>{ts.name}</span>
-                    <span className={`text-[9px] font-mono px-1 py-0.1 rounded ${
-                      isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
-                    }`}>
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Row 2: 🦏🛡️ 品牌群組 */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar -mx-1 px-1">
-            <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50">
-              <span className="text-[10.5px] font-bold text-[#231F2E] px-1.5 py-0.5 flex items-center gap-1">
-                <span>🦏</span>
-                <span>🦏🛡️</span>
-              </span>
-              {PRODUCTS_DATA.SERIES.map((s) => {
-                const isSelected = selectedSeries === s.id;
-                const count = allDesigns.filter((d) => d.seriesId === s.id).length;
-                return (
-                  <button
-                    key={s.id}
-                    onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
-                    className={`text-[10.5px] font-semibold px-2.5 py-0.5 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1 ${
-                      isSelected
-                        ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
-                        : 'bg-white text-[#231F2E] border-purple-200/80 hover:bg-purple-100/60'
-                    }`}
-                  >
-                    <span>{s.name}</span>
                     <span className={`text-[9px] font-mono px-1 py-0.1 rounded ${
                       isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
                     }`}>
@@ -803,7 +791,7 @@ export default function Gallery({
         <div className="lg:col-span-9 space-y-4">
           {/* Desktop quick horizontal series bar - Split into 2 clear rows */}
           <div className="hidden lg:flex flex-col gap-1.5 select-none">
-            {/* Row 1: 全部系列 + 💜 tutuboom 品牌群組 */}
+            {/* Row 1: 全部系列 + 🦏 犀牛盾 品牌群組 */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
               <button
                 onClick={() => { setSelectedSeries('all'); setSelectedSubseries('all'); }}
@@ -821,7 +809,39 @@ export default function Gallery({
                 </span>
               </button>
 
-              {/* 品牌 1: 💜 tutuboom 品牌群組 */}
+              {/* 品牌 1: 🦏 犀牛盾 品牌群組 */}
+              <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50 shadow-2xs">
+                <span className="text-xs font-bold text-[#231F2E] px-2 py-0.5 flex items-center gap-1">
+                  <span>🦏</span>
+                  <span>犀牛盾</span>
+                </span>
+                {PRODUCTS_DATA.SERIES.map((s) => {
+                  const isSelected = selectedSeries === s.id;
+                  const count = allDesigns.filter((d) => d.seriesId === s.id).length;
+                  return (
+                    <button
+                      key={s.id}
+                      onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                        isSelected
+                          ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
+                          : 'bg-white text-[#231F2E] border-purple-200 hover:bg-purple-100/70'
+                      }`}
+                    >
+                      <span>{s.name}</span>
+                      <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
+                        isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
+                      }`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Row 2: 💜 tutuboom 品牌群組 */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
               <div className="flex items-center gap-1 shrink-0 bg-purple-50/90 p-0.5 rounded-xl border border-purple-200/80 shadow-2xs">
                 <span className="text-xs font-bold text-purple-950 px-2 py-0.5 flex items-center gap-1">
                   <span>💜</span>
@@ -841,38 +861,6 @@ export default function Gallery({
                       }`}
                     >
                       <span>{ts.name}</span>
-                      <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
-                        isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
-                      }`}>
-                        {count}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Row 2: 🦏🛡️ 品牌群組 */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
-              <div className="flex items-center gap-1 shrink-0 bg-purple-50/60 p-0.5 rounded-xl border border-purple-200/50 shadow-2xs">
-                <span className="text-xs font-bold text-[#231F2E] px-2 py-0.5 flex items-center gap-1">
-                  <span>🦏</span>
-                  <span>🦏🛡️</span>
-                </span>
-                {PRODUCTS_DATA.SERIES.map((s) => {
-                  const isSelected = selectedSeries === s.id;
-                  const count = allDesigns.filter((d) => d.seriesId === s.id).length;
-                  return (
-                    <button
-                      key={s.id}
-                      onClick={() => { setSelectedSeries(s.id); setSelectedSubseries('all'); }}
-                      className={`text-xs font-semibold px-2.5 py-1 rounded-lg whitespace-nowrap transition-all border shrink-0 cursor-pointer flex items-center gap-1.5 ${
-                        isSelected
-                          ? 'bg-[#5C5468] text-white border-[#5C5468] shadow-xs font-bold'
-                          : 'bg-white text-[#231F2E] border-purple-200 hover:bg-purple-100/70'
-                      }`}
-                    >
-                      <span>{s.name}</span>
                       <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-md ${
                         isSelected ? 'bg-white/20 text-white font-bold' : 'bg-purple-100 text-purple-800 font-semibold'
                       }`}>
@@ -910,8 +898,8 @@ export default function Gallery({
                       {selectedBadge === 'all_badges'
                         ? 'NEW + HOT 精選'
                         : selectedBadge === 'new'
-                          ? 'NEW'
-                          : 'HOT'}
+                          ? 'NEW 新品'
+                          : 'HOT 人氣'}
                     </span>
                   </span>
                 )}
@@ -1105,22 +1093,30 @@ export default function Gallery({
                             <h4 className="text-xs font-semibold text-[#231F2E] group-hover:text-purple-900 transition-colors line-clamp-1">
                               {d.title}
                             </h4>
-                            {d.link && getSocialLinks(d.link).length > 0 && (
-                              <div className="mt-1.5 flex flex-wrap gap-1" onClick={(e) => e.stopPropagation()}>
-                                {getSocialLinks(d.link).map((link, idx) => (
-                                  <a
-                                    key={idx}
-                                    href={link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-1.5 py-0.2 rounded-md transition-all text-[9.5px] font-semibold"
-                                  >
-                                    <span>📕 小紅書</span>
-                                    <ExternalLink className="h-2 w-2" />
-                                  </a>
-                                ))}
-                              </div>
-                            )}
+                            {(() => {
+                              const cardOfficialUrl = getOfficialUrl(d);
+                              const showcaseLinks = getShowcaseLinks(d);
+                              if (!cardOfficialUrl && showcaseLinks.length === 0) return null;
+                              return (
+                                <div className="mt-1.5 flex flex-wrap gap-1" onClick={(e) => e.stopPropagation()}>
+                                  {cardOfficialUrl && (
+                                    <OfficialStoreTag officialUrl={cardOfficialUrl} className="text-[9.5px] px-1.5 py-0.2" />
+                                  )}
+                                  {showcaseLinks.map((link, idx) => (
+                                    <a
+                                      key={idx}
+                                      href={link.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-1.5 py-0.2 rounded-md transition-all text-[9.5px] font-semibold"
+                                    >
+                                      <span>{PLATFORM_INFO[link.platform]?.icon || '📕'} {PLATFORM_INFO[link.platform]?.label || '小紅書'}</span>
+                                      <ExternalLink className="h-2 w-2" />
+                                    </a>
+                                  ))}
+                                </div>
+                              );
+                            })()}
                           </div>
 
                           {/* Bottom Model compatible list tags */}
@@ -1414,29 +1410,44 @@ export default function Gallery({
                         </div>
                       )}
 
-                      {/* Social media / LRB Link */}
-                      {quickViewDesign.link && getSocialLinks(quickViewDesign.link).length > 0 && (
-                        <div className="space-y-1.5 pt-1">
-                          <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
-                            社群平台展示 / Social Link
-                          </span>
-                          <div className="flex flex-wrap gap-1.5">
-                            {getSocialLinks(quickViewDesign.link).map((link, idx) => (
-                              <a
-                                key={idx}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/60 px-2.5 py-1 rounded-md transition-all text-xs font-semibold"
-                              >
-                                <span className="text-xs">📕</span>
-                                <span>小紅書</span>
-                                <ExternalLink className="h-3 w-3" />
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      {/* Social media / Official Store Link */}
+                      {(() => {
+                        const modalOfficialUrl = getOfficialUrl(quickViewDesign);
+                        const showcaseLinks = getShowcaseLinks(quickViewDesign);
+
+                        return (
+                          <>
+                            {modalOfficialUrl && (
+                              <div className="pt-1">
+                                <OfficialStoreBadge officialUrl={modalOfficialUrl} className="mt-1" />
+                              </div>
+                            )}
+
+                            {showcaseLinks.length > 0 && (
+                              <div className="space-y-1.5 pt-1">
+                                <span className="font-mono text-[9.5px] tracking-wider text-[#746B84] uppercase block font-semibold">
+                                  社群平台展示 / Social Link
+                                </span>
+                                <div className="flex flex-wrap gap-1.5">
+                                  {showcaseLinks.map((link, idx) => (
+                                    <a
+                                      key={idx}
+                                      href={link.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/60 px-2.5 py-1 rounded-md transition-all text-xs font-semibold"
+                                    >
+                                      <span className="text-xs">{PLATFORM_INFO[link.platform]?.icon || '📕'}</span>
+                                      <span>{PLATFORM_INFO[link.platform]?.label || '小紅書'}</span>
+                                      <ExternalLink className="h-3 w-3" />
+                                    </a>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        );
+                      })()}
                     </div>
 
                     {/* Primary CTA Action */}

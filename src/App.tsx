@@ -365,10 +365,10 @@ function AppContent() {
           {/* Xiaohongshu Links Group */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 flex-wrap">
             <span className="font-mono text-[10px] text-[#746B84] uppercase tracking-wider font-semibold mr-1">
-              小紅書 / REDBOOK:
+              小紅書專頁 / REDBOOK:
             </span>
             <a
-              href=" https://xhslink.cn/o/9lK63SaKcNM"
+              href="https://www.xiaohongshu.com/search_result?keyword=%E8%90%AC%E6%9C%89%E7%8B%80%E6%85%8B"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
@@ -378,7 +378,7 @@ function AppContent() {
               <ExternalLink className="h-3 w-3 opacity-70" />
             </a>
             <a
-              href=" https://xhslink.cn/o/AgtvphqTFc4"
+              href="https://www.xiaohongshu.com/search_result?keyword=jimmmibobo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
@@ -388,7 +388,7 @@ function AppContent() {
               <ExternalLink className="h-3 w-3 opacity-70" />
             </a>
             <a
-              href="https://xhslink.cn/o/3vyYylktaC2"
+              href="https://www.xiaohongshu.com/search_result?keyword=Hey%20there"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
@@ -402,7 +402,7 @@ function AppContent() {
           <div className="text-[11px] text-stone-500 leading-relaxed tracking-wider font-sans">
             看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
-            © 2026 萬有狀態 Omnistate.
+            © 2026 萬有狀態 Omnistate. All Rights Reserved.
           </div>
         </div>
       </footer>

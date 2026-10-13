@@ -2883,6 +2883,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "title": "貓貓玩具熊透色-粉",
               "badge": "hot",
               "link": [
+                 {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amuse45af7128351b46f99a08965ce210f76f" },
                 {
                   "url": "http://xhslink.com/o/8EfLmdGn3Af ",
                   "platform": "xhs"
@@ -4671,10 +4672,10 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "4-2-16",
               "title": "鈴蘭刺繡彩",
-              "badge": "new",
+              "badge": "hot",
               "link": [
-                {
-                  "platform": "xhs",
+                {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?device_color=silver&device_handle=iphone-18-pro-max&product_handle=solidx-magsafe-bumper-back&spec_code=5H" },
+                 { "platform": "xhs",
                   "url": " http://xhslink.com/o/5Y73OmEN6la  "
                 }
               ],
@@ -4730,6 +4731,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-17",
               "title": "鈴蘭刺繡白",
               "badge": "new",
+             "link": [
+                {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=translucent-matte5h&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=5H&share_design=amuse174bb025d013486ab9534e2904fadc7a" }
+              ],
               "models": [
                 {
                   "name": "SolidX",
@@ -4767,6 +4771,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-18",
               "title": "愛心熊熊",
               "badge": "new",
+             "link": [
+                {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amusea2b4149fce2543ec88e3d82aa9efc2bd" }
+              ],
               "models": [
                 {
                   "name": "SolidX",

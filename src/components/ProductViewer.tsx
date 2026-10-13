@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CASE_TYPES, CaseType, Design } from '../data/productsData';
+import { CASE_TYPES, CaseType, Design, getOfficialUrl, getShowcaseLinks, PLATFORM_INFO } from '../data/productsData';
 import { PRODUCTS_DATA } from '../data/products';
 import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check, RefreshCw, Upload, Scissors, Move, RotateCw, Trash2, Sliders, CheckSquare, Sparkles, ExternalLink, Share2, Heart, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ShareCardModal from './ShareCardModal';
+import OfficialStoreBadge, { OfficialStoreTag } from './OfficialStoreBadge';
 import { ShareQueueItem } from '../types';
 
 interface ProductViewerProps {
@@ -336,19 +337,6 @@ export default function ProductViewer({
     setIsShareModalOpen(true);
   };
 
-  const getSocialLinks = (link: any): { platform: string; url: string }[] => {
-    if (!link) return [];
-    if (Array.isArray(link)) {
-      return link;
-    }
-    if (typeof link === 'string') {
-      return [{ platform: 'xhs', url: link }];
-    }
-    if (typeof link === 'object') {
-      return Object.entries(link).map(([platform, url]) => ({ platform, url: url as string }));
-    }
-    return [];
-  };
 
   const parseDetailedPrice = (modelsList: { name: string; price: string }[]) => {
     if (modelsList.length > 0) {
@@ -443,7 +431,7 @@ export default function ProductViewer({
     
     // Prioritize clearx and solidsuit matching to avoid collision with clear or solidx rules
     if (sType === 'clearx') {
-      return '350元';
+      return '315 - 350元';
     }
     if (sType === 'solidsuit') {
       return '190 - 290元';
@@ -457,7 +445,7 @@ export default function ProductViewer({
     if (sType === 'clear') {
       return '245 - 315元';
     }
-    if (sType === 'modnx') {
+    if (sType === 'modnx' || sType.includes('mod')) {
       return '110 - 255元';
     }
 
@@ -474,7 +462,7 @@ export default function ProductViewer({
       return parseDetailedPrice(ct.models);
     }
 
-    return '190元起';
+    return '110元起';
   };
 
   const getDisplayCaseType = () => {
@@ -908,6 +896,9 @@ export default function ProductViewer({
 
   const subInfo = getSubseriesInfo();
 
+  const officialUrl = getOfficialUrl(selectedDesign);
+  const isOfficial = !!officialUrl;
+
   const currentPrice = getPrice();
 
   const renderDisplayStage = (isMobile = false) => (
@@ -1128,7 +1119,7 @@ export default function ProductViewer({
           </h2>
         </div>
         <p className="text-[11px] text-[#746B84] font-sans hidden sm:block shrink-0">
-          單獨瀏覽區
+          全系列圖款與不同型號殼體預覽
         </p>
       </div>
 
@@ -1161,21 +1152,22 @@ export default function ProductViewer({
                           {selectedDesign.layer}
                         </span>
                       )}
-                      {selectedDesign.link && getSocialLinks(selectedDesign.link).length > 0 && (
-                        getSocialLinks(selectedDesign.link).map((link, idx) => (
-                          <a
-                            key={idx}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2 py-0.5 rounded-md transition-all text-[11px] font-semibold hover:scale-[1.02]"
-                          >
-                            <span className="text-xs">📕</span>
-                            <span>小紅書</span>
-                            <ExternalLink className="h-2.5 w-2.5" />
-                          </a>
-                        ))
+                      {officialUrl && (
+                        <OfficialStoreTag officialUrl={officialUrl} />
                       )}
+                      {getShowcaseLinks(selectedDesign).map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200/50 px-2 py-0.5 rounded-md transition-all text-[11px] font-semibold hover:scale-[1.02]"
+                        >
+                          <span className="text-xs">{PLATFORM_INFO[link.platform]?.icon || '📕'}</span>
+                          <span>{PLATFORM_INFO[link.platform]?.label || '小紅書'}</span>
+                          <ExternalLink className="h-2.5 w-2.5" />
+                        </a>
+                      ))}
                     </div>
                   </div>
                   {selectedDesign.badge && (
@@ -1556,24 +1548,32 @@ export default function ProductViewer({
 
           {/* Pricing & Order Action bar */}
           <div className="mt-6 pt-4 border-t border-purple-100/80">
-            <div className="flex justify-between items-baseline mb-3">
-              <span className="font-mono text-[10px] tracking-widest text-stone-500 uppercase font-semibold">
-                參考定價 / Reference Price
-              </span>
-              <span className="font-serif text-2xl font-bold text-[#231F2E] italic">
-                {currentPrice}
-              </span>
-            </div>
+            {officialUrl ? (
+              <OfficialStoreBadge officialUrl={officialUrl} />
+            ) : (
+              <>
+                <div className="flex justify-between items-baseline mb-3">
+                  <span className="font-mono text-[10px] tracking-widest text-stone-500 uppercase font-semibold">
+                    參考定價 / Reference Price
+                  </span>
+                  <span className="font-serif text-2xl font-bold text-[#231F2E] italic">
+                    {currentPrice}
+                  </span>
+                </div>
+
+                <div className="flex flex-col">
+                  <button
+                    onClick={() => onOpenOrderModal(getDisplayCaseType(), '', '', '', currentPrice)}
+                    className="w-full flex items-center justify-center gap-2 rounded-full py-3.5 bg-[#5C5468] text-white hover:bg-[#453D50] hover:scale-[1.01] transition-all font-semibold text-xs tracking-wider uppercase shadow-[0_8px_20px_rgba(92,84,104,0.25)] mb-2.5 cursor-pointer"
+                  >
+                    <ShoppingBag className="h-4.5 w-4.5 text-purple-200" />
+                    <span>諮詢萬有狀態</span>
+                  </button>
+                </div>
+              </>
+            )}
 
             <div className="flex flex-col">
-              <button
-                onClick={() => onOpenOrderModal(getDisplayCaseType(), '', '', '', currentPrice)}
-                className="w-full flex items-center justify-center gap-2 rounded-full py-3.5 bg-[#5C5468] text-white hover:bg-[#453D50] hover:scale-[1.01] transition-all font-semibold text-xs tracking-wider uppercase shadow-[0_8px_20px_rgba(92,84,104,0.25)] mb-2.5 cursor-pointer"
-              >
-                <ShoppingBag className="h-4.5 w-4.5 text-purple-200" />
-                <span>諮詢萬有狀態</span>
-              </button>
-
               <div className="grid grid-cols-3 gap-2">
                 <button
                   onClick={() => onToggleFavorite(selectedDesign.id)}
