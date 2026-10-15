@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-1 text-[10px] font-mono text-amber-800/80 bg-amber-100/60 px-2 py-0.5 rounded-md font-semibold shrink-0">
               <Calendar className="h-3 w-3" />
-              <span>20261013 更新</span>
+              <span>2026-10-15 更新</span>
             </div>
           </div>
 

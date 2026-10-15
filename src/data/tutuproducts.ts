@@ -824,7 +824,41 @@ export const TUTU_SERIES: Series = {
               ]
             }
           ]
+        },
+    {
+          "id": "tb-2.30",
+          "title": "星星小羊",
+          "badge": "new",
+          "desc": "單層浮雕工藝",
+
+          "layer": "單層",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.30/1015-18.webp"
+              ]
+            }
+          ]
+        },
+            {
+          "id": "tb-2.31",
+          "title": "芒果小熊軟糖",
+          "badge": "new",
+          "desc": "",
+
+          "layer": "單層",
+          "models": [
+            {
+              "name": "分離殼預覽",
+              "imgs": [
+                "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/tutuboom/tb-2.31/1015-19.webp"
+              ]
+            }
+          ]
         }
+
+
       ]
     }
   ]

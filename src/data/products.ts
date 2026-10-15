@@ -17,7 +17,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/8P638v8Yh8B "
+                  "url": "http://xhslink.com/o/8P638v8Yh8B"
                 }
               ],
               "models": [
@@ -54,6 +54,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "1-1-2",
               "title": "黃黑灰格紋",
               "badge": "hot",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=mod-nx-magsafe-bumper-with-capture-button-clearplate&product_color=black-3&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=24&share_design=amuse57693d6aa6b940e58f51ac85a963bf24"
+                }
+              ],
               "models": [
                 {
                   "name": "AirX",
@@ -217,7 +223,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "1-1-6",
               "title": "灰綠格紋",
-              "badge": "",
+              "badge": "hot",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=mod-nx-magsafe-bumper-with-capture-button-clearplate&product_color=black-3&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=black&spec_code=24&share_design=amusebc4e7e862e85442ab730c22a379b8cd0"
+                }
+              ],
               "models": [
                 {
                   "name": "ModNX",
@@ -336,7 +348,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/2025091110_57.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/2025091110_57.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-9/1015-11.webp"
                   ]
                 },
                 {
@@ -553,7 +566,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/4yRke7a6fns"
+                  "url": "http://xhslink.com/o/4yRke7a6fns"
                 }
               ],
               "models": [
@@ -753,6 +766,44 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   ]
                 }
               ]
+            },
+            {
+              "id": "1-1-24",
+              "title": "白綠格紋",
+              "badge": "hot",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=green-b9cbc2&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=black&spec_code=6E&share_design=amusebf3ab34c78004cc8a33cfda624a90613"
+                }
+              ],
+              "models": [
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/2025091110_54_1.png"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1-1-25",
+              "title": "白紫格紋",
+              "badge": "hot",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=clear-case-magsafe-bumper-with-capture-button&product_color=clear&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=black&spec_code=O7&share_design=amuse3fd9de7daf1b4941a0abc765d119edc3"
+                }
+              ],
+              "models": [
+                {
+                  "name": "ModNX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-1-6/0919-108.webp"
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -766,8 +817,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "  http://xhslink.com/o/AQaXfJHPC5A ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/AQaXfJHPC5A"
                 }
               ],
               "models": [
@@ -791,8 +842,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/2lsFxsot0tV ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/2lsFxsot0tV"
                 }
               ],
               "models": [
@@ -927,7 +978,9 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
-                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.47 PM.png"
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/Screenshot 2026-05-30 at 11.05.47 PM.png",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/1015-6.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/1-2-9/1015-7.webp"
                   ]
                 },
                 {
@@ -1339,8 +1392,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/5O5GWuzIVWb  ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/5O5GWuzIVWb"
                 }
               ],
               "models": [
@@ -1590,7 +1643,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/3L5AAiJuM4y "
+                  "url": "http://xhslink.com/o/3L5AAiJuM4y"
                 }
               ],
               "models": [
@@ -1731,6 +1784,17 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "name": "ModNX",
                   "imgs": [
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/2025091111_13_1.png"
+                  ]
+                },
+                {
+                  "name": "AirX",
+                  "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/1015-12.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/1015-13.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/1015-14.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/1015-15.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/1015-16.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/2-1-11/1015-17.webp"
                   ]
                 }
               ]
@@ -2013,16 +2077,16 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/2h1kT6jvREC",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/2h1kT6jvREC"
                 },
                 {
                   "platform": "xhs",
                   "url": "http://xhslink.cn/o/5YtVmYVRe4a"
                 },
                 {
-                  "url": "http://xhslink.cn/o/4qZ9vxEf73z",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/4qZ9vxEf73z"
                 }
               ],
               "models": [
@@ -2216,8 +2280,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "new",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/7hce8ufWW3Y",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/7hce8ufWW3Y"
                 }
               ],
               "models": [
@@ -2509,7 +2573,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/REdBHok1hh "
+                  "url": "http://xhslink.com/o/REdBHok1hh"
                 }
               ],
               "models": [
@@ -2558,8 +2622,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/1YL28ccehyp ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/1YL28ccehyp"
                 }
               ],
               "models": [
@@ -2589,8 +2653,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/6IFQlX0yewe",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/6IFQlX0yewe"
                 },
                 {
                   "platform": "xhs",
@@ -2883,14 +2947,17 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "title": "貓貓玩具熊透色-粉",
               "badge": "hot",
               "link": [
-                 {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amuse45af7128351b46f99a08965ce210f76f" },
                 {
-                  "url": "http://xhslink.com/o/8EfLmdGn3Af ",
-                  "platform": "xhs"
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amuse45af7128351b46f99a08965ce210f76f"
                 },
                 {
-                  "url": "http://xhslink.com/o/1WADexhVb9g ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/8EfLmdGn3Af"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/1WADexhVb9g"
                 }
               ],
               "models": [
@@ -2925,7 +2992,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "3-1-2",
               "title": "貓貓玩具熊透色-藍",
-              "badge": "",
+              "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=sky-bluee&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=5X&share_design=amusea814f4a8ade54784a045d67db798376d"
+                }
+              ],
               "models": [
                 {
                   "name": "SolidX",
@@ -2948,16 +3021,16 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": "  http://xhslink.com/o/1Z4sXiIIIKC  ",
-                  "platform": "xhs"
-                },
-                {
-                  "url": "http://xhslink.com/o/A2JR8dKzcau ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/1Z4sXiIIIKC"
                 },
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.com/o/2A8rMcfdewJ   "
+                  "url": "http://xhslink.com/o/A2JR8dKzcau"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/2A8rMcfdewJ"
                 }
               ],
               "models": [
@@ -3058,7 +3131,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "3-1-7",
               "title": "貓貓玩具熊透色-綠",
-              "badge": "",
+              "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=green-b9cbc2&product_type=PhoneCase&device_handle=iphone-18-pro&device_color=silver&spec_code=6E&share_design=amuse26d5d2766943431898fa3a293c67cf08"
+                }
+              ],
               "models": [
                 {
                   "name": "AirX",
@@ -3080,7 +3159,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "3-1-8",
               "title": "貓貓玩具熊透色-紫",
-              "badge": "",
+              "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=purple-a49aa7&product_type=PhoneCase&device_handle=iphone-18-pro&device_color=silver&spec_code=6C&share_design=amused5a5308ebdfa4b1b8327e17891f0fd9d"
+                }
+              ],
               "models": [
                 {
                   "name": "AirX",
@@ -3094,7 +3179,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "3-1-9",
               "title": "貓貓玩具熊透色-黑白",
-              "badge": "",
+              "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amuse275fa6b57095452294ac5befb38b8c21"
+                }
+              ],
               "models": [
                 {
                   "name": "AirX",
@@ -3169,19 +3260,24 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "3-2-1",
               "title": "蜜瓜冰飲",
-              "badge": "new",
+              "badge": "hot",
               "link": [
+                
                 {
-                  "url": "http://xhslink.com/o/3JI4QznKpWy",
-                  "platform": "xhs"
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=field-gree5y&product_type=PhoneCase&device_handle=iphone-17-pro&device_color=silver&spec_code=5Y&share_design=amuse82b861863a2847aa9aa5482d18fd1d7c"
                 },
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/5kyix3HHnSW "
+                  "url": "http://xhslink.com/o/3JI4QznKpWy"
                 },
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.com/o/6zBH0dt0vpZ "
+                  "url": "http://xhslink.com/o/5kyix3HHnSW"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/6zBH0dt0vpZ"
                 },
                 {
                   "platform": "xhs",
@@ -3225,6 +3321,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-2",
               "title": "冰藍冰飲",
               "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=sky-bluee&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=5X&share_design=amusef219c38a29f948659729145d01eb03c7"
+                }
+              ],
               "models": [
                 {
                   "name": "SolidX",
@@ -3251,6 +3353,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-3",
               "title": "草莓冰飲",
               "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=blossom-pinkv2&product_type=PhoneCase&device_handle=iphone-17-pro&device_color=silver&spec_code=5Z&share_design=amused825898963e149d8bbbd66fc3ae1784d"
+                }
+              ],
               "models": [
                 {
                   "name": "SolidX",
@@ -3273,6 +3381,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "3-2-4",
               "title": "芒果冰飲",
               "badge": "new",
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=sunflower-yellow6a&product_type=PhoneCase&device_handle=iphone-17-pro&device_color=silver&spec_code=6A&share_design=amuse0f1d9cd017e945178118c1efe310c9fe"
+                }
+              ],
               "models": [
                 {
                   "name": "SolidX",
@@ -3301,7 +3415,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
             {
               "id": "3-2-5",
               "title": "滿滿心心",
-              "badge": "new",
+              "badge": "",
               "models": [
                 {
                   "name": "SolidX",
@@ -3337,11 +3451,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.com/o/657wjLVwkvC  "
+                  "url": "http://xhslink.com/o/657wjLVwkvC"
                 },
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/4yRke7a6fns"
+                  "url": "http://xhslink.com/o/4yRke7a6fns"
                 }
               ],
               "models": [
@@ -3401,7 +3515,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/8nejef6nNsT "
+                  "url": "http://xhslink.com/o/8nejef6nNsT"
                 }
               ],
               "models": [
@@ -3427,12 +3541,12 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/5Kk3cffNRph ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/5Kk3cffNRph"
                 },
                 {
-                  "url": " http://xhslink.com/o/8bOdRra9Poj  ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/8bOdRra9Poj"
                 }
               ],
               "models": [
@@ -3538,7 +3652,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/GFTujcKTMg "
+                  "url": "http://xhslink.com/o/GFTujcKTMg"
                 }
               ],
               "models": [
@@ -3684,6 +3798,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "AirX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-20/1015-2.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-20/0812-39.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-20/0812-40.webp"
                   ]
@@ -3704,6 +3819,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-21/1015-9.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-21/1015-10.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/3-2-21/2025091111_29.png"
                   ]
                 }
@@ -3788,8 +3905,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "desc": "實物會比預覽圖淺一些",
               "link": [
                 {
-                  "url": "http://xhslink.cn/o/5wSjc38tkyw",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.cn/o/5wSjc38tkyw"
                 }
               ],
               "models": [
@@ -4029,8 +4146,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": " http://xhslink.com/o/2XkwLNUIzRr ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/2XkwLNUIzRr"
                 }
               ],
               "models": [
@@ -4221,11 +4338,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": "  http://xhslink.com/o/8fEJIJDVzRh "
+                  "url": "http://xhslink.com/o/8fEJIJDVzRh"
                 },
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.com/o/BwrRhtZdP5 "
+                  "url": "http://xhslink.com/o/BwrRhtZdP5"
                 }
               ],
               "models": [
@@ -4254,8 +4371,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": " http://xhslink.com/o/7O44sveRj8v ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/7O44sveRj8v"
                 }
               ],
               "models": [
@@ -4383,8 +4500,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/L3I3IrW05t ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/L3I3IrW05t"
                 }
               ],
               "models": [
@@ -4433,8 +4550,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "https://xhslink.cn/o/AS0qoEmn6Hy",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "https://xhslink.cn/o/AS0qoEmn6Hy"
                 }
               ],
               "models": [
@@ -4603,7 +4720,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.com/o/7tg0VoKFs9a "
+                  "url": "http://xhslink.com/o/7tg0VoKFs9a"
                 }
               ],
               "models": [
@@ -4663,6 +4780,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                 {
                   "name": "ModNX",
                   "imgs": [
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/1015-4.webp",
+                    "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/1015-5.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g3.webp",
                     "https://pub-ee3a4255fbd840f589cf8057238045a5.r2.dev/4-2-15/g7.webp"
                   ]
@@ -4674,9 +4793,13 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "title": "鈴蘭刺繡彩",
               "badge": "hot",
               "link": [
-                {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?device_color=silver&device_handle=iphone-18-pro-max&product_handle=solidx-magsafe-bumper-back&spec_code=5H" },
-                 { "platform": "xhs",
-                  "url": " http://xhslink.com/o/5Y73OmEN6la  "
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?device_color=silver&device_handle=iphone-18-pro-max&product_handle=solidx-magsafe-bumper-back&spec_code=5H"
+                },
+                {
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/5Y73OmEN6la"
                 }
               ],
               "models": [
@@ -4731,8 +4854,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-17",
               "title": "鈴蘭刺繡白",
               "badge": "new",
-             "link": [
-                {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=translucent-matte5h&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=5H&share_design=amuse174bb025d013486ab9534e2904fadc7a" }
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=translucent-matte5h&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=5H&share_design=amuse174bb025d013486ab9534e2904fadc7a"
+                }
               ],
               "models": [
                 {
@@ -4771,8 +4897,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "id": "4-2-18",
               "title": "愛心熊熊",
               "badge": "new",
-             "link": [
-                {  "platform": "rhinoshield", "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amusea2b4149fce2543ec88e3d82aa9efc2bd" }
+              "link": [
+                {
+                  "platform": "rhinoshield",
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=airx-magsafe-bumper-back&product_color=cloud-white&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=7G&share_design=amusea2b4149fce2543ec88e3d82aa9efc2bd"
+                }
               ],
               "models": [
                 {
@@ -4818,8 +4947,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/7LcUo4nVbg5",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/7LcUo4nVbg5"
                 }
               ],
               "models": [
@@ -4895,11 +5024,11 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": "http://xhslink.com/o/5YjvuNLS3uC "
+                  "url": "http://xhslink.com/o/5YjvuNLS3uC"
                 },
                 {
-                  "url": " http://xhslink.com/o/2a9sobbY54v ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/2a9sobbY54v"
                 }
               ],
               "models": [
@@ -4940,8 +5069,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
                   "url": "http://xhslink.com/o/30Akv1ItoWI"
                 },
                 {
-                  "url": "http://xhslink.com/o/73muBBV0Dej",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/73muBBV0Dej"
                 },
                 {
                   "platform": "xhs",
@@ -5742,7 +5871,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/4yRke7a6fns"
+                  "url": "http://xhslink.com/o/4yRke7a6fns"
                 },
                 {
                   "platform": "xhs",
@@ -6147,7 +6276,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "xhs",
-                  "url": " http://xhslink.com/o/73hKMzNbUgk "
+                  "url": "http://xhslink.com/o/73hKMzNbUgk"
                 }
               ],
               "models": [
@@ -6216,8 +6345,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/9bIjv1nRWKn",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/9bIjv1nRWKn"
                 }
               ],
               "models": [
@@ -6485,8 +6614,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "new",
               "link": [
                 {
-                  "url": "http://xhslink.com/o/8DGaFlehwWD",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/8DGaFlehwWD"
                 }
               ],
               "models": [
@@ -6582,8 +6711,8 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "badge": "hot",
               "link": [
                 {
-                  "url": " http://xhslink.com/o/9B6OGkeSa   ",
-                  "platform": "xhs"
+                  "platform": "xhs",
+                  "url": "http://xhslink.com/o/9B6OGkeSa"
                 }
               ],
               "models": [
