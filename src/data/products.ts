@@ -4795,7 +4795,7 @@ export const PRODUCTS_DATA: { SERIES: Series[] } = {
               "link": [
                 {
                   "platform": "rhinoshield",
-                  "url": "https://rhinoshield.tw/ditto/customize?device_color=silver&device_handle=iphone-18-pro-max&product_handle=solidx-magsafe-bumper-back&spec_code=5H"
+                  "url": "https://rhinoshield.tw/ditto/customize?product_handle=solidx-magsafe-bumper-back&product_color=translucent-matte5h&product_type=PhoneCase&device_handle=iphone-18-pro-max&device_color=silver&spec_code=5H&share_design=amuse28a9235655fe4f00a669a1a8d1c531d3"
                 },
                 {
                   "platform": "xhs",
