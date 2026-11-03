@@ -399,6 +399,19 @@ function AppContent() {
             </a>
           </div>
 
+          <div className="flex justify-center">
+            <a
+              href="https://my.rhinoshield.tw/artist/@omnistate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-200 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
+            >
+              <span>🛡️</span>
+              <span>犀牛盾創作者主頁直達連結</span>
+              <ExternalLink className="h-3 w-3 opacity-70" />
+            </a>
+          </div>
+
           <div className="text-[11px] text-stone-500 leading-relaxed tracking-wider font-sans">
             看中哪款，<b>煩請截圖規格或複製商品資訊</b> 告知圖款編號 ＋ 機型 ＋ 殼種 ✦
             <br />
