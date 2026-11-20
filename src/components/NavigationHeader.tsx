@@ -22,7 +22,8 @@ export default function NavigationHeader({
       {/* Brand logo - Single-line layout, enlarged mobile font size, and dynamic luxury shimmer effect */}
       <Link
         to="/"
-        className="group relative flex items-center gap-1.5 sm:gap-2 px-2 py-1 -ml-1 sm:ml-0 rounded-xl transition-all active:scale-[0.97] cursor-pointer select-none min-w-0 hover:bg-purple-50/60"
+        data-spring-button="true"
+        className="group relative flex items-center gap-1.5 sm:gap-2 px-2 py-1 -ml-1 sm:ml-0 rounded-xl transition-all cursor-pointer select-none min-w-0 hover:bg-purple-50/60"
         title="返回首頁 / Back to Home"
       >
         {/* Shimmer light sweep container on the logo */}
@@ -47,6 +48,7 @@ export default function NavigationHeader({
       <nav className="hidden md:flex items-center p-1 bg-purple-50/80 rounded-full border border-purple-200/60 relative z-10 shadow-inner max-w-full gap-0.5">
         <NavLink
           to="/"
+          data-spring-button="true"
           className={({ isActive }) =>
             `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
               isActive && !isStudioActive
@@ -61,6 +63,7 @@ export default function NavigationHeader({
 
         <NavLink
           to="/gallery"
+          data-spring-button="true"
           className={({ isActive }) =>
             `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
               isActive
@@ -86,6 +89,7 @@ export default function NavigationHeader({
 
         <NavLink
           to="/studio"
+          data-spring-button="true"
           className={({ isActive }) =>
             `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
               isActive || isStudioActive
@@ -100,6 +104,7 @@ export default function NavigationHeader({
 
         <NavLink
           to="/pricing"
+          data-spring-button="true"
           className={({ isActive }) =>
             `flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer select-none whitespace-nowrap ${
               isActive

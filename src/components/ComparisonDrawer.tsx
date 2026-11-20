@@ -169,7 +169,7 @@ export default function ComparisonDrawer({
                 </button>
                 <button
                   onClick={onOpenShareModal}
-                  className="flex-1 py-2.5 bg-black hover:bg-stone-900 text-white dark:bg-stone-100 dark:hover:bg-white dark:text-black font-semibold text-xs rounded-full shadow-sm hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="flex-1 py-2.5 bg-black hover:bg-stone-900 text-white dark:bg-stone-100 dark:hover:bg-white dark:text-black font-semibold text-xs rounded-full shadow-sm hover:scale-[1.01] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <span>立即生成 {shareList.length} 款對比分享卡 ✉️</span>
                 </button>

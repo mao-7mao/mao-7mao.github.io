@@ -231,6 +231,21 @@
 
 
 /* =================================
+   Spring Press Button Override
+   Prevents Tailwind transition-all from fighting Framer Motion spring transform
+   ================================= */
+
+[data-spring-active="true"] {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow !important;
+  transition-duration: 140ms !important;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-favorite-btn="true"] {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow !important;
+}
+
+/* =================================
    Image Protection
    ================================= */
 

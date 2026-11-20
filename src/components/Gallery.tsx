@@ -7,6 +7,7 @@ import { Series, Design, Subseries, getOfficialUrl, getShowcaseLinks, PLATFORM_I
 import { Search, SlidersHorizontal, Check, RefreshCw, Star, Layers, Zap, ExternalLink, Compass, X, ChevronLeft, ChevronRight, ShoppingBag, Heart, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import OfficialStoreBadge, { OfficialStoreTag } from './OfficialStoreBadge';
+import FavoriteButton from './FavoriteButton';
 
 const convertToTC = (s: string) => s;
 
@@ -596,7 +597,7 @@ export default function Gallery({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
-            className="flex-1 flex items-center justify-center gap-2 bg-[#5C5468] text-white hover:bg-[#453D50] py-2.5 px-3 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-xs active:scale-[0.99] cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-2 bg-[#5C5468] text-white hover:bg-[#453D50] py-2.5 px-3 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-xs cursor-pointer"
           >
             <SlidersHorizontal className="h-3.5 w-3.5 text-purple-200" />
             <span>系列與篩選 ({filteredDesigns.length}款)</span>
@@ -1020,14 +1021,30 @@ export default function Gallery({
                         transition={{ duration: 0.45 }}
                         key={d.id}
                         onClick={() => handleCardClick(d)}
-                        className={`group relative flex flex-col justify-between glass-card rounded-2xl overflow-hidden cursor-pointer transition-all ${
+                        className={`group relative flex flex-col justify-between glass-card rounded-2xl cursor-pointer transition-all ${
                           isActive
                             ? 'border-purple-600 ring-2 ring-purple-400/40 shadow-md scale-[1.01]'
                             : 'border-purple-100/70 hover:shadow-lg hover:-translate-y-0.5'
                         }`}
                       >
+                        {/* Heart favorite overlay (outside overflow-hidden so 8 dots never clip) */}
+                        <FavoriteButton
+                          isFavorite={isFavorite}
+                          onToggle={(e) => {
+                            e.stopPropagation();
+                            onToggleFavorite(d.id);
+                          }}
+                          burstRadius={22}
+                          className={`absolute top-2 right-2 p-1.5 rounded-full backdrop-blur-md border shadow-xs transition-colors hover:scale-110 z-20 cursor-pointer ${
+                            isFavorite
+                              ? 'bg-rose-50 border-rose-200 text-rose-500'
+                              : 'bg-white/80 border-purple-100 text-purple-700/60 hover:text-rose-500 hover:bg-white'
+                          }`}
+                          iconClassName={`h-3.5 w-3.5 ${isFavorite ? 'fill-current' : ''}`}
+                        />
+
                         {/* Product Preview Image Block */}
-                        <div className="relative w-full aspect-[3/4] bg-neutral-100/40 overflow-hidden flex items-center justify-center p-2.5 select-none">
+                        <div className="relative w-full aspect-[3/4] bg-neutral-100/40 rounded-t-2xl overflow-hidden flex items-center justify-center p-2.5 select-none">
                           {previewImg ? (
                             <img
                               src={previewImg}
@@ -1043,23 +1060,6 @@ export default function Gallery({
                               <span>No Preview</span>
                             </div>
                           )}
-
-                          {/* Heart favorite overlay */}
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              onToggleFavorite(d.id);
-                            }}
-                            className={`absolute top-2 right-2 p-1.5 rounded-full backdrop-blur-md border shadow-xs transition-all hover:scale-110 z-20 ${
-                              isFavorite
-                                ? 'bg-rose-50 border-rose-200 text-rose-500'
-                                : 'bg-white/80 border-purple-100 text-purple-700/60 hover:text-rose-500 hover:bg-white'
-                            }`}
-                            type="button"
-                            title={isFavorite ? '取消收藏' : '加入收藏'}
-                          >
-                            <Heart className={`h-3.5 w-3.5 ${isFavorite ? 'fill-current' : ''}`} />
-                          </button>
 
                           {/* Top Badges */}
                           {d.badge && (
@@ -1358,21 +1358,20 @@ export default function Gallery({
                         </div>
 
                         {/* Favorite Button in Quick View */}
-                        <button
-                          onClick={(e) => {
+                        <FavoriteButton
+                          isFavorite={favorites.includes(quickViewDesign.id)}
+                          onToggle={(e) => {
                             e.stopPropagation();
                             onToggleFavorite(quickViewDesign.id);
                           }}
-                          className={`p-2.5 rounded-full border shadow-2xs transition-all hover:scale-110 shrink-0 cursor-pointer ${
+                          burstRadius={24}
+                          className={`p-2.5 rounded-full border shadow-2xs transition-colors hover:scale-110 shrink-0 cursor-pointer ${
                             favorites.includes(quickViewDesign.id)
                               ? 'bg-rose-50 border-rose-200 text-rose-500'
                               : 'bg-white hover:bg-purple-50 border-purple-200 text-purple-700/60 hover:text-rose-500'
                           }`}
-                          type="button"
-                          title={favorites.includes(quickViewDesign.id) ? '取消收藏' : '加入收藏'}
-                        >
-                          <Heart className={`h-4 w-4 ${favorites.includes(quickViewDesign.id) ? 'fill-current' : ''}`} />
-                        </button>
+                          iconClassName={`h-4 w-4 ${favorites.includes(quickViewDesign.id) ? 'fill-current' : ''}`}
+                        />
                       </div>
 
                       {/* Description if present */}

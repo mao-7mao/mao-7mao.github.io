@@ -9,6 +9,7 @@ import PricingPage from './pages/PricingPage';
 import OrderInquiryModal from './components/OrderInquiryModal';
 import FavoritesDrawer from './components/FavoritesDrawer';
 import ComparisonDrawer from './components/ComparisonDrawer';
+import GlobalButtonSpring from './components/GlobalButtonSpring';
 import { PRODUCTS_DATA } from './data/products';
 import { TUTU_SERIES_LIST } from './data/tutuproducts';
 import { Design, Subseries } from './data/productsData';
@@ -213,6 +214,7 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-[#FAF8FC] text-[#231F2E] font-sans smooth-scroll flex flex-col selection:bg-purple-200 selection:text-purple-900 relative overflow-x-clip">
       <ScrollToTop />
+      <GlobalButtonSpring />
 
       {/* Immersive Glass Ambient Background Blur Spots - Softened Purple & Rose Tones */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -371,6 +373,7 @@ function AppContent() {
               href="https://www.xiaohongshu.com/search_result?keyword=%E8%90%AC%E6%9C%89%E7%8B%80%E6%85%8B"
               target="_blank"
               rel="noopener noreferrer"
+              data-spring-button="true"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
             >
               <span>📕</span>
@@ -381,6 +384,7 @@ function AppContent() {
               href="https://www.xiaohongshu.com/search_result?keyword=jimmmibobo"
               target="_blank"
               rel="noopener noreferrer"
+              data-spring-button="true"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
             >
               <span>📕</span>
@@ -391,6 +395,7 @@ function AppContent() {
               href="https://www.xiaohongshu.com/search_result?keyword=Hey%20there"
               target="_blank"
               rel="noopener noreferrer"
+              data-spring-button="true"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100/90 text-red-600 hover:text-red-700 border border-red-200/80 text-xs font-semibold shadow-2xs hover:scale-105 transition-all cursor-pointer"
             >
               <span>📕</span>
@@ -424,11 +429,15 @@ function AppContent() {
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
+            data-no-global-spring="true"
+            data-favorite-btn="true"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
+            whileTap={{ scale: 0.94, boxShadow: '0 2px 8px rgba(92,84,104,0.14)' }}
+            transition={{ type: 'spring', stiffness: 260, damping: 12 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-20 md:bottom-6 right-5 md:right-6 z-30 p-3.5 rounded-full bg-[#5C5468] hover:bg-[#453D50] text-white shadow-[0_8px_20px_rgba(92,84,104,0.3)] transition-all hover:scale-105 cursor-pointer"
+            className="fixed bottom-20 md:bottom-6 right-5 md:right-6 z-30 p-3.5 rounded-full bg-[#5C5468] hover:bg-[#453D50] text-white shadow-[0_8px_20px_rgba(92,84,104,0.3)] transition-colors hover:scale-105 cursor-pointer"
             aria-label="返回頂部"
           >
             <ArrowUp className="h-4 w-4" />

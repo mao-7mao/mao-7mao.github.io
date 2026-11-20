@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ShoppingBag, Layers, Check,
 import { motion, AnimatePresence } from 'framer-motion';
 import ShareCardModal from './ShareCardModal';
 import OfficialStoreBadge, { OfficialStoreTag } from './OfficialStoreBadge';
+import FavoriteButton from './FavoriteButton';
 import { ShareQueueItem } from '../types';
 
 interface ProductViewerProps {
@@ -949,17 +950,17 @@ export default function ProductViewer({
           >
             {isZoomed ? <ZoomOut className="h-4 w-4 text-purple-600" /> : <ZoomIn className="h-4 w-4 text-purple-600" />}
           </button>
-          <button
-            onClick={() => onToggleFavorite(selectedDesign.id)}
-            className={`p-2 sm:p-2.5 rounded-full backdrop-blur-md border shadow-xs hover:scale-105 transition-all cursor-pointer ${
+          <FavoriteButton
+            isFavorite={isFavorite}
+            onToggle={() => onToggleFavorite(selectedDesign.id)}
+            burstRadius={22}
+            className={`p-2 sm:p-2.5 rounded-full backdrop-blur-md border shadow-xs hover:scale-105 transition-colors cursor-pointer ${
               isFavorite
                 ? 'bg-rose-50 border-rose-200 text-rose-500'
                 : 'bg-white/85 hover:bg-purple-50 border-purple-100 text-[#231F2E]'
             }`}
-            title={isFavorite ? '取消收藏' : '加入收藏'}
-          >
-            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current' : 'text-purple-600'}`} />
-          </button>
+            iconClassName={`h-4 w-4 ${isFavorite ? 'fill-current' : 'text-purple-600'}`}
+          />
           <button
             onClick={handleOpenShareModal}
             className="p-2 sm:p-2.5 rounded-full bg-white/85 hover:bg-purple-50 backdrop-blur-md border border-purple-100 text-[#231F2E] shadow-xs hover:scale-105 transition-all cursor-pointer"
@@ -1575,18 +1576,19 @@ export default function ProductViewer({
 
             <div className="flex flex-col">
               <div className="grid grid-cols-3 gap-2">
-                <button
-                  onClick={() => onToggleFavorite(selectedDesign.id)}
-                  className={`flex items-center justify-center gap-1.5 rounded-full py-2.5 border transition-all hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
+                <FavoriteButton
+                  isFavorite={isFavorite}
+                  onToggle={() => onToggleFavorite(selectedDesign.id)}
+                  burstRadius={24}
+                  className={`flex items-center justify-center gap-1.5 rounded-full py-2.5 border transition-colors hover:scale-[1.02] font-semibold text-xs tracking-wider uppercase shadow-xs cursor-pointer ${
                     isFavorite
                       ? 'bg-rose-50 border-rose-200 text-rose-500 hover:bg-rose-100'
                       : 'border-purple-200/70 bg-white/80 hover:bg-purple-50 text-[#231F2E]'
                   }`}
-                  title={isFavorite ? '取消收藏' : '加入收藏'}
+                  iconClassName={`h-4 w-4 ${isFavorite ? 'fill-current text-rose-500' : 'text-purple-600'}`}
                 >
-                  <Heart className={`h-4 w-4 ${isFavorite ? 'fill-current text-rose-500' : 'text-purple-600'}`} />
                   <span>{isFavorite ? '已收藏' : '收藏'}</span>
-                </button>
+                </FavoriteButton>
 
                 <button
                   onClick={handleAddToComparison}

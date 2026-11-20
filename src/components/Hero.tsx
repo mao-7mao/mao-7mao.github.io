@@ -86,30 +86,25 @@ export default function Hero() {
 
           {/* Bulletin Items */}
           <div className="space-y-2.5 text-xs text-[#5C5468] leading-relaxed">
-            <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
-              <span className="text-sm shrink-0">✨</span>
-              <div>
-                <span className="font-bold text-[#231F2E]">【圖款上新】</span>
-                <span>浮雕三葉草、芭樂果茶、海星圓舞曲🐚</span>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
-              <span className="text-sm shrink-0">🏷️</span>
-              <div>
-                <span className="font-bold text-[#231F2E]">【ClearX系列升級】</span>
-                <span>ClearX殼體已升級且新版只提供透明磁吸款</span>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
-              <span className="text-sm shrink-0">🩵</span>
-              <div>
-                <span className="font-bold text-[#231F2E]">【入駐rhinoshield創作者】</span>
-                <span>可以直接在rhinoshield官網下單部分圖款</span>
-              </div>
-            </div>
-          </div>
+<div className="flex items-start gap-2 bg-white/60 p-2.5 rounded-xl border border-amber-100/80">
+  <span className="text-sm shrink-0">✨</span>
+  <div className="flex flex-col gap-2">
+    <div>
+      <span className="font-bold text-[#231F2E]">【入駐rhinoshield創作者】</span>
+      <span>可以直接在rhinoshield官網下單部分圖款，點擊下方按鈕直達：</span>
+    </div>
+    <a
+      href="https://my.rhinoshield.tw/artist/@omnistate"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex w-fit items-center gap-1.5 rounded-full bg-amber-500 px-4 py-1.5 text-xs font-bold text-white shadow-sm transition hover:bg-amber-600 hover:shadow-md active:scale-95"
+    >
+      前往 RhinoShield 官網
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>
+  </div>
 
           {/* Quick Action Footer in Memo */}
  
