@@ -307,7 +307,7 @@ export default function PricePage() {
             </span>
             <h4 className="font-sans font-bold text-xs sm:text-sm text-[#231F2E] mb-1.5">僅購買萬有商品</h4>
             <ol className="list-decimal list-inside text-xs text-[#5C5468] space-y-1 leading-relaxed">
-              <li>填寫集運委託登記表單（萬有狀態商品滿 <b>265元</b> 即可安排下單，未滿需等待湊單滿額後下單🙇）</li>
+              <li>填寫集運委託登記表單（萬有狀態商品滿 <b>255元</b> 即可安排下單，未滿需等待湊單滿額後下單🙇）</li>
               <li>私訊萬有狀態支付商品款項</li>
               <li>私訊 Jimmibobo 支付運費並通知留意包裹</li>
               <li>商品寄達台灣後由 Jimmibobo 代收並拼郵，安排寄往大陸</li>
